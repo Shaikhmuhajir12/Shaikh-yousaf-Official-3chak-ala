@@ -1,351 +1,456 @@
-
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Shaikh Yousaf | Official</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root {
-  --gold: #e9bd62;
-  --dark: #090b10;
-  --panel: #141720;
-  --white: #fff;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--dark);
-  color: var(--white);
-  font-family: 'Cairo', sans-serif;
-  overflow-x: hidden;
-}
-a { color: inherit; text-decoration: none; }
-header {
-  min-height: 75px;
-  padding: 14px 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  background: rgba(9,11,16,.95);
-  border-bottom: 1px solid #e9bd6240;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-.site-name {
-  color: var(--gold);
-  font-weight: 900;
-  font-size: 21px;
-}
-nav { display: flex; flex-wrap: wrap; gap: 17px; }
-nav a { font-size: 13px; transition: .3s; }
-nav a:hover { color: var(--gold); }
-
-/* Animated logo */
-.logo-wrap {
-  position: fixed;
-  top: 90px;
-  right: 14px;
-  z-index: 60;
-  width: 94px;
-  height: 94px;
-  border-radius: 50%;
-  background: linear-gradient(145deg,#fff0b0,#bd8428,#fff0b0);
-  padding: 4px;
-  box-shadow: 0 0 20px #e9bd6260;
-  animation: logoGlow 2.5s infinite alternate;
-}
-.logo-inner {
-  width: 100%;
-  height: 100%;
-  border: 2px dashed #fff1be;
-  background: #101116;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: spinBorder 12s linear infinite;
-}
-.logo-inner strong {
-  color: var(--gold);
-  font-size: 22px;
-  line-height: 1.2;
-}
-.logo-inner span {
-  font-size: 9px;
-  letter-spacing: 2px;
-}
-@keyframes logoGlow {
-  from { box-shadow: 0 0 8px #e9bd6260; transform: scale(1); }
-  to { box-shadow: 0 0 28px #e9bd62b0; transform: scale(1.04); }
-}
-@keyframes spinBorder { to { transform: rotate(360deg); } }
-
-/* Front page */
-.hero {
-  min-height: 88vh;
-  padding: 65px 7%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 35px;
-  background:
-    radial-gradient(circle at 15% 40%,#9b70201c,transparent 35%),
-    linear-gradient(135deg,#0b0d13,#17130c 60%,#090b10);
-}
-.hero-text { animation: slideIn 1s ease both; }
-.eyebrow {
-  color: var(--gold);
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: bold;
-}
-.hero h1 {
-  font-size: clamp(38px,6vw,68px);
-  line-height: 1.25;
-  margin: 14px 0;
-}
-.hero h1 span { color: var(--gold); }
-.hero p {
-  color: #d0d0d0;
-  line-height: 2;
-  max-width: 520px;
-  margin-bottom: 25px;
-}
-.gold-btn {
-  display: inline-block;
-  background: linear-gradient(120deg,#f7dc91,#bd852d);
-  color: #111;
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-weight: 900;
-  box-shadow: 0 6px 22px #d8a74730;
-  transition: .3s;
-}
-.gold-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 30px #d8a74765; }
-
-/* Large, clear Yousaf picture */
-.hero-photo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  min-height: 390px;
-}
-.photo-frame {
-  width: min(100%, 390px);
-  height: 450px;
-  padding: 7px;
-  border-radius: 190px 190px 28px 28px;
-  background: linear-gradient(140deg,#fff0b0,#bb832a,#f6d987);
-  box-shadow: 0 0 35px #e9bd6230;
-  animation: floatPhoto 4s ease-in-out infinite;
-  position: relative;
-}
-.photo-frame::before {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  border: 1px solid #e9bd6270;
-  border-radius: 200px 200px 35px 35px;
-  animation: outlinePulse 3s ease-in-out infinite;
-}
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-  border-radius: 185px 185px 23px 23px;
-  display: block;
-  background: #202020;
-}
-.photo-label {
-  position: absolute;
-  bottom: 25px;
-  right: 50%;
-  transform: translateX(50%);
-  white-space: nowrap;
-  padding: 8px 22px;
-  border: 1px solid #e9bd62;
-  border-radius: 25px;
-  background: #090b10e8;
-  color: var(--gold);
-  font-weight: 900;
-  box-shadow: 0 5px 20px #0008;
-}
-@keyframes floatPhoto {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-@keyframes outlinePulse {
-  0%,100% { transform: scale(1); opacity: .5; }
-  50% { transform: scale(1.025); opacity: 1; }
-}
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(35px); }
-  to { opacity: 1; transform: translateX(0); }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-/* Sections */
-section.content-section { padding: 75px 7%; }
-.section-heading { text-align: center; margin-bottom: 35px; }
-.section-heading h2 { font-size: clamp(26px,4vw,38px); }
-.section-heading h2 span { color: var(--gold); }
-.section-heading p { color: #aaa; margin-top: 8px; }
-.about-box {
-  max-width: 900px;
-  margin: auto;
-  background: var(--panel);
-  border: 1px solid #e9bd6230;
-  border-radius: 20px;
-  padding: 28px;
-  text-align: center;
-  line-height: 2.1;
-  color: #ddd;
+html{
+  scroll-behavior:smooth;
 }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 23px;
-}
-.person-card {
-  background: var(--panel);
-  border: 1px solid #e9bd6230;
-  border-radius: 20px;
-  padding: 13px;
-  text-align: center;
-  overflow: hidden;
-  transition: transform .35s, box-shadow .35s;
-}
-.person-card:hover {
-  transform: translateY(-9px);
-  box-shadow: 0 12px 30px #e9bd6220;
-}
-.person-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  object-position: center 25%;
-  border-radius: 14px;
-  transition: transform .6s, filter .6s;
-}
-.person-card:hover img { transform: scale(1.04); filter: brightness(1.08); }
-.person-card h3 { color: var(--gold); margin: 13px 0 5px; }
-.person-card p { color: #bbb; font-size: 13px; padding-bottom: 9px; }
-.timeline {
-  max-width: 850px;
-  margin: auto;
-  border-right: 2px solid var(--gold);
-  padding-right: 25px;
-}
-.timeline-item { margin: 0 0 25px; position: relative; }
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  right: -32px;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  background: var(--gold);
-  border-radius: 50%;
-  box-shadow: 0 0 12px #e9bd62;
-}
-.timeline-item h3 { color: var(--gold); margin-bottom: 5px; }
-.timeline-item p { color: #ccc; line-height: 1.9; }
 
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 16px;
+body{
+  background:#080a0f;
+  color:#fff;
+  font-family:Cairo,sans-serif;
+  overflow-x:hidden;
 }
-.gallery figure {
-  height: 300px;
-  overflow: hidden;
-  border-radius: 17px;
-  border: 1px solid #e9bd6255;
-  background: #171717;
-}
-.gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-  transition: transform .7s, filter .7s;
-}
-.gallery figure:hover img { transform: scale(1.09); filter: brightness(1.12); }
 
-.socials {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin: 24px 0;
+a{
+  text-decoration:none;
+  color:inherit;
 }
-.socials a {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--gold);
-  border: 1px solid #e9bd6280;
-  background: #141720;
-  font-size: 19px;
-  transition: .3s;
-}
-.socials a:hover {
-  color: #111;
-  background: var(--gold);
-  transform: translateY(-5px) rotate(8deg);
-}
-footer {
-  text-align: center;
-  padding: 28px 15px;
-  background: #050609;
-  border-top: 1px solid #e9bd6230;
-  color: #aaa;
-  font-size: 13px;
-}
-footer span { color: var(--gold); }
 
-.reveal { opacity: 0; transform: translateY(25px); transition: opacity .8s, transform .8s; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  min-height:70px;
+  padding:12px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(8,10,15,.96);
+  border-bottom:1px solid #dcae4d55;
+  backdrop-filter:blur(10px);
+}
 
-@media (max-width: 760px) {
-  header { padding: 12px 4%; }
-  .site-name { font-size: 17px; }
-  nav { gap: 10px; }
-  nav a { font-size: 11px; }
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 48px 6%;
+.brand{
+  color:#e8bd63;
+  font-size:21px;
+  font-weight:900;
+}
+
+nav{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  font-size:13px;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#e8bd63;
+}
+
+/* ANIMATED LOGO */
+.logo{
+  position:fixed;
+  top:88px;
+  right:14px;
+  width:90px;
+  height:90px;
+  z-index:90;
+  border-radius:50%;
+  padding:4px;
+  background:linear-gradient(135deg,#fff0a9,#b77c20,#fff0a9);
+  box-shadow:0 0 25px #e8bd6366;
+  animation:logoFloat 3s infinite ease-in-out;
+}
+
+.logo-in{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background:#0b0d12;
+  border:2px dashed #e8bd63;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.logo-in b{
+  color:#e8bd63;
+  font-size:23px;
+}
+
+.logo-in small{
+  font-size:8px;
+  letter-spacing:2px;
+}
+
+@keyframes logoFloat{
+  0%,100%{
+    transform:translateY(0) rotate(0);
   }
-  .hero-text { order: 1; }
-  .hero-photo { order: 0; min-height: 340px; }
-  .photo-frame { width: min(78vw,330px); height: 360px; }
-  .hero p { margin-left: auto; margin-right: auto; }
-  .logo-wrap { width: 70px; height: 70px; top: 85px; right: 8px; }
-  .logo-inner strong { font-size: 17px; }
-  .logo-inner span { font-size: 7px; }
-  .cards, .gallery { grid-template-columns: 1fr; }
-  .person-card img { height: 320px; }
-  .gallery figure { height: 340px; }
-  section.content-section { padding: 55px 6%; }
+  50%{
+    transform:translateY(-8px) rotate(5deg);
+  }
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  padding:55px 7%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:40px;
+  background:
+  radial-gradient(circle at 20% 50%,#e8bd631b,transparent 35%),
+  linear-gradient(135deg,#080a0f,#171209,#080a0f);
+}
+
+.hero-text{
+  animation:heroText 1.2s ease;
+}
+
+.hero-text small{
+  color:#e8bd63;
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:clamp(40px,6vw,70px);
+  line-height:1.3;
+  margin:15px 0;
+}
+
+.hero h1 span{
+  color:#e8bd63;
+}
+
+.hero p{
+  color:#ccc;
+  line-height:2;
+  max-width:550px;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  border-radius:30px;
+  background:linear-gradient(120deg,#ffe29a,#b77c20);
+  color:#111;
+  font-weight:900;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px #e8bd6344;
+}
+
+@keyframes heroText{
+  from{
+    opacity:0;
+    transform:translateX(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+/* YOUSAF PHOTO */
+.hero-photo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.photo-frame{
+  width:min(90%,400px);
+  height:470px;
+  padding:7px;
+  border-radius:210px 210px 30px 30px;
+  background:linear-gradient(140deg,#fff0a9,#b77c20,#fff0a9);
+  box-shadow:0 0 45px #e8bd6344;
+  animation:photoFloat 4s infinite ease-in-out;
+}
+
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  border-radius:203px 203px 24px 24px;
+  display:block;
+}
+
+@keyframes photoFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+/* SECTIONS */
+section{
+  padding:75px 7%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.title h2{
+  font-size:36px;
+}
+
+.title h2 span{
+  color:#e8bd63;
+}
+
+.title p{
+  color:#aaa;
+  margin-top:7px;
+}
+
+/* VIDEO */
+.video-section{
+  background:linear-gradient(180deg,#080a0f,#11100c,#080a0f);
+}
+
+.video-box{
+  max-width:900px;
+  margin:auto;
+  padding:7px;
+  border-radius:25px;
+  background:linear-gradient(135deg,#fff0a9,#b77c20,#fff0a9);
+  box-shadow:0 0 35px #e8bd6355;
+  animation:videoGlow 3s infinite alternate;
+}
+
+.video-box video{
+  width:100%;
+  max-height:600px;
+  display:block;
+  border-radius:19px;
+  background:#000;
+}
+
+@keyframes videoGlow{
+  from{
+    box-shadow:0 0 15px #e8bd6322;
+  }
+  to{
+    box-shadow:0 0 40px #e8bd6377;
+  }
+}
+
+/* ABOUT */
+.about{
+  max-width:900px;
+  margin:auto;
+  padding:30px;
+  text-align:center;
+  line-height:2.2;
+  color:#ddd;
+  background:#141720;
+  border:1px solid #e8bd6333;
+  border-radius:22px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  background:#141720;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid #e8bd6333;
+  text-align:center;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px #e8bd6322;
+}
+
+.card img{
+  width:100%;
+  height:290px;
+  object-fit:cover;
+  border-radius:15px;
+  transition:.5s;
+}
+
+.card:hover img{
+  transform:scale(1.04);
+}
+
+.card h3{
+  color:#e8bd63;
+  margin:13px 0 5px;
+}
+
+.card p{
+  color:#aaa;
+  padding-bottom:8px;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.gallery img{
+  width:100%;
+  height:330px;
+  object-fit:cover;
+  border-radius:18px;
+  border:1px solid #e8bd6355;
+  transition:.6s;
+}
+
+.gallery img:hover{
+  transform:scale(1.04);
+  box-shadow:0 0 25px #e8bd6344;
+}
+
+/* SOCIAL */
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.socials a{
+  width:48px;
+  height:48px;
+  border:1px solid #e8bd6380;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#e8bd63;
+  background:#141720;
+  transition:.3s;
+}
+
+.socials a:hover{
+  background:#e8bd63;
+  color:#111;
+  transform:translateY(-5px) rotate(8deg);
+}
+
+/* FOOTER */
+footer{
+  padding:28px;
+  text-align:center;
+  color:#999;
+  background:#050609;
+  border-top:1px solid #e8bd6333;
+}
+
+footer span{
+  color:#e8bd63;
+}
+
+/* MOBILE */
+@media(max-width:750px){
+
+  header{
+    padding:11px 4%;
+  }
+
+  .brand{
+    font-size:16px;
+  }
+
+  nav{
+    gap:8px;
+  }
+
+  nav a{
+    font-size:10px;
+  }
+
+  .logo{
+    width:70px;
+    height:70px;
+    right:8px;
+    top:82px;
+  }
+
+  .logo-in b{
+    font-size:17px;
+  }
+
+  .logo-in small{
+    font-size:6px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:45px 6%;
+  }
+
+  .hero p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-photo{
+    order:-1;
+  }
+
+  .photo-frame{
+    width:85%;
+    height:390px;
+  }
+
+  .cards,
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img{
+    height:360px;
+  }
+
+  section{
+    padding:55px 6%;
   }
 }
 </style>
@@ -354,193 +459,299 @@ footer span { color: var(--gold); }
 <body>
 
 <header>
-  <a class="site-name" href="#home">SHAIKH YOUSAF</a>
+
+  <div class="brand">
+    SHAIKH YOUSAF
+  </div>
+
   <nav>
     <a href="#home">ہوم</a>
+    <a href="#video">ویڈیو</a>
     <a href="#about">تعارف</a>
-    <a href="#family">اہم شخصیات</a>
-    <a href="#gallery">تصاویر</a>
+    <a href="#family">تصاویر</a>
     <a href="#contact">رابطہ</a>
   </nav>
+
 </header>
 
-<!-- Animated MUHAJIR logo -->
-<div class="logo-wrap" aria-label="Muhajir Official Logo">
-  <div class="logo-inner">
-    <strong>SY</strong>
-    <span>MUHAJIR</span>
-    <span>OFFICIAL</span>
+<!-- ANIMATED LOGO -->
+
+<div class="logo">
+
+  <div class="logo-in">
+
+    <b>SY</b>
+    <small>MUHAJIR</small>
+    <small>OFFICIAL</small>
+
   </div>
+
 </div>
 
-<!-- FRONT PAGE: Yousaf's large photo -->
-<main>
+<!-- FRONT PAGE -->
+
 <section class="hero" id="home">
+
   <div class="hero-text">
-    <div class="eyebrow">✦ OFFICIAL WEBSITE ✦</div>
-    <h1>شیخ <span>یوسف</span><br>آفیشل پیج</h1>
+
+    <small>✦ OFFICIAL WEBSITE ✦</small>
+
+    <h1>
+      شیخ <span>یوسف</span><br>
+      آفیشل پیج
+    </h1>
+
     <p>
-      خوش آمدید! یہ شیخ یوسف کا آفیشل پیج ہے۔
-      یہاں ان کی یادیں، تصاویر، سفر اور زندگی کے خوبصورت لمحات دیکھیں۔
+      شیخ یوسف کے آفیشل پیج میں خوش آمدید۔
+      یہاں ان کی خوبصورت تصاویر، یادیں، ویڈیوز
+      اور زندگی کے یادگار لمحات دیکھیں۔
     </p>
-    <a class="gold-btn" href="#gallery">تصاویر دیکھیں &nbsp; <i class="fa-solid fa-images"></i></a>
+
+    <a class="btn" href="#video">
+      ویڈیو دیکھیں
+      <i class="fa-solid fa-play"></i>
+    </a>
+
   </div>
 
   <div class="hero-photo">
+
     <div class="photo-frame">
-      <img src="yousaf-8.jpg" alt="Shaikh Yousaf کی تصویر">
-      <div class="photo-label">SHAIKH YOUSAF ✦</div>
+
+      <img
+        src="yousaf-8.jpg"
+        alt="Shaikh Yousaf">
+
     </div>
+
   </div>
+
 </section>
 
-<section class="content-section reveal" id="about">
-  <div class="section-heading">
-    <h2>میرا <span>تعارف</span></h2>
-    <p>زندگی، یادیں اور خوبصورت لمحات</p>
-  </div>
-  <div class="about-box">
-    شیخ یوسف کے آفیشل پیج میں خوش آمدید۔
-    اس ویب سائٹ کو ان کی تصاویر، یادوں اور اہم لمحات کے لیے تیار کیا گیا ہے۔
-    <br>
-    <strong style="color:#e9bd62">سادگی، عزت اور خلوص</strong>
-  </div>
-</section>
+<!-- VIDEO -->
 
-<section class="content-section reveal" id="family">
-  <div class="section-heading">
-    <h2>اہم <span>شخصیات</span></h2>
-    <p>تصاویر اور یادگار لمحات</p>
-  </div>
+<section class="video-section" id="video">
 
-  <div class="cards">
-    <article class="person-card">
-      <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-      <h3>Shaikh Yousaf</h3>
-      <p>Official Profile</p>
-    </article>
-    <article class="person-card">
-      <img src="mudassir-5.jpg" alt="Mudassir کی تصویر">
-      <h3>Mudassir</h3>
-      <p>یادگار لمحات</p>
-    </article>
-    <article class="person-card">
-      <img src="ustad-7.jpg" alt="Ustad کی تصویر">
-      <h3>Ustad</h3>
-      <p>قابلِ احترام شخصیت</p>
-    </article>
-  </div>
-</section>
+  <div class="title">
 
-<section class="content-section reveal">
-  <div class="section-heading">
-    <h2>زندگی کے <span>لمحات</span></h2>
-    <p>یادوں کا ایک خوبصورت سفر</p>
-  </div>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>خوبصورت یادیں</h3>
-      <p>زندگی کے اچھے لمحات ہمیشہ دل کے قریب رہتے ہیں۔</p>
-    </div>
-    <div class="timeline-item">
-      <h3>دوستی اور احترام</h3>
-      <p>اچھے تعلقات، خلوص اور احترام زندگی کا قیمتی سرمایہ ہیں۔</p>
-    </div>
-    <div class="timeline-item">
-      <h3>نئے خواب</h3>
-      <p>ہر نیا دن ایک نئی امید اور نئے سفر کا آغاز ہے۔</p>
-    </div>
-  </div>
-</section>
+    <h2>
+      یوسف کی <span>ویڈیو</span>
+    </h2>
 
-<section class="content-section reveal" id="gallery">
-  <div class="section-heading">
-    <h2>تصاویر کی <span>گیلری</span></h2>
-    <p>تصاویر پر کلک کیے بغیر بھی خوبصورت اینیمیشن دیکھیں</p>
-  </div>
+    <p>
+      یادگار لمحات
+    </p>
 
-  <div class="gallery">
-    <figure><img src="yousaf-8.jpg" alt="Yousaf تصویر 1" loading="lazy"></figure>
-    <figure><img src="mudassir-5.jpg" alt="Mudassir تصویر" loading="lazy"></figure>
-    <figure><img src="ustad-7.jpg" alt="Ustad تصویر" loading="lazy"></figure>
-  </div>
-</section>
-
-<section class="content-section reveal" id="contact">
-  <div class="section-heading">
-    <h2>سوشل <span>میڈیا</span></h2>
-    <p>اپنے آفیشل سوشل میڈیا اکاؤنٹس کے لنکس یہاں شامل کریں</p>
-  </div>
-
-  <div class="socials">
-    <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#" aria-label="YouTube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-    <a href="#" aria-label="TikTok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-    <a href="#" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  </div>
-</section>
-</main>
-
-<footer>
-  © 2026 <span>Shaikh Yousaf Official</span> — All Rights Reserved
-</footer>
-
-<script>
-const revealItems = document.querySelectorAll('.reveal');
-
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('visible'));
-}
-</script>
-
-</body>
-</html>
-<section class="content-section reveal" id="video">
-  <div class="section-heading">
-    <h2>یوسف کی <span>ویڈیو</span></h2>
-    <p>یادگار لمحات</p>
   </div>
 
   <div class="video-box">
-    <video controls autoplay muted loop playsinline>
-      <source src="yousaf-video.mp4" type="video/mp4">
+
+    <video
+      controls
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata">
+
+      <source
+        src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4"
+        type="video/mp4">
+
       آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
+
     </video>
+
   </div>
+
 </section>
 
-<style>
-.video-box {
-  max-width: 850px;
-  margin: auto;
-  padding: 7px;
-  border-radius: 25px;
-  background: linear-gradient(135deg,#f4d98b,#9d6c20,#f4d98b);
-  box-shadow: 0 0 35px #e9bd6250;
-  animation: videoGlow 3s ease-in-out infinite alternate;
-}
+<!-- ABOUT -->
 
-.video-box video {
-  width: 100%;
-  display: block;
-  border-radius: 19px;
-  background: #000;
-}
+<section id="about">
 
-@keyframes videoGlow {
-  from { box-shadow: 0 0 15px #e9bd6230; }
-  to { box-shadow: 0 0 35px #e9bd6280; }
-}
-</style>
+  <div class="title">
+
+    <h2>
+      میرا <span>تعارف</span>
+    </h2>
+
+    <p>
+      زندگی، یادیں اور خوبصورت لمحات
+    </p>
+
+  </div>
+
+  <div class="about">
+
+    شیخ یوسف کے آفیشل پیج میں خوش آمدید۔
+    یہ ویب سائٹ ان کی خوبصورت یادوں،
+    تصاویر اور اہم لمحات کو محفوظ رکھنے کے لیے تیار کی گئی ہے۔
+
+    <br><br>
+
+    <strong style="color:#e8bd63">
+      سادگی • عزت • خلوص
+    </strong>
+
+  </div>
+
+</section>
+
+<!-- FAMILY -->
+
+<section id="family">
+
+  <div class="title">
+
+    <h2>
+      اہم <span>شخصیات</span>
+    </h2>
+
+    <p>
+      یادگار تصاویر
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <img
+        src="yousaf-8.jpg"
+        alt="Shaikh Yousaf">
+
+      <h3>
+        Shaikh Yousaf
+      </h3>
+
+      <p>
+        Official Profile
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <img
+        src="mudassir-5.jpg"
+        alt="Mudassir">
+
+      <h3>
+        Mudassir
+      </h3>
+
+      <p>
+        یادگار لمحات
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <img
+        src="ustad-7.jpg"
+        alt="Ustad">
+
+      <h3>
+        Ustad
+      </h3>
+
+      <p>
+        قابل احترام شخصیت
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+  <div class="title">
+
+    <h2>
+      تصاویر کی <span>گیلری</span>
+    </h2>
+
+    <p>
+      Beautiful Memories
+    </p>
+
+  </div>
+
+  <div class="gallery">
+
+    <img
+      src="yousaf-8.jpg"
+      alt="Yousaf">
+
+    <img
+      src="mudassir-5.jpg"
+      alt="Mudassir">
+
+    <img
+      src="ustad-7.jpg"
+      alt="Ustad">
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="title">
+
+    <h2>
+      سوشل <span>میڈیا</span>
+    </h2>
+
+    <p>
+      Follow Official Accounts
+    </p>
+
+  </div>
+
+  <div class="socials">
+
+    <a href="#">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+
+  © 2026
+  <span>Shaikh Yousaf Official</span>
+  —
+  All Rights Reserved
+
+</footer>
+
+</body>
+</html>
