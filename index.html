@@ -4,17 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>شیخ یوسف | Shaikh Yousaf</title>
+<title>Shaikh Yousaf | Official Story</title>
 
-<meta name="description" content="شیخ یوسف — 3 چک دلے والا، دریا خان، بھکر">
+<meta name="description" content="Shaikh Yousaf — A story of simplicity, struggle, family, dedication and dreams.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -26,110 +24,1104 @@ html{
 }
 
 body{
-    background:#07111f;
+    background:#0b0d10;
     color:#f5f1e8;
-    font-family:'Noto Naskh Arabic',serif;
+    font-family:"Noto Naskh Arabic",serif;
     line-height:1.9;
+    overflow-x:hidden;
 }
 
-/* NAVBAR */
+:root{
+    --gold:#d6b56d;
+    --gold2:#f1d58d;
+    --cream:#f5f1e8;
+    --muted:#a9adb4;
+    --dark:#0b0d10;
+    --card:#13171c;
+    --border:rgba(214,181,109,.22);
+}
 
-nav{
+/* ---------- BACKGROUND ---------- */
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+    background:
+    radial-gradient(circle at 15% 15%,rgba(214,181,109,.10),transparent 25%),
+    radial-gradient(circle at 85% 70%,rgba(100,130,170,.08),transparent 25%);
+}
+
+body:after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+/* ---------- NAVBAR ---------- */
+
+.nav{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
-    z-index:999;
-    padding:13px 5%;
-    background:rgba(5,12,22,.82);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav-inner{
-    max-width:1200px;
-    margin:auto;
+    z-index:1000;
+    padding:16px 6%;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+    background:rgba(8,10,13,.72);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .logo{
-    font-family:'Playfair Display',serif;
-    font-size:23px;
-    color:#e9c46a;
-    letter-spacing:1px;
     direction:ltr;
+    font-family:"Playfair Display",serif;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:3px;
+    color:var(--gold2);
 }
 
-.nav-links{
-    display:flex;
-    gap:22px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:#fff;
+.nav a{
+    color:#ddd;
     text-decoration:none;
-    font-size:15px;
+    margin-left:22px;
+    font-size:14px;
+    transition:.3s;
 }
 
-.nav-links a:hover{
-    color:#e9c46a;
+.nav a:hover{
+    color:var(--gold2);
 }
 
-/* HERO */
+/* ---------- HERO ---------- */
 
 .hero{
     min-height:100vh;
+    padding:140px 7% 80px;
+    display:flex;
+    align-items:center;
     position:relative;
+    overflow:hidden;
+}
+
+.hero-content{
+    max-width:900px;
+    position:relative;
+    z-index:2;
+}
+
+.eyebrow{
+    color:var(--gold2);
+    letter-spacing:4px;
+    font-family:"Playfair Display",serif;
+    font-size:13px;
+    direction:ltr;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    direction:ltr;
+    font-size:clamp(55px,11vw,125px);
+    line-height:.95;
+    letter-spacing:-4px;
+    margin-bottom:20px;
+    color:#fff;
+}
+
+.hero h1 span{
+    color:var(--gold2);
+}
+
+.hero-urdu{
+    font-size:clamp(28px,5vw,52px);
+    color:#eee;
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:650px;
+    color:#b8bdc4;
+    font-size:18px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:32px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:50px;
+    text-decoration:none;
+    transition:.3s;
+    font-size:16px;
+}
+
+.btn-primary{
+    background:var(--gold2);
+    color:#111;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(214,181,109,.22);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.25);
+    color:white;
+}
+
+.btn-outline:hover{
+    border-color:var(--gold2);
+    color:var(--gold2);
+}
+
+/* decorative circle */
+
+.hero-orb{
+    position:absolute;
+    width:520px;
+    height:520px;
+    border-radius:50%;
+    border:1px solid rgba(214,181,109,.15);
+    right:-180px;
+    top:22%;
+}
+
+.hero-orb:before{
+    content:"";
+    position:absolute;
+    inset:50px;
+    border-radius:50%;
+    border:1px solid rgba(214,181,109,.10);
+}
+
+.hero-orb:after{
+    content:"";
+    position:absolute;
+    inset:120px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(214,181,109,.13),transparent 70%);
+}
+
+/* ---------- SECTIONS ---------- */
+
+section{
+    padding:110px 7%;
+}
+
+.section-head{
+    max-width:800px;
+    margin-bottom:55px;
+}
+
+.kicker{
+    color:var(--gold2);
+    font-size:13px;
+    letter-spacing:3px;
+    direction:ltr;
+    font-family:"Playfair Display",serif;
+    margin-bottom:10px;
+}
+
+.section-head h2{
+    font-family:"Playfair Display",serif;
+    direction:ltr;
+    font-size:clamp(36px,6vw,65px);
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.section-head p{
+    color:var(--muted);
+    font-size:17px;
+}
+
+/* ---------- STORY ---------- */
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:35px;
+    align-items:stretch;
+}
+
+.story-card{
+    background:linear-gradient(145deg,#171b21,#0e1115);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:38px;
+    box-shadow:0 25px 60px rgba(0,0,0,.2);
+}
+
+.story-card h3{
+    color:var(--gold2);
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.story-card p{
+    color:#c4c7cc;
+    font-size:17px;
+}
+
+.quote{
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    overflow:hidden;
-    background:
-    linear-gradient(rgba(3,10,18,.45),rgba(3,10,18,.92)),
-    radial-gradient(circle at 20% 20%,#214d58,transparent 35%),
-    radial-gradient(circle at 80% 70%,#573d28,transparent 40%),
-    #07111f;
+    min-height:100%;
+    font-size:28px;
+    color:#eee;
+    position:relative;
 }
 
-.hero::before{
+.quote:before{
+    content:"“";
+    position:absolute;
+    top:0;
+    left:25px;
+    font-family:Georgia,serif;
+    font-size:100px;
+    color:rgba(214,181,109,.2);
+}
+
+/* ---------- PEOPLE ---------- */
+
+.people{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.person{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:25px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.person:hover{
+    transform:translateY(-8px);
+    border-color:var(--border);
+}
+
+.person-img{
+    height:390px;
+    background:#171b20;
+    overflow:hidden;
+}
+
+.person-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.person:hover img{
+    transform:scale(1.04);
+}
+
+.person-info{
+    padding:23px;
+}
+
+.person-info h3{
+    font-size:26px;
+    color:var(--gold2);
+}
+
+.person-info span{
+    color:#999;
+    font-size:14px;
+}
+
+/* ---------- JOURNEY ---------- */
+
+.timeline{
+    position:relative;
+    max-width:950px;
+    margin:auto;
+}
+
+.timeline:before{
     content:"";
     position:absolute;
-    width:450px;
-    height:450px;
-    border-radius:50%;
-    background:#e9c46a;
-    opacity:.08;
-    filter:blur(80px);
+    right:25px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:linear-gradient(var(--gold),transparent);
 }
 
-.hero-content{
+.time-item{
     position:relative;
-    z-index:2;
-    max-width:900px;
-    padding:100px 20px 50px;
+    padding:0 75px 45px 0;
 }
 
-.small-title{
-    color:#e9c46a;
-    font-size:17px;
-    letter-spacing:3px;
+.time-dot{
+    position:absolute;
+    right:17px;
+    top:8px;
+    width:17px;
+    height:17px;
+    border-radius:50%;
+    background:var(--gold2);
+    box-shadow:0 0 0 7px rgba(214,181,109,.10);
+}
+
+.time-item h3{
+    color:var(--gold2);
+    font-size:25px;
+    margin-bottom:5px;
+}
+
+.time-item p{
+    color:#afb4ba;
+    font-size:16px;
+}
+
+/* ---------- FEATURE ---------- */
+
+.feature{
+    border-radius:35px;
+    padding:65px 8%;
+    background:
+    linear-gradient(120deg,rgba(214,181,109,.12),rgba(255,255,255,.025)),
+    #11151a;
+    border:1px solid var(--border);
+    position:relative;
+    overflow:hidden;
+}
+
+.feature h2{
+    font-family:"Playfair Display",serif;
+    direction:ltr;
+    font-size:clamp(35px,6vw,65px);
     margin-bottom:15px;
 }
 
-.hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:clamp(45px,9vw,100px);
-    direction:ltr;
-    line-height:1.1;
-    margin-bottom:10px;
-    color:#fff;
-    text-shadow:0 10px 35px rgba(0,0,0,.5);
+.feature p{
+    max-width:760px;
+    color:#c2c5ca;
+    font-size:18px;
 }
 
-.hero h2{
-    font-size:clamp(28px,5vw,55px);
-    color:#e9c46a;
-    margin
+/* ---------- GALLERY ---------- */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery-item{
+    height:420px;
+    overflow:hidden;
+    border-radius:24px;
+    background:#15191e;
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+/* ---------- LETTER ---------- */
+
+.letter{
+    max-width:900px;
+    margin:auto;
+    background:#f0eadc;
+    color:#252525;
+    padding:55px;
+    border-radius:8px;
+    box-shadow:0 30px 80px rgba(0,0,0,.3);
+    position:relative;
+}
+
+.letter:before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(70,50,25,.2);
+    pointer-events:none;
+}
+
+.letter h2{
+    color:#5b4524;
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.letter p{
+    font-size:19px;
+    line-height:2.1;
+}
+
+/* ---------- DUA ---------- */
+
+.dua{
+    text-align:center;
+    background:
+    radial-gradient(circle at center,rgba(214,181,109,.11),transparent 55%);
+}
+
+.dua h2{
+    font-size:clamp(35px,6vw,65px);
+    margin-bottom:20px;
+}
+
+.dua p{
+    max-width:750px;
+    margin:auto;
+    color:#c5c8cd;
+    font-size:20px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    padding:50px 7%;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.07);
+    color:#777;
+}
+
+.footer-name{
+    font-family:"Playfair Display",serif;
+    color:var(--gold2);
+    font-size:25px;
+    direction:ltr;
+    margin-bottom:8px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:850px){
+
+    .nav{
+        padding:14px 5%;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding:125px 6% 70px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr;
+    }
+
+    .people{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .person-img{
+        height:430px;
+    }
+
+    .gallery-item{
+        height:450px;
+    }
+
+    .letter{
+        padding:35px 25px;
+    }
+
+    .hero-orb{
+        width:330px;
+        height:330px;
+        right:-190px;
+    }
+}
+
+@media(max-width:500px){
+
+    .logo{
+        font-size:16px;
+        letter-spacing:2px;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .hero-urdu{
+        font-size:28px;
+    }
+
+    .story-card{
+        padding:25px;
+    }
+
+    .person-img{
+        height:390px;
+    }
+
+    .gallery-item{
+        height:390px;
+    }
+
+    .time-item{
+        padding-right:55px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="nav">
+
+    <div class="logo">SHAIKH YOUSAF</div>
+
+    <div class="nav-links">
+        <a href="#story">Story</a>
+        <a href="#family">Family</a>
+        <a href="#journey">Journey</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#dua">Dua</a>
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            AN ORDINARY LIFE • AN EXTRAORDINARY JOURNEY
+        </div>
+
+        <h1>
+            SHAIKH<br>
+            <span>YOUSAF</span>
+        </h1>
+
+        <div class="hero-urdu">
+            شیخ یوسف
+        </div>
+
+        <p>
+            ایک سادہ انسان کی وہ کہانی جس میں محنت، خاموشی،
+            خاندان، خواب اور آگے بڑھنے کی امید شامل ہے۔
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="btn btn-primary" href="#story">
+                کہانی پڑھیں
+            </a>
+
+            <a class="btn btn-outline" href="#gallery">
+                تصاویر دیکھیں
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-orb"></div>
+
+</header>
+
+
+<!-- ================= STORY ================= -->
+
+<section id="story">
+
+    <div class="section-head">
+
+        <div class="kicker">THE STORY</div>
+
+        <h2>ایک خاموش سفر</h2>
+
+        <p>
+            ہر انسان کی زندگی میں کچھ ایسے باب ہوتے ہیں جو
+            کتاب میں نہیں لکھے جاتے، مگر دل ہمیشہ انہیں یاد رکھتا ہے۔
+        </p>
+
+    </div>
+
+
+    <div class="story-grid">
+
+        <div class="story-card">
+
+            <h3>شیخ یوسف کی کہانی</h3>
+
+            <p>
+                شیخ یوسف 2011 میں 3 چک ڈلے والا،
+                تحصیل دریا خان، ضلع بھکر میں پیدا ہوئے۔
+                ایک سادہ اور عزت دار گھرانے میں پرورش پائی۔
+            </p>
+
+            <p>
+                زندگی ہمیشہ آسان نہیں تھی۔ گھر کے حالات محدود تھے،
+                مگر اسی ماحول نے محنت، صبر اور سادگی کی قدر سکھائی۔
+            </p>
+
+            <p>
+                آج یوسف ساتویں جماعت میں تعلیم حاصل کر رہے ہیں۔
+                ان کے اندر سادگی بھی ہے اور آگے بڑھنے کے خواب بھی۔
+            </p>
+
+        </div>
+
+
+        <div class="story-card quote">
+
+            <div>
+                <p>
+                    بعض لوگ ہماری زندگی میں
+                    زیادہ باتوں سے نہیں،
+                    صرف اپنی موجودگی سے
+                    خاص بن جاتے ہیں۔
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FAMILY ================= -->
+
+<section id="family">
+
+    <div class="section-head">
+
+        <div class="kicker">FAMILY</div>
+
+        <h2>محنت کرنے والا خاندان</h2>
+
+        <p>
+            کسی بھی کامیابی کے پیچھے اکثر ایسے لوگ ہوتے ہیں
+            جن کی محنت دنیا کو نظر نہیں آتی۔
+        </p>
+
+    </div>
+
+
+    <div class="people">
+
+        <!-- YOUSAF -->
+
+        <article class="person">
+
+            <div class="person-img">
+
+                <img
+                    src="yousaf-8.jpg"
+                    alt="Shaikh Yousaf"
+                    loading="lazy"
+                    onerror="this.style.display='none';"
+                >
+
+            </div>
+
+            <div class="person-info">
+
+                <h3>Yousaf</h3>
+
+                <span>شیخ یوسف • 2011</span>
+
+                <p>
+                    سادہ مزاج، خاموش طبیعت اور خوابوں سے بھرا نوجوان۔
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- MUDASSIR -->
+
+        <article class="person">
+
+            <div class="person-img">
+
+                <img
+                    src="mudassir-5.jpg"
+                    alt="Mudassir"
+                    loading="lazy"
+                    onerror="this.style.display='none';"
+                >
+
+            </div>
+
+            <div class="person-info">
+
+                <h3>Mudassir</h3>
+
+                <span>مدثر • بڑا بھائی</span>
+
+                <p>
+                    محنت اور ذمہ داری کو زندگی کا حصہ بنانے والا بھائی۔
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- USTAD -->
+
+        <article class="person">
+
+            <div class="person-img">
+
+                <img
+                    src="ustad-7.jpg"
+                    alt="Ustad"
+                    loading="lazy"
+                    onerror="this.style.display='none';"
+                >
+
+            </div>
+
+            <div class="person-info">
+
+                <h3>Ustad</h3>
+
+                <span>استاد • سلائی کا ہنر</span>
+
+                <p>
+                    ہنر سکھانے والے استاد جن سے محنت کا ایک نیا راستہ ملا۔
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURE ================= -->
+
+<section>
+
+    <div class="feature">
+
+        <div class="kicker">FROM STRUGGLE TO HOPE</div>
+
+        <h2>Small Beginnings.<br>Big Dreams.</h2>
+
+        <p>
+            ایک وقت تھا جب حالات محدود تھے، مگر محنت کبھی محدود نہیں ہوئی۔
+            گھر کے بڑوں کی جدوجہد نے نئی نسل کے لیے بہتر مستقبل کی بنیاد رکھی۔
+            یہی سفر یوسف کی زندگی کا خوبصورت حصہ ہے۔
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= JOURNEY ================= -->
+
+<section id="journey">
+
+    <div class="section-head">
+
+        <div class="kicker">THE JOURNEY</div>
+
+        <h2>زندگی کے چند باب</h2>
+
+        <p>
+            وقت کے ساتھ حالات بدلتے ہیں، لیکن محنت کی یاد باقی رہتی ہے۔
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="time-item">
+
+            <div class="time-dot"></div>
+
+            <h3>2011 — آغاز</h3>
+
+            <p>
+                شیخ یوسف کی زندگی کا آغاز 3 چک ڈلے والا،
+                تحصیل دریا خان، ضلع بھکر سے ہوا۔
+            </p>
+
+        </div>
+
+
+        <div class="time-item">
+
+            <div class="time-dot"></div>
+
+            <h3>بچپن — سادگی</h3>
+
+            <p>
+                محدود وسائل میں ایک سادہ زندگی،
+                گھر والوں کے قریب رہنا اور چھوٹی چھوٹی خوشیوں میں خوش رہنا۔
+            </p>
+
+        </div>
+
+
+        <div class="time-item">
+
+            <div class="time-dot"></div>
+
+            <h3>محنت — ہنر کا سفر</h3>
+
+            <p>
+                سلائی کے ہنر کی طرف قدم بڑھانا،
+                استاد سے سیکھنا اور اپنے وقت کو بہتر مستقبل کے لیے استعمال کرنا۔
+            </p>
+
+        </div>
+
+
+        <div class="time-item">
+
+            <div class="time-dot"></div>
+
+            <h3>آج — تعلیم اور خواب</h3>
+
+            <p>
+                ساتویں جماعت میں تعلیم جاری ہے اور زندگی میں
+                آگے بڑھنے کے نئے خواب ساتھ ہیں۔
+            </p>
+
+        </div>
+
+
+        <div class="time-item">
+
+            <div class="time-dot"></div>
+
+            <h3>کل — کامیابی</h3>
+
+            <p>
+                منزل ابھی دور ہے، مگر امید، دعا اور محنت کا سفر جاری ہے۔
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PERSONAL MESSAGE ================= -->
+
+<section>
+
+    <div class="section-head">
+
+        <div class="kicker">A PERSONAL MESSAGE</div>
+
+        <h2>ایک بات جو شاید کبھی کہی نہیں گئی</h2>
+
+    </div>
+
+
+    <div class="letter">
+
+        <h2>یوسف کے نام</h2>
+
+        <p>
+            شاید میں نے کبھی تمہیں کھل کر یہ نہیں بتایا کہ تم میرے لیے
+            صرف ایک جاننے والے نہیں ہو۔
+        </p>
+
+        <p>
+            وقت کے ساتھ دل میں تمہارے لیے ایک چھوٹے بھائی جیسی محبت اور
+            عزت پیدا ہوئی۔ تمہیں نہ دیکھوں تو ایک کمی سی محسوس ہوتی ہے،
+            اور تمہیں دیکھ لوں تو دل خوش ہو جاتا ہے۔
+        </p>
+
+        <p>
+            تمہاری سادگی، محنت اور گھر والوں کے قریب رہنا ہمیشہ اچھا لگا۔
+            میری دعا ہے کہ اللہ تمہیں زندگی میں بہت ترقی دے،
+            تمہیں کامیاب کرے اور تمہارے خاندان کو خوشیاں عطا فرمائے۔
+        </p>
+
+        <p>
+            <strong>
+                اللہ تمہیں ہمیشہ اپنی حفظ و امان میں رکھے۔
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="section-head">
+
+        <div class="kicker">GALLERY</div>
+
+        <h2>یادوں کے چند لمحے</h2>
+
+        <p>
+            یہ تصاویر اس کہانی کے اصل کرداروں کی یادوں کو محفوظ رکھنے کے لیے ہیں۔
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+
+            <img
+                src="yousaf-8.jpg"
+                alt="Yousaf"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="mudassir-5.jpg"
+                alt="Mudassir"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="ustad-7.jpg"
+                alt="Ustad"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VILLAGE / ROOTS ================= -->
+
+<section>
+
+    <div class="feature">
+
+        <div class="kicker">ROOTS</div>
+
+        <h2>3 Chak Dulle Wala</h2>
+
+        <p>
+            ایک ایسا ماحول جہاں رشتے قریب ہوتے ہیں،
+            لوگ ایک دوسرے کو جانتے ہیں اور زندگی محنت سے جڑی ہوتی ہے۔
+            یہی وہ جگہ ہے جہاں یوسف نے اپنا بچپن دیکھا،
+            خاندان کی محنت کو سمجھا اور زندگی کے ابتدائی سبق سیکھے۔
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DUA ================= -->
+
+<section id="dua" class="dua">
+
+    <div class="kicker">A PRAYER</div>
+
+    <h2>یوسف کے لیے دعا</h2>
+
+    <p>
+        یا اللہ! شیخ یوسف کو نیک، کامیاب، خوش اور محفوظ زندگی عطا فرما۔
+        اس کے علم میں اضافہ فرما، اس کے راستے آسان فرما،
+        اس کے والدین اور خاندان کو صحت، عزت اور خوشیاں عطا فرما،
+        اور اسے ہر میدان میں کامیابی نصیب فرما۔
+        آمین یا رب العالمین۔
+    </p>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-name">
+        SHAIKH YOUSAF
+    </div>
+
+    <p>
+        A story of simplicity • struggle • family • hope
+    </p>
+
+    <p style="margin-top:12px;font-size:13px;">
+        © 2026 Shaikh Yousaf — All Rights Reserved
+    </p>
+
+</footer>
+
+</body>
+</html>
