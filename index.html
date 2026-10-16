@@ -30,7 +30,7 @@ nav{display:flex;gap:15px;flex-wrap:wrap}
 nav a{font-size:13px}
 nav a:hover{color:#e8bd63}
 
-/* Official Logo - original animation retained */
+/* Official Logo - unchanged */
 .logo{
  position:fixed;top:88px;right:14px;width:85px;height:85px;
  z-index:90;border-radius:50%;padding:4px;
@@ -50,7 +50,7 @@ nav a:hover{color:#e8bd63}
  50%{transform:translateY(-8px) rotate(5deg)}
 }
 
-/* Telegram */
+/* Telegram - unchanged */
 .telegram-top{
  position:fixed;top:185px;right:14px;z-index:95;
  display:flex;flex-direction:column;align-items:center;gap:8px
@@ -70,7 +70,7 @@ nav a:hover{color:#e8bd63}
  white-space:nowrap;transition:.3s
 }
 
-/* TikTok */
+/* TikTok - unchanged */
 .tiktok-top{
  position:fixed;top:300px;right:14px;z-index:95;
  display:flex;flex-direction:column;align-items:center;gap:8px
@@ -89,18 +89,23 @@ nav a:hover{color:#e8bd63}
  white-space:nowrap;transition:.3s
 }
 
-/* Lion: fixed on the left, no animation */
+/* LION: FIXED AT TOP-LEFT, NO MOVEMENT */
 .lion-scene{
- position:fixed;
- left:0;
- top:100px;
- width:205px;
- height:300px;
- z-index:20;
- pointer-events:none;
- display:flex;
- align-items:center;
- justify-content:center;
+ position:fixed!important;
+ top:85px!important;
+ left:8px!important;
+ right:auto!important;
+ width:125px!important;
+ height:165px!important;
+ z-index:110!important;
+ pointer-events:none!important;
+ display:flex!important;
+ align-items:flex-start!important;
+ justify-content:flex-start!important;
+ margin:0!important;
+ padding:0!important;
+ animation:none!important;
+ transform:none!important;
 }
 .lion-scene::before,
 .lion-scene::after{
@@ -108,18 +113,20 @@ nav a:hover{color:#e8bd63}
  display:none!important;
 }
 .lion-scene img{
- position:relative;
- width:100%;
- max-height:100%;
- height:100%;
- object-fit:contain;
- display:block;
+ display:block!important;
+ width:100%!important;
+ height:100%!important;
+ max-height:100%!important;
+ object-fit:contain!important;
+ margin:0!important;
+ padding:0!important;
  animation:none!important;
  transform:none!important;
+ transition:none!important;
  filter:drop-shadow(0 0 8px rgba(232,189,99,.2));
 }
 
-/* Hero */
+/* Hero - unchanged */
 .hero{
  position:relative;
  min-height:85vh;padding:55px 7%;display:grid;
@@ -203,13 +210,28 @@ footer span{color:#e8bd63}
  .telegram-icon,.tiktok-icon{width:48px;height:48px;font-size:25px}
  .telegram-button,.tiktok-button{font-size:9px;padding:7px 9px}
  .tiktok-top{top:275px;right:8px}
+
+ /* Mobile lion: fixed, still, top-left */
  .lion-scene{
-   position:fixed;
-   top:95px;
-   left:0;
-   width:112px;
-   height:185px;
+   position:fixed!important;
+   top:75px!important;
+   left:4px!important;
+   right:auto!important;
+   width:85px!important;
+   height:115px!important;
+   z-index:110!important;
+   animation:none!important;
+   transform:none!important;
  }
+ .lion-scene img{
+   width:100%!important;
+   height:100%!important;
+   object-fit:contain!important;
+   animation:none!important;
+   transform:none!important;
+   transition:none!important;
+ }
+
  .hero{grid-template-columns:1fr;text-align:center;padding:40px 6%}
  .hero h1{font-family:Cairo,sans-serif;font-size:34px;line-height:2}
  .hero-photo img{height:370px}
@@ -232,7 +254,7 @@ footer span{color:#e8bd63}
  </nav>
 </header>
 
-<!-- Lion fixed on the left -->
+<!-- Fixed lion: does not move when scrolling -->
 <div class="lion-scene">
  <img src="lion%20(1).png" alt="Royal Lion">
 </div>
