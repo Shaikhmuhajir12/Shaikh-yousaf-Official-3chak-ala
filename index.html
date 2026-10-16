@@ -507,4 +507,40 @@ if ('IntersectionObserver' in window) {
 
 </body>
 </html>
-<source src="yousaf-video.mp4" type="video/mp4">
+<section class="content-section reveal" id="video">
+  <div class="section-heading">
+    <h2>یوسف کی <span>ویڈیو</span></h2>
+    <p>یادگار لمحات</p>
+  </div>
+
+  <div class="video-box">
+    <video controls autoplay muted loop playsinline>
+      <source src="yousaf-video.mp4" type="video/mp4">
+      آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
+    </video>
+  </div>
+</section>
+
+<style>
+.video-box {
+  max-width: 850px;
+  margin: auto;
+  padding: 7px;
+  border-radius: 25px;
+  background: linear-gradient(135deg,#f4d98b,#9d6c20,#f4d98b);
+  box-shadow: 0 0 35px #e9bd6250;
+  animation: videoGlow 3s ease-in-out infinite alternate;
+}
+
+.video-box video {
+  width: 100%;
+  display: block;
+  border-radius: 19px;
+  background: #000;
+}
+
+@keyframes videoGlow {
+  from { box-shadow: 0 0 15px #e9bd6230; }
+  to { box-shadow: 0 0 35px #e9bd6280; }
+}
+</style>
