@@ -25,7 +25,7 @@ nav{display:flex;gap:15px;flex-wrap:wrap}
 nav a{font-size:13px}
 nav a:hover{color:#e8bd63}
 
-/* Animated SY MUHAJIR Official Logo */
+/* SY MUHAJIR Official Logo */
 .logo{
 position:fixed;top:88px;right:14px;width:85px;height:85px;
 z-index:90;border-radius:50%;padding:4px;
@@ -45,7 +45,7 @@ justify-content:center;align-items:center
 50%{transform:translateY(-8px) rotate(5deg)}
 }
 
-/* Telegram and TikTok floating buttons */
+/* Telegram */
 .telegram-top{
 position:fixed;top:185px;right:14px;z-index:95;
 display:flex;flex-direction:column;align-items:center;gap:8px
@@ -64,6 +64,8 @@ color:white;padding:8px 12px;border-radius:20px;
 font-size:11px;font-weight:900;box-shadow:0 0 14px #229ed955;
 white-space:nowrap;transition:.3s
 }
+
+/* TikTok */
 .tiktok-top{
 position:fixed;top:300px;right:14px;z-index:95;
 display:flex;flex-direction:column;align-items:center;gap:8px
@@ -82,34 +84,34 @@ font-size:11px;font-weight:900;box-shadow:0 0 14px #fe2c5555;
 white-space:nowrap;transition:.3s
 }
 
-/* Lion PNG: walking-style movement and silent roar effect */
-.real-lion{
+/* NEW LION — LEFT SIDE */
+.lion-showcase{
 position:fixed;
-top:105px;
-left:8px;
-width:145px;
+top:110px;
+left:12px;
+width:155px;
 z-index:85;
 pointer-events:none;
-animation:lionWalk 1.2s ease-in-out infinite;
+animation:lionFloat 4.5s ease-in-out infinite;
 }
-.real-lion img{
+.lion-showcase img{
 width:100%;
 height:auto;
 display:block;
+object-fit:contain;
+filter:drop-shadow(0 5px 12px #e8bd6377);
 transform-origin:center bottom;
-filter:drop-shadow(0 0 10px #dcae4d66);
-animation:lionRoar 2.8s ease-in-out infinite;
+animation:lionBreath 5s ease-in-out infinite;
 }
-@keyframes lionWalk{
-0%,100%{transform:translate(0,0) rotate(0)}
-25%{transform:translate(4px,-4px) rotate(-1deg)}
-50%{transform:translate(8px,0) rotate(1deg)}
-75%{transform:translate(4px,-3px) rotate(0)}
+@keyframes lionFloat{
+0%,100%{transform:translate(0,0)}
+25%{transform:translate(3px,-3px)}
+50%{transform:translate(6px,0)}
+75%{transform:translate(2px,-2px)}
 }
-@keyframes lionRoar{
-0%,72%,100%{transform:scale(1)}
-80%{transform:scale(1.04,1.07)}
-88%{transform:scale(1.02,.98)}
+@keyframes lionBreath{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.025,1.035)}
 }
 
 .hero{
@@ -186,15 +188,14 @@ nav a{font-size:10px}
 .telegram-icon,.tiktok-icon{width:48px;height:48px;font-size:25px}
 .telegram-button,.tiktok-button{font-size:9px;padding:7px 9px}
 .tiktok-top{top:275px;right:8px}
-.real-lion{top:95px;left:3px;width:95px}
+.lion-showcase{top:95px;left:3px;width:100px}
 .hero{grid-template-columns:1fr;text-align:center;padding:40px 6%}
 .hero-photo img{height:370px}
 .cards,.gallery{grid-template-columns:1fr}
 section{padding:55px 6%}
 }
-
 @media(prefers-reduced-motion:reduce){
-.real-lion,.real-lion img{animation:none}
+.lion-showcase,.lion-showcase img{animation:none}
 }
 </style>
 </head>
@@ -212,42 +213,33 @@ section{padding:55px 6%}
   </nav>
 </header>
 
-<!-- Lion PNG animation -->
-<div class="real-lion" aria-label="Animated lion">
-  <img src="lion.png" alt="Lion">
+<!-- New lion image: old lion code removed -->
+<div class="lion-showcase">
+  <img src="lion%20(1).png" alt="Royal Lion">
 </div>
 
-<!-- Telegram button at top -->
 <div class="telegram-top">
-  <a class="telegram-icon"
-     href="https://t.me/Mujairhacker"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Open Telegram">
+  <a class="telegram-icon" href="https://t.me/Mujairhacker"
+     target="_blank" rel="noopener noreferrer" aria-label="Open Telegram">
     <i class="fa-brands fa-telegram"></i>
   </a>
-  <a class="telegram-button"
-     href="https://t.me/Mujairhacker"
+  <a class="telegram-button" href="https://t.me/Mujairhacker"
      target="_blank" rel="noopener noreferrer">
     <i class="fa-brands fa-telegram"></i> Contact Us
   </a>
 </div>
 
-<!-- TikTok button below Telegram -->
 <div class="tiktok-top">
-  <a class="tiktok-icon"
-     href="https://www.tiktok.com/@muhajir_0001"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Open TikTok">
+  <a class="tiktok-icon" href="https://www.tiktok.com/@muhajir_0001"
+     target="_blank" rel="noopener noreferrer" aria-label="Open TikTok">
     <i class="fa-brands fa-tiktok"></i>
   </a>
-  <a class="tiktok-button"
-     href="https://www.tiktok.com/@muhajir_0001"
+  <a class="tiktok-button" href="https://www.tiktok.com/@muhajir_0001"
      target="_blank" rel="noopener noreferrer">
     <i class="fa-brands fa-tiktok"></i> Follow on TikTok
   </a>
 </div>
 
-<!-- Animated SY MUHAJIR Logo -->
 <div class="logo">
   <div class="logo-in">
     <b>SY</b>
@@ -273,16 +265,13 @@ section{padding:55px 6%}
     <h2>ہماری <span>ویڈیوز</span></h2>
     <p>یادگار لمحات</p>
   </div>
-
   <div class="video-box">
     <video controls playsinline preload="metadata">
       <source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
       آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
     </video>
   </div>
-
   <div style="height:35px"></div>
-
   <div class="video-box">
     <video controls playsinline preload="metadata">
       <source src="foryoupage%20foryoupage.mp4" type="video/mp4">
@@ -292,9 +281,7 @@ section{padding:55px 6%}
 </section>
 
 <section id="about">
-  <div class="title">
-    <h2>میرا <span>تعارف</span></h2>
-  </div>
+  <div class="title"><h2>میرا <span>تعارف</span></h2></div>
   <div class="about">
     شیخ یوسف کے آفیشل پیج میں خوش آمدید۔ یہ ویب سائٹ تصاویر، ویڈیوز اور خوبصورت یادوں کو محفوظ رکھنے کے لیے تیار کی گئی ہے۔
     <br><strong style="color:#e8bd63">سادگی • عزت • خلوص</strong>
@@ -302,9 +289,7 @@ section{padding:55px 6%}
 </section>
 
 <section id="family">
-  <div class="title">
-    <h2>اہم <span>شخصیات</span></h2>
-  </div>
+  <div class="title"><h2>اہم <span>شخصیات</span></h2></div>
   <div class="cards">
     <div class="card">
       <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
@@ -325,9 +310,7 @@ section{padding:55px 6%}
 </section>
 
 <section>
-  <div class="title">
-    <h2>تصاویر کی <span>گیلری</span></h2>
-  </div>
+  <div class="title"><h2>تصاویر کی <span>گیلری</span></h2></div>
   <div class="gallery">
     <img src="yousaf-8.jpg" alt="Yousaf">
     <img src="mudassir-5.jpg" alt="Mudassir">
@@ -340,45 +323,30 @@ section{padding:55px 6%}
     <h2>سوشل <span>میڈیا</span></h2>
     <p>Follow Official Accounts</p>
   </div>
-
   <div class="socials">
-    <a href="#" aria-label="Facebook">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="#" aria-label="Instagram">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="#" aria-label="YouTube">
-      <i class="fa-brands fa-youtube"></i>
-    </a>
+    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
     <a href="https://www.tiktok.com/@muhajir_0001"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="TikTok">
+       target="_blank" rel="noopener noreferrer" aria-label="TikTok">
       <i class="fa-brands fa-tiktok"></i>
     </a>
-    <a href="#" aria-label="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     <a href="https://t.me/Mujairhacker"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Telegram">
+       target="_blank" rel="noopener noreferrer" aria-label="Telegram">
       <i class="fa-brands fa-telegram"></i>
     </a>
   </div>
-
   <div style="text-align:center;margin-top:25px">
     <a href="https://www.tiktok.com/@muhajir_0001"
        target="_blank" rel="noopener noreferrer" class="btn">
-      <i class="fa-brands fa-tiktok"></i>
-      Follow Me on TikTok
+      <i class="fa-brands fa-tiktok"></i> Follow Me on TikTok
     </a>
   </div>
-
   <div style="text-align:center;margin-top:18px">
     <a href="https://t.me/Mujairhacker"
        target="_blank" rel="noopener noreferrer" class="btn">
-      <i class="fa-brands fa-telegram"></i>
-      Contact Us on Telegram
+      <i class="fa-brands fa-telegram"></i> Contact Us on Telegram
     </a>
   </div>
 </section>
