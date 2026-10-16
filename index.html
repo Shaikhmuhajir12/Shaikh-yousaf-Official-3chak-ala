@@ -20,7 +20,7 @@ nav{display:flex;gap:15px;flex-wrap:wrap}
 nav a{font-size:13px}
 nav a:hover{color:#e8bd63}
 
-/* Animated Logo */
+/* Animated SY MUHAJIR Official Logo */
 .logo{
 position:fixed;top:88px;right:14px;width:85px;height:85px;
 z-index:90;border-radius:50%;padding:4px;
@@ -39,6 +39,29 @@ justify-content:center;align-items:center
 0%,100%{transform:translateY(0) rotate(0)}
 50%{transform:translateY(-8px) rotate(5deg)}
 }
+
+/* Top Telegram Logo and Contact Button */
+.telegram-top{
+position:fixed;top:185px;right:14px;z-index:95;
+display:flex;flex-direction:column;align-items:center;gap:8px
+}
+.telegram-icon{
+width:58px;height:58px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#40c9ff,#087ee1);
+color:white;font-size:30px;
+box-shadow:0 0 18px #229ed966;border:2px solid #fff;
+transition:.3s
+}
+.telegram-icon:hover{transform:scale(1.08)}
+.telegram-button{
+background:linear-gradient(120deg,#40c9ff,#087ee1);
+color:white;padding:8px 12px;border-radius:20px;
+font-size:11px;font-weight:900;
+box-shadow:0 0 14px #229ed955;white-space:nowrap;
+transition:.3s
+}
+.telegram-button:hover{transform:translateY(-3px)}
 
 .hero{min-height:85vh;padding:55px 7%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px;background:radial-gradient(circle at 20% 50%,#e8bd631b,transparent 35%),#0a0b10}
 .hero h1{font-size:clamp(38px,6vw,68px);line-height:1.5}
@@ -75,6 +98,9 @@ nav a{font-size:10px}
 .logo{width:68px;height:68px;right:8px;top:82px}
 .logo-in b{font-size:19px}
 .logo-in small{font-size:6px}
+.telegram-top{top:165px;right:8px}
+.telegram-icon{width:48px;height:48px;font-size:25px}
+.telegram-button{font-size:9px;padding:7px 9px}
 .hero{grid-template-columns:1fr;text-align:center;padding:40px 6%}
 .hero-photo img{height:370px}
 .cards,.gallery{grid-template-columns:1fr}
@@ -94,6 +120,24 @@ section{padding:55px 6%}
     <a href="#contact">رابطہ</a>
   </nav>
 </header>
+
+<!-- Top Telegram Contact -->
+<div class="telegram-top">
+  <a class="telegram-icon"
+     href="https://t.me/Mujairhacker"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Open Telegram">
+    <i class="fa-brands fa-telegram"></i>
+  </a>
+  <a class="telegram-button"
+     href="https://t.me/Mujairhacker"
+     target="_blank"
+     rel="noopener noreferrer">
+    <i class="fa-brands fa-telegram"></i>
+    Contact Us
+  </a>
+</div>
 
 <!-- Animated SY MUHAJIR Logo -->
 <div class="logo">
@@ -122,6 +166,7 @@ section{padding:55px 6%}
     <p>یادگار لمحات</p>
   </div>
 
+  <!-- First Video -->
   <div class="video-box">
     <video controls playsinline preload="metadata">
       <source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
@@ -131,6 +176,7 @@ section{padding:55px 6%}
 
   <div style="height:35px"></div>
 
+  <!-- Second Video -->
   <div class="video-box">
     <video controls playsinline preload="metadata">
       <source src="foryoupage%20foryoupage.mp4" type="video/mp4">
@@ -200,7 +246,6 @@ section{padding:55px 6%}
       <i class="fa-brands fa-youtube"></i>
     </a>
 
-    <!-- TikTok -->
     <a href="https://www.tiktok.com/@muhajir_0001"
        target="_blank"
        rel="noopener noreferrer"
@@ -212,7 +257,6 @@ section{padding:55px 6%}
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Telegram Logo -->
     <a href="https://t.me/Mujairhacker"
        target="_blank"
        rel="noopener noreferrer"
@@ -231,7 +275,6 @@ section{padding:55px 6%}
     </a>
   </div>
 
-  <!-- Telegram Contact Us Button -->
   <div style="text-align:center;margin-top:18px">
     <a href="https://t.me/Mujairhacker"
        target="_blank"
