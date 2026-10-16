@@ -1,1118 +1,702 @@
+
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shaikh Yousaf | Official</title>
+<title>Shaikh Yousaf | Official Story</title>
+<meta name="description" content="Shaikh Yousaf — A story of simplicity, struggle, family, dedication and dreams.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#080b0f;
-color:#fff;
-font-family:"Noto Naskh Arabic",serif;
-overflow-x:hidden;
-}
-
-/* BACKGROUND */
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-z-index:-2;
-background:
-radial-gradient(circle at 15% 20%,rgba(214,181,109,.14),transparent 28%),
-radial-gradient(circle at 85% 70%,rgba(70,100,150,.12),transparent 30%);
-}
-
-body::after{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-border-radius:50%;
-border:1px solid rgba(214,181,109,.08);
-right:-250px;
-top:20%;
-z-index:-1;
-animation:rotateOrb 18s linear infinite;
-}
-
-@keyframes rotateOrb{
-from{transform:rotate(0deg)}
-to{transform:rotate(360deg)}
-}
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 7%;
-background:rgba(5,7,10,.72);
-backdrop-filter:blur(18px);
-border-bottom:1px solid rgba(255,255,255,.07);
-z-index:999;
-}
-
-.logo{
-font-family:"Playfair Display",serif;
-direction:ltr;
-font-size:19px;
-letter-spacing:3px;
-color:#e8cd8a;
-}
-
-nav a{
-color:#ddd;
-text-decoration:none;
-margin-left:22px;
-transition:.3s;
-}
-
-nav a:hover{
-color:#e8cd8a;
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-padding:150px 8% 80px;
-display:flex;
-align-items:center;
-position:relative;
-}
-
-.hero-content{
-max-width:850px;
-animation:heroIn 1.3s ease both;
-}
-
-@keyframes heroIn{
-from{
-opacity:0;
-transform:translateY(45px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.small-title{
-font-family:"Playfair Display",serif;
-direction:ltr;
-letter-spacing:4px;
-font-size:13px;
-color:#e8cd8a;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-family:"Playfair Display",serif;
-direction:ltr;
-font-size:clamp(55px,10vw,120px);
-line-height:.9;
-letter-spacing:-4px;
-}
-
-.hero h1 span{
-color:#e8cd8a;
-}
-
-.hero h2{
-font-size:42px;
-font-weight:500;
-margin-top:25px;
-animation:textFloat 3s ease-in-out infinite;
-}
-
-@keyframes textFloat{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-6px)}
-}
-
-.hero p{
-max-width:650px;
-color:#adb3bb;
-font-size:19px;
-margin-top:20px;
-line-height:2;
-}
-
-.buttons{
-margin-top:32px;
-display:flex;
-gap:14px;
-flex-wrap:wrap;
-}
-
-.btn{
-text-decoration:none;
-padding:12px 28px;
-border-radius:50px;
-transition:.35s;
-}
-
-.primary{
-background:#e8cd8a;
-color:#111;
-}
-
-.primary:hover{
-transform:translateY(-5px) scale(1.03);
-box-shadow:0 15px 35px rgba(232,205,138,.2);
-}
-
-.outline{
-border:1px solid rgba(255,255,255,.25);
-color:#fff;
-}
-
-.outline:hover{
-border-color:#e8cd8a;
-color:#e8cd8a;
-transform:translateY(-5px);
-}
-
-/* FLOATING LIGHT */
-
-.light{
-position:absolute;
-width:12px;
-height:12px;
-border-radius:50%;
-background:#e8cd8a;
-filter:blur(2px);
-opacity:.5;
-animation:float 5s ease-in-out infinite;
-}
-
-.light.one{
-right:20%;
-top:30%;
-}
-
-.light.two{
-right:35%;
-top:70%;
-animation-delay:1s;
-}
-
-.light.three{
-left:15%;
-top:25%;
-animation-delay:2s;
-}
-
-@keyframes float{
-0%,100%{
-transform:translateY(0);
-opacity:.25;
-}
-50%{
-transform:translateY(-30px);
-opacity:.8;
-}
-}
-
-/* SECTIONS */
-
-section{
-padding:110px 7%;
+:root {
+  --bg: #08090d;
+  --panel: #12141c;
+  --gold: #d4af37;
+  --light-gold: #ffe8a0;
+  --white: #f8f5ed;
+  --muted: #c1bdaf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: "Noto Naskh Arabic", serif;
+  line-height: 1.9;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section {
+  padding: 85px 7%;
+  position: relative;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+h2.section-title {
+  color: var(--gold);
+  font-size: clamp(28px, 4vw, 42px);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.section-intro {
+  color: var(--muted);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* Rotating MUHAJIR Logo */
+.muhajir-logo {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 82px;
+  height: 82px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #10182c;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+}
+
+.muhajir-logo::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #d4af37,
+    #fff3b0,
+    #7d5e12,
+    #f5d76e,
+    #d4af37
+  );
+  animation: muhajirSpin 4s linear infinite;
+  z-index: -1;
+}
+
+.muhajir-logo::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+}
+
+.muhajir-logo span {
+  color: var(--light-gold);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  direction: ltr;
+  text-align: center;
 }
 
-.section-title{
-text-align:center;
-max-width:750px;
-margin:0 auto 55px;
+@keyframes muhajirSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.section-title small{
-font-family:"Playfair Display",serif;
-direction:ltr;
-letter-spacing:3px;
-color:#e8cd8a;
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8, 9, 13, 0.94);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  backdrop-filter: blur(12px);
+  padding: 15px 6%;
 }
 
-.section-title h2{
-font-size:48px;
-margin-top:8px;
+.nav-inner {
+  max-width: 1150px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.section-title p{
-color:#aeb4bb;
-font-size:17px;
-margin-top:10px;
+.brand {
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 700;
+  direction: ltr;
 }
 
-/* REVEAL */
-
-.reveal{
-opacity:0;
-transform:translateY(50px);
-transition:1s ease;
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.reveal.show{
-opacity:1;
-transform:translateY(0);
+.nav-links a {
+  color: var(--white);
+  font-size: 14px;
+  transition: color 0.3s;
 }
 
-/* STORY */
-
-.story{
-max-width:950px;
-margin:auto;
-background:linear-gradient(135deg,#151a20,#0d1115);
-border:1px solid rgba(232,205,138,.2);
-border-radius:30px;
-padding:45px;
-box-shadow:0 30px 80px rgba(0,0,0,.25);
+.nav-links a:hover {
+  color: var(--gold);
 }
 
-.story h3{
-color:#e8cd8a;
-font-size:30px;
-margin-bottom:15px;
+/* Hero */
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 7%;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(173, 130, 30, 0.15), transparent 55%),
+    linear-gradient(145deg, #08090d, #12131b 55%, #090a0e);
+  overflow: hidden;
 }
 
-.story p{
-color:#c2c7cd;
-font-size:18px;
-line-height:2.1;
-margin-bottom:14px;
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 50%;
+  width: 330px;
+  height: 330px;
+  animation: rotateOrb 22s linear infinite;
 }
-
-/* PEOPLE */
 
-.people{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
+.hero::after {
+  width: 470px;
+  height: 470px;
+  animation-direction: reverse;
 }
 
-.card{
-background:#11161c;
-border:1px solid rgba(255,255,255,.07);
-border-radius:26px;
-overflow:hidden;
-transition:.5s;
+@keyframes rotateOrb {
+  to { transform: rotate(360deg); }
 }
 
-.card:hover{
-transform:translateY(-12px);
-border-color:rgba(232,205,138,.4);
-box-shadow:0 25px 55px rgba(0,0,0,.4);
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  animation: heroIn 1.2s ease both;
 }
 
-.photo{
-height:400px;
-overflow:hidden;
-background:#161b20;
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.photo img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-transition:1s cubic-bezier(.2,.7,.2,1);
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-family: "Playfair Display", serif;
+  direction: ltr;
+  font-size: 13px;
 }
 
-.card:hover .photo img{
-transform:scale(1.09);
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  direction: ltr;
+  font-size: clamp(40px, 8vw, 78px);
+  line-height: 1.2;
+  margin: 18px 0;
+  color: var(--white);
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.12);
 }
 
-.info{
-padding:23px;
+.hero h1 span {
+  color: var(--gold);
 }
 
-.info h3{
-font-size:28px;
-color:#e8cd8a;
+.hero p {
+  color: var(--muted);
+  font-size: clamp(17px, 2.5vw, 21px);
+  max-width: 700px;
+  margin: 0 auto 28px;
 }
 
-.info span{
-color:#858b93;
-font-size:14px;
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #f2d675, #b68b23);
+  color: #15110a;
+  padding: 11px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  margin: 7px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.info p{
-color:#b8bec5;
-margin-top:8px;
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.24);
 }
 
-/* TIMELINE */
-
-.timeline{
-max-width:900px;
-margin:auto;
-position:relative;
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
 }
 
-.timeline::before{
-content:"";
-position:absolute;
-right:20px;
-top:0;
-bottom:0;
-width:1px;
-background:linear-gradient(#e8cd8a,transparent);
+/* Cards and sections */
+.story-box,
+.letter-box,
+.dua-box {
+  background: linear-gradient(145deg, #151720, #0e1016);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 20px;
+  padding: clamp(22px, 5vw, 45px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
 }
 
-.item{
-position:relative;
-padding-right:65px;
-padding-bottom:45px;
+.story-box p,
+.letter-box p,
+.dua-box p {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 12px 0;
 }
 
-.dot{
-position:absolute;
-right:12px;
-top:7px;
-width:17px;
-height:17px;
-border-radius:50%;
-background:#e8cd8a;
-box-shadow:0 0 0 7px rgba(232,205,138,.1);
-animation:pulse 2s infinite;
+.gold-text {
+  color: var(--gold);
 }
 
-@keyframes pulse{
-0%,100%{
-box-shadow:0 0 0 7px rgba(232,205,138,.1);
-}
-50%{
-box-shadow:0 0 0 13px rgba(232,205,138,.03);
-}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
 
-.item h3{
-font-size:25px;
-color:#e8cd8a;
+.card {
+  background: var(--panel);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 17px;
+  overflow: hidden;
+  transition: transform 0.35s, border-color 0.35s;
 }
 
-.item p{
-color:#aeb4bb;
-font-size:17px;
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
 }
 
-/* FEATURE */
-
-.feature{
-max-width:1100px;
-margin:auto;
-padding:70px;
-border-radius:35px;
-background:
-linear-gradient(120deg,rgba(232,205,138,.12),rgba(255,255,255,.025)),
-#11161b;
-border:1px solid rgba(232,205,138,.2);
-overflow:hidden;
-position:relative;
+.card img,
+.gallery img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  background: #20222a;
 }
 
-.feature::after{
-content:"";
-position:absolute;
-width:300px;
-height:300px;
-border-radius:50%;
-border:1px solid rgba(232,205,138,.12);
-right:-100px;
-top:-100px;
-animation:rotateOrb 15s linear infinite;
+.card img {
+  height: 260px;
 }
 
-.feature h2{
-font-family:"Playfair Display",serif;
-direction:ltr;
-font-size:60px;
-line-height:1.1;
+.card-body {
+  padding: 22px;
 }
 
-.feature p{
-max-width:750px;
-color:#b9bec5;
-font-size:18px;
-margin-top:18px;
+.card h3 {
+  color: var(--gold);
+  font-size: 22px;
+  margin-bottom: 8px;
 }
 
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+.card p {
+  color: var(--muted);
 }
 
-.gallery-box{
-height:450px;
-border-radius:25px;
-overflow:hidden;
-background:#12171c;
+.feature {
+  background: linear-gradient(120deg, #17140d, #101117);
+  border-top: 1px solid rgba(212, 175, 55, 0.16);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+  text-align: center;
 }
 
-.gallery-box img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:1s;
+.feature h2 {
+  color: var(--gold);
+  font-size: 30px;
+  margin-bottom: 12px;
 }
 
-.gallery-box:hover img{
-transform:scale(1.1);
+.feature p {
+  max-width: 750px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 18px;
 }
-
-/* LETTER */
 
-.letter{
-max-width:900px;
-margin:auto;
-padding:55px;
-background:#f0e9da;
-color:#29251f;
-border-radius:12px;
-box-shadow:0 30px 70px rgba(0,0,0,.3);
-position:relative;
+.timeline {
+  max-width: 800px;
+  margin: auto;
+  border-right: 2px solid var(--gold);
+  padding-right: 25px;
 }
 
-.letter::before{
-content:"";
-position:absolute;
-inset:14px;
-border:1px solid rgba(70,50,25,.18);
-pointer-events:none;
+.timeline-item {
+  position: relative;
+  margin: 0 0 30px;
+  padding: 20px;
+  background: var(--panel);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.18);
 }
 
-.letter h2{
-font-size:35px;
-color:#604b2b;
-margin-bottom:20px;
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  right: -33px;
+  top: 26px;
+  width: 13px;
+  height: 13px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
 }
 
-.letter p{
-font-size:19px;
-line-height:2.1;
-margin-bottom:12px;
+.timeline-item h3 {
+  color: var(--gold);
+  margin-bottom: 6px;
 }
 
-/* DUA */
-
-.dua{
-text-align:center;
-background:radial-gradient(circle,rgba(232,205,138,.1),transparent 55%);
+.timeline-item p {
+  color: var(--muted);
 }
 
-.dua h2{
-font-size:55px;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
 }
 
-.dua p{
-max-width:800px;
-margin:15px auto;
-color:#bdc2c8;
-font-size:20px;
+.gallery img {
+  height: 280px;
+  border-radius: 15px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: transform 0.4s;
 }
 
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:55px 7%;
-border-top:1px solid rgba(255,255,255,.07);
-color:#777;
+.gallery img:hover {
+  transform: scale(1.03);
 }
 
-.footer-logo{
-font-family:"Playfair Display",serif;
-direction:ltr;
-font-size:25px;
-color:#e8cd8a;
-margin-bottom:8px;
+.dua-box {
+  text-align: center;
 }
-
-/* MOBILE */
 
-@media(max-width:850px){
-
-nav{
-padding:0 5%;
+.dua-box p {
+  font-size: 22px;
+  color: var(--light-gold);
 }
 
-nav div:last-child{
-display:none;
+footer {
+  text-align: center;
+  padding: 35px 6%;
+  background: #050609;
+  color: var(--muted);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.hero{
-padding:125px 6% 70px;
+footer strong {
+  color: var(--gold);
 }
 
-.hero h1{
-font-size:58px;
-letter-spacing:-2px;
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.hero h2{
-font-size:30px;
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.hero p{
-font-size:16px;
+.floating-light {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
 }
 
-section{
-padding:80px 6%;
+.floating-light.one {
+  top: 35%;
+  left: 8%;
 }
 
-.section-title h2{
-font-size:38px;
+.floating-light.two {
+  top: 70%;
+  right: 9%;
+  animation-delay: 2s;
 }
 
-.people{
-grid-template-columns:1fr;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
 }
 
-.gallery{
-grid-template-columns:1fr;
-}
+@media (max-width: 760px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 
-.photo{
-height:430px;
-}
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-.gallery-box{
-height:430px;
-}
+  .gallery img {
+    height: 190px;
+  }
 
-.story{
-padding:28px;
-}
+  .navbar {
+    padding: 12px 4%;
+  }
 
-.feature{
-padding:40px 28px;
-}
+  .nav-inner {
+    justify-content: center;
+  }
 
-.feature h2{
-font-size:42px;
-}
+  .nav-links {
+    justify-content: center;
+    gap: 12px;
+  }
 
-.letter{
-padding:35px 25px;
-}
+  .muhajir-logo {
+    width: 62px;
+    height: 62px;
+    top: 10px;
+    right: 10px;
+  }
 
-.dua h2{
-font-size:40px;
+  .muhajir-logo span {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
-<nav>
-
-<div class="logo">
-SHAIKH YOUSAF
+<!-- Rotating MUHAJIR Logo -->
+<div class="muhajir-logo" aria-label="MUHAJIR Logo">
+  <span>MUHAJIR</span>
 </div>
 
-<div>
-<a href="#story">کہانی</a>
-<a href="#family">خاندان</a>
-<a href="#journey">سفر</a>
-<a href="#gallery">تصاویر</a>
-</div>
+<div class="floating-light one"></div>
+<div class="floating-light two"></div>
 
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="brand" href="#home">SHAIKH YOUSAF</a>
+    <div class="nav-links">
+      <a href="#home">ہوم</a>
+      <a href="#story">میری کہانی</a>
+      <a href="#family">خاندان</a>
+      <a href="#journey">سفر</a>
+      <a href="#gallery">گیلری</a>
+      <a href="#dua">دعا</a>
+    </div>
+  </div>
 </nav>
 
-
-<div class="light one"></div>
-<div class="light two"></div>
-<div class="light three"></div>
-
-
-<header class="hero">
-
-<div class="hero-content">
-
-<div class="small-title">
-AN ORDINARY LIFE • A BEAUTIFUL JOURNEY
-</div>
-
-<h1>
-SHAIKH<br>
-<span>YOUSAF</span>
-</h1>
-
-<h2>
-شیخ یوسف
-</h2>
-
-<p>
-ایک سادہ انسان کی خوبصورت کہانی —
-محنت، خاندان، ہنر، امید اور بہتر مستقبل کے خوابوں کا سفر۔
-</p>
-
-<div class="buttons">
-
-<a href="#story" class="btn primary">
-کہانی پڑھیں
-</a>
-
-<a href="#gallery" class="btn outline">
-تصاویر دیکھیں
-</a>
-
-</div>
-
-</div>
-
+<header class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">MY OFFICIAL STORY</div>
+    <h1>SHAIKH <span>YOUSAF</span></h1>
+    <p>سادگی، جدوجہد، خاندان، وفاداری اور خوابوں کا ایک خوبصورت سفر۔</p>
+    <a class="btn" href="#story">میری کہانی پڑھیں</a>
+    <a class="btn btn-outline" href="#gallery">تصویری گیلری</a>
+  </div>
 </header>
 
-
 <section id="story">
-
-<div class="section-title reveal">
-
-<small>THE STORY</small>
-
-<h2>
-ایک خاموش سفر
-</h2>
-
-<p>
-کچھ کہانیاں شور سے نہیں بلکہ خاموش محنت سے لکھی جاتی ہیں۔
-</p>
-
-</div>
-
-<div class="story reveal">
-
-<h3>
-شیخ یوسف کی کہانی
-</h3>
-
-<p>
-شیخ یوسف 2011 میں 3 چک ڈلے والا،
-تحصیل دریا خان، ضلع بھکر میں پیدا ہوئے۔
-ایک سادہ اور عزت دار خاندان میں پرورش پائی۔
-</p>
-
-<p>
-زندگی کے ابتدائی حالات ہمیشہ آسان نہیں تھے،
-لیکن مشکلات نے محنت، صبر اور سادگی کی قدر سکھائی۔
-</p>
-
-<p>
-آج یوسف ساتویں جماعت میں تعلیم حاصل کر رہے ہیں
-اور زندگی میں آگے بڑھنے کے خواب رکھتے ہیں۔
-</p>
-
-</div>
-
+  <div class="container reveal">
+    <h2 class="section-title">میری کہانی</h2>
+    <p class="section-intro">ہر انسان کی زندگی ایک کہانی ہے، اور ہر کہانی میں کچھ خواب، کچھ سبق اور کچھ یادیں ہوتی ہیں۔</p>
+    <div class="story-box">
+      <p>خوش آمدید میری آفیشل ویب سائٹ پر۔ یہ جگہ میری زندگی، میرے سفر، میرے خاندان اور میری خوبصورت یادوں کے لیے ہے۔</p>
+      <p>زندگی میں اصل کامیابی صرف منزل تک پہنچنا نہیں بلکہ اپنے اصولوں پر قائم رہنا، اپنے لوگوں کا احترام کرنا اور مشکل وقت میں حوصلہ نہ ہارنا ہے۔</p>
+      <p class="gold-text">سادگی میری پہچان، وفاداری میرا اصول، اور امید میرا راستہ ہے۔</p>
+    </div>
+  </div>
 </section>
-
 
 <section id="family">
+  <div class="container reveal">
+    <h2 class="section-title">میرا خاندان</h2>
+    <p class="section-intro">خاندان محبت، عزت اور زندگی کے سب سے قیمتی رشتوں کا نام ہے۔</p>
 
-<div class="section-title reveal">
+    <div class="cards">
+      <article class="card">
+        <img src="yousaf-8.jpg" alt="Shaikh Yousaf" loading="lazy">
+        <div class="card-body">
+          <h3>Shaikh Yousaf</h3>
+          <p>زندگی کا سفر، خواب اور خوبصورت یادیں۔</p>
+        </div>
+      </article>
 
-<small>PEOPLE</small>
+      <article class="card">
+        <img src="mudassir-5.jpg" alt="Mudassir" loading="lazy">
+        <div class="card-body">
+          <h3>Mudassir</h3>
+          <p>محبت، بھائی چارہ اور خاندانی تعلق۔</p>
+        </div>
+      </article>
 
-<h2>
-اس سفر کے لوگ
-</h2>
-
-<p>
-وہ لوگ جن کی محنت اور موجودگی اس کہانی کا حصہ ہے۔
-</p>
-
-</div>
-
-
-<div class="people">
-
-<div class="card reveal">
-
-<div class="photo">
-<img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-</div>
-
-<div class="info">
-
-<h3>Yousaf</h3>
-
-<span>شیخ یوسف</span>
-
-<p>
-سادگی، خاموشی اور بڑے خواب۔
-</p>
-
-</div>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="photo">
-<img src="mudassir-5.jpg" alt="Mudassir">
-</div>
-
-<div class="info">
-
-<h3>Mudassir</h3>
-
-<span>مدثر</span>
-
-<p>
-محنت اور ذمہ داری کو زندگی کا حصہ بنانے والا بھائی۔
-</p>
-
-</div>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="photo">
-<img src="ustad-7.jpg" alt="Ustad">
-</div>
-
-<div class="info">
-
-<h3>Ustad</h3>
-
-<span>استاد</span>
-
-<p>
-ہنر سکھانے اور راستہ دکھانے والا شخص۔
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+      <article class="card">
+        <img src="ustad-7.jpg" alt="Ustad" loading="lazy">
+        <div class="card-body">
+          <h3>استاد محترم</h3>
+          <p>علم، رہنمائی اور زندگی کے اہم اسباق۔</p>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-
-<section>
-
-<div class="feature reveal">
-
-<h2>
-Small Beginnings.<br>
-Big Dreams.
-</h2>
-
-<p>
-چھوٹے حالات کسی انسان کے خوابوں کو چھوٹا نہیں کرتے۔
-محنت، دعا اور مستقل مزاجی انسان کو ایک دن اپنی منزل تک پہنچا سکتی ہے۔
-</p>
-
-</div>
-
+<section class="feature">
+  <div class="container reveal">
+    <h2>اصول، عزت اور وفاداری</h2>
+    <p>زندگی کی خوبصورتی مہنگی چیزوں میں نہیں، اچھے کردار، سچی محبت اور اپنے لوگوں کے ساتھ کھڑے رہنے میں ہے۔</p>
+  </div>
 </section>
-
 
 <section id="journey">
+  <div class="container reveal">
+    <h2 class="section-title">زندگی کا سفر</h2>
+    <p class="section-intro">ہر تجربہ کچھ نہ کچھ سکھاتا ہے اور ہر قدم ایک نئی منزل کی طرف لے جاتا ہے۔</p>
 
-<div class="section-title reveal">
-
-<small>JOURNEY</small>
-
-<h2>
-زندگی کے چند باب
-</h2>
-
-</div>
-
-
-<div class="timeline">
-
-<div class="item reveal">
-
-<div class="dot"></div>
-
-<h3>2011 — آغاز</h3>
-
-<p>
-شیخ یوسف کی زندگی کا آغاز 3 چک ڈلے والا سے ہوا۔
-</p>
-
-</div>
-
-
-<div class="item reveal">
-
-<div class="dot"></div>
-
-<h3>بچپن — سادگی</h3>
-
-<p>
-گھر، خاندان اور محدود وسائل کے درمیان ایک سادہ بچپن۔
-</p>
-
-</div>
-
-
-<div class="item reveal">
-
-<div class="dot"></div>
-
-<h3>ہنر — نیا راستہ</h3>
-
-<p>
-سلائی کے ہنر سے وابستگی اور محنت کے نئے راستے کی ابتدا۔
-</p>
-
-</div>
-
-
-<div class="item reveal">
-
-<div class="dot"></div>
-
-<h3>آج — تعلیم</h3>
-
-<p>
-ساتویں جماعت میں تعلیم اور مستقبل کے نئے خواب۔
-</p>
-
-</div>
-
-
-<div class="item reveal">
-
-<div class="dot"></div>
-
-<h3>کل — کامیابی</h3>
-
-<p>
-منزل ابھی آگے ہے، مگر سفر جاری ہے۔
-</p>
-
-</div>
-
-</div>
-
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>ابتدا</h3>
+        <p>زندگی کے سفر کی شروعات خوابوں، امیدوں اور نئے تجربات کے ساتھ ہوتی ہے۔</p>
+      </div>
+      <div class="timeline-item">
+        <h3>جدوجہد</h3>
+        <p>مشکلات انسان کو مضبوط بناتی ہیں، جبکہ صبر اسے آگے بڑھنے کا حوصلہ دیتا ہے۔</p>
+      </div>
+      <div class="timeline-item">
+        <h3>آنے والے خواب</h3>
+        <p>ہر نیا دن بہتر مستقبل کی امید اور نئے مواقع لے کر آتا ہے۔</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<section>
-
-<div class="section-title reveal">
-
-<small>A MESSAGE</small>
-
-<h2>
-یوسف کے نام
-</h2>
-
-</div>
-
-
-<div class="letter reveal">
-
-<h2>
-ایک بات جو شاید کبھی کہی نہیں گئی
-</h2>
-
-<p>
-شاید میں نے کبھی تمہیں کھل کر یہ نہیں بتایا کہ تم میرے لیے
-صرف ایک جاننے والے نہیں ہو۔
-</p>
-
-<p>
-وقت کے ساتھ دل میں تمہارے لیے ایک چھوٹے بھائی جیسی محبت
-اور عزت پیدا ہوئی۔
-</p>
-
-<p>
-میری دعا ہے کہ اللہ تمہیں زندگی میں بہت ترقی دے،
-کامیابی دے، خوش رکھے اور تمہارے خاندان کو ہمیشہ سلامت رکھے۔
-</p>
-
-<p>
-<strong>
-اللہ تمہیں ہمیشہ اپنی حفظ و امان میں رکھے۔ آمین۔
-</strong>
-</p>
-
-</div>
-
+<section id="letter">
+  <div class="container reveal">
+    <h2 class="section-title">دل کی بات</h2>
+    <div class="letter-box">
+      <p>زندگی مختصر ہے، اس لیے محبت بانٹیں، رشتوں کی قدر کریں اور کسی کا دل نہ دکھائیں۔</p>
+      <p>لوگ آپ کی دولت یا شہرت سے زیادہ آپ کے اخلاق اور رویے کو یاد رکھتے ہیں۔ ہمیشہ سچائی، عزت اور انسانیت کا راستہ اختیار کریں۔</p>
+      <p class="gold-text">اچھا کردار وہ پہچان ہے جو وقت گزرنے کے بعد بھی باقی رہتی ہے۔</p>
+    </div>
+  </div>
 </section>
-
 
 <section id="gallery">
+  <div class="container reveal">
+    <h2 class="section-title">یادوں کی گیلری</h2>
+    <p class="section-intro">زندگی کے خوبصورت لمحات اور قیمتی یادیں۔</p>
 
-<div class="section-title reveal">
-
-<small>GALLERY</small>
-
-<h2>
-یادوں کے چند لمحے
-</h2>
-
-</div>
-
-
-<div class="gallery">
-
-<div class="gallery-box reveal">
-<img src="yousaf-8.jpg" alt="Yousaf">
-</div>
-
-<div class="gallery-box reveal">
-<img src="mudassir-5.jpg" alt="Mudassir">
-</div>
-
-<div class="gallery-box reveal">
-<img src="ustad-7.jpg" alt="Ustad">
-</div>
-
-</div>
-
+    <div class="gallery">
+      <img src="yousaf-8.jpg" alt="یادگار تصویر 1" loading="lazy">
+      <img src="mudassir-5.jpg" alt="یادگار تصویر 2" loading="lazy">
+      <img src="ustad-7.jpg" alt="یادگار تصویر 3" loading="lazy">
+    </div>
+  </div>
 </section>
 
-
-<section class="dua">
-
-<div class="reveal">
-
-<h2>
-یوسف کے لیے دعا
-</h2>
-
-<p>
-یا اللہ! شیخ یوسف کو نیک، کامیاب، خوش اور محفوظ زندگی عطا فرما۔
-اس کے علم میں اضافہ فرما، اس کے راستے آسان فرما،
-اور اسے اور اس کے خاندان کو ہمیشہ خوشیاں عطا فرما۔
-آمین یا رب العالمین۔
-</p>
-
-</div>
-
+<section id="dua">
+  <div class="container reveal">
+    <h2 class="section-title">ایک خوبصورت دعا</h2>
+    <div class="dua-box">
+      <p>اللہ تعالیٰ سب کے لیے آسانیاں پیدا فرمائے، دلوں میں محبت، گھروں میں سکون اور زندگی میں برکت عطا فرمائے۔ آمین۔</p>
+    </div>
+  </div>
 </section>
-
 
 <footer>
-
-<div class="footer-logo">
-SHAIKH YOUSAF
-</div>
-
-<p>
-A story of simplicity • struggle • hope
-</p>
-
-<p>
-© 2026 Shaikh Yousaf
-</p>
-
+  <p>© 2026 <strong>Shaikh Yousaf</strong> | Official Website</p>
+  <p>محبت، عزت اور یادوں کے نام</p>
 </footer>
 
-
 <script>
+/* Reveal sections on scroll */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
 
-/* SCROLL ANIMATION */
-
-const revealElements =
-document.querySelectorAll(".reveal");
-
-const observer =
-new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
+document.querySelectorAll(".reveal").forEach(element => {
+  revealObserver.observe(element);
 });
 
-},{
-threshold:0.12
+/* Gentle image appearance animation */
+document.querySelectorAll("img").forEach(img => {
+  img.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+  img.addEventListener("load", () => {
+    img.style.opacity = "1";
+    img.style.transform = "scale(1)";
+  });
+  img.addEventListener("error", () => {
+    img.style.opacity = "0.65";
+    img.style.background = "#20222a";
+  });
 });
 
-revealElements.forEach(element=>{
-observer.observe(element);
+/* Button click feedback */
+document.querySelectorAll(".btn").forEach(button => {
+  button.addEventListener("click", () => {
+    button.style.transform = "scale(0.96)";
+    setTimeout(() => {
+      button.style.transform = "";
+    }, 180);
+  });
 });
-
-
-/* IMAGE LOAD EFFECT */
-
-document.querySelectorAll("img").forEach(img=>{
-
-img.addEventListener("load",()=>{
-
-img.style.opacity="0";
-
-img.animate(
-[
-{opacity:0,transform:"scale(1.08)"},
-{opacity:1,transform:"scale(1)"}
-],
-{
-duration:1200,
-easing:"cubic-bezier(.2,.7,.2,1)",
-fill:"forwards"
-}
-);
-
-});
-
-});
-
-
-/* SMOOTH BUTTON FEEDBACK */
-
-document.querySelectorAll(".btn").forEach(btn=>{
-
-btn.addEventListener("click",function(){
-
-this.style.transform="scale(.96)";
-
-setTimeout(()=>{
-this.style.transform="";
-},160);
-
-});
-
-});
-
 </script>
 
 </body>
