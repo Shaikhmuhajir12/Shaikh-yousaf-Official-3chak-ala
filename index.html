@@ -77,6 +77,69 @@ font-size:11px;font-weight:900;box-shadow:0 0 14px #fe2c5555;
 white-space:nowrap;transition:.3s
 }
 
+/* Walking golden lion animation — no sound or video */
+.lion-stage{
+position:fixed;
+left:8px;
+top:105px;
+width:150px;
+z-index:85;
+pointer-events:none;
+filter:drop-shadow(0 5px 12px #d99c3444);
+animation:lionFloat 1.2s ease-in-out infinite;
+}
+.lion-svg{width:100%;height:auto;overflow:visible}
+.lion-leg{
+transform-box:fill-box;
+transform-origin:top center;
+}
+.lion-leg-a{animation:legWalk .65s ease-in-out infinite alternate}
+.lion-leg-b{animation:legWalk .65s ease-in-out infinite alternate-reverse}
+.lion-tail{
+transform-box:fill-box;
+transform-origin:left center;
+animation:tailSwing 1.1s ease-in-out infinite alternate;
+}
+.lion-head{
+transform-box:fill-box;
+transform-origin:bottom center;
+animation:headMove .8s ease-in-out infinite alternate;
+}
+.lion-jaw{
+transform-box:fill-box;
+transform-origin:top center;
+animation:jawMove 2.8s ease-in-out infinite;
+}
+@keyframes lionFloat{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-3px)}
+}
+@keyframes legWalk{
+from{transform:rotate(-13deg)}
+to{transform:rotate(13deg)}
+}
+@keyframes tailSwing{
+from{transform:rotate(-12deg)}
+to{transform:rotate(13deg)}
+}
+@keyframes headMove{
+from{transform:rotate(-2deg)}
+to{transform:rotate(3deg)}
+}
+@keyframes jawMove{
+0%,78%,100%{transform:rotate(0)}
+84%,92%{transform:rotate(12deg)}
+}
+.lion-caption{
+font-size:9px;
+font-weight:900;
+letter-spacing:2px;
+text-align:center;
+color:#f5ce71;
+text-shadow:0 0 8px #e8bd63;
+margin-top:-3px;
+}
+
 .hero{min-height:85vh;padding:55px 7%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px;background:radial-gradient(circle at 20% 50%,#e8bd631b,transparent 35%),#0a0b10}
 .hero h1{font-size:clamp(38px,6vw,68px);line-height:1.5}
 .hero h1 span,.title span{color:#e8bd63}
@@ -104,47 +167,6 @@ section{padding:70px 7%}
 footer{padding:28px;text-align:center;color:#999;background:#050609;border-top:1px solid #e8bd6333}
 footer span{color:#e8bd63}
 
-/* NEW: Royal Crown Lion on the LEFT */
-.lion-royal{
-position:fixed;
-left:12px;
-top:42%;
-transform:translateY(-50%);
-z-index:80;
-width:100px;
-text-align:center;
-pointer-events:none;
-animation:lionGlow 3s ease-in-out infinite;
-}
-.lion-crown{
-font-size:38px;
-line-height:1;
-filter:drop-shadow(0 0 9px #e8bd63);
-margin-bottom:-5px;
-}
-.lion-face{
-font-size:66px;
-line-height:1.2;
-filter:drop-shadow(0 0 12px #e8bd63);
-}
-.lion-title{
-color:#e8bd63;
-font-size:9px;
-font-weight:900;
-letter-spacing:2px;
-text-shadow:0 0 8px #e8bd6388;
-}
-@keyframes lionGlow{
-0%,100%{
-filter:brightness(1);
-transform:translateY(-50%) scale(1);
-}
-50%{
-filter:brightness(1.25);
-transform:translateY(-52%) scale(1.04);
-}
-}
-
 @media(max-width:750px){
 header{padding:12px 4%}
 .brand{font-size:15px}
@@ -157,23 +179,15 @@ nav a{font-size:10px}
 .telegram-icon,.tiktok-icon{width:48px;height:48px;font-size:25px}
 .telegram-button,.tiktok-button{font-size:9px;padding:7px 9px}
 .tiktok-top{top:275px;right:8px}
+.lion-stage{left:3px;top:92px;width:95px}
+.lion-caption{font-size:7px;letter-spacing:1px}
 .hero{grid-template-columns:1fr;text-align:center;padding:40px 6%}
 .hero-photo img{height:370px}
 .cards,.gallery{grid-template-columns:1fr}
 section{padding:55px 6%}
-
-/* NEW: smaller lion on mobile */
-.lion-royal{
-left:3px;
-top:48%;
-width:65px;
 }
-.lion-crown{font-size:26px}
-.lion-face{font-size:44px}
-.lion-title{
-font-size:6px;
-letter-spacing:1px;
-}
+@media(prefers-reduced-motion:reduce){
+.lion-stage,.lion-leg,.lion-tail,.lion-head,.lion-jaw{animation:none}
 }
 </style>
 </head>
@@ -189,6 +203,124 @@ letter-spacing:1px;
     <a href="#contact">رابطہ</a>
   </nav>
 </header>
+
+<!-- Animated walking lion on the upper left -->
+<div class="lion-stage" aria-label="Animated golden lion">
+<svg class="lion-svg" viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="maneGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff1a8"/>
+      <stop offset="40%" stop-color="#d99a28"/>
+      <stop offset="75%" stop-color="#9b5413"/>
+      <stop offset="100%" stop-color="#f5c65b"/>
+    </linearGradient>
+    <linearGradient id="bodyGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe49a"/>
+      <stop offset="55%" stop-color="#dca044"/>
+      <stop offset="100%" stop-color="#a96622"/>
+    </linearGradient>
+    <linearGradient id="shadeGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f9d66e"/>
+      <stop offset="100%" stop-color="#8b4816"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tail -->
+  <g class="lion-tail">
+    <path d="M54 83 Q29 80 29 57 Q28 43 40 40"
+      fill="none" stroke="#c88b31" stroke-width="7" stroke-linecap="round"/>
+    <path d="M40 43 Q31 30 20 39 Q13 48 27 54 Q38 53 40 43Z"
+      fill="#6f3a16" stroke="#e6b550" stroke-width="2"/>
+  </g>
+
+  <!-- Rear legs -->
+  <g class="lion-leg lion-leg-a">
+    <path d="M62 99 Q58 116 62 132 L56 146 Q54 153 64 154 L79 154 Q86 151 80 145 L78 130 L85 105Z"
+      fill="url(#bodyGold)" stroke="#8e501d" stroke-width="2"/>
+    <path d="M57 148 Q68 143 81 149" fill="none" stroke="#754017" stroke-width="2"/>
+  </g>
+  <g class="lion-leg lion-leg-b">
+    <path d="M91 103 Q101 118 96 135 L99 147 Q97 154 108 154 L120 154 Q128 150 120 144 L117 130 L121 106Z"
+      fill="url(#bodyGold)" stroke="#8e501d" stroke-width="2"/>
+    <path d="M99 148 Q110 143 122 149" fill="none" stroke="#754017" stroke-width="2"/>
+  </g>
+
+  <!-- Body -->
+  <path d="M52 67 Q76 52 111 64 Q139 68 151 87 L143 111
+    Q118 122 84 113 L60 108 Q49 91 52 67Z"
+    fill="url(#bodyGold)" stroke="#8e501d" stroke-width="2.5"/>
+  <path d="M63 73 Q85 63 110 72" fill="none" stroke="#fff0a4" stroke-width="3" opacity=".7"/>
+  <path d="M79 108 Q105 117 134 105" fill="none" stroke="#99581d" stroke-width="2" opacity=".7"/>
+
+  <!-- Front legs -->
+  <g class="lion-leg lion-leg-b">
+    <path d="M119 96 Q126 113 123 132 L119 146 Q119 153 130 154 L145 154 Q151 150 144 144 L143 128 L150 101Z"
+      fill="url(#bodyGold)" stroke="#8e501d" stroke-width="2"/>
+    <path d="M120 148 Q132 143 146 149" fill="none" stroke="#754017" stroke-width="2"/>
+  </g>
+  <g class="lion-leg lion-leg-a">
+    <path d="M137 91 Q150 106 151 124 L157 143 Q154 151 165 153 L179 152 Q185 148 177 143 L170 121 L171 95Z"
+      fill="url(#bodyGold)" stroke="#8e501d" stroke-width="2"/>
+    <path d="M157 147 Q167 143 180 148" fill="none" stroke="#754017" stroke-width="2"/>
+  </g>
+
+  <!-- Mane silhouette -->
+  <g class="lion-head">
+    <path d="M128 20 L139 9 L148 24 L163 17 L166 34 L182 34 L178 49
+      L194 57 L182 70 L193 83 L177 91 L179 106 L160 105 L151 120
+      L137 109 L122 118 L114 102 L98 105 L100 88 L85 80 L95 66
+      L88 52 L105 46 L107 31 L122 35Z"
+      fill="url(#maneGold)" stroke="#8b4a16" stroke-width="3"/>
+
+    <!-- Mane highlights -->
+    <path d="M119 31 L128 43 L117 53 M145 24 L146 42 L159 35
+      M169 43 L158 56 L176 60 M176 76 L159 76 L166 91
+      M145 101 L142 86 L130 103 M107 80 L122 72 L104 61"
+      fill="none" stroke="#ffe7a0" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+
+    <!-- Face -->
+    <path d="M125 38 Q146 28 162 42 L173 57 L167 77
+      Q159 94 143 96 Q126 91 119 75 L117 55Z"
+      fill="url(#bodyGold)" stroke="#754017" stroke-width="2.5"/>
+
+    <!-- Ears -->
+    <path d="M121 40 Q111 23 105 36 L111 52Z"
+      fill="#bd7727" stroke="#754017" stroke-width="2"/>
+    <path d="M158 39 Q166 22 176 39 L169 53Z"
+      fill="#bd7727" stroke="#754017" stroke-width="2"/>
+
+    <!-- Eyes -->
+    <path d="M124 55 Q132 49 139 56" fill="none" stroke="#4d2a12" stroke-width="3" stroke-linecap="round"/>
+    <path d="M148 56 Q156 49 163 54" fill="none" stroke="#4d2a12" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="133" cy="56" r="2.5" fill="#17100a"/>
+    <circle cx="155" cy="55" r="2.5" fill="#17100a"/>
+
+    <!-- Muzzle -->
+    <path d="M129 68 Q140 61 152 68 L158 77 Q151 86 140 84 Q130 84 124 77Z"
+      fill="#f5d8a0" stroke="#9b5d29" stroke-width="1.8"/>
+    <path d="M136 69 Q141 65 147 69 L143 75 L138 75Z" fill="#3d2415"/>
+    <path d="M142 75 L142 81 Q137 85 132 81"
+      fill="none" stroke="#573019" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Animated lower jaw -->
+    <g class="lion-jaw">
+      <path d="M127 78 Q141 88 156 77 Q153 93 140 95 Q130 91 127 78Z"
+        fill="#7e311b" stroke="#5c2a12" stroke-width="1.5"/>
+      <path d="M132 81 L136 87 L139 82 L143 88 L147 81"
+        fill="#fff0cf" stroke="#fff0cf" stroke-width="1.2"/>
+    </g>
+
+    <!-- Mane beard -->
+    <path d="M124 83 Q131 98 142 104 L151 92 L157 84
+      Q147 98 139 94 Q130 93 124 83Z"
+      fill="url(#shadeGold)" stroke="#8b4a16" stroke-width="1.5"/>
+  </g>
+
+  <!-- Ground shadow -->
+  <ellipse cx="108" cy="160" rx="77" ry="5" fill="#000" opacity=".35"/>
+</svg>
+<div class="lion-caption">ROYAL LION</div>
+</div>
 
 <!-- Telegram button at top -->
 <div class="telegram-top">
@@ -227,13 +359,6 @@ letter-spacing:1px;
     <small>MUHAJIR</small>
     <small>OFFICIAL</small>
   </div>
-</div>
-
-<!-- NEW: Crowned Lion on the LEFT -->
-<div class="lion-royal" aria-label="Royal crowned lion decoration">
-  <div class="lion-crown">👑</div>
-  <div class="lion-face">🦁</div>
-  <div class="lion-title">ROYAL LION</div>
 </div>
 
 <section class="hero" id="home">
