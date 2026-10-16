@@ -6,171 +6,147 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shaikh Yousaf | Official</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:#080a0f;color:#fff;font-family:Cairo,sans-serif;overflow-x:hidden}
+body{
+ background:#080a0f;
+ color:#fff;
+ font-family:Cairo,sans-serif;
+ overflow-x:hidden
+}
 a{text-decoration:none;color:inherit}
 
 header{
-position:sticky;top:0;z-index:100;padding:15px 5%;
-display:flex;align-items:center;justify-content:space-between;
-background:#080a0ff5;border-bottom:1px solid #dcae4d55
+ position:sticky;top:0;z-index:100;padding:15px 5%;
+ display:flex;align-items:center;justify-content:space-between;
+ background:#080a0ff5;border-bottom:1px solid #dcae4d55
 }
 .brand{color:#e8bd63;font-size:21px;font-weight:900}
 nav{display:flex;gap:15px;flex-wrap:wrap}
 nav a{font-size:13px}
 nav a:hover{color:#e8bd63}
 
-/* Official Logo */
+/* Official Logo - original animation retained */
 .logo{
-position:fixed;top:88px;right:14px;width:85px;height:85px;
-z-index:90;border-radius:50%;padding:4px;
-background:linear-gradient(135deg,#fff0a9,#b77c20,#fff0a9);
-box-shadow:0 0 22px #e8bd6366;
-animation:float 3s infinite ease-in-out
+ position:fixed;top:88px;right:14px;width:85px;height:85px;
+ z-index:90;border-radius:50%;padding:4px;
+ background:linear-gradient(135deg,#fff0a9,#b77c20,#fff0a9);
+ box-shadow:0 0 22px #e8bd6366;
+ animation:float 3s infinite ease-in-out
 }
 .logo-in{
-width:100%;height:100%;border-radius:50%;background:#0b0d12;
-border:2px dashed #e8bd63;display:flex;flex-direction:column;
-justify-content:center;align-items:center
+ width:100%;height:100%;border-radius:50%;background:#0b0d12;
+ border:2px dashed #e8bd63;display:flex;flex-direction:column;
+ justify-content:center;align-items:center
 }
 .logo-in b{color:#e8bd63;font-size:24px}
 .logo-in small{font-size:8px;color:#fff;letter-spacing:1px}
 @keyframes float{
-0%,100%{transform:translateY(0) rotate(0)}
-50%{transform:translateY(-8px) rotate(5deg)}
+ 0%,100%{transform:translateY(0) rotate(0)}
+ 50%{transform:translateY(-8px) rotate(5deg)}
 }
 
 /* Telegram */
 .telegram-top{
-position:fixed;top:185px;right:14px;z-index:95;
-display:flex;flex-direction:column;align-items:center;gap:8px
+ position:fixed;top:185px;right:14px;z-index:95;
+ display:flex;flex-direction:column;align-items:center;gap:8px
 }
 .telegram-icon{
-width:58px;height:58px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-background:linear-gradient(135deg,#40c9ff,#087ee1);
-color:white;font-size:30px;box-shadow:0 0 18px #229ed966;
-border:2px solid #fff;transition:.3s
+ width:58px;height:58px;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#40c9ff,#087ee1);
+ color:white;font-size:30px;box-shadow:0 0 18px #229ed966;
+ border:2px solid #fff;transition:.3s
 }
 .telegram-icon:hover,.tiktok-icon:hover{transform:scale(1.08)}
 .telegram-button{
-background:linear-gradient(120deg,#40c9ff,#087ee1);
-color:white;padding:8px 12px;border-radius:20px;
-font-size:11px;font-weight:900;box-shadow:0 0 14px #229ed955;
-white-space:nowrap;transition:.3s
+ background:linear-gradient(120deg,#40c9ff,#087ee1);
+ color:white;padding:8px 12px;border-radius:20px;
+ font-size:11px;font-weight:900;box-shadow:0 0 14px #229ed955;
+ white-space:nowrap;transition:.3s
 }
 
 /* TikTok */
 .tiktok-top{
-position:fixed;top:300px;right:14px;z-index:95;
-display:flex;flex-direction:column;align-items:center;gap:8px
+ position:fixed;top:300px;right:14px;z-index:95;
+ display:flex;flex-direction:column;align-items:center;gap:8px
 }
 .tiktok-icon{
-width:58px;height:58px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-background:linear-gradient(135deg,#25f4ee,#111,#fe2c55);
-color:white;font-size:27px;box-shadow:0 0 18px #fe2c5566;
-border:2px solid #fff;transition:.3s
+ width:58px;height:58px;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#25f4ee,#111,#fe2c55);
+ color:white;font-size:27px;box-shadow:0 0 18px #fe2c5566;
+ border:2px solid #fff;transition:.3s
 }
 .tiktok-button{
-background:linear-gradient(120deg,#25f4ee,#111,#fe2c55);
-color:white;padding:8px 12px;border-radius:20px;
-font-size:11px;font-weight:900;box-shadow:0 0 14px #fe2c5555;
-white-space:nowrap;transition:.3s
+ background:linear-gradient(120deg,#25f4ee,#111,#fe2c55);
+ color:white;padding:8px 12px;border-radius:20px;
+ font-size:11px;font-weight:900;box-shadow:0 0 14px #fe2c5555;
+ white-space:nowrap;transition:.3s
 }
 
-/* Lion integrated into the left background */
+/* Lion: fixed on the left, no animation */
 .lion-scene{
-position:fixed;
-left:0;
-top:100px;
-width:205px;
-height:300px;
-z-index:20;
-pointer-events:none;
-display:flex;
-align-items:center;
-justify-content:center;
-isolation:isolate;
+ position:fixed;
+ left:0;
+ top:100px;
+ width:205px;
+ height:300px;
+ z-index:20;
+ pointer-events:none;
+ display:flex;
+ align-items:center;
+ justify-content:center;
 }
-.lion-scene::before{
-content:"";
-position:absolute;
-inset:8%;
-border-radius:50%;
-background:radial-gradient(ellipse,
-rgba(232,189,99,.20) 0%,
-rgba(183,124,32,.09) 38%,
-transparent 72%);
-filter:blur(15px);
-animation:lionGlow 5s ease-in-out infinite;
-z-index:-1;
-}
+.lion-scene::before,
 .lion-scene::after{
-content:"";
-position:absolute;
-left:10px;
-top:12%;
-bottom:12%;
-width:2px;
-background:linear-gradient(transparent,#e8bd6377,transparent);
-opacity:.7;
+ content:none!important;
+ display:none!important;
 }
 .lion-scene img{
-position:relative;
-width:100%;
-max-height:100%;
-height:auto;
-object-fit:contain;
-display:block;
-filter:drop-shadow(0 0 12px rgba(232,189,99,.25));
-animation:lionMotion 5s ease-in-out infinite;
-transform-origin:center bottom;
-}
-@keyframes lionMotion{
-0%,100%{transform:translate(0,0) rotate(0) scale(1)}
-25%{transform:translate(3px,-3px) rotate(-.4deg) scale(1.005)}
-50%{transform:translate(7px,0) rotate(.4deg) scale(1.01)}
-75%{transform:translate(3px,-2px) rotate(0) scale(1.005)}
-}
-@keyframes lionGlow{
-0%,100%{opacity:.55;transform:scale(.95)}
-50%{opacity:1;transform:scale(1.08)}
+ position:relative;
+ width:100%;
+ max-height:100%;
+ height:100%;
+ object-fit:contain;
+ display:block;
+ animation:none!important;
+ transform:none!important;
+ filter:drop-shadow(0 0 8px rgba(232,189,99,.2));
 }
 
 /* Hero */
 .hero{
-position:relative;
-min-height:85vh;padding:55px 7%;display:grid;
-grid-template-columns:1fr 1fr;align-items:center;gap:35px;
-background:
-radial-gradient(ellipse at left center,rgba(183,124,32,.10),transparent 40%),
-radial-gradient(circle at 20% 50%,#e8bd631b,transparent 35%),
-#0a0b10
+ position:relative;
+ min-height:85vh;padding:55px 7%;display:grid;
+ grid-template-columns:1fr 1fr;align-items:center;gap:35px;
+ background:
+ radial-gradient(ellipse at left center,rgba(183,124,32,.10),transparent 40%),
+ radial-gradient(circle at 20% 50%,#e8bd631b,transparent 35%),
+ #0a0b10
 }
 .hero h1{
-font-family:"Noto Nastaliq Urdu",serif;
-font-size:clamp(32px,5vw,55px);
-line-height:2;
-padding-top:8px;
+ font-family:Cairo,sans-serif;
+ font-size:clamp(32px,5vw,55px);
+ line-height:2;
+ padding-top:8px;
 }
 .hero h1 span,.title span{color:#e8bd63}
 .hero p{color:#ccc;line-height:2;margin:15px 0 25px}
 .hero-photo{text-align:center}
 .hero-photo img{
-width:min(90%,400px);height:450px;object-fit:cover;
-border:5px solid #e8bd63;border-radius:200px 200px 25px 25px;
-box-shadow:0 0 35px #e8bd6344
+ width:min(90%,400px);height:450px;object-fit:cover;
+ border:5px solid #e8bd63;border-radius:200px 200px 25px 25px;
+ box-shadow:0 0 35px #e8bd6344
 }
 .btn{
-display:inline-block;padding:12px 25px;border-radius:30px;
-background:linear-gradient(120deg,#ffe29a,#b77c20);
-color:#111;font-weight:900
+ display:inline-block;padding:12px 25px;border-radius:30px;
+ background:linear-gradient(120deg,#ffe29a,#b77c20);
+ color:#111;font-weight:900
 }
 section{padding:70px 7%}
 .title{text-align:center;margin-bottom:35px}
@@ -178,64 +154,67 @@ section{padding:70px 7%}
 .title p{color:#aaa;margin-top:8px}
 .video-section{background:linear-gradient(180deg,#080a0f,#11100c,#080a0f)}
 .video-box{
-max-width:900px;margin:auto;padding:7px;border-radius:23px;
-background:linear-gradient(135deg,#fff0a9,#b77c20);
-box-shadow:0 0 30px #e8bd6344
+ max-width:900px;margin:auto;padding:7px;border-radius:23px;
+ background:linear-gradient(135deg,#fff0a9,#b77c20);
+ box-shadow:0 0 30px #e8bd6344
 }
 .video-box video{
-width:100%;max-height:600px;display:block;
-border-radius:17px;background:#000
+ width:100%;max-height:600px;display:block;
+ border-radius:17px;background:#000
 }
 .about{
-max-width:900px;margin:auto;padding:30px;text-align:center;
-line-height:2.2;color:#ddd;background:#141720;
-border:1px solid #e8bd6333;border-radius:22px
+ max-width:900px;margin:auto;padding:30px;text-align:center;
+ line-height:2.2;color:#ddd;background:#141720;
+ border:1px solid #e8bd6333;border-radius:22px
 }
 .cards,.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{
-background:#141720;padding:12px;border-radius:20px;
-border:1px solid #e8bd6333;text-align:center;transition:.3s
+ background:#141720;padding:12px;border-radius:20px;
+ border:1px solid #e8bd6333;text-align:center;transition:.3s
 }
 .card:hover{transform:translateY(-7px)}
 .card img,.gallery img{
-width:100%;height:290px;object-fit:cover;border-radius:14px
+ width:100%;height:290px;object-fit:cover;border-radius:14px
 }
 .card h3{color:#e8bd63;margin:12px 0 5px}
 .card p{color:#aaa}
 .socials{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
 .socials a{
-width:48px;height:48px;border:1px solid #e8bd6380;
-border-radius:50%;display:grid;place-items:center;
-color:#e8bd63;transition:.3s
+ width:48px;height:48px;border:1px solid #e8bd6380;
+ border-radius:50%;display:grid;place-items:center;
+ color:#e8bd63;transition:.3s
 }
 .socials a:hover{background:#e8bd63;color:#111;transform:translateY(-4px)}
 footer{
-padding:28px;text-align:center;color:#999;background:#050609;
-border-top:1px solid #e8bd6333
+ padding:28px;text-align:center;color:#999;background:#050609;
+ border-top:1px solid #e8bd6333
 }
 footer span{color:#e8bd63}
 
 @media(max-width:750px){
-header{padding:12px 4%}
-.brand{font-size:15px}
-nav{gap:8px}
-nav a{font-size:10px}
-.logo{width:68px;height:68px;right:8px;top:82px}
-.logo-in b{font-size:19px}
-.logo-in small{font-size:6px}
-.telegram-top{top:165px;right:8px}
-.telegram-icon,.tiktok-icon{width:48px;height:48px;font-size:25px}
-.telegram-button,.tiktok-button{font-size:9px;padding:7px 9px}
-.tiktok-top{top:275px;right:8px}
-.lion-scene{top:95px;left:0;width:112px;height:185px}
-.hero{grid-template-columns:1fr;text-align:center;padding:40px 6%}
-.hero h1{font-size:34px;line-height:2}
-.hero-photo img{height:370px}
-.cards,.gallery{grid-template-columns:1fr}
-section{padding:55px 6%}
-}
-@media(prefers-reduced-motion:reduce){
-.lion-scene,.lion-scene img,.lion-scene::before{animation:none}
+ header{padding:12px 4%}
+ .brand{font-size:15px}
+ nav{gap:8px}
+ nav a{font-size:10px}
+ .logo{width:68px;height:68px;right:8px;top:82px}
+ .logo-in b{font-size:19px}
+ .logo-in small{font-size:6px}
+ .telegram-top{top:165px;right:8px}
+ .telegram-icon,.tiktok-icon{width:48px;height:48px;font-size:25px}
+ .telegram-button,.tiktok-button{font-size:9px;padding:7px 9px}
+ .tiktok-top{top:275px;right:8px}
+ .lion-scene{
+   position:fixed;
+   top:95px;
+   left:0;
+   width:112px;
+   height:185px;
+ }
+ .hero{grid-template-columns:1fr;text-align:center;padding:40px 6%}
+ .hero h1{font-family:Cairo,sans-serif;font-size:34px;line-height:2}
+ .hero-photo img{height:370px}
+ .cards,.gallery{grid-template-columns:1fr}
+ section{padding:55px 6%}
 }
 </style>
 </head>
@@ -243,156 +222,156 @@ section{padding:55px 6%}
 <body>
 
 <header>
-  <div class="brand">SHAIKH YOUSAF</div>
-  <nav>
-    <a href="#home">ہوم</a>
-    <a href="#video">ویڈیوز</a>
-    <a href="#about">تعارف</a>
-    <a href="#family">تصاویر</a>
-    <a href="#contact">رابطہ</a>
-  </nav>
+ <div class="brand">SHAIKH YOUSAF</div>
+ <nav>
+  <a href="#home">ہوم</a>
+  <a href="#video">ویڈیوز</a>
+  <a href="#about">تعارف</a>
+  <a href="#family">تصاویر</a>
+  <a href="#contact">رابطہ</a>
+ </nav>
 </header>
 
-<!-- New lion image, positioned on the left -->
+<!-- Lion fixed on the left -->
 <div class="lion-scene">
-  <img src="lion%20(1).png" alt="Royal Lion">
+ <img src="lion%20(1).png" alt="Royal Lion">
 </div>
 
 <div class="telegram-top">
-  <a class="telegram-icon" href="https://t.me/Mujairhacker"
-     target="_blank" rel="noopener noreferrer" aria-label="Open Telegram">
-    <i class="fa-brands fa-telegram"></i>
-  </a>
-  <a class="telegram-button" href="https://t.me/Mujairhacker"
-     target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-telegram"></i> Contact Us
-  </a>
+ <a class="telegram-icon" href="https://t.me/Mujairhacker"
+    target="_blank" rel="noopener noreferrer" aria-label="Open Telegram">
+  <i class="fa-brands fa-telegram"></i>
+ </a>
+ <a class="telegram-button" href="https://t.me/Mujairhacker"
+    target="_blank" rel="noopener noreferrer">
+  <i class="fa-brands fa-telegram"></i> Contact Us
+ </a>
 </div>
 
 <div class="tiktok-top">
-  <a class="tiktok-icon" href="https://www.tiktok.com/@muhajir_0001"
-     target="_blank" rel="noopener noreferrer" aria-label="Open TikTok">
-    <i class="fa-brands fa-tiktok"></i>
-  </a>
-  <a class="tiktok-button" href="https://www.tiktok.com/@muhajir_0001"
-     target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-tiktok"></i> Follow on TikTok
-  </a>
+ <a class="tiktok-icon" href="https://www.tiktok.com/@muhajir_0001"
+    target="_blank" rel="noopener noreferrer" aria-label="Open TikTok">
+  <i class="fa-brands fa-tiktok"></i>
+ </a>
+ <a class="tiktok-button" href="https://www.tiktok.com/@muhajir_0001"
+    target="_blank" rel="noopener noreferrer">
+  <i class="fa-brands fa-tiktok"></i> Follow on TikTok
+ </a>
 </div>
 
 <div class="logo">
-  <div class="logo-in">
-    <b>SY</b>
-    <small>MUHAJIR</small>
-    <small>OFFICIAL</small>
-  </div>
+ <div class="logo-in">
+  <b>SY</b>
+  <small>MUHAJIR</small>
+  <small>OFFICIAL</small>
+ </div>
 </div>
 
 <section class="hero" id="home">
-  <div>
-    <p style="color:#e8bd63">✦ OFFICIAL WEBSITE ✦</p>
-    <h1>شیخ <span>یوسف</span><br>آفیشل پیج</h1>
-    <p>شیخ یوسف کے آفیشل پیج میں خوش آمدید۔ یہاں خوبصورت تصاویر، ویڈیوز اور یادگار لمحات دیکھیں۔</p>
-    <a class="btn" href="#video">ویڈیوز دیکھیں <i class="fa-solid fa-play"></i></a>
-  </div>
-  <div class="hero-photo">
-    <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-  </div>
+ <div>
+  <p style="color:#e8bd63">✦ OFFICIAL WEBSITE ✦</p>
+  <h1>شیخ <span>یوسف</span><br>آفیشل پیج</h1>
+  <p>شیخ یوسف کے آفیشل پیج میں خوش آمدید۔ یہاں خوبصورت تصاویر، ویڈیوز اور یادگار لمحات دیکھیں۔</p>
+  <a class="btn" href="#video">ویڈیوز دیکھیں <i class="fa-solid fa-play"></i></a>
+ </div>
+ <div class="hero-photo">
+  <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+ </div>
 </section>
 
 <section class="video-section" id="video">
-  <div class="title">
-    <h2>ہماری <span>ویڈیوز</span></h2>
-    <p>یادگار لمحات</p>
-  </div>
-  <div class="video-box">
-    <video controls playsinline preload="metadata">
-      <source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
-      آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
-    </video>
-  </div>
-  <div style="height:35px"></div>
-  <div class="video-box">
-    <video controls playsinline preload="metadata">
-      <source src="foryoupage%20foryoupage.mp4" type="video/mp4">
-      آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
-    </video>
-  </div>
+ <div class="title">
+  <h2>ہماری <span>ویڈیوز</span></h2>
+  <p>یادگار لمحات</p>
+ </div>
+ <div class="video-box">
+  <video controls playsinline preload="metadata">
+   <source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
+   آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
+  </video>
+ </div>
+ <div style="height:35px"></div>
+ <div class="video-box">
+  <video controls playsinline preload="metadata">
+   <source src="foryoupage%20foryoupage.mp4" type="video/mp4">
+   آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
+  </video>
+ </div>
 </section>
 
 <section id="about">
-  <div class="title"><h2>میرا <span>تعارف</span></h2></div>
-  <div class="about">
-    شیخ یوسف کے آفیشل پیج میں خوش آمدید۔ یہ ویب سائٹ تصاویر، ویڈیوز اور خوبصورت یادوں کو محفوظ رکھنے کے لیے تیار کی گئی ہے۔
-    <br><strong style="color:#e8bd63">سادگی • عزت • خلوص</strong>
-  </div>
+ <div class="title"><h2>میرا <span>تعارف</span></h2></div>
+ <div class="about">
+  شیخ یوسف کے آفیشل پیج میں خوش آمدید۔ یہ ویب سائٹ تصاویر، ویڈیوز اور خوبصورت یادوں کو محفوظ رکھنے کے لیے تیار کی گئی ہے۔
+  <br><strong style="color:#e8bd63">سادگی • عزت • خلوص</strong>
+ </div>
 </section>
 
 <section id="family">
-  <div class="title"><h2>اہم <span>شخصیات</span></h2></div>
-  <div class="cards">
-    <div class="card">
-      <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-      <h3>Shaikh Yousaf</h3>
-      <p>Official Profile</p>
-    </div>
-    <div class="card">
-      <img src="mudassir-5.jpg" alt="Mudassir">
-      <h3>Mudassir</h3>
-      <p>یادگار لمحات</p>
-    </div>
-    <div class="card">
-      <img src="ustad-7.jpg" alt="Ustad">
-      <h3>Ustad</h3>
-      <p>قابل احترام شخصیت</p>
-    </div>
+ <div class="title"><h2>اہم <span>شخصیات</span></h2></div>
+ <div class="cards">
+  <div class="card">
+   <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+   <h3>Shaikh Yousaf</h3>
+   <p>Official Profile</p>
   </div>
+  <div class="card">
+   <img src="mudassir-5.jpg" alt="Mudassir">
+   <h3>Mudassir</h3>
+   <p>یادگار لمحات</p>
+  </div>
+  <div class="card">
+   <img src="ustad-7.jpg" alt="Ustad">
+   <h3>Ustad</h3>
+   <p>قابل احترام شخصیت</p>
+  </div>
+ </div>
 </section>
 
 <section>
-  <div class="title"><h2>تصاویر کی <span>گیلری</span></h2></div>
-  <div class="gallery">
-    <img src="yousaf-8.jpg" alt="Yousaf">
-    <img src="mudassir-5.jpg" alt="Mudassir">
-    <img src="ustad-7.jpg" alt="Ustad">
-  </div>
+ <div class="title"><h2>تصاویر کی <span>گیلری</span></h2></div>
+ <div class="gallery">
+  <img src="yousaf-8.jpg" alt="Yousaf">
+  <img src="mudassir-5.jpg" alt="Mudassir">
+  <img src="ustad-7.jpg" alt="Ustad">
+ </div>
 </section>
 
 <section id="contact">
-  <div class="title">
-    <h2>سوشل <span>میڈیا</span></h2>
-    <p>Follow Official Accounts</p>
-  </div>
-  <div class="socials">
-    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://www.tiktok.com/@muhajir_0001"
-       target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-      <i class="fa-brands fa-tiktok"></i>
-    </a>
-    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://t.me/Mujairhacker"
-       target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-      <i class="fa-brands fa-telegram"></i>
-    </a>
-  </div>
-  <div style="text-align:center;margin-top:25px">
-    <a href="https://www.tiktok.com/@muhajir_0001"
-       target="_blank" rel="noopener noreferrer" class="btn">
-      <i class="fa-brands fa-tiktok"></i> Follow Me on TikTok
-    </a>
-  </div>
-  <div style="text-align:center;margin-top:18px">
-    <a href="https://t.me/Mujairhacker"
-       target="_blank" rel="noopener noreferrer" class="btn">
-      <i class="fa-brands fa-telegram"></i> Contact Us on Telegram
-    </a>
-  </div>
+ <div class="title">
+  <h2>سوشل <span>میڈیا</span></h2>
+  <p>Follow Official Accounts</p>
+ </div>
+ <div class="socials">
+  <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+  <a href="https://www.tiktok.com/@muhajir_0001"
+     target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+   <i class="fa-brands fa-tiktok"></i>
+  </a>
+  <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="https://t.me/Mujairhacker"
+     target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+   <i class="fa-brands fa-telegram"></i>
+  </a>
+ </div>
+ <div style="text-align:center;margin-top:25px">
+  <a href="https://www.tiktok.com/@muhajir_0001"
+     target="_blank" rel="noopener noreferrer" class="btn">
+   <i class="fa-brands fa-tiktok"></i> Follow Me on TikTok
+  </a>
+ </div>
+ <div style="text-align:center;margin-top:18px">
+  <a href="https://t.me/Mujairhacker"
+     target="_blank" rel="noopener noreferrer" class="btn">
+   <i class="fa-brands fa-telegram"></i> Contact Us on Telegram
+  </a>
+ </div>
 </section>
 
 <footer>
-  © 2026 <span>Shaikh Yousaf Official</span> — All Rights Reserved
+ © 2026 <span>Shaikh Yousaf Official</span> — All Rights Reserved
 </footer>
 
 </body>
