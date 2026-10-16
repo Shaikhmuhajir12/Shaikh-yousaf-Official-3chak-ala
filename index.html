@@ -104,6 +104,47 @@ section{padding:70px 7%}
 footer{padding:28px;text-align:center;color:#999;background:#050609;border-top:1px solid #e8bd6333}
 footer span{color:#e8bd63}
 
+/* NEW: Royal Crown Lion on the LEFT */
+.lion-royal{
+position:fixed;
+left:12px;
+top:42%;
+transform:translateY(-50%);
+z-index:80;
+width:100px;
+text-align:center;
+pointer-events:none;
+animation:lionGlow 3s ease-in-out infinite;
+}
+.lion-crown{
+font-size:38px;
+line-height:1;
+filter:drop-shadow(0 0 9px #e8bd63);
+margin-bottom:-5px;
+}
+.lion-face{
+font-size:66px;
+line-height:1.2;
+filter:drop-shadow(0 0 12px #e8bd63);
+}
+.lion-title{
+color:#e8bd63;
+font-size:9px;
+font-weight:900;
+letter-spacing:2px;
+text-shadow:0 0 8px #e8bd6388;
+}
+@keyframes lionGlow{
+0%,100%{
+filter:brightness(1);
+transform:translateY(-50%) scale(1);
+}
+50%{
+filter:brightness(1.25);
+transform:translateY(-52%) scale(1.04);
+}
+}
+
 @media(max-width:750px){
 header{padding:12px 4%}
 .brand{font-size:15px}
@@ -120,6 +161,19 @@ nav a{font-size:10px}
 .hero-photo img{height:370px}
 .cards,.gallery{grid-template-columns:1fr}
 section{padding:55px 6%}
+
+/* NEW: smaller lion on mobile */
+.lion-royal{
+left:3px;
+top:48%;
+width:65px;
+}
+.lion-crown{font-size:26px}
+.lion-face{font-size:44px}
+.lion-title{
+font-size:6px;
+letter-spacing:1px;
+}
 }
 </style>
 </head>
@@ -173,6 +227,13 @@ section{padding:55px 6%}
     <small>MUHAJIR</small>
     <small>OFFICIAL</small>
   </div>
+</div>
+
+<!-- NEW: Crowned Lion on the LEFT -->
+<div class="lion-royal" aria-label="Royal crowned lion decoration">
+  <div class="lion-crown">👑</div>
+  <div class="lion-face">🦁</div>
+  <div class="lion-title">ROYAL LION</div>
 </div>
 
 <section class="hero" id="home">
