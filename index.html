@@ -46,11 +46,15 @@ section{padding:70px 7%}
 .card h3{color:#e8bd63;margin:12px 0 5px}
 .card p{color:#aaa}
 .socials{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.socials a{width:48px;height:48px;border:1px solid #e8bd6380;border-radius:50%;display:grid;place-items:center;color:#e8bd63}
+.socials a{width:48px;height:48px;border:1px solid #e8bd6380;border-radius:50%;display:grid;place-items:center;color:#e8bd63;transition:.3s}
+.socials a:hover{background:#e8bd63;color:#111;transform:translateY(-4px)}
 footer{padding:28px;text-align:center;color:#999;background:#050609;border-top:1px solid #e8bd6333}
 footer span{color:#e8bd63}
 @media(max-width:750px){
-header{padding:12px 4%}.brand{font-size:15px}nav{gap:8px}nav a{font-size:10px}
+header{padding:12px 4%}
+.brand{font-size:15px}
+nav{gap:8px}
+nav a{font-size:10px}
 .logo{width:68px;height:68px;right:8px;top:82px}
 .hero{grid-template-columns:1fr;text-align:center;padding:40px 6%}
 .hero-photo img{height:370px}
@@ -102,7 +106,7 @@ section{padding:55px 6%}
 
   <div style="height:35px"></div>
 
-  <!-- دوسری ویڈیو: foryoupage foryoupage.mp4 -->
+  <!-- دوسری ویڈیو -->
   <div class="video-box">
     <video controls playsinline preload="metadata">
       <source src="foryoupage%20foryoupage.mp4" type="video/mp4">
@@ -122,9 +126,21 @@ section{padding:55px 6%}
 <section id="family">
   <div class="title"><h2>اہم <span>شخصیات</span></h2></div>
   <div class="cards">
-    <div class="card"><img src="yousaf-8.jpg" alt="Shaikh Yousaf"><h3>Shaikh Yousaf</h3><p>Official Profile</p></div>
-    <div class="card"><img src="mudassir-5.jpg" alt="Mudassir"><h3>Mudassir</h3><p>یادگار لمحات</p></div>
-    <div class="card"><img src="ustad-7.jpg" alt="Ustad"><h3>Ustad</h3><p>قابل احترام شخصیت</p></div>
+    <div class="card">
+      <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+      <h3>Shaikh Yousaf</h3>
+      <p>Official Profile</p>
+    </div>
+    <div class="card">
+      <img src="mudassir-5.jpg" alt="Mudassir">
+      <h3>Mudassir</h3>
+      <p>یادگار لمحات</p>
+    </div>
+    <div class="card">
+      <img src="ustad-7.jpg" alt="Ustad">
+      <h3>Ustad</h3>
+      <p>قابل احترام شخصیت</p>
+    </div>
   </div>
 </section>
 
@@ -138,13 +154,44 @@ section{padding:55px 6%}
 </section>
 
 <section id="contact">
-  <div class="title"><h2>سوشل <span>میڈیا</span></h2><p>Follow Official Accounts</p></div>
+  <div class="title">
+    <h2>سوشل <span>میڈیا</span></h2>
+    <p>Follow Official Accounts</p>
+  </div>
+
   <div class="socials">
-    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="#" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="#" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="#" aria-label="YouTube">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <!-- آپ کا TikTok اکاؤنٹ -->
+    <a href="https://www.tiktok.com/@muhajir_0001"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Follow me on TikTok"
+       title="Follow @muhajir_0001 on TikTok">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a href="#" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <div style="text-align:center;margin-top:25px">
+    <a href="https://www.tiktok.com/@muhajir_0001"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn">
+      <i class="fa-brands fa-tiktok"></i>
+      Follow Me on TikTok
+    </a>
   </div>
 </section>
 
