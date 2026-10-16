@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download website files
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Java
@@ -20,33 +20,42 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.9'
+      - name: Install Android build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
 
       - name: Create Android application
         shell: bash
         run: |
-          mkdir -p app/src/main/java/com/shaikhyousaf/app
-          mkdir -p app/src/main/res/values
-          mkdir -p app/src/main/assets
+          set -e
 
-          if [ ! -f index.html ]; then
-            echo "ERROR: index.html not found in repository root"
-            exit 1
-          fi
+          test -f index.html || { echo "index.html missing"; exit 1; }
+          test -f YqR4K.jpg || { echo "YqR4K.jpg missing from repository root"; exit 1; }
+
+          mkdir -p app/src/main/assets
+          mkdir -p app/src/main/res/values
+          mkdir -p app/src/main/java/com/shaikhyousaf/app
 
           cp index.html app/src/main/assets/index.html
 
           find . -maxdepth 1 -type f \
-            \( -iname "*.jpg" -o -iname "*.jpeg" \
-            -o -iname "*.png" -o -iname "*.webp" \
-            -o -iname "*.gif" -o -iname "*.css" \
-            -o -iname "*.js" -o -iname "*.svg" \
-            -o -iname "*.mp4" -o -iname "*.woff" \
-            -o -iname "*.woff2" \) \
+            \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \
+            -o -iname "*.webp" -o -iname "*.gif" -o -iname "*.css" \
+            -o -iname "*.js" -o -iname "*.svg" -o -iname "*.mp4" \) \
+            ! -name "YqR4K.jpg" \
             -exec cp {} app/src/main/assets/ \;
+
+          for item in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 xxxhdpi:192; do
+            density="${item%%:*}"
+            size="${item##*:}"
+            mkdir -p "app/src/main/res/mipmap-${density}"
+            convert YqR4K.jpg -background white -alpha remove \
+              -gravity center -resize "${size}x${size}^" \
+              -extent "${size}x${size}" \
+              "app/src/main/res/mipmap-${density}/ic_launcher.png"
+          done
 
           cat > settings.gradle <<'EOF'
           pluginManagement {
@@ -86,8 +95,8 @@ jobs:
                   applicationId 'com.shaikhyousaf.app'
                   minSdk 23
                   targetSdk 35
-                  versionCode 1
-                  versionName '1.0'
+                  versionCode 2
+                  versionName '1.1'
               }
           }
           EOF
@@ -98,6 +107,8 @@ jobs:
               <application
                   android:theme="@style/AppTheme"
                   android:label="Shaikh Yousaf"
+                  android:icon="@mipmap/ic_launcher"
+                  android:roundIcon="@mipmap/ic_launcher"
                   android:usesCleartextTraffic="true">
                   <activity
                       android:name=".MainActivity"
@@ -113,7 +124,8 @@ jobs:
 
           cat > app/src/main/res/values/styles.xml <<'EOF'
           <resources>
-              <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+              <style name="AppTheme"
+                  parent="@android:style/Theme.Material.Light.NoActionBar">
                   <item name="android:fontFamily">sans</item>
                   <item name="android:colorAccent">#8B4513</item>
                   <item name="android:statusBarColor">#24150F</item>
@@ -135,26 +147,20 @@ jobs:
               @Override
               protected void onCreate(Bundle savedInstanceState) {
                   super.onCreate(savedInstanceState);
-
                   WebView webView = new WebView(this);
                   WebSettings settings = webView.getSettings();
                   settings.setJavaScriptEnabled(true);
                   settings.setDomStorageEnabled(true);
                   webView.setWebViewClient(new WebViewClient());
-
                   setContentView(webView);
                   webView.loadUrl("file:///android_asset/index.html");
-              }
-
-              @Override
-              public void onBackPressed() {
-                  super.onBackPressed();
               }
           }
           EOF
 
       - name: Build APK
-        run: gradle --no-daemon assembleDebug
+        run: |
+          gradle --no-daemon assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
