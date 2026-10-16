@@ -5,447 +5,379 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shaikh Yousaf | Official</title>
-<meta name="description" content="Shaikh Yousaf Official Website - Memories, family and life story">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 :root {
-  --gold: #f4ce64;
-  --gold2: #b68a25;
-  --bg: #070910;
-  --card: #121725;
-  --white: #fffaf0;
-  --muted: #d0d2dc;
+  --gold:#f4ce64;
+  --bg:#080a12;
+  --panel:#131725;
+  --white:#fffaf0;
+  --muted:#d0d2dc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:"Noto Naskh Arabic",serif;
+  line-height:1.9;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+section{padding:75px 0}
+.section-title{
+  color:var(--gold);
+  text-align:center;
+  font-size:clamp(30px,5vw,44px);
+  margin-bottom:12px;
+}
+.section-subtitle{
+  text-align:center;
+  color:var(--muted);
+  max-width:720px;
+  margin:0 auto 35px;
+  font-size:18px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* MUHAJIR LOGO */
+.muhajir-logo{
+  position:fixed;
+  top:18px;
+  right:18px;
+  width:88px;
+  height:88px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:radial-gradient(circle,#29213d,#080a12 72%);
+  border:2px solid var(--gold);
+  box-shadow:0 0 24px #f4ce6455;
+  direction:ltr;
 }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: "Noto Naskh Arabic", serif;
-  line-height: 2;
-  overflow-x: hidden;
+.logo-ring{
+  position:absolute;
+  inset:-6px;
+  border:3px dashed var(--gold);
+  border-radius:50%;
+  animation:logoSpin 6s linear infinite;
 }
-
-a { color: inherit; text-decoration: none; }
-
-.container {
-  width: min(1120px, 90%);
-  margin: auto;
+.logo-ring-inner{
+  position:absolute;
+  inset:-12px;
+  border:1px solid #f4ce6490;
+  border-radius:50%;
+  border-top-color:transparent;
+  border-bottom-color:transparent;
+  animation:logoSpin 4s linear infinite reverse;
 }
-
-section {
-  padding: 85px 0;
-  position: relative;
+.logo-name{
+  color:var(--gold);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-align:center;
+  text-shadow:0 0 12px #f4ce64;
 }
-
-.section-title {
-  color: var(--gold);
-  text-align: center;
-  font-size: clamp(30px, 5vw, 45px);
-  margin-bottom: 12px;
+.logo-name small{
+  display:block;
+  color:white;
+  font-size:8px;
+  margin-top:4px;
+  letter-spacing:2px;
 }
-
-.section-subtitle {
-  text-align: center;
-  color: var(--muted);
-  margin: 0 auto 35px;
-  max-width: 700px;
-  font-size: 18px;
-}
-
-/* CLEAR ROTATING MUHAJIR LOGO */
-.logo {
-  position: fixed;
-  top: 17px;
-  right: 18px;
-  z-index: 9999;
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle, #242039, #080a12 72%);
-  border: 2px solid var(--gold);
-  box-shadow: 0 0 20px #f4ce6466, inset 0 0 15px #f4ce6433;
-  direction: ltr;
-}
-
-.logo-ring {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 3px dashed var(--gold);
-  animation: spin 7s linear infinite;
-}
-
-.logo-ring.second {
-  inset: -12px;
-  border: 1px solid #f4ce6488;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  animation: spin 4s linear infinite reverse;
-}
-
-.logo-text {
-  text-align: center;
-  color: var(--gold);
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  line-height: 1.4;
-  text-shadow: 0 0 12px #f4ce64;
-}
-
-.logo-text small {
-  display: block;
-  color: white;
-  font-size: 9px;
-  letter-spacing: 2px;
-  margin-top: 4px;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes logoSpin{to{transform:rotate(360deg)}}
 
 /* NAVIGATION */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 15px 5%;
-  background: #080a12ed;
-  border-bottom: 1px solid #f4ce6440;
-  backdrop-filter: blur(12px);
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#080a12ed;
+  border-bottom:1px solid #f4ce6440;
+  backdrop-filter:blur(12px);
+  padding:14px 5%;
 }
-
-.nav-inner {
-  max-width: 1120px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
+.nav-inner{
+  max-width:1120px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
 }
-
-.brand {
-  font-family: "Playfair Display", serif;
-  font-size: 21px;
-  color: var(--gold);
-  direction: ltr;
+.brand{
+  color:var(--gold);
+  font-family:"Playfair Display",serif;
+  font-size:21px;
+  direction:ltr;
 }
-
-.nav-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  font-size: 14px;
-  transition: color .3s;
-}
-
-.nav-links a:hover { color: var(--gold); }
+.nav-links{display:flex;gap:16px;flex-wrap:wrap}
+.nav-links a{font-size:14px;transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
 
 /* HERO */
-.hero {
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
   background:
-    radial-gradient(ellipse at 50% 40%, #8b671b35, transparent 55%),
-    linear-gradient(135deg, #080a12, #171727, #080a12);
+    radial-gradient(ellipse at center,#8b671b35,transparent 58%),
+    linear-gradient(135deg,#080a12,#19182a,#080a12);
+}
+.hero::before,.hero::after{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border:1px solid #f4ce643d;
+  border-radius:50%;
+  animation:orbit 20s linear infinite;
+}
+.hero::after{
+  width:450px;
+  height:450px;
+  animation-direction:reverse;
+}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:100px 5% 60px;
+  animation:fadeUp 1.2s ease both;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.eyebrow{
+  color:var(--gold);
+  font-family:"Playfair Display",serif;
+  letter-spacing:4px;
+  direction:ltr;
+}
+.hero h1{
+  direction:ltr;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(40px,9vw,82px);
+  line-height:1.35;
+  margin:18px 0;
+  text-shadow:0 0 30px #f4ce6430;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  color:var(--muted);
+  font-size:clamp(18px,3vw,24px);
+  max-width:720px;
+  margin:0 auto 25px;
+}
+.btn{
+  display:inline-block;
+  background:linear-gradient(135deg,#ffe9a0,#c2942c);
+  color:#101010;
+  font-weight:700;
+  padding:10px 27px;
+  border-radius:30px;
+  margin:6px;
+  transition:.3s;
+}
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 25px #f4ce6455;
+}
+.btn-outline{
+  background:transparent;
+  color:var(--gold);
+  border:1px solid var(--gold);
 }
 
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border: 1px solid #f4ce6438;
-  border-radius: 50%;
-  left: calc(50% - 160px);
-  top: calc(50% - 160px);
-  animation: orbit 18s linear infinite;
+/* CONTENT */
+.story-box{
+  padding:clamp(22px,5vw,42px);
+  border:1px solid #f4ce6438;
+  border-radius:20px;
+  background:linear-gradient(140deg,#171b2a,#0e111a);
+  box-shadow:0 15px 45px #0005;
+}
+.story-box p{color:var(--muted);font-size:19px;margin:12px 0}
+.gold-text{color:var(--gold)!important}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+.card{
+  background:var(--panel);
+  border:1px solid #f4ce6438;
+  border-radius:18px;
+  overflow:hidden;
+  transition:transform .4s,box-shadow .4s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px #f4ce6420;
+}
+.card img{
+  width:100%;
+  height:290px;
+  display:block;
+  object-fit:cover;
+  background:#202433;
+  transition:transform .7s;
+}
+.card:hover img{transform:scale(1.04)}
+.card-body{padding:20px}
+.card h3{color:var(--gold);font-size:22px;margin-bottom:8px}
+.card p{color:var(--muted)}
+
+.feature{
+  text-align:center;
+  background:linear-gradient(120deg,#211b0e,#101321);
+  border-top:1px solid #f4ce6433;
+  border-bottom:1px solid #f4ce6433;
+}
+.feature h2{color:var(--gold);font-size:clamp(28px,5vw,42px)}
+.feature p{
+  max-width:760px;
+  margin:12px auto 0;
+  color:var(--muted);
+  font-size:19px;
 }
 
-.hero::after {
-  width: 450px;
-  height: 450px;
-  left: calc(50% - 225px);
-  top: calc(50% - 225px);
-  animation-direction: reverse;
+.timeline{
+  max-width:800px;
+  margin:auto;
+  border-right:2px solid var(--gold);
+  padding-right:25px;
+}
+.timeline-item{
+  position:relative;
+  padding:20px;
+  margin-bottom:25px;
+  border-radius:14px;
+  background:var(--panel);
+  border:1px solid #f4ce6433;
+}
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  right:-33px;
+  top:27px;
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 12px var(--gold);
+}
+.timeline-item h3{color:var(--gold)}
+.timeline-item p{color:var(--muted)}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:17px;
+}
+.gallery img{
+  display:block;
+  width:100%;
+  height:290px;
+  object-fit:cover;
+  border-radius:16px;
+  border:1px solid #f4ce6444;
+  background:#202433;
+  transition:transform .4s,box-shadow .4s;
+}
+.gallery img:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 25px #f4ce6430;
 }
 
-@keyframes orbit {
-  to { transform: rotate(360deg); }
+/* SOCIAL MEDIA */
+.social-area{text-align:center;margin-top:25px}
+.social-area h3{color:var(--gold);margin-bottom:18px;font-size:23px}
+.social-icons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  direction:ltr;
+}
+.social-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:1px solid #f4ce6480;
+  color:var(--gold);
+  background:#131725;
+  font-size:23px;
+  transition:transform .3s,color .3s,background .3s;
+}
+.social-icon:hover{
+  transform:translateY(-6px) rotate(8deg);
+  background:var(--gold);
+  color:#101010;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 100px 5% 60px;
-  animation: fadeUp 1.3s ease both;
+.quote{
+  text-align:center;
+  padding:35px;
+  border-radius:20px;
+  border:1px solid #f4ce6440;
+  background:linear-gradient(135deg,#171827,#10111a);
+  color:var(--gold);
+  font-size:clamp(20px,3vw,27px);
 }
-
-.eyebrow {
-  color: var(--gold);
-  font-family: "Playfair Display", serif;
-  font-size: 14px;
-  letter-spacing: 5px;
-  direction: ltr;
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .8s ease,transform .8s ease;
 }
+.reveal.show{opacity:1;transform:translateY(0)}
 
-.hero h1 {
-  direction: ltr;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(42px, 9vw, 88px);
-  line-height: 1.3;
-  margin: 15px 0;
-  text-shadow: 0 0 35px #f4ce6433;
+footer{
+  text-align:center;
+  background:#040509;
+  border-top:1px solid #f4ce6435;
+  padding:32px 5%;
+  color:var(--muted);
 }
+footer strong{color:var(--gold)}
 
-.hero h1 span { color: var(--gold); }
-
-.hero p {
-  color: var(--muted);
-  font-size: clamp(18px, 3vw, 24px);
-  margin: 0 auto 28px;
-  max-width: 700px;
-}
-
-.button {
-  display: inline-block;
-  background: linear-gradient(135deg, #ffe9a0, #c2942c);
-  color: #111;
-  font-weight: 700;
-  padding: 10px 28px;
-  border-radius: 30px;
-  margin: 6px;
-  transition: .3s;
-}
-
-.button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px #f4ce6455;
-}
-
-.button.outline {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-}
-
-/* INTRODUCTION */
-.story {
-  background: linear-gradient(135deg, #0c0e16, #131624);
-  border: 1px solid #f4ce6438;
-  border-radius: 20px;
-  padding: clamp(22px, 5vw, 45px);
-  box-shadow: 0 15px 50px #0005;
-}
-
-.story p {
-  color: var(--muted);
-  font-size: 19px;
-  margin: 10px 0;
-}
-
-.gold-text { color: var(--gold) !important; }
-
-/* PHOTO CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid #f4ce6435;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform .4s, box-shadow .4s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px #f4ce6422;
-}
-
-.card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
-  transition: transform .8s;
-  background: #222533;
-}
-
-.card:hover img { transform: scale(1.06); }
-
-.card-body { padding: 22px; }
-
-.card h3 {
-  color: var(--gold);
-  font-size: 23px;
-  margin-bottom: 8px;
-}
-
-.card p { color: var(--muted); }
-
-/* HIGHLIGHT */
-.highlight {
-  text-align: center;
-  background: linear-gradient(120deg, #211b0e, #101321);
-  border-top: 1px solid #f4ce6433;
-  border-bottom: 1px solid #f4ce6433;
-}
-
-.highlight h2 {
-  color: var(--gold);
-  font-size: clamp(28px, 5vw, 42px);
-}
-
-.highlight p {
-  max-width: 750px;
-  margin: 12px auto 0;
-  color: var(--muted);
-  font-size: 19px;
-}
-
-/* TIMELINE */
-.timeline {
-  max-width: 800px;
-  margin: auto;
-  border-right: 2px solid var(--gold);
-  padding-right: 25px;
-}
-
-.timeline-item {
-  background: var(--card);
-  border: 1px solid #f4ce6433;
-  border-radius: 14px;
-  padding: 22px;
-  margin-bottom: 25px;
-  position: relative;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  right: -33px;
-  top: 27px;
-  height: 13px;
-  width: 13px;
-  background: var(--gold);
-  border-radius: 50%;
-  box-shadow: 0 0 12px var(--gold);
-}
-
-.timeline-item h3 { color: var(--gold); }
-.timeline-item p { color: var(--muted); }
-
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid #f4ce6444;
-  transition: transform .5s, box-shadow .5s;
-}
-
-.gallery img:hover {
-  transform: scale(1.035);
-  box-shadow: 0 0 25px #f4ce6433;
-}
-
-.quote {
-  text-align: center;
-  padding: 35px;
-  border-radius: 20px;
-  border: 1px solid #f4ce6440;
-  background: linear-gradient(135deg, #171827, #10111a);
-  color: var(--gold);
-  font-size: clamp(20px, 3vw, 27px);
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .9s ease, transform .9s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer {
-  text-align: center;
-  background: #040509;
-  border-top: 1px solid #f4ce6435;
-  padding: 35px 5%;
-  color: var(--muted);
-}
-
-footer strong { color: var(--gold); }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(35px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media(max-width: 760px) {
-  .nav-inner { justify-content: center; }
-  .nav-links { justify-content: center; gap: 10px; }
-  .cards { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .gallery img { height: 190px; }
-  .card img { height: 280px; }
-  .logo {
-    width: 65px;
-    height: 65px;
-    top: 10px;
-    right: 10px;
+@media(max-width:760px){
+  .nav-inner{justify-content:center}
+  .nav-links{justify-content:center;gap:10px}
+  .cards{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery img{height:190px}
+  .card img{height:280px}
+  .muhajir-logo{
+    width:65px;height:65px;top:10px;right:10px;
   }
-  .logo-text { font-size: 9px; }
-  .logo-text small { font-size: 7px; }
-  .logo-ring { inset: -4px; }
-  .logo-ring.second { inset: -8px; }
+  .logo-name{font-size:9px}
+  .logo-name small{font-size:7px}
 }
-
-@media(prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-    scroll-behavior: auto !important;
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
   }
 }
 </style>
@@ -454,16 +386,13 @@ footer strong { color: var(--gold); }
 <body>
 
 <!-- Animated MUHAJIR Logo -->
-<div class="logo" aria-label="MUHAJIR logo">
+<div class="muhajir-logo" aria-label="MUHAJIR logo">
   <div class="logo-ring"></div>
-  <div class="logo-ring second"></div>
-  <div class="logo-text">
-    MUHAJIR
-    <small>OFFICIAL</small>
-  </div>
+  <div class="logo-ring-inner"></div>
+  <div class="logo-name">MUHAJIR<small>OFFICIAL</small></div>
 </div>
 
-<nav>
+<nav class="navbar">
   <div class="nav-inner">
     <a class="brand" href="#home">SHAIKH YOUSAF</a>
     <div class="nav-links">
@@ -472,6 +401,7 @@ footer strong { color: var(--gold); }
       <a href="#family">خاندان</a>
       <a href="#journey">سفر</a>
       <a href="#gallery">گیلری</a>
+      <a href="#social">سوشل میڈیا</a>
       <a href="#dua">دعا</a>
     </div>
   </div>
@@ -482,8 +412,8 @@ footer strong { color: var(--gold); }
     <div class="eyebrow">MY OFFICIAL STORY</div>
     <h1>SHAIKH <span>YOUSAF</span></h1>
     <p>سادگی، جدوجہد، خاندان، وفاداری اور خوابوں کا ایک خوبصورت سفر۔</p>
-    <a class="button" href="#story">میری کہانی پڑھیں</a>
-    <a class="button outline" href="#gallery">تصویری گیلری</a>
+    <a class="btn" href="#story">میری کہانی پڑھیں</a>
+    <a class="btn btn-outline" href="#gallery">تصویری گیلری</a>
   </div>
 </header>
 
@@ -491,7 +421,7 @@ footer strong { color: var(--gold); }
   <div class="container reveal">
     <h2 class="section-title">میری کہانی</h2>
     <p class="section-subtitle">ہر انسان کی زندگی ایک کہانی ہے، اور ہر کہانی میں کچھ خواب، کچھ سبق اور کچھ یادیں ہوتی ہیں۔</p>
-    <div class="story">
+    <div class="story-box">
       <p>خوش آمدید میری آفیشل ویب سائٹ پر۔ یہ جگہ میری زندگی، میرے سفر، میرے خاندان اور میری خوبصورت یادوں کے لیے ہے۔</p>
       <p>زندگی میں اصل کامیابی صرف منزل تک پہنچنا نہیں بلکہ اپنے اصولوں پر قائم رہنا، اپنے لوگوں کا احترام کرنا اور مشکل وقت میں حوصلہ نہ ہارنا ہے۔</p>
       <p class="gold-text">سادگی میری پہچان، وفاداری میرا اصول، اور امید میرا راستہ ہے۔</p>
@@ -505,23 +435,23 @@ footer strong { color: var(--gold); }
     <p class="section-subtitle">خاندان محبت، عزت اور زندگی کے سب سے قیمتی رشتوں کا نام ہے۔</p>
     <div class="cards">
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85" alt="Portrait" loading="lazy">
+        <img src="yousaf-8.jpg" alt="Shaikh Yousaf" loading="lazy">
         <div class="card-body">
           <h3>Shaikh Yousaf</h3>
           <p>زندگی کا سفر، خواب اور خوبصورت یادیں۔</p>
         </div>
       </article>
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=85" alt="Family memories" loading="lazy">
+        <img src="mudassir-5.jpg" alt="Mudassir" loading="lazy">
         <div class="card-body">
-          <h3>خاندانی یادیں</h3>
+          <h3>Mudassir</h3>
           <p>محبت، بھائی چارہ اور خاندانی تعلق۔</p>
         </div>
       </article>
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=85" alt="Life memories" loading="lazy">
+        <img src="ustad-7.jpg" alt="Ustad" loading="lazy">
         <div class="card-body">
-          <h3>رہنمائی</h3>
+          <h3>استاد محترم</h3>
           <p>علم، رہنمائی اور زندگی کے اہم اسباق۔</p>
         </div>
       </article>
@@ -529,7 +459,7 @@ footer strong { color: var(--gold); }
   </div>
 </section>
 
-<section class="highlight">
+<section class="feature">
   <div class="container reveal">
     <h2>اصول، عزت اور وفاداری</h2>
     <p>زندگی کی خوبصورتی مہنگی چیزوں میں نہیں، اچھے کردار، سچی محبت اور اپنے لوگوں کے ساتھ کھڑے رہنے میں ہے۔</p>
@@ -557,10 +487,10 @@ footer strong { color: var(--gold); }
   </div>
 </section>
 
-<section>
+<section id="letter">
   <div class="container reveal">
     <h2 class="section-title">دل کی بات</h2>
-    <div class="story">
+    <div class="story-box">
       <p>زندگی مختصر ہے، اس لیے محبت بانٹیں، رشتوں کی قدر کریں اور کسی کا دل نہ دکھائیں۔</p>
       <p>لوگ آپ کی دولت یا شہرت سے زیادہ آپ کے اخلاق اور رویے کو یاد رکھتے ہیں۔ ہمیشہ سچائی، عزت اور انسانیت کا راستہ اختیار کریں۔</p>
       <p class="gold-text">اچھا کردار وہ پہچان ہے جو وقت گزرنے کے بعد بھی باقی رہتی ہے۔</p>
@@ -571,11 +501,28 @@ footer strong { color: var(--gold); }
 <section id="gallery">
   <div class="container reveal">
     <h2 class="section-title">یادوں کی گیلری</h2>
-    <p class="section-subtitle">زندگی کے خوبصورت لمحات اور قیمتی یادیں۔</p>
+    <p class="section-subtitle">آپ کی اپنی تصاویر، انہی فائل ناموں کے ساتھ۔</p>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85" alt="یادگار تصویر 1" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=85" alt="یادگار تصویر 2" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=85" alt="یادگار تصویر 3" loading="lazy">
+      <img src="yousaf-8.jpg" alt="Shaikh Yousaf کی تصویر" loading="lazy">
+      <img src="mudassir-5.jpg" alt="Mudassir کی تصویر" loading="lazy">
+      <img src="ustad-7.jpg" alt="استاد محترم کی تصویر" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="social">
+  <div class="container reveal">
+    <h2 class="section-title">سوشل میڈیا</h2>
+    <p class="section-subtitle">اپنے اصل اکاؤنٹس کے لنکس نیچے شامل کریں۔</p>
+    <div class="social-area">
+      <h3>Connect With Me</h3>
+      <div class="social-icons">
+        <a class="social-icon" href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="social-icon" href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a class="social-icon" href="#" aria-label="YouTube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a class="social-icon" href="#" aria-label="TikTok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="social-icon" href="#" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
     </div>
   </div>
 </section>
@@ -583,9 +530,7 @@ footer strong { color: var(--gold); }
 <section id="dua">
   <div class="container reveal">
     <h2 class="section-title">ایک خوبصورت دعا</h2>
-    <div class="quote">
-      اللہ تعالیٰ سب کے لیے آسانیاں پیدا فرمائے، دلوں میں محبت، گھروں میں سکون اور زندگی میں برکت عطا فرمائے۔ آمین۔
-    </div>
+    <div class="quote">اللہ تعالیٰ سب کے لیے آسانیاں پیدا فرمائے، دلوں میں محبت، گھروں میں سکون اور زندگی میں برکت عطا فرمائے۔ آمین۔</div>
   </div>
 </section>
 
@@ -608,38 +553,18 @@ document.querySelectorAll(".reveal").forEach(element => {
   revealObserver.observe(element);
 });
 
-/* Smooth image reveal */
 document.querySelectorAll("img").forEach(img => {
-  img.style.opacity = "0";
-  img.style.transform = "scale(.97)";
-  img.style.transition = "opacity .8s ease, transform .8s ease";
-
-  const showImage = () => {
-    img.style.opacity = "1";
-    img.style.transform = "scale(1)";
-  };
-
-  if (img.complete && img.naturalWidth > 0) {
-    showImage();
-  } else {
-    img.addEventListener("load", showImage, { once: true });
-    img.addEventListener("error", () => {
-      img.style.opacity = "1";
-      img.style.transform = "scale(1)";
-      img.style.background = "#242735";
-    }, { once: true });
-  }
+  img.addEventListener("error", () => {
+    img.style.background = "#202433";
+    img.alt = img.alt + " — تصویر کی فائل چیک کریں";
+  });
 });
 
-document.querySelectorAll(".button").forEach(button => {
+document.querySelectorAll(".btn").forEach(button => {
   button.addEventListener("click", () => {
     button.animate(
-      [
-        { transform: "scale(1)" },
-        { transform: "scale(.96)" },
-        { transform: "scale(1)" }
-      ],
-      { duration: 220 }
+      [{transform:"scale(1)"},{transform:"scale(.96)"},{transform:"scale(1)"}],
+      {duration:220}
     );
   });
 });
