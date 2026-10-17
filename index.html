@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
@@ -12,20 +11,14 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:#080a0f;color:#fff;font-family:Cairo,sans-serif;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-
-header{
-position:sticky;top:0;z-index:100;padding:15px 5%;
-display:flex;align-items:center;justify-content:space-between;
-background:#080a0ff5;border-bottom:1px solid #dcae4d55
+body{
+background:#080a0f;color:#fff;font-family:Cairo,sans-serif;
+overflow-x:hidden
 }
-.brand{color:#e8bd63;font-size:21px;font-weight:900}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{font-size:13px}
-nav a:hover{color:#e8bd63}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
 
-/* WELCOME SCREEN */
+/* ================= WELCOME ================= */
 #welcomeIntro{
 position:fixed;inset:0;z-index:999999;
 display:flex;align-items:center;justify-content:center;
@@ -60,6 +53,7 @@ font-size:clamp(23px,5vw,32px);
 color:#fff;margin:16px 0;line-height:2
 }
 .intro-caption{font-size:11px;letter-spacing:3px;color:#c9c9c9}
+
 @keyframes introIn{
 from{opacity:0;transform:translateY(20px) scale(.94)}
 to{opacity:1;transform:translateY(0) scale(1)}
@@ -68,7 +62,18 @@ to{opacity:1;transform:translateY(0) scale(1)}
 to{opacity:0;visibility:hidden;pointer-events:none}
 }
 
-/* OFFICIAL LOGO */
+/* ================= HEADER ================= */
+header{
+position:sticky;top:0;z-index:100;padding:15px 5%;
+display:flex;align-items:center;justify-content:space-between;
+background:#080a0ff5;border-bottom:1px solid #dcae4d55
+}
+.brand{color:#e8bd63;font-size:21px;font-weight:900}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{font-size:13px}
+nav a:hover{color:#e8bd63}
+
+/* ================= FLOATING LOGO ================= */
 .logo{
 position:fixed;top:88px;right:14px;width:85px;height:85px;
 z-index:90;border-radius:50%;padding:4px;
@@ -78,116 +83,120 @@ animation:float 3s infinite ease-in-out
 }
 .logo-in{
 width:100%;height:100%;border-radius:50%;background:#0b0d12;
-border:2px dashed #e8bd63;display:flex;flex-direction:column;
-justify-content:center;align-items:center
+border:2px dashed #e8bd63;display:flex;
+flex-direction:column;justify-content:center;align-items:center
 }
 .logo-in b{color:#e8bd63;font-size:24px}
 .logo-in small{font-size:8px;color:#fff;letter-spacing:1px}
 @keyframes float{
-0%,100%{transform:translateY(0) rotate(0)}
-50%{transform:translateY(-8px) rotate(5deg)}
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
 }
 
-/* TELEGRAM */
+/* ================= SOCIAL BUTTONS ================= */
 .telegram-top{
 position:fixed;top:185px;right:14px;z-index:95;
 display:flex;flex-direction:column;align-items:center;gap:8px
 }
-.telegram-icon{
+.telegram-icon,.tiktok-icon{
 width:58px;height:58px;border-radius:50%;
 display:flex;align-items:center;justify-content:center;
-background:linear-gradient(135deg,#40c9ff,#087ee1);
-color:white;font-size:30px;box-shadow:0 0 18px #229ed966;
-border:2px solid #fff;transition:.3s
+color:white;font-size:29px;border:2px solid #fff;
+transition:.3s
 }
-.telegram-icon:hover,.tiktok-icon:hover{transform:scale(1.08)}
-.telegram-button{
-background:linear-gradient(120deg,#40c9ff,#087ee1);
+.telegram-icon{
+background:linear-gradient(135deg,#40c9ff,#087ee1);
+box-shadow:0 0 18px #229ed966
+}
+.telegram-button,.tiktok-button{
 color:white;padding:8px 12px;border-radius:20px;
-font-size:11px;font-weight:900;box-shadow:0 0 14px #229ed955;
+font-size:11px;font-weight:900;
 white-space:nowrap;transition:.3s
 }
+.telegram-button{background:linear-gradient(120deg,#40c9ff,#087ee1)}
 
-/* TIKTOK */
 .tiktok-top{
 position:fixed;top:300px;right:14px;z-index:95;
 display:flex;flex-direction:column;align-items:center;gap:8px
 }
 .tiktok-icon{
-width:58px;height:58px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
 background:linear-gradient(135deg,#25f4ee,#111,#fe2c55);
-color:white;font-size:27px;box-shadow:0 0 18px #fe2c5566;
-border:2px solid #fff;transition:.3s
+box-shadow:0 0 18px #fe2c5566
 }
 .tiktok-button{
-background:linear-gradient(120deg,#25f4ee,#111,#fe2c55);
-color:white;padding:8px 12px;border-radius:20px;
-font-size:11px;font-weight:900;box-shadow:0 0 14px #fe2c5555;
-white-space:nowrap;transition:.3s
+background:linear-gradient(120deg,#25f4ee,#111,#fe2c55)
+}
+.telegram-icon:hover,.tiktok-icon:hover{
+transform:scale(1.08)
 }
 
-/* LION IMAGE */
+/* ================= LION ================= */
 .lion-scene{
 position:fixed;left:0;top:100px;width:205px;height:300px;
 z-index:20;pointer-events:none;display:flex;
-align-items:center;justify-content:center;isolation:isolate
-}
-.lion-scene::before{
-content:"";position:absolute;inset:8%;border-radius:50%;
-background:radial-gradient(ellipse,rgba(232,189,99,.20) 0%,rgba(183,124,32,.09) 38%,transparent 72%);
-filter:blur(15px);animation:lionGlow 5s ease-in-out infinite;z-index:-1
-}
-.lion-scene::after{
-content:"";position:absolute;left:10px;top:12%;bottom:12%;
-width:2px;background:linear-gradient(transparent,#e8bd6377,transparent);opacity:.7
+align-items:center;justify-content:center
 }
 .lion-scene img{
-position:relative;width:100%;max-height:100%;height:auto;
+width:100%;max-height:100%;height:auto;
 object-fit:contain;display:block;
 filter:drop-shadow(0 0 12px rgba(232,189,99,.25));
-animation:lionMotion 5s ease-in-out infinite;transform-origin:center bottom
+animation:lionMotion 5s ease-in-out infinite
 }
 @keyframes lionMotion{
-0%,100%{transform:translate(0,0) rotate(0) scale(1)}
-25%{transform:translate(3px,-3px) rotate(-.4deg) scale(1.005)}
-50%{transform:translate(7px,0) rotate(.4deg) scale(1.01)}
-75%{transform:translate(3px,-2px) rotate(0) scale(1.005)}
-}
-@keyframes lionGlow{
-0%,100%{opacity:.55;transform:scale(.95)}
-50%{opacity:1;transform:scale(1.08)}
+0%,100%{transform:translate(0,0)}
+50%{transform:translate(7px,-3px)}
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
 position:relative;min-height:85vh;padding:55px 7%;
-display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px;
-background:radial-gradient(ellipse at left center,rgba(183,124,32,.10),transparent 40%),
-radial-gradient(circle at 20% 50%,#e8bd631b,transparent 35%),#0a0b10
+display:grid;grid-template-columns:1fr 1fr;
+align-items:center;gap:35px;
+background:
+radial-gradient(ellipse at left center,rgba(183,124,32,.10),transparent 40%),
+radial-gradient(circle at 20% 50%,#e8bd631b,transparent 35%),
+#0a0b10
 }
 .hero h1{
 font-family:"Noto Nastaliq Urdu",serif;
-font-size:clamp(32px,5vw,55px);line-height:2;padding-top:8px
+font-size:clamp(32px,5vw,55px);
+line-height:2;padding-top:8px
 }
 .hero h1 span,.title span{color:#e8bd63}
 .hero p{color:#ccc;line-height:2;margin:15px 0 25px}
 .hero-photo{text-align:center}
 .hero-photo img{
 width:min(90%,400px);height:450px;object-fit:cover;
-border:5px solid #e8bd63;border-radius:200px 200px 25px 25px;
+border:5px solid #e8bd63;
+border-radius:200px 200px 25px 25px;
 box-shadow:0 0 35px #e8bd6344
 }
+
+/* ================= BUTTONS ================= */
 .btn{
 display:inline-block;padding:12px 25px;border-radius:30px;
 background:linear-gradient(120deg,#ffe29a,#b77c20);
-color:#111;font-weight:900
+color:#111;font-weight:900;border:0
 }
+.btn-dark{
+display:inline-block;padding:12px 22px;border-radius:30px;
+background:#141720;color:#e8bd63;
+border:1px solid #e8bd63;font-weight:800;
+transition:.3s
+}
+.btn-dark:hover{
+background:#e8bd63;color:#111
+}
+
 section{padding:70px 7%}
 .title{text-align:center;margin-bottom:35px}
 .title h2{font-size:34px}
 .title p{color:#aaa;margin-top:8px}
-.video-section{background:linear-gradient(180deg,#080a0f,#11100c,#080a0f)}
+
+/* ================= VIDEOS ================= */
+.video-section{
+background:linear-gradient(180deg,#080a0f,#11100c,#080a0f)
+}
 .video-box{
 max-width:900px;margin:auto;padding:7px;border-radius:23px;
 background:linear-gradient(135deg,#fff0a9,#b77c20);
@@ -197,15 +206,22 @@ box-shadow:0 0 30px #e8bd6344
 width:100%;max-height:600px;display:block;
 border-radius:17px;background:#000
 }
+
+/* ================= ABOUT ================= */
 .about{
 max-width:900px;margin:auto;padding:30px;text-align:center;
 line-height:2.2;color:#ddd;background:#141720;
 border:1px solid #e8bd6333;border-radius:22px
 }
-.cards,.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* ================= CARDS ================= */
+.cards,.gallery{
+display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+}
 .card{
 background:#141720;padding:12px;border-radius:20px;
-border:1px solid #e8bd6333;text-align:center;transition:.3s
+border:1px solid #e8bd6333;text-align:center;
+transition:.3s
 }
 .card:hover{transform:translateY(-7px)}
 .card img,.gallery img{
@@ -213,225 +229,828 @@ width:100%;height:290px;object-fit:cover;border-radius:14px
 }
 .card h3{color:#e8bd63;margin:12px 0 5px}
 .card p{color:#aaa}
-.socials{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+
+/* ================= WEBSITE BUTTON ================= */
+.website-section{
+text-align:center;
+background:
+radial-gradient(circle at center,#e8bd6310,transparent 55%),
+#0b0d12
+}
+.website-box{
+max-width:700px;margin:auto;padding:35px 20px;
+border:1px solid #e8bd6355;border-radius:25px;
+background:#141720;
+box-shadow:0 0 25px #e8bd6315
+}
+.website-icon{
+width:80px;height:80px;margin:0 auto 15px;
+border-radius:50%;display:grid;place-items:center;
+font-size:35px;color:#111;
+background:linear-gradient(135deg,#fff0a9,#b77c20);
+box-shadow:0 0 25px #e8bd6344
+}
+.website-box h2{color:#e8bd63;margin-bottom:10px}
+.website-box p{color:#aaa;margin-bottom:20px;line-height:2}
+
+/* ================= REVIEWS ================= */
+.review-section{
+background:linear-gradient(180deg,#080a0f,#11100c,#080a0f)
+}
+.review-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+max-width:1050px;margin:auto
+}
+.review{
+background:#141720;border:1px solid #e8bd6333;
+border-radius:20px;padding:22px;text-align:center;
+transition:.3s
+}
+.review:hover{transform:translateY(-5px)}
+.review-avatar{
+width:55px;height:55px;margin:auto;border-radius:50%;
+display:grid;place-items:center;
+background:linear-gradient(135deg,#ffe29a,#b77c20);
+color:#111;font-weight:900;font-size:20px
+}
+.stars{color:#e8bd63;margin:12px 0}
+.review h3{font-size:16px;color:#fff}
+.review p{color:#aaa;line-height:1.9;font-size:13px;margin-top:8px}
+.sample-note{
+text-align:center;color:#777;font-size:11px;margin-top:20px
+}
+
+/* ================= GAMES ================= */
+.games-section{
+background:
+radial-gradient(circle at center,#e8bd6310,transparent 60%),
+#080a0f
+}
+.game-grid{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:22px;max-width:1100px;margin:auto
+}
+.game-card{
+background:#141720;border:1px solid #e8bd6344;
+border-radius:22px;padding:22px;text-align:center;
+box-shadow:0 0 20px #0005
+}
+.game-card h3{color:#e8bd63;margin-bottom:8px}
+.game-card p{font-size:12px;color:#aaa;margin-bottom:15px}
+
+/* TIC TAC TOE */
+.board{
+display:grid;grid-template-columns:repeat(3,65px);
+gap:5px;justify-content:center;margin:15px auto
+}
+.cell{
+width:65px;height:65px;border-radius:10px;
+border:1px solid #e8bd6355;background:#0b0d12;
+color:#e8bd63;font-size:28px;font-weight:900
+}
+.game-status{color:#ccc;font-size:13px;min-height:25px}
+
+/* NUMBER GAME */
+.number-input{
+width:100%;padding:12px;border-radius:12px;
+border:1px solid #e8bd6355;background:#080a0f;
+color:#fff;text-align:center;outline:none;margin-bottom:10px
+}
+.game-message{
+color:#ccc;font-size:13px;min-height:42px;
+line-height:1.8;margin:8px
+}
+
+/* RPS */
+.rps-buttons{
+display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
+margin:18px 0
+}
+.rps-btn{
+width:52px;height:52px;border-radius:50%;
+border:1px solid #e8bd6355;
+background:#0b0d12;color:#e8bd63;font-size:21px;
+transition:.3s
+}
+.rps-btn:hover{
+background:#e8bd63;color:#111;transform:scale(1.08)
+}
+
+/* ================= SOCIAL ================= */
+.socials{
+display:flex;justify-content:center;gap:15px;flex-wrap:wrap
+}
 .socials a{
 width:48px;height:48px;border:1px solid #e8bd6380;
 border-radius:50%;display:grid;place-items:center;
 color:#e8bd63;transition:.3s
 }
-.socials a:hover{background:#e8bd63;color:#111;transform:translateY(-4px)}
+.socials a:hover{
+background:#e8bd63;color:#111;transform:translateY(-4px)
+}
+
+/* ================= FOOTER ================= */
 footer{
-padding:28px;text-align:center;color:#999;background:#050609;
-border-top:1px solid #e8bd6333
+padding:28px;text-align:center;color:#999;
+background:#050609;border-top:1px solid #e8bd6333
 }
 footer span{color:#e8bd63}
 
+/* ================= MOBILE ================= */
 @media(max-width:750px){
 header{padding:12px 4%}
 .brand{font-size:15px}
 nav{gap:8px}
 nav a{font-size:10px}
-.logo{width:68px;height:68px;right:8px;top:82px}
+
+.logo{
+width:68px;height:68px;right:8px;top:82px
+}
 .logo-in b{font-size:19px}
 .logo-in small{font-size:6px}
+
 .telegram-top{top:165px;right:8px}
-.telegram-icon,.tiktok-icon{width:48px;height:48px;font-size:25px}
-.telegram-button,.tiktok-button{font-size:9px;padding:7px 9px}
+.telegram-icon,.tiktok-icon{
+width:48px;height:48px;font-size:25px
+}
+.telegram-button,.tiktok-button{
+font-size:9px;padding:7px 9px
+}
 .tiktok-top{top:275px;right:8px}
-.lion-scene{top:95px;left:0;width:112px;height:185px}
-.hero{grid-template-columns:1fr;text-align:center;padding:40px 6%}
+
+.lion-scene{
+top:95px;left:0;width:112px;height:185px
+}
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;padding:40px 6%
+}
 .hero h1{font-size:34px;line-height:2}
 .hero-photo img{height:370px}
-.cards,.gallery{grid-template-columns:1fr}
-section{padding:55px 6%}
+
+.cards,.gallery,.review-grid,.game-grid{
+grid-template-columns:1fr
 }
-@media(prefers-reduced-motion:reduce){
-.lion-scene,.lion-scene img,.lion-scene::before{animation:none}
+section{padding:55px 6%}
+
+.website-box{padding:28px 15px}
+.board{grid-template-columns:repeat(3,58px)}
+.cell{width:58px;height:58px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- WELCOME INTRO: only the requested name is changed -->
-<div id="welcomeIntro" aria-label="Welcome to Shaikh Yousaf Official">
-  <div class="intro-box">
-    <div class="intro-emblem">SY</div>
-    <div class="intro-kicker">WELCOME TO</div>
-    <h1 class="intro-name">SHAIKH YOUSAF</h1>
-    <div class="intro-divider"></div>
-    <div class="intro-built">Build by Muhajir Hacker</div>
-    <div class="intro-urdu">مہاجر ابو سفیان ملک</div>
-    <div class="intro-divider"></div>
-    <div class="intro-caption">✦ OFFICIAL WEBSITE ✦</div>
-  </div>
+<!-- ================= WELCOME ================= -->
+<div id="welcomeIntro">
+<div class="intro-box">
+<div class="intro-emblem">SY</div>
+<div class="intro-kicker">WELCOME TO</div>
+<h1 class="intro-name">SHAIKH YOUSAF</h1>
+<div class="intro-divider"></div>
+<div class="intro-built">Build by Muhajir Hacker</div>
+<div class="intro-urdu">مہاجر ابو سفیان ملک</div>
+<div class="intro-divider"></div>
+<div class="intro-caption">✦ OFFICIAL WEBSITE ✦</div>
+</div>
 </div>
 
+<!-- ================= HEADER ================= -->
 <header>
-  <div class="brand">SHAIKH YOUSAF</div>
-  <nav>
-    <a href="#home">ہوم</a>
-    <a href="#video">ویڈیوز</a>
-    <a href="#about">تعارف</a>
-    <a href="#family">تصاویر</a>
-    <a href="#contact">رابطہ</a>
-  </nav>
+<div class="brand">SHAIKH YOUSAF</div>
+<nav>
+<a href="#home">ہوم</a>
+<a href="#video">ویڈیوز</a>
+<a href="#about">تعارف</a>
+<a href="#family">تصاویر</a>
+<a href="#reviews">ریویوز</a>
+<a href="#games">گیمز</a>
+<a href="#contact">رابطہ</a>
+</nav>
 </header>
 
-<div class="lion-scene">
-  <img src="lion%20(1).png" alt="Royal Lion">
-</div>
-
-<div class="telegram-top">
-  <a class="telegram-icon" href="https://t.me/Mujairhacker" target="_blank" rel="noopener noreferrer" aria-label="Open Telegram">
-    <i class="fa-brands fa-telegram"></i>
-  </a>
-  <a class="telegram-button" href="https://t.me/Mujairhacker" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-telegram"></i> Contact Us
-  </a>
-</div>
-
-<div class="tiktok-top">
-  <a class="tiktok-icon" href="https://www.tiktok.com/@muhajir_0001" target="_blank" rel="noopener noreferrer" aria-label="Open TikTok">
-    <i class="fa-brands fa-tiktok"></i>
-  </a>
-  <a class="tiktok-button" href="https://www.tiktok.com/@muhajir_0001" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-tiktok"></i> Follow on TikTok
-  </a>
-</div>
-
+<!-- ================= LOGO ================= -->
 <div class="logo">
-  <div class="logo-in">
-    <b>SY</b>
-    <small>MUHAJIR</small>
-    <small>OFFICIAL</small>
-  </div>
+<div class="logo-in">
+<b>SY</b>
+<small>MUHAJIR</small>
+<small>OFFICIAL</small>
+</div>
 </div>
 
+<!-- ================= LION ================= -->
+<div class="lion-scene">
+<img src="lion%20(1).png" alt="Royal Lion">
+</div>
+
+<!-- ================= TELEGRAM ================= -->
+<div class="telegram-top">
+<a class="telegram-icon"
+href="https://t.me/Mujairhacker"
+target="_blank">
+<i class="fa-brands fa-telegram"></i>
+</a>
+<a class="telegram-button"
+href="https://t.me/Mujairhacker"
+target="_blank">
+<i class="fa-brands fa-telegram"></i> Contact Us
+</a>
+</div>
+
+<!-- ================= TIKTOK ================= -->
+<div class="tiktok-top">
+<a class="tiktok-icon"
+href="https://www.tiktok.com/@muhajir_0001"
+target="_blank">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+<a class="tiktok-button"
+href="https://www.tiktok.com/@muhajir_0001"
+target="_blank">
+<i class="fa-brands fa-tiktok"></i> Follow on TikTok
+</a>
+</div>
+
+<!-- ================= HERO ================= -->
 <section class="hero" id="home">
-  <div>
-    <p style="color:#e8bd63">✦ OFFICIAL WEBSITE ✦</p>
-    <h1>شیخ <span>یوسف</span><br>آفیشل پیج</h1>
-    <p>شیخ یوسف کے آفیشل پیج میں خوش آمدید۔ یہاں خوبصورت تصاویر، ویڈیوز اور یادگار لمحات دیکھیں۔</p>
-    <a class="btn" href="#video">ویڈیوز دیکھیں <i class="fa-solid fa-play"></i></a>
-  </div>
-  <div class="hero-photo">
-    <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-  </div>
+<div>
+<p style="color:#e8bd63">✦ OFFICIAL WEBSITE ✦</p>
+
+<h1>
+شیخ <span>یوسف</span><br>
+آفیشل پیج
+</h1>
+
+<p>
+شیخ یوسف کے آفیشل پیج میں خوش آمدید۔
+یہاں خوبصورت تصاویر، ویڈیوز اور یادگار لمحات دیکھیں۔
+</p>
+
+<a class="btn" href="#video">
+ویڈیوز دیکھیں <i class="fa-solid fa-play"></i>
+</a>
+</div>
+
+<div class="hero-photo">
+<img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+</div>
 </section>
 
+<!-- ================= VIDEOS ================= -->
 <section class="video-section" id="video">
-  <div class="title">
-    <h2>ہماری <span>ویڈیوز</span></h2>
-    <p>یادگار لمحات</p>
-  </div>
 
-  <div class="video-box">
-    <video controls playsinline preload="metadata">
-      <source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
-      آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
-    </video>
-  </div>
+<div class="title">
+<h2>ہماری <span>ویڈیوز</span></h2>
+<p>یادگار لمحات</p>
+</div>
 
-  <div style="height:35px"></div>
+<div class="video-box">
+<video controls playsinline preload="metadata">
+<source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
+آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
+</video>
+</div>
 
-  <div class="video-box">
-    <video controls playsinline preload="metadata">
-      <source src="foryoupage%20foryoupage.mp4" type="video/mp4">
-      آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
-    </video>
-  </div>
+<div style="height:35px"></div>
+
+<div class="video-box">
+<video controls playsinline preload="metadata">
+<source src="foryoupage%20foryoupage.mp4" type="video/mp4">
+آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
+</video>
+</div>
+
 </section>
 
+<!-- ================= ABOUT ================= -->
 <section id="about">
-  <div class="title">
-    <h2>میرا <span>تعارف</span></h2>
-  </div>
-  <div class="about">
-    شیخ یوسف کے آفیشل پیج میں خوش آمدید۔ یہ ویب سائٹ تصاویر، ویڈیوز اور خوبصورت یادوں کو محفوظ رکھنے کے لیے تیار کی گئی ہے۔
-    <br><strong style="color:#e8bd63">سادگی • عزت • خلوص</strong>
-  </div>
+
+<div class="title">
+<h2>میرا <span>تعارف</span></h2>
+</div>
+
+<div class="about">
+شیخ یوسف کے آفیشل پیج میں خوش آمدید۔
+یہ ویب سائٹ تصاویر، ویڈیوز اور خوبصورت یادوں کو محفوظ رکھنے کے لیے تیار کی گئی ہے۔
+
+<br><br>
+
+<strong style="color:#e8bd63">
+سادگی • عزت • خلوص
+</strong>
+</div>
+
 </section>
 
+<!-- ================= PEOPLE ================= -->
 <section id="family">
-  <div class="title">
-    <h2>اہم <span>شخصیات</span></h2>
-  </div>
-  <div class="cards">
-    <div class="card">
-      <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-      <h3>Shaikh Yousaf</h3>
-      <p>Official Profile</p>
-    </div>
-    <div class="card">
-      <img src="mudassir-5.jpg" alt="Mudassir">
-      <h3>Mudassir</h3>
-      <p>یادگار لمحات</p>
-    </div>
-    <div class="card">
-      <img src="ustad-7.jpg" alt="Ustad">
-      <h3>Ustad</h3>
-      <p>قابل احترام شخصیت</p>
-    </div>
-  </div>
+
+<div class="title">
+<h2>اہم <span>شخصیات</span></h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+<h3>Shaikh Yousaf</h3>
+<p>Official Profile</p>
+</div>
+
+<div class="card">
+<img src="mudassir-5.jpg" alt="Mudassir">
+<h3>Mudassir</h3>
+<p>یادگار لمحات</p>
+</div>
+
+<div class="card">
+<img src="ustad-7.jpg" alt="Ustad">
+<h3>Ustad</h3>
+<p>قابل احترام شخصیت</p>
+</div>
+
+</div>
 </section>
 
+<!-- ================= GALLERY ================= -->
 <section>
-  <div class="title">
-    <h2>تصاویر کی <span>گیلری</span></h2>
-  </div>
-  <div class="gallery">
-    <img src="yousaf-8.jpg" alt="Yousaf">
-    <img src="mudassir-5.jpg" alt="Mudassir">
-    <img src="ustad-7.jpg" alt="Ustad">
-  </div>
+
+<div class="title">
+<h2>تصاویر کی <span>گیلری</span></h2>
+</div>
+
+<div class="gallery">
+<img src="yousaf-8.jpg" alt="Yousaf">
+<img src="mudassir-5.jpg" alt="Mudassir">
+<img src="ustad-7.jpg" alt="Ustad">
+</div>
+
 </section>
 
+<!-- ================= WEBSITE LINK ================= -->
+<section class="website-section">
+
+<div class="website-box">
+
+<div class="website-icon">
+<i class="fa-solid fa-globe"></i>
+</div>
+
+<h2>OUR OFFICIAL WEBSITE</h2>
+
+<p>
+ہماری مکمل آفیشل ویب سائٹ یہاں کھولیں۔
+</p>
+
+<a
+class="btn"
+href="https://shaikhmuhajir12.github.io/Shaikh-yousaf-Official-3chak-ala/"
+target="_blank"
+>
+<i class="fa-solid fa-globe"></i>
+ OPEN WEBSITE
+</a>
+
+</div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="review-section" id="reviews">
+
+<div class="title">
+<h2>Comments & <span>Reviews</span></h2>
+<p>آپ کے لیے خوبصورت رائے کا سیکشن</p>
+</div>
+
+<div class="review-grid">
+
+<div class="review">
+<div class="review-avatar">A</div>
+<div class="stars">★★★★★</div>
+<h3>Ahmed</h3>
+<p>
+بہت خوبصورت اور پروفیشنل ویب سائٹ ہے۔
+ویڈیوز اور ڈیزائن بہت اچھا ہے۔
+</p>
+</div>
+
+<div class="review">
+<div class="review-avatar">M</div>
+<div class="stars">★★★★★</div>
+<h3>Muhammad</h3>
+<p>
+ویب سائٹ کا ڈیزائن بہت اچھا لگا۔
+خاص طور پر گیلری اور ویڈیوز کا سیکشن۔
+</p>
+</div>
+
+<div class="review">
+<div class="review-avatar">S</div>
+<div class="stars">★★★★★</div>
+<h3>Shahid</h3>
+<p>
+سادہ، خوبصورت اور استعمال کرنے میں آسان۔
+بہت اچھا کام کیا گیا ہے۔
+</p>
+</div>
+
+</div>
+
+<p class="sample-note">
+* اوپر دی گئی آراء نمونہ (Sample) Reviews ہیں۔
+</p>
+
+<div style="text-align:center;margin-top:25px">
+<a class="btn-dark" href="#contact">
+<i class="fa-regular fa-comment"></i>
+ Comment / Review
+</a>
+</div>
+
+</section>
+
+<!-- ================= GAMES ================= -->
+<section class="games-section" id="games">
+
+<div class="title">
+<h2>🎮 <span>Free Time Games</span></h2>
+<p>فارغ وقت میں آسان اور مزے دار گیمز کھیلیں</p>
+</div>
+
+<div class="game-grid">
+
+<!-- TIC TAC TOE -->
+<div class="game-card">
+
+<h3>⭕ Tic Tac Toe</h3>
+<p>کمپیوٹر کے خلاف کھیلیں</p>
+
+<div class="board" id="board"></div>
+
+<div class="game-status" id="tttStatus">
+آپ کی باری ہے — X
+</div>
+
+<br>
+
+<button class="btn-dark" onclick="resetTTT()">
+نئی گیم
+</button>
+
+</div>
+
+<!-- NUMBER GUESS -->
+<div class="game-card">
+
+<h3>🔢 Number Guess</h3>
+
+<p>
+1 سے 20 کے درمیان نمبر Guess کریں
+</p>
+
+<input
+id="guessInput"
+class="number-input"
+type="number"
+min="1"
+max="20"
+placeholder="نمبر لکھیں"
+>
+
+<button class="btn" onclick="checkGuess()">
+Guess
+</button>
+
+<div class="game-message" id="guessMessage">
+نمبر منتخب کیا گیا ہے۔
+</div>
+
+<button class="btn-dark" onclick="newGuessGame()">
+نئی گیم
+</button>
+
+</div>
+
+<!-- ROCK PAPER SCISSORS -->
+<div class="game-card">
+
+<h3>✊ Rock Paper Scissors</h3>
+
+<p>اپنی choice منتخب کریں</p>
+
+<div class="rps-buttons">
+
+<button class="rps-btn" onclick="playRPS('rock')">
+✊
+</button>
+
+<button class="rps-btn" onclick="playRPS('paper')">
+✋
+</button>
+
+<button class="rps-btn" onclick="playRPS('scissors')">
+✌️
+</button>
+
+</div>
+
+<div class="game-message" id="rpsMessage">
+گیم شروع کریں!
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ================= CONTACT ================= -->
 <section id="contact">
-  <div class="title">
-    <h2>سوشل <span>میڈیا</span></h2>
-    <p>Follow Official Accounts</p>
-  </div>
 
-  <div class="socials">
-    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://www.tiktok.com/@muhajir_0001" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-      <i class="fa-brands fa-tiktok"></i>
-    </a>
-    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://t.me/Mujairhacker" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-      <i class="fa-brands fa-telegram"></i>
-    </a>
-  </div>
+<div class="title">
+<h2>سوشل <span>میڈیا</span></h2>
+<p>Follow Official Accounts</p>
+</div>
 
-  <div style="text-align:center;margin-top:25px">
-    <a href="https://www.tiktok.com/@muhajir_0001" target="_blank" rel="noopener noreferrer" class="btn">
-      <i class="fa-brands fa-tiktok"></i> Follow Me on TikTok
-    </a>
-  </div>
+<div class="socials">
 
-  <div style="text-align:center;margin-top:18px">
-    <a href="https://t.me/Mujairhacker" target="_blank" rel="noopener noreferrer" class="btn">
-      <i class="fa-brands fa-telegram"></i> Contact Us on Telegram
-    </a>
-  </div>
+<a href="#" aria-label="Facebook">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#" aria-label="Instagram">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#" aria-label="YouTube">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+<a
+href="https://www.tiktok.com/@muhajir_0001"
+target="_blank">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
+<a href="#" aria-label="WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a
+href="https://t.me/Mujairhacker"
+target="_blank">
+<i class="fa-brands fa-telegram"></i>
+</a>
+
+</div>
+
+<div style="text-align:center;margin-top:25px">
+
+<a
+href="https://www.tiktok.com/@muhajir_0001"
+target="_blank"
+class="btn">
+<i class="fa-brands fa-tiktok"></i>
+Follow Me on TikTok
+</a>
+
+</div>
+
+<div style="text-align:center;margin-top:18px">
+
+<a
+href="https://t.me/Mujairhacker"
+target="_blank"
+class="btn">
+<i class="fa-brands fa-telegram"></i>
+Contact Us on Telegram
+</a>
+
+</div>
+
 </section>
 
 <footer>
-  © 2026 <span>Shaikh Yousaf Official</span> — All Rights Reserved
+© 2026 <span>Shaikh Yousaf Official</span> — All Rights Reserved
 </footer>
 
 <script>
-(function(){
-  const intro = document.getElementById('welcomeIntro');
-  if (!intro) return;
 
-  window.setTimeout(function(){
-    intro.remove();
-  }, 5000);
+/* ================= WELCOME 5 SECONDS ================= */
+(function(){
+const intro=document.getElementById("welcomeIntro");
+if(!intro)return;
+
+setTimeout(function(){
+intro.remove();
+},5000);
 })();
+
+
+/* ================= TIC TAC TOE ================= */
+
+let tttBoard=["","","","","","","","",""];
+let tttGameOver=false;
+
+const boardElement=document.getElementById("board");
+
+function drawBoard(){
+
+boardElement.innerHTML="";
+
+tttBoard.forEach(function(value,index){
+
+const button=document.createElement("button");
+
+button.className="cell";
+button.textContent=value;
+
+button.onclick=function(){
+playTTT(index);
+};
+
+boardElement.appendChild(button);
+
+});
+
+}
+
+function playTTT(index){
+
+if(tttBoard[index]!=="" || tttGameOver)return;
+
+tttBoard[index]="X";
+
+drawBoard();
+
+if(checkTTT("X")){
+document.getElementById("tttStatus").textContent="🎉 آپ جیت گئے!";
+tttGameOver=true;
+return;
+}
+
+if(tttBoard.every(x=>x!=="")){
+document.getElementById("tttStatus").textContent="🤝 گیم برابر!";
+tttGameOver=true;
+return;
+}
+
+document.getElementById("tttStatus").textContent="کمپیوٹر کی باری...";
+
+setTimeout(function(){
+
+let empty=[];
+
+tttBoard.forEach(function(x,i){
+if(x==="")empty.push(i);
+});
+
+if(empty.length){
+
+let move=empty[Math.floor(Math.random()*empty.length)];
+
+tttBoard[move]="O";
+
+drawBoard();
+
+if(checkTTT("O")){
+document.getElementById("tttStatus").textContent="😄 کمپیوٹر جیت گیا!";
+tttGameOver=true;
+return;
+}
+
+if(tttBoard.every(x=>x!=="")){
+document.getElementById("tttStatus").textContent="🤝 گیم برابر!";
+tttGameOver=true;
+return;
+}
+
+document.getElementById("tttStatus").textContent="آپ کی باری ہے — X";
+
+}
+
+},500);
+
+}
+
+function checkTTT(player){
+
+const wins=[
+[0,1,2],[3,4,5],[6,7,8],
+[0,3,6],[1,4,7],[2,5,8],
+[0,4,8],[2,4,6]
+];
+
+return wins.some(function(combo){
+
+return combo.every(function(i){
+return tttBoard[i]===player;
+});
+
+});
+
+}
+
+function resetTTT(){
+
+tttBoard=["","","","","","","","",""];
+tttGameOver=false;
+
+document.getElementById("tttStatus").textContent=
+"آپ کی باری ہے — X";
+
+drawBoard();
+
+}
+
+drawBoard();
+
+
+/* ================= NUMBER GUESS ================= */
+
+let secretNumber=Math.floor(Math.random()*20)+1;
+let guessAttempts=0;
+
+function checkGuess(){
+
+const input=document.getElementById("guessInput");
+const message=document.getElementById("guessMessage");
+
+const guess=Number(input.value);
+
+if(!guess || guess<1 || guess>20){
+
+message.textContent="⚠️ 1 سے 20 کے درمیان نمبر لکھیں۔";
+return;
+
+}
+
+guessAttempts++;
+
+if(guess===secretNumber){
+
+message.textContent=
+"🎉 شاباش! آپ نے صحیح نمبر Guess کر لیا۔ Attempts: "+guessAttempts;
+
+}else if(guess<secretNumber){
+
+message.textContent="⬆️ تھوڑا بڑا نمبر آزمائیں۔";
+
+}else{
+
+message.textContent="⬇️ تھوڑا چھوٹا نمبر آزمائیں۔";
+
+}
+
+}
+
+function newGuessGame(){
+
+secretNumber=Math.floor(Math.random()*20)+1;
+guessAttempts=0;
+
+document.getElementById("guessInput").value="";
+document.getElementById("guessMessage").textContent=
+"نئی گیم شروع! 1 سے 20 کے درمیان نمبر Guess کریں۔";
+
+}
+
+
+/* ================= ROCK PAPER SCISSORS ================= */
+
+function playRPS(player){
+
+const choices=["rock","paper","scissors"];
+
+const computer=
+choices[Math.floor(Math.random()*3)];
+
+let result="";
+
+if(player===computer){
+
+result="🤝 برابر! دونوں نے ایک جیسا انتخاب کیا۔";
+
+}else if(
+(player==="rock" && computer==="scissors") ||
+(player==="paper" && computer==="rock") ||
+(player==="scissors" && computer==="paper")
+){
+
+result="🎉 آپ جیت گئے!";
+
+}else{
+
+result="😄 کمپیوٹر جیت گیا!";
+
+}
+
+document.getElementById("rpsMessage").textContent=
+result+" Computer: "+computer;
+
+}
+
 </script>
 
 </body>
