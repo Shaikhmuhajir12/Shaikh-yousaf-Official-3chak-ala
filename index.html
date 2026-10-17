@@ -89,7 +89,7 @@ nav a:hover{
     color:#000;
 }
 
-/* FLOATING OFFICIAL LOGO */
+/* FLOATING MUHAJIR OFFICIAL LOGO */
 .floating-logo{
     position:fixed;
     left:12px;
@@ -97,22 +97,21 @@ nav a:hover{
     width:58px;
     height:58px;
     border-radius:50%;
-    background:linear-gradient(135deg,#d4af37,#8c6b18);
-    color:#000;
+    background:#111;
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
-    z-index:900;
-    box-shadow:0 0 15px rgba(212,175,55,.45);
-    font-weight:900;
-    border:2px solid #fff;
-    opacity:.92;
+    z-index:1000;
+    box-shadow:0 0 18px rgba(212,175,55,.45);
+    border:2px solid #d4af37;
+    overflow:hidden;
 }
 
-.floating-logo small{
-    font-size:7px;
-    line-height:1;
+.floating-logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
 }
 
 /* HERO */
@@ -152,7 +151,10 @@ nav a:hover{
 }
 
 .btn{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
     padding:12px 24px;
     margin:6px;
     border-radius:30px;
@@ -173,26 +175,12 @@ nav a:hover{
     border:1px solid #d4af37;
 }
 
-/* SOCIAL ICON BUTTONS */
-.social-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-}
-
+/* SOCIAL ICONS */
 .social-icon{
-    width:22px;
-    height:22px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.social-icon svg{
-    width:22px;
-    height:22px;
-    fill:currentColor;
+    width:23px;
+    height:23px;
+    display:inline-block;
+    flex-shrink:0;
 }
 
 /* TITLES */
@@ -605,10 +593,9 @@ footer strong{
     </div>
 </div>
 
-<!-- FLOATING OFFICIAL LOGO -->
+<!-- FLOATING MUHAJIR OFFICIAL LOGO -->
 <div class="floating-logo">
-    SY
-    <small>MUHAJIR</small>
+    <img src="lion%20(1).png" alt="Muhajir Official">
 </div>
 
 <!-- HEADER -->
@@ -841,7 +828,7 @@ footer strong{
     </div>
 </section>
 
-<!-- LION / OFFICIAL SYMBOL -->
+<!-- LION -->
 <section>
     <div class="container lion-box">
 
@@ -850,7 +837,7 @@ footer strong{
             <p>MUHAJIR OFFICIAL</p>
         </div>
 
-        <img src="lion%20(1).png" alt="Muhajir Official Lion Logo">
+        <img src="lion%20(1).png" alt="Official Lion Logo">
 
         <p style="margin-top:15px;color:#aaa;">
             ✦ MUHAJIR OFFICIAL ✦
@@ -1071,47 +1058,40 @@ footer strong{
                 <a
                 href="https://t.me/Mujairhacker"
                 target="_blank"
-                class="btn social-btn">
+                class="btn">
 
-                    <span class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M21.9 3.2 18.6 20c-.25 1.19-.91 1.48-1.84.92l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.41-.36-.09-.56-.64-.2L5.76 13.5.78 11.94c-1.08-.34-1.1-1.08.23-1.6L20.46 3c.89-.33 1.67.21 1.44.2z"/>
-                        </svg>
-                    </span>
+                <svg class="social-icon" viewBox="0 0 24 24" aria-label="Telegram">
+                    <path fill="currentColor"
+                    d="M21.4 3.1 2.9 10.2c-1.3.5-1.3 1.3-.2 1.7l4.7 1.5 1.8 5.7c.2.7.4.9.9.9.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.6.2 1.8-.9l3.1-14.9c.3-1.3-.5-1.9-1.6-1.4ZM8.1 13.1l10.9-6.9c.5-.3 1-.1.6.2l-8.8 7.9-.3 3.1-1.6-4.3-.8-.2Z"/>
+                </svg>
 
-                    Telegram
-
+                Telegram
                 </a>
 
                 <!-- TIKTOK -->
                 <a
                 href="https://www.tiktok.com/@muhajir_0001"
                 target="_blank"
-                class="btn social-btn">
+                class="btn">
 
-                    <span class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M16.6 5.82A4.92 4.92 0 0 0 19.5 8v2.73a7.5 7.5 0 0 1-2.9-.58v5.4a6.45 6.45 0 1 1-5.57-6.4v2.77a3.68 3.68 0 1 0 2.84 3.63V2h2.73a4.94 4.94 0 0 0 0 3.82z"/>
-                        </svg>
-                    </span>
+                <svg class="social-icon" viewBox="0 0 24 24" aria-label="TikTok">
+                    <path fill="currentColor"
+                    d="M15.5 3c.4 2.4 1.8 3.9 4.5 4.1v3.2c-1.5.1-3-.4-4.4-1.3v6.7c0 4.3-3.4 6.9-7 6.1-3.1-.7-4.8-4-3.5-6.9 1.3-3 4.9-4.2 7.5-2.4v3.3c-1.5-1.3-3.8-.8-4.2.9-.4 1.4.8 2.5 2.1 2.5 1.6 0 2.2-1.2 2.2-2.7V3h2.8Z"/>
+                </svg>
 
-                    TikTok
-
+                TikTok
                 </a>
 
                 <!-- WHATSAPP -->
                 <a
                 href="https://wa.me/"
                 target="_blank"
-                class="btn social-btn">
-
-                    <span class="social-icon">💬</span>
-                    WhatsApp
-
+                class="btn">
+                💬 WhatsApp
                 </a>
 
                 <a href="#reviews" class="btn dark">
-                    ⭐ Reviews
+                ⭐ Reviews
                 </a>
 
             </div>
@@ -1140,7 +1120,6 @@ footer strong{
 
 <script>
 
-/* WELCOME */
 setTimeout(function(){
 
     const welcome = document.getElementById("welcome");
