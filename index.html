@@ -3,1052 +3,1312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaikh Yousaf | Official</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Shaikh Yousaf | Official Website</title>
+
+<meta name="description" content="Shaikh Yousaf Official Website — زندگی، جدوجہد، خاندان، یادیں اور خواب">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
 body{
-background:#080a0f;color:#fff;font-family:Cairo,sans-serif;
-overflow-x:hidden
-}
-a{text-decoration:none;color:inherit}
-button{font-family:inherit;cursor:pointer}
-
-/* ================= WELCOME ================= */
-#welcomeIntro{
-position:fixed;inset:0;z-index:999999;
-display:flex;align-items:center;justify-content:center;
-padding:20px;text-align:center;
-background:radial-gradient(circle at center,#29200d 0%,#111 45%,#030303 100%);
-animation:introOut .8s ease 4.2s forwards
-}
-.intro-box{
-width:min(100%,480px);padding:35px 22px;
-border:1px solid #e8bd63;border-radius:24px;
-background:linear-gradient(145deg,#17140e,#08090d);
-box-shadow:0 0 35px #e8bd6344;
-animation:introIn 1s ease both
-}
-.intro-emblem{
-width:85px;height:85px;margin:0 auto 18px;
-border:3px double #e8bd63;border-radius:50%;
-display:grid;place-items:center;
-color:#e8bd63;font-size:35px;font-weight:900;
-box-shadow:0 0 25px #e8bd6344
-}
-.intro-kicker{color:#e8bd63;letter-spacing:5px;font-size:13px}
-.intro-name{font-size:clamp(25px,6vw,38px);margin:15px 0;color:#fff}
-.intro-divider{
-width:120px;height:2px;margin:18px auto;
-background:linear-gradient(90deg,transparent,#e8bd63,transparent)
-}
-.intro-built{font-size:16px;color:#e8bd63;font-weight:700}
-.intro-urdu{
-font-family:"Noto Nastaliq Urdu",serif;
-font-size:clamp(23px,5vw,32px);
-color:#fff;margin:16px 0;line-height:2
-}
-.intro-caption{font-size:11px;letter-spacing:3px;color:#c9c9c9}
-
-@keyframes introIn{
-from{opacity:0;transform:translateY(20px) scale(.94)}
-to{opacity:1;transform:translateY(0) scale(1)}
-}
-@keyframes introOut{
-to{opacity:0;visibility:hidden;pointer-events:none}
+    background:#050505;
+    color:#fff;
+    font-family:'Cairo',sans-serif;
+    line-height:1.8;
 }
 
-/* ================= HEADER ================= */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+section{
+    padding:75px 7%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HEADER */
 header{
-position:sticky;top:0;z-index:100;padding:15px 5%;
-display:flex;align-items:center;justify-content:space-between;
-background:#080a0ff5;border-bottom:1px solid #dcae4d55
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(0,0,0,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #c9a227;
+    padding:12px 5%;
 }
-.brand{color:#e8bd63;font-size:21px;font-weight:900}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{font-size:13px}
-nav a:hover{color:#e8bd63}
 
-/* ================= FLOATING LOGO ================= */
+.nav{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
 .logo{
-position:fixed;top:88px;right:14px;width:85px;height:85px;
-z-index:90;border-radius:50%;padding:4px;
-background:linear-gradient(135deg,#fff0a9,#b77c20,#fff0a9);
-box-shadow:0 0 22px #e8bd6366;
-animation:float 3s infinite ease-in-out
-}
-.logo-in{
-width:100%;height:100%;border-radius:50%;background:#0b0d12;
-border:2px dashed #e8bd63;display:flex;
-flex-direction:column;justify-content:center;align-items:center
-}
-.logo-in b{color:#e8bd63;font-size:24px}
-.logo-in small{font-size:8px;color:#fff;letter-spacing:1px}
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
+    color:#d4af37;
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:1px;
 }
 
-/* ================= SOCIAL BUTTONS ================= */
-.telegram-top{
-position:fixed;top:185px;right:14px;z-index:95;
-display:flex;flex-direction:column;align-items:center;gap:8px
-}
-.telegram-icon,.tiktok-icon{
-width:58px;height:58px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-color:white;font-size:29px;border:2px solid #fff;
-transition:.3s
-}
-.telegram-icon{
-background:linear-gradient(135deg,#40c9ff,#087ee1);
-box-shadow:0 0 18px #229ed966
-}
-.telegram-button,.tiktok-button{
-color:white;padding:8px 12px;border-radius:20px;
-font-size:11px;font-weight:900;
-white-space:nowrap;transition:.3s
-}
-.telegram-button{background:linear-gradient(120deg,#40c9ff,#087ee1)}
-
-.tiktok-top{
-position:fixed;top:300px;right:14px;z-index:95;
-display:flex;flex-direction:column;align-items:center;gap:8px
-}
-.tiktok-icon{
-background:linear-gradient(135deg,#25f4ee,#111,#fe2c55);
-box-shadow:0 0 18px #fe2c5566
-}
-.tiktok-button{
-background:linear-gradient(120deg,#25f4ee,#111,#fe2c55)
-}
-.telegram-icon:hover,.tiktok-icon:hover{
-transform:scale(1.08)
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
 }
 
-/* ================= LION ================= */
-.lion-scene{
-position:fixed;left:0;top:100px;width:205px;height:300px;
-z-index:20;pointer-events:none;display:flex;
-align-items:center;justify-content:center
-}
-.lion-scene img{
-width:100%;max-height:100%;height:auto;
-object-fit:contain;display:block;
-filter:drop-shadow(0 0 12px rgba(232,189,99,.25));
-animation:lionMotion 5s ease-in-out infinite
-}
-@keyframes lionMotion{
-0%,100%{transform:translate(0,0)}
-50%{transform:translate(7px,-3px)}
+nav a{
+    padding:7px 11px;
+    border-radius:20px;
+    color:#fff;
+    font-size:13px;
+    transition:.3s;
 }
 
-/* ================= HERO ================= */
+nav a:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+/* FLOATING LOGO */
+.floating-logo{
+    position:fixed;
+    left:15px;
+    bottom:18px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#d4af37,#8c6b18);
+    color:#000;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+    box-shadow:0 0 20px rgba(212,175,55,.55);
+    font-weight:900;
+    border:2px solid #fff;
+}
+
+.floating-logo small{
+    font-size:8px;
+    line-height:1;
+}
+
+/* HERO */
 .hero{
-position:relative;min-height:85vh;padding:55px 7%;
-display:grid;grid-template-columns:1fr 1fr;
-align-items:center;gap:35px;
-background:
-radial-gradient(ellipse at left center,rgba(183,124,32,.10),transparent 40%),
-radial-gradient(circle at 20% 50%,#e8bd631b,transparent 35%),
-#0a0b10
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.92)),
+    url("yousaf-8.jpg") center/cover;
 }
+
+.hero-content{
+    max-width:900px;
+}
+
 .hero h1{
-font-family:"Noto Nastaliq Urdu",serif;
-font-size:clamp(32px,5vw,55px);
-line-height:2;padding-top:8px
-}
-.hero h1 span,.title span{color:#e8bd63}
-.hero p{color:#ccc;line-height:2;margin:15px 0 25px}
-.hero-photo{text-align:center}
-.hero-photo img{
-width:min(90%,400px);height:450px;object-fit:cover;
-border:5px solid #e8bd63;
-border-radius:200px 200px 25px 25px;
-box-shadow:0 0 35px #e8bd6344
+    font-size:clamp(38px,8vw,82px);
+    color:#d4af37;
+    font-weight:900;
+    text-shadow:0 0 20px rgba(212,175,55,.25);
 }
 
-/* ================= BUTTONS ================= */
+.hero h2{
+    font-size:clamp(25px,5vw,50px);
+    margin:5px 0 15px;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+    margin-bottom:25px;
+}
+
 .btn{
-display:inline-block;padding:12px 25px;border-radius:30px;
-background:linear-gradient(120deg,#ffe29a,#b77c20);
-color:#111;font-weight:900;border:0
-}
-.btn-dark{
-display:inline-block;padding:12px 22px;border-radius:30px;
-background:#141720;color:#e8bd63;
-border:1px solid #e8bd63;font-weight:800;
-transition:.3s
-}
-.btn-dark:hover{
-background:#e8bd63;color:#111
+    display:inline-block;
+    padding:12px 24px;
+    margin:6px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#d4af37,#a47d17);
+    color:#000;
+    font-weight:800;
+    transition:.3s;
 }
 
-section{padding:70px 7%}
-.title{text-align:center;margin-bottom:35px}
-.title h2{font-size:34px}
-.title p{color:#aaa;margin-top:8px}
-
-/* ================= VIDEOS ================= */
-.video-section{
-background:linear-gradient(180deg,#080a0f,#11100c,#080a0f)
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 8px 25px rgba(212,175,55,.3);
 }
+
+.btn.dark{
+    background:#111;
+    color:#fff;
+    border:1px solid #d4af37;
+}
+
+/* TITLES */
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#d4af37;
+    font-size:34px;
+    font-weight:900;
+}
+
+.section-title p{
+    color:#aaa;
+}
+
+/* STORY */
+.story-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.story-card{
+    background:linear-gradient(145deg,#111,#080808);
+    border:1px solid #2b2411;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.story-card:hover{
+    transform:translateY(-7px);
+    border-color:#d4af37;
+    box-shadow:0 10px 30px rgba(212,175,55,.12);
+}
+
+.story-card .icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.story-card h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+/* IMAGE */
+.main-image{
+    width:100%;
+    max-width:700px;
+    display:block;
+    margin:0 auto 30px;
+    border-radius:25px;
+    border:2px solid #d4af37;
+    box-shadow:0 0 35px rgba(212,175,55,.15);
+}
+
+/* TIMELINE */
+.timeline{
+    max-width:850px;
+    margin:auto;
+    position:relative;
+}
+
+.timeline:before{
+    content:"";
+    position:absolute;
+    right:20px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#d4af37;
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 60px 30px 0;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    right:12px;
+    top:8px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#d4af37;
+    box-shadow:0 0 12px #d4af37;
+}
+
+.timeline-item h3{
+    color:#d4af37;
+}
+
+/* FAMILY */
+.family-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.family-card{
+    background:#0d0d0d;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid #28200d;
+}
+
+.family-card img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+}
+
+.family-card div{
+    padding:20px;
+}
+
+.family-card h3{
+    color:#d4af37;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:18px;
+    border:1px solid #d4af37;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* VIDEOS */
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
 .video-box{
-max-width:900px;margin:auto;padding:7px;border-radius:23px;
-background:linear-gradient(135deg,#fff0a9,#b77c20);
-box-shadow:0 0 30px #e8bd6344
+    background:#0c0c0c;
+    padding:12px;
+    border-radius:20px;
+    border:1px solid #2c230e;
 }
+
 .video-box video{
-width:100%;max-height:600px;display:block;
-border-radius:17px;background:#000
+    width:100%;
+    border-radius:14px;
+    display:block;
 }
 
-/* ================= ABOUT ================= */
-.about{
-max-width:900px;margin:auto;padding:30px;text-align:center;
-line-height:2.2;color:#ddd;background:#141720;
-border:1px solid #e8bd6333;border-radius:22px
+.video-box h3{
+    color:#d4af37;
+    padding:12px 5px 3px;
 }
 
-/* ================= CARDS ================= */
-.cards,.gallery{
-display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+/* LION */
+.lion-box{
+    text-align:center;
 }
-.card{
-background:#141720;padding:12px;border-radius:20px;
-border:1px solid #e8bd6333;text-align:center;
-transition:.3s
-}
-.card:hover{transform:translateY(-7px)}
-.card img,.gallery img{
-width:100%;height:290px;object-fit:cover;border-radius:14px
-}
-.card h3{color:#e8bd63;margin:12px 0 5px}
-.card p{color:#aaa}
 
-/* ================= WEBSITE BUTTON ================= */
-.website-section{
-text-align:center;
-background:
-radial-gradient(circle at center,#e8bd6310,transparent 55%),
-#0b0d12
+.lion-box img{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+    border-radius:50%;
+    border:2px solid #d4af37;
+    padding:8px;
+    background:#111;
 }
-.website-box{
-max-width:700px;margin:auto;padding:35px 20px;
-border:1px solid #e8bd6355;border-radius:25px;
-background:#141720;
-box-shadow:0 0 25px #e8bd6315
-}
-.website-icon{
-width:80px;height:80px;margin:0 auto 15px;
-border-radius:50%;display:grid;place-items:center;
-font-size:35px;color:#111;
-background:linear-gradient(135deg,#fff0a9,#b77c20);
-box-shadow:0 0 25px #e8bd6344
-}
-.website-box h2{color:#e8bd63;margin-bottom:10px}
-.website-box p{color:#aaa;margin-bottom:20px;line-height:2}
 
-/* ================= REVIEWS ================= */
-.review-section{
-background:linear-gradient(180deg,#080a0f,#11100c,#080a0f)
+/* LETTER */
+.letter{
+    max-width:850px;
+    margin:auto;
+    background:linear-gradient(145deg,#121212,#080808);
+    border:1px solid #d4af37;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
 }
+
+.urdu{
+    font-family:'Noto Nastaliq Urdu',serif;
+    font-size:21px;
+    line-height:2.4;
+}
+
+/* REVIEWS */
 .review-grid{
-display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-max-width:1050px;margin:auto
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
+
 .review{
-background:#141720;border:1px solid #e8bd6333;
-border-radius:20px;padding:22px;text-align:center;
-transition:.3s
-}
-.review:hover{transform:translateY(-5px)}
-.review-avatar{
-width:55px;height:55px;margin:auto;border-radius:50%;
-display:grid;place-items:center;
-background:linear-gradient(135deg,#ffe29a,#b77c20);
-color:#111;font-weight:900;font-size:20px
-}
-.stars{color:#e8bd63;margin:12px 0}
-.review h3{font-size:16px;color:#fff}
-.review p{color:#aaa;line-height:1.9;font-size:13px;margin-top:8px}
-.sample-note{
-text-align:center;color:#777;font-size:11px;margin-top:20px
+    background:#0d0d0d;
+    border:1px solid #29200d;
+    border-radius:20px;
+    padding:25px;
 }
 
-/* ================= GAMES ================= */
-.games-section{
-background:
-radial-gradient(circle at center,#e8bd6310,transparent 60%),
-#080a0f
-}
-.game-grid{
-display:grid;grid-template-columns:repeat(3,1fr);
-gap:22px;max-width:1100px;margin:auto
-}
-.game-card{
-background:#141720;border:1px solid #e8bd6344;
-border-radius:22px;padding:22px;text-align:center;
-box-shadow:0 0 20px #0005
-}
-.game-card h3{color:#e8bd63;margin-bottom:8px}
-.game-card p{font-size:12px;color:#aaa;margin-bottom:15px}
-
-/* TIC TAC TOE */
-.board{
-display:grid;grid-template-columns:repeat(3,65px);
-gap:5px;justify-content:center;margin:15px auto
-}
-.cell{
-width:65px;height:65px;border-radius:10px;
-border:1px solid #e8bd6355;background:#0b0d12;
-color:#e8bd63;font-size:28px;font-weight:900
-}
-.game-status{color:#ccc;font-size:13px;min-height:25px}
-
-/* NUMBER GAME */
-.number-input{
-width:100%;padding:12px;border-radius:12px;
-border:1px solid #e8bd6355;background:#080a0f;
-color:#fff;text-align:center;outline:none;margin-bottom:10px
-}
-.game-message{
-color:#ccc;font-size:13px;min-height:42px;
-line-height:1.8;margin:8px
+.stars{
+    color:#d4af37;
+    font-size:20px;
 }
 
-/* RPS */
-.rps-buttons{
-display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
-margin:18px 0
-}
-.rps-btn{
-width:52px;height:52px;border-radius:50%;
-border:1px solid #e8bd6355;
-background:#0b0d12;color:#e8bd63;font-size:21px;
-transition:.3s
-}
-.rps-btn:hover{
-background:#e8bd63;color:#111;transform:scale(1.08)
+.review h3{
+    color:#d4af37;
+    margin-top:8px;
 }
 
-/* ================= SOCIAL ================= */
+/* WEBSITE */
+.website-box{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    background:linear-gradient(145deg,#111,#070707);
+    border:1px solid #d4af37;
+    padding:40px 20px;
+    border-radius:25px;
+}
+
+.website-icon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+/* GAMES */
+.games-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.game{
+    background:#0e0e0e;
+    border:1px solid #2e250f;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+}
+
+.game h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.game button{
+    border:none;
+    background:#d4af37;
+    color:#000;
+    padding:9px 16px;
+    margin:4px;
+    border-radius:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.game input{
+    width:80%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #d4af37;
+    background:#111;
+    color:#fff;
+    text-align:center;
+    margin:8px;
+}
+
+.game-result{
+    min-height:30px;
+    color:#fff;
+    margin-top:10px;
+}
+
+/* CONTACT */
+.contact-box{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    background:#0c0c0c;
+    padding:35px 20px;
+    border-radius:25px;
+    border:1px solid #d4af37;
+}
+
 .socials{
-display:flex;justify-content:center;gap:15px;flex-wrap:wrap
-}
-.socials a{
-width:48px;height:48px;border:1px solid #e8bd6380;
-border-radius:50%;display:grid;place-items:center;
-color:#e8bd63;transition:.3s
-}
-.socials a:hover{
-background:#e8bd63;color:#111;transform:translateY(-4px)
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-top:20px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer{
-padding:28px;text-align:center;color:#999;
-background:#050609;border-top:1px solid #e8bd6333
-}
-footer span{color:#e8bd63}
-
-/* ================= MOBILE ================= */
-@media(max-width:750px){
-header{padding:12px 4%}
-.brand{font-size:15px}
-nav{gap:8px}
-nav a{font-size:10px}
-
-.logo{
-width:68px;height:68px;right:8px;top:82px
-}
-.logo-in b{font-size:19px}
-.logo-in small{font-size:6px}
-
-.telegram-top{top:165px;right:8px}
-.telegram-icon,.tiktok-icon{
-width:48px;height:48px;font-size:25px
-}
-.telegram-button,.tiktok-button{
-font-size:9px;padding:7px 9px
-}
-.tiktok-top{top:275px;right:8px}
-
-.lion-scene{
-top:95px;left:0;width:112px;height:185px
+    background:#000;
+    border-top:1px solid #2d240d;
+    padding:30px 15px;
+    text-align:center;
+    color:#888;
 }
 
-.hero{
-grid-template-columns:1fr;
-text-align:center;padding:40px 6%
+footer strong{
+    color:#d4af37;
 }
-.hero h1{font-size:34px;line-height:2}
-.hero-photo img{height:370px}
 
-.cards,.gallery,.review-grid,.game-grid{
-grid-template-columns:1fr
+/* WELCOME */
+#welcome{
+    position:fixed;
+    inset:0;
+    background:#030303;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    transition:opacity .8s;
 }
-section{padding:55px 6%}
 
-.website-box{padding:28px 15px}
-.board{grid-template-columns:repeat(3,58px)}
-.cell{width:58px;height:58px}
+.welcome-content{
+    animation:welcome 1.3s ease;
+}
+
+.welcome-content h1{
+    color:#d4af37;
+    font-size:clamp(35px,8vw,75px);
+}
+
+.welcome-content h2{
+    font-family:'Noto Nastaliq Urdu',serif;
+    font-size:28px;
+    margin:10px;
+}
+
+.welcome-content p{
+    color:#aaa;
+}
+
+@keyframes welcome{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@media(max-width:700px){
+    section{
+        padding:55px 5%;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        min-height:85vh;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .urdu{
+        font-size:18px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= WELCOME ================= -->
-<div id="welcomeIntro">
-<div class="intro-box">
-<div class="intro-emblem">SY</div>
-<div class="intro-kicker">WELCOME TO</div>
-<h1 class="intro-name">SHAIKH YOUSAF</h1>
-<div class="intro-divider"></div>
-<div class="intro-built">Build by Muhajir Hacker</div>
-<div class="intro-urdu">مہاجر ابو سفیان ملک</div>
-<div class="intro-divider"></div>
-<div class="intro-caption">✦ OFFICIAL WEBSITE ✦</div>
-</div>
+<!-- WELCOME SCREEN -->
+<div id="welcome">
+    <div class="welcome-content">
+        <h1>WELCOME TO</h1>
+        <h2>SHAIKH YOUSAF</h2>
+        <p>Build by Muhajir Hacker</p>
+        <p class="urdu">مہاجر ابو سفیان ملک</p>
+        <p>✦ OFFICIAL WEBSITE ✦</p>
+    </div>
 </div>
 
-<!-- ================= HEADER ================= -->
+<!-- FLOATING LOGO -->
+<div class="floating-logo">
+    SY
+    <small>MUHAJIR</small>
+</div>
+
+<!-- HEADER -->
 <header>
-<div class="brand">SHAIKH YOUSAF</div>
-<nav>
-<a href="#home">ہوم</a>
-<a href="#video">ویڈیوز</a>
-<a href="#about">تعارف</a>
-<a href="#family">تصاویر</a>
-<a href="#reviews">ریویوز</a>
-<a href="#games">گیمز</a>
-<a href="#contact">رابطہ</a>
-</nav>
+    <div class="nav">
+        <div class="logo">SHAIKH YOUSAF</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#story">زندگی</a>
+            <a href="#videos">Videos</a>
+            <a href="#family">Family</a>
+            <a href="#gallery">Photos</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#games">Games</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<!-- ================= LOGO ================= -->
-<div class="logo">
-<div class="logo-in">
-<b>SY</b>
-<small>MUHAJIR</small>
-<small>OFFICIAL</small>
-</div>
-</div>
-
-<!-- ================= LION ================= -->
-<div class="lion-scene">
-<img src="lion%20(1).png" alt="Royal Lion">
-</div>
-
-<!-- ================= TELEGRAM ================= -->
-<div class="telegram-top">
-<a class="telegram-icon"
-href="https://t.me/Mujairhacker"
-target="_blank">
-<i class="fa-brands fa-telegram"></i>
-</a>
-<a class="telegram-button"
-href="https://t.me/Mujairhacker"
-target="_blank">
-<i class="fa-brands fa-telegram"></i> Contact Us
-</a>
-</div>
-
-<!-- ================= TIKTOK ================= -->
-<div class="tiktok-top">
-<a class="tiktok-icon"
-href="https://www.tiktok.com/@muhajir_0001"
-target="_blank">
-<i class="fa-brands fa-tiktok"></i>
-</a>
-<a class="tiktok-button"
-href="https://www.tiktok.com/@muhajir_0001"
-target="_blank">
-<i class="fa-brands fa-tiktok"></i> Follow on TikTok
-</a>
-</div>
-
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero" id="home">
-<div>
-<p style="color:#e8bd63">✦ OFFICIAL WEBSITE ✦</p>
+    <div class="hero-content">
 
-<h1>
-شیخ <span>یوسف</span><br>
-آفیشل پیج
-</h1>
+        <h1>SHAIKH YOUSAF</h1>
 
-<p>
-شیخ یوسف کے آفیشل پیج میں خوش آمدید۔
-یہاں خوبصورت تصاویر، ویڈیوز اور یادگار لمحات دیکھیں۔
-</p>
+        <h2 class="urdu">ایک سادہ انسان، ایک خوبصورت داستان</h2>
 
-<a class="btn" href="#video">
-ویڈیوز دیکھیں <i class="fa-solid fa-play"></i>
-</a>
-</div>
+        <p>
+            زندگی، جدوجہد، خاندان، محبت، یادیں اور بہتر مستقبل کے خواب۔
+        </p>
 
-<div class="hero-photo">
-<img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-</div>
+        <a href="#story" class="btn">زندگی کی داستان</a>
+
+        <a href="#website" class="btn dark">🌐 Website</a>
+
+    </div>
 </section>
 
-<!-- ================= VIDEOS ================= -->
-<section class="video-section" id="video">
+<!-- LIFE STORY -->
+<section id="story">
+    <div class="container">
 
-<div class="title">
-<h2>ہماری <span>ویڈیوز</span></h2>
-<p>یادگار لمحات</p>
-</div>
+        <div class="section-title">
+            <h2>زندگی کی داستان</h2>
+            <p>زندگی کے سفر کی چند خوبصورت اور یادگار باتیں</p>
+        </div>
 
-<div class="video-box">
-<video controls playsinline preload="metadata">
-<source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
-آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
-</video>
-</div>
+        <img src="yousaf-8.jpg" class="main-image" alt="Shaikh Yousaf">
 
-<div style="height:35px"></div>
+        <div class="story-grid">
 
-<div class="video-box">
-<video controls playsinline preload="metadata">
-<source src="foryoupage%20foryoupage.mp4" type="video/mp4">
-آپ کا براؤزر ویڈیو کو سپورٹ نہیں کرتا۔
-</video>
-</div>
+            <div class="story-card">
+                <div class="icon">🏡</div>
+                <h3>گاؤں سے آغاز</h3>
+                <p>
+                    زندگی کا سفر سادگی، اپنے لوگوں اور اپنے گاؤں کی مٹی سے شروع ہوا۔
+                </p>
+            </div>
 
+            <div class="story-card">
+                <div class="icon">🤲</div>
+                <h3>والد کی محنت</h3>
+                <p>
+                    خاندان کے لیے محنت، قربانی اور ذمہ داری زندگی کا ایک اہم حصہ رہی۔
+                </p>
+            </div>
+
+            <div class="story-card">
+                <div class="icon">👨‍👦</div>
+                <h3>بھائی مدثر</h3>
+                <p>
+                    بھائی مدثر کے ساتھ رشتہ، محبت اور یادیں اس سفر کی خوبصورت داستان ہیں۔
+                </p>
+            </div>
+
+            <div class="story-card">
+                <div class="icon">🧵</div>
+                <h3>شیخ صغیر کے ساتھ</h3>
+                <p>
+                    محنت اور ہنر کے سفر میں شیخ صغیر کے ساتھ کام اور سیکھنے کا تجربہ بھی اہم رہا۔
+                </p>
+            </div>
+
+            <div class="story-card">
+                <div class="icon">🌅</div>
+                <h3>امید اور بہتر مستقبل</h3>
+                <p>
+                    مشکلات کے باوجود امید قائم ہے اور بہتر آنے والے کل کے لیے سفر جاری ہے۔
+                </p>
+            </div>
+
+        </div>
+
+        <div class="letter" style="margin-top:30px;">
+            <p class="urdu">
+                زندگی چاہے کتنی بھی مشکل ہو، انسان کو امید، محنت اور اپنے لوگوں کا ساتھ نہیں چھوڑنا چاہیے۔
+                ہر نیا دن ایک نئی امید لے کر آتا ہے۔
+            </p>
+        </div>
+
+    </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
-<section id="about">
-
-<div class="title">
-<h2>میرا <span>تعارف</span></h2>
-</div>
-
-<div class="about">
-شیخ یوسف کے آفیشل پیج میں خوش آمدید۔
-یہ ویب سائٹ تصاویر، ویڈیوز اور خوبصورت یادوں کو محفوظ رکھنے کے لیے تیار کی گئی ہے۔
-
-<br><br>
-
-<strong style="color:#e8bd63">
-سادگی • عزت • خلوص
-</strong>
-</div>
-
-</section>
-
-<!-- ================= PEOPLE ================= -->
-<section id="family">
-
-<div class="title">
-<h2>اہم <span>شخصیات</span></h2>
-</div>
-
-<div class="cards">
-
-<div class="card">
-<img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-<h3>Shaikh Yousaf</h3>
-<p>Official Profile</p>
-</div>
-
-<div class="card">
-<img src="mudassir-5.jpg" alt="Mudassir">
-<h3>Mudassir</h3>
-<p>یادگار لمحات</p>
-</div>
-
-<div class="card">
-<img src="ustad-7.jpg" alt="Ustad">
-<h3>Ustad</h3>
-<p>قابل احترام شخصیت</p>
-</div>
-
-</div>
-</section>
-
-<!-- ================= GALLERY ================= -->
+<!-- JOURNEY -->
 <section>
+    <div class="container">
 
-<div class="title">
-<h2>تصاویر کی <span>گیلری</span></h2>
-</div>
+        <div class="section-title">
+            <h2>زندگی کا سفر</h2>
+            <p>کچھ اہم مراحل</p>
+        </div>
 
-<div class="gallery">
-<img src="yousaf-8.jpg" alt="Yousaf">
-<img src="mudassir-5.jpg" alt="Mudassir">
-<img src="ustad-7.jpg" alt="Ustad">
-</div>
+        <div class="timeline">
 
+            <div class="timeline-item">
+                <h3>بچپن</h3>
+                <p>سادگی، خاندان اور اپنوں کے درمیان گزرا خوبصورت وقت۔</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>محنت کا آغاز</h3>
+                <p>زندگی کی ذمہ داریوں کو سمجھتے ہوئے محنت کا سفر شروع ہوا۔</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>مشکل وقت</h3>
+                <p>مشکلات آئیں مگر حوصلہ اور امید برقرار رہی۔</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>آج</h3>
+                <p>نئے خواب، نئی امید اور بہتر مستقبل کی طرف سفر جاری ہے۔</p>
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
-<!-- ================= WEBSITE LINK ================= -->
-<section class="website-section">
+<!-- VIDEOS -->
+<section id="videos">
+    <div class="container">
 
-<div class="website-box">
+        <div class="section-title">
+            <h2>Videos</h2>
+            <p>یادگار ویڈیوز</p>
+        </div>
 
-<div class="website-icon">
-<i class="fa-solid fa-globe"></i>
-</div>
+        <div class="video-grid">
 
-<h2>OUR OFFICIAL WEBSITE</h2>
+            <div class="video-box">
+                <video controls playsinline>
+                    <source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
+                    آپ کے browser میں video support نہیں ہے۔
+                </video>
+                <h3>Shaikh Yousaf — Official Video</h3>
+            </div>
 
-<p>
-ہماری مکمل آفیشل ویب سائٹ یہاں کھولیں۔
-</p>
+            <div class="video-box">
+                <video controls playsinline>
+                    <source src="foryoupage%20foryoupage.mp4" type="video/mp4">
+                    آپ کے browser میں video support نہیں ہے۔
+                </video>
+                <h3>Memories & Moments</h3>
+            </div>
 
-<a
-class="btn"
-href="https://shaikhmuhajir12.github.io/Shaikh-yousaf-Official-3chak-ala/"
-target="_blank"
->
-<i class="fa-solid fa-globe"></i>
- OPEN WEBSITE
-</a>
+        </div>
 
-</div>
+    </div>
 </section>
 
-<!-- ================= REVIEWS ================= -->
-<section class="review-section" id="reviews">
+<!-- FAMILY -->
+<section id="family">
+    <div class="container">
 
-<div class="title">
-<h2>Comments & <span>Reviews</span></h2>
-<p>آپ کے لیے خوبصورت رائے کا سیکشن</p>
-</div>
+        <div class="section-title">
+            <h2>Family & Important People</h2>
+            <p>زندگی کے اہم رشتے اور لوگ</p>
+        </div>
 
-<div class="review-grid">
+        <div class="family-grid">
 
-<div class="review">
-<div class="review-avatar">A</div>
-<div class="stars">★★★★★</div>
-<h3>Ahmed</h3>
-<p>
-بہت خوبصورت اور پروفیشنل ویب سائٹ ہے۔
-ویڈیوز اور ڈیزائن بہت اچھا ہے۔
-</p>
-</div>
+            <div class="family-card">
+                <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+                <div>
+                    <h3>Shaikh Yousaf</h3>
+                    <p>زندگی کی اس داستان کا مرکزی کردار۔</p>
+                </div>
+            </div>
 
-<div class="review">
-<div class="review-avatar">M</div>
-<div class="stars">★★★★★</div>
-<h3>Muhammad</h3>
-<p>
-ویب سائٹ کا ڈیزائن بہت اچھا لگا۔
-خاص طور پر گیلری اور ویڈیوز کا سیکشن۔
-</p>
-</div>
+            <div class="family-card">
+                <img src="mudassir-5.jpg" alt="Mudassir">
+                <div>
+                    <h3>Mudassir</h3>
+                    <p>بھائی، ساتھی اور خوبصورت یادوں کا حصہ۔</p>
+                </div>
+            </div>
 
-<div class="review">
-<div class="review-avatar">S</div>
-<div class="stars">★★★★★</div>
-<h3>Shahid</h3>
-<p>
-سادہ، خوبصورت اور استعمال کرنے میں آسان۔
-بہت اچھا کام کیا گیا ہے۔
-</p>
-</div>
+            <div class="family-card">
+                <img src="ustad-7.jpg" alt="Ustad">
+                <div>
+                    <h3>Ustad / Shaikh Sagheer</h3>
+                    <p>محنت اور ہنر کے سفر میں اہم شخصیت۔</p>
+                </div>
+            </div>
 
-</div>
+        </div>
 
-<p class="sample-note">
-* اوپر دی گئی آراء نمونہ (Sample) Reviews ہیں۔
-</p>
-
-<div style="text-align:center;margin-top:25px">
-<a class="btn-dark" href="#contact">
-<i class="fa-regular fa-comment"></i>
- Comment / Review
-</a>
-</div>
-
+    </div>
 </section>
 
-<!-- ================= GAMES ================= -->
-<section class="games-section" id="games">
+<!-- GALLERY -->
+<section id="gallery">
+    <div class="container">
 
-<div class="title">
-<h2>🎮 <span>Free Time Games</span></h2>
-<p>فارغ وقت میں آسان اور مزے دار گیمز کھیلیں</p>
-</div>
+        <div class="section-title">
+            <h2>Photo Gallery</h2>
+            <p>یادگار تصاویر</p>
+        </div>
 
-<div class="game-grid">
+        <div class="gallery">
 
-<!-- TIC TAC TOE -->
-<div class="game-card">
+            <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+            <img src="mudassir-5.jpg" alt="Mudassir">
+            <img src="ustad-7.jpg" alt="Ustad">
 
-<h3>⭕ Tic Tac Toe</h3>
-<p>کمپیوٹر کے خلاف کھیلیں</p>
+        </div>
 
-<div class="board" id="board"></div>
-
-<div class="game-status" id="tttStatus">
-آپ کی باری ہے — X
-</div>
-
-<br>
-
-<button class="btn-dark" onclick="resetTTT()">
-نئی گیم
-</button>
-
-</div>
-
-<!-- NUMBER GUESS -->
-<div class="game-card">
-
-<h3>🔢 Number Guess</h3>
-
-<p>
-1 سے 20 کے درمیان نمبر Guess کریں
-</p>
-
-<input
-id="guessInput"
-class="number-input"
-type="number"
-min="1"
-max="20"
-placeholder="نمبر لکھیں"
->
-
-<button class="btn" onclick="checkGuess()">
-Guess
-</button>
-
-<div class="game-message" id="guessMessage">
-نمبر منتخب کیا گیا ہے۔
-</div>
-
-<button class="btn-dark" onclick="newGuessGame()">
-نئی گیم
-</button>
-
-</div>
-
-<!-- ROCK PAPER SCISSORS -->
-<div class="game-card">
-
-<h3>✊ Rock Paper Scissors</h3>
-
-<p>اپنی choice منتخب کریں</p>
-
-<div class="rps-buttons">
-
-<button class="rps-btn" onclick="playRPS('rock')">
-✊
-</button>
-
-<button class="rps-btn" onclick="playRPS('paper')">
-✋
-</button>
-
-<button class="rps-btn" onclick="playRPS('scissors')">
-✌️
-</button>
-
-</div>
-
-<div class="game-message" id="rpsMessage">
-گیم شروع کریں!
-</div>
-
-</div>
-
-</div>
+    </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
+<!-- LION -->
+<section>
+    <div class="container lion-box">
+
+        <div class="section-title">
+            <h2>Official Symbol</h2>
+            <p>MUHAJIR OFFICIAL</p>
+        </div>
+
+        <img src="lion%20(1).png" alt="Official Lion Logo">
+
+        <p style="margin-top:15px;color:#aaa;">
+            ✦ MUHAJIR OFFICIAL ✦
+        </p>
+
+    </div>
+</section>
+
+<!-- WEBSITE BUTTON -->
+<section id="website">
+    <div class="container">
+
+        <div class="website-box">
+
+            <div class="website-icon">🌐</div>
+
+            <div class="section-title" style="margin-bottom:20px;">
+                <h2>Official Website</h2>
+                <p>Shaikh Yousaf Official Website</p>
+            </div>
+
+            <a
+                href="https://shaikhmuhajir12.github.io/Shaikh-yousaf-Official-3chak-ala/"
+                target="_blank"
+                class="btn">
+                🌐 WEBSITE OPEN کریں
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Comments & Reviews</h2>
+            <p>Website کے بارے میں خوبصورت تاثرات</p>
+        </div>
+
+        <div class="review-grid">
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <h3>Ahmed</h3>
+                <p>
+                    بہت خوبصورت اور سادہ website ہے۔ design کافی اچھا لگا۔
+                </p>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <h3>Muhammad</h3>
+                <p>
+                    زندگی کی داستان اور تصاویر بہت اچھی طرح پیش کی گئی ہیں۔
+                </p>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <h3>Shahid</h3>
+                <p>
+                    Videos اور gallery کا انداز اچھا ہے۔ website professional لگتی ہے۔
+                </p>
+            </div>
+
+        </div>
+
+        <div style="text-align:center;margin-top:25px;">
+            <a href="#contact" class="btn">💬 Comment / Review</a>
+        </div>
+
+        <p style="text-align:center;color:#777;font-size:12px;margin-top:15px;">
+            * اوپر دی گئی آراء نمونہ (Sample) Reviews ہیں۔
+        </p>
+
+    </div>
+</section>
+
+<!-- EASY GAMES -->
+<section id="games">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>🎮 Easy Games</h2>
+            <p>Free time کے لیے آسان اور چھوٹی چھوٹی games</p>
+        </div>
+
+        <div class="games-grid">
+
+            <!-- TIC TAC TOE -->
+            <div class="game">
+
+                <h3>⭕ Tic Tac Toe</h3>
+
+                <div id="board"
+                style="
+                display:grid;
+                grid-template-columns:repeat(3,60px);
+                justify-content:center;
+                gap:5px;
+                margin:15px auto;
+                ">
+                </div>
+
+                <button onclick="resetTic()">New Game</button>
+
+                <div id="ticResult" class="game-result">
+                    آپ کی باری ہے
+                </div>
+
+            </div>
+
+            <!-- NUMBER GUESS -->
+            <div class="game">
+
+                <h3>🔢 Number Guess</h3>
+
+                <p>1 سے 20 کے درمیان نمبر guess کریں</p>
+
+                <input
+                    type="number"
+                    id="guessInput"
+                    min="1"
+                    max="20"
+                    placeholder="نمبر لکھیں">
+
+                <br>
+
+                <button onclick="guessNumber()">Guess</button>
+
+                <div id="guessResult" class="game-result"></div>
+
+            </div>
+
+            <!-- ROCK PAPER -->
+            <div class="game">
+
+                <h3>✊ Rock Paper Scissors</h3>
+
+                <button onclick="rps('Rock')">✊ Rock</button>
+                <button onclick="rps('Paper')">✋ Paper</button>
+                <button onclick="rps('Scissors')">✌️ Scissors</button>
+
+                <div id="rpsResult" class="game-result"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- LETTER -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>ایک خاص پیغام</h2>
+        </div>
+
+        <div class="letter">
+
+            <p class="urdu">
+                انسان کی اصل پہچان اس کی نیت، اس کی محنت اور اس کا کردار ہے۔
+                راستہ کتنا ہی مشکل کیوں نہ ہو، امید کا دامن ہاتھ سے نہیں چھوڑنا چاہیے۔
+                اللہ بہتر مستقبل عطا فرمائے اور زندگی میں خوشیاں، سکون اور کامیابی دے۔
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- DUA -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>🤲 دعا</h2>
+        </div>
+
+        <div class="letter">
+
+            <p class="urdu">
+                یا اللہ! زندگی میں آسانیاں پیدا فرما،
+                رزق میں برکت عطا فرما،
+                والدین اور تمام اپنوں کو سلامت رکھ،
+                ہر مشکل کو آسان فرما
+                اور آنے والے کل کو آج سے بہتر بنا۔
+                آمین۔
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
+    <div class="container">
 
-<div class="title">
-<h2>سوشل <span>میڈیا</span></h2>
-<p>Follow Official Accounts</p>
-</div>
+        <div class="section-title">
+            <h2>Contact & Social</h2>
+            <p>ہم سے رابطہ کریں</p>
+        </div>
 
-<div class="socials">
+        <div class="contact-box">
 
-<a href="#" aria-label="Facebook">
-<i class="fa-brands fa-facebook-f"></i>
-</a>
+            <h3 style="color:#d4af37;">SHAIKH YOUSAF OFFICIAL</h3>
 
-<a href="#" aria-label="Instagram">
-<i class="fa-brands fa-instagram"></i>
-</a>
+            <p style="margin-top:10px;">
+                Website سے متعلق رائے، Comment یا رابطے کے لیے Social links استعمال کریں۔
+            </p>
 
-<a href="#" aria-label="YouTube">
-<i class="fa-brands fa-youtube"></i>
-</a>
+            <div class="socials">
 
-<a
-href="https://www.tiktok.com/@muhajir_0001"
-target="_blank">
-<i class="fa-brands fa-tiktok"></i>
-</a>
+                <a
+                href="https://t.me/Mujairhacker"
+                target="_blank"
+                class="btn">
+                ✈️ Telegram
+                </a>
 
-<a href="#" aria-label="WhatsApp">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
+                <a
+                href="https://www.tiktok.com/@muhajir_0001"
+                target="_blank"
+                class="btn">
+                🎵 TikTok
+                </a>
 
-<a
-href="https://t.me/Mujairhacker"
-target="_blank">
-<i class="fa-brands fa-telegram"></i>
-</a>
+                <a
+                href="https://wa.me/"
+                target="_blank"
+                class="btn">
+                💬 WhatsApp
+                </a>
 
-</div>
+                <a href="#reviews" class="btn dark">
+                ⭐ Reviews
+                </a>
 
-<div style="text-align:center;margin-top:25px">
+            </div>
 
-<a
-href="https://www.tiktok.com/@muhajir_0001"
-target="_blank"
-class="btn">
-<i class="fa-brands fa-tiktok"></i>
-Follow Me on TikTok
-</a>
+        </div>
 
-</div>
-
-<div style="text-align:center;margin-top:18px">
-
-<a
-href="https://t.me/Mujairhacker"
-target="_blank"
-class="btn">
-<i class="fa-brands fa-telegram"></i>
-Contact Us on Telegram
-</a>
-
-</div>
-
+    </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-© 2026 <span>Shaikh Yousaf Official</span> — All Rights Reserved
+
+    <p>
+        © 2026 <strong>Shaikh Yousaf Official</strong>
+    </p>
+
+    <p>
+        Build by Muhajir Hacker
+    </p>
+
+    <p style="margin-top:8px;color:#d4af37;">
+        ✦ مہاجر ابو سفیان ملک ✦
+    </p>
+
 </footer>
 
 <script>
 
-/* ================= WELCOME 5 SECONDS ================= */
-(function(){
-const intro=document.getElementById("welcomeIntro");
-if(!intro)return;
-
+/* WELCOME */
 setTimeout(function(){
-intro.remove();
+
+    const welcome = document.getElementById("welcome");
+
+    welcome.style.opacity = "0";
+
+    setTimeout(function(){
+        welcome.style.display = "none";
+    },800);
+
 },5000);
-})();
 
 
-/* ================= TIC TAC TOE ================= */
+/* TIC TAC TOE */
+let board = ["","","","","","","","",""];
+let player = "X";
+let gameOver = false;
 
-let tttBoard=["","","","","","","","",""];
-let tttGameOver=false;
-
-const boardElement=document.getElementById("board");
+const boardElement = document.getElementById("board");
 
 function drawBoard(){
 
-boardElement.innerHTML="";
+    boardElement.innerHTML = "";
 
-tttBoard.forEach(function(value,index){
+    board.forEach((value,index)=>{
 
-const button=document.createElement("button");
+        const cell = document.createElement("button");
 
-button.className="cell";
-button.textContent=value;
+        cell.style.width = "60px";
+        cell.style.height = "60px";
+        cell.style.fontSize = "25px";
+        cell.style.background = "#111";
+        cell.style.color = "#d4af37";
+        cell.style.border = "1px solid #d4af37";
+        cell.style.borderRadius = "8px";
+        cell.innerText = value;
 
-button.onclick=function(){
-playTTT(index);
-};
+        cell.onclick = function(){
+            playTic(index);
+        };
 
-boardElement.appendChild(button);
+        boardElement.appendChild(cell);
 
-});
-
+    });
 }
 
-function playTTT(index){
+function playTic(index){
 
-if(tttBoard[index]!=="" || tttGameOver)return;
+    if(board[index] !== "" || gameOver) return;
 
-tttBoard[index]="X";
+    board[index] = "X";
+
+    checkTic();
+
+    if(!gameOver){
+
+        setTimeout(function(){
+
+            let empty = [];
+
+            board.forEach((v,i)=>{
+                if(v === "") empty.push(i);
+            });
+
+            if(empty.length){
+
+                let random =
+                    empty[Math.floor(Math.random()*empty.length)];
+
+                board[random] = "O";
+
+                checkTic();
+                drawBoard();
+
+            }
+
+        },300);
+
+    }
+
+    drawBoard();
+}
+
+function checkTic(){
+
+    const wins = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ];
+
+    for(let w of wins){
+
+        if(
+            board[w[0]] &&
+            board[w[0]] === board[w[1]] &&
+            board[w[1]] === board[w[2]]
+        ){
+
+            gameOver = true;
+
+            document.getElementById("ticResult").innerText =
+                board[w[0]] === "X"
+                ? "🎉 آپ جیت گئے!"
+                : "🤖 Computer جیت گیا!";
+
+            return;
+        }
+    }
+
+    if(!board.includes("")){
+
+        gameOver = true;
+
+        document.getElementById("ticResult").innerText =
+            "🤝 Game Draw!";
+
+    }
+}
+
+function resetTic(){
+
+    board = ["","","","","","","","",""];
+
+    gameOver = false;
+
+    document.getElementById("ticResult").innerText =
+        "آپ کی باری ہے";
+
+    drawBoard();
+}
 
 drawBoard();
 
-if(checkTTT("X")){
-document.getElementById("tttStatus").textContent="🎉 آپ جیت گئے!";
-tttGameOver=true;
-return;
-}
 
-if(tttBoard.every(x=>x!=="")){
-document.getElementById("tttStatus").textContent="🤝 گیم برابر!";
-tttGameOver=true;
-return;
-}
+/* NUMBER GUESS */
 
-document.getElementById("tttStatus").textContent="کمپیوٹر کی باری...";
+let secretNumber =
+    Math.floor(Math.random()*20)+1;
 
-setTimeout(function(){
+function guessNumber(){
 
-let empty=[];
+    let guess =
+        Number(document.getElementById("guessInput").value);
 
-tttBoard.forEach(function(x,i){
-if(x==="")empty.push(i);
-});
+    let result =
+        document.getElementById("guessResult");
 
-if(empty.length){
+    if(!guess || guess < 1 || guess > 20){
 
-let move=empty[Math.floor(Math.random()*empty.length)];
+        result.innerText =
+            "1 سے 20 کے درمیان نمبر لکھیں۔";
 
-tttBoard[move]="O";
+        return;
+    }
 
-drawBoard();
+    if(guess === secretNumber){
 
-if(checkTTT("O")){
-document.getElementById("tttStatus").textContent="😄 کمپیوٹر جیت گیا!";
-tttGameOver=true;
-return;
-}
+        result.innerText =
+            "🎉 بالکل صحیح! آپ جیت گئے۔";
 
-if(tttBoard.every(x=>x!=="")){
-document.getElementById("tttStatus").textContent="🤝 گیم برابر!";
-tttGameOver=true;
-return;
-}
+        secretNumber =
+            Math.floor(Math.random()*20)+1;
 
-document.getElementById("tttStatus").textContent="آپ کی باری ہے — X";
+    }else if(guess < secretNumber){
 
-}
+        result.innerText =
+            "⬆️ تھوڑا بڑا نمبر try کریں۔";
 
-},500);
+    }else{
 
-}
+        result.innerText =
+            "⬇️ تھوڑا چھوٹا نمبر try کریں۔";
 
-function checkTTT(player){
-
-const wins=[
-[0,1,2],[3,4,5],[6,7,8],
-[0,3,6],[1,4,7],[2,5,8],
-[0,4,8],[2,4,6]
-];
-
-return wins.some(function(combo){
-
-return combo.every(function(i){
-return tttBoard[i]===player;
-});
-
-});
-
-}
-
-function resetTTT(){
-
-tttBoard=["","","","","","","","",""];
-tttGameOver=false;
-
-document.getElementById("tttStatus").textContent=
-"آپ کی باری ہے — X";
-
-drawBoard();
-
-}
-
-drawBoard();
-
-
-/* ================= NUMBER GUESS ================= */
-
-let secretNumber=Math.floor(Math.random()*20)+1;
-let guessAttempts=0;
-
-function checkGuess(){
-
-const input=document.getElementById("guessInput");
-const message=document.getElementById("guessMessage");
-
-const guess=Number(input.value);
-
-if(!guess || guess<1 || guess>20){
-
-message.textContent="⚠️ 1 سے 20 کے درمیان نمبر لکھیں۔";
-return;
-
-}
-
-guessAttempts++;
-
-if(guess===secretNumber){
-
-message.textContent=
-"🎉 شاباش! آپ نے صحیح نمبر Guess کر لیا۔ Attempts: "+guessAttempts;
-
-}else if(guess<secretNumber){
-
-message.textContent="⬆️ تھوڑا بڑا نمبر آزمائیں۔";
-
-}else{
-
-message.textContent="⬇️ تھوڑا چھوٹا نمبر آزمائیں۔";
-
-}
-
-}
-
-function newGuessGame(){
-
-secretNumber=Math.floor(Math.random()*20)+1;
-guessAttempts=0;
-
-document.getElementById("guessInput").value="";
-document.getElementById("guessMessage").textContent=
-"نئی گیم شروع! 1 سے 20 کے درمیان نمبر Guess کریں۔";
-
+    }
 }
 
 
-/* ================= ROCK PAPER SCISSORS ================= */
+/* ROCK PAPER SCISSORS */
 
-function playRPS(player){
+function rps(playerChoice){
 
-const choices=["rock","paper","scissors"];
+    const choices =
+        ["Rock","Paper","Scissors"];
 
-const computer=
-choices[Math.floor(Math.random()*3)];
+    const computer =
+        choices[Math.floor(Math.random()*3)];
 
-let result="";
+    let result = "";
 
-if(player===computer){
+    if(playerChoice === computer){
 
-result="🤝 برابر! دونوں نے ایک جیسا انتخاب کیا۔";
+        result = "🤝 Draw! Computer نے بھی " + computer + " چنا۔";
 
-}else if(
-(player==="rock" && computer==="scissors") ||
-(player==="paper" && computer==="rock") ||
-(player==="scissors" && computer==="paper")
-){
+    }else if(
 
-result="🎉 آپ جیت گئے!";
+        (playerChoice === "Rock" && computer === "Scissors") ||
+        (playerChoice === "Paper" && computer === "Rock") ||
+        (playerChoice === "Scissors" && computer === "Paper")
 
-}else{
+    ){
 
-result="😄 کمپیوٹر جیت گیا!";
+        result = "🎉 آپ جیت گئے! Computer نے " + computer + " چنا۔";
 
-}
+    }else{
 
-document.getElementById("rpsMessage").textContent=
-result+" Computer: "+computer;
+        result = "🤖 Computer جیت گیا! اس نے " + computer + " چنا۔";
 
+    }
+
+    document.getElementById("rpsResult").innerText =
+        result;
 }
 
 </script>
