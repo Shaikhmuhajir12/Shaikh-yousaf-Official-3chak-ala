@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -33,31 +33,101 @@ a{
     color:inherit;
 }
 
-section{
-    padding:80px 20px;
+img{
+    max-width:100%;
+    display:block;
 }
 
-.container{
-    max-width:1150px;
-    margin:auto;
+button{
+    font-family:inherit;
+}
+
+/* WELCOME SCREEN */
+#welcome{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:
+        radial-gradient(circle at center,#211900 0%,#090909 45%,#000 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transition:opacity 1s ease,visibility 1s ease;
+}
+
+#welcome.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.welcome-box{
+    padding:35px 20px;
+    animation:welcomeIn 1.2s ease;
+}
+
+.welcome-small{
+    color:#d6ad45;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+.welcome-title{
+    font-size:clamp(38px,8vw,85px);
+    font-weight:900;
+    color:#fff;
+    text-shadow:0 0 25px rgba(212,167,66,.45);
+}
+
+.welcome-sub{
+    margin-top:15px;
+    color:#d6ad45;
+    font-size:17px;
+    letter-spacing:2px;
+}
+
+.welcome-urdu{
+    margin-top:12px;
+    font-family:'Noto Nastaliq Urdu',serif;
+    font-size:25px;
+    color:#fff;
+}
+
+.welcome-line{
+    margin-top:22px;
+    color:#d6ad45;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+@keyframes welcomeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
 }
 
 /* HEADER */
-
 header{
     position:sticky;
     top:0;
-    z-index:9999;
+    z-index:1000;
     background:rgba(0,0,0,.94);
-    border-bottom:1px solid rgba(212,175,55,.35);
     backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(214,173,69,.3);
 }
 
-.navbar{
-    min-height:78px;
+.nav{
     max-width:1200px;
     margin:auto;
-    padding:10px 20px;
+    min-height:78px;
+    padding:10px 18px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -68,255 +138,201 @@ header{
     display:flex;
     align-items:center;
     gap:12px;
-    color:#d4af37;
-    font-weight:900;
-    font-size:22px;
-    letter-spacing:1px;
+    direction:ltr;
 }
 
-.side-logo{
-    width:65px;
-    height:65px;
+.brand img{
+    width:55px;
+    height:55px;
     object-fit:contain;
-    background:transparent;
-    border:0;
-    border-radius:0;
-    filter:drop-shadow(0 0 10px rgba(212,175,55,.6));
-    animation:logoGlow 3s infinite alternate;
+    filter:drop-shadow(0 0 10px rgba(214,173,69,.45));
 }
 
-@keyframes logoGlow{
-    from{
-        filter:drop-shadow(0 0 5px rgba(212,175,55,.35));
-    }
-    to{
-        filter:drop-shadow(0 0 18px rgba(212,175,55,.9));
-    }
+.brand-text{
+    font-size:22px;
+    font-weight:900;
+    color:#d6ad45;
+    letter-spacing:1px;
 }
 
 nav{
     display:flex;
-    gap:8px;
     flex-wrap:wrap;
     justify-content:center;
+    gap:8px;
 }
 
 nav a{
-    padding:8px 11px;
-    color:#eee;
+    padding:8px 12px;
+    color:#ddd;
     font-size:13px;
-    border-radius:20px;
+    font-weight:700;
+    border-radius:8px;
     transition:.3s;
 }
 
 nav a:hover{
     color:#000;
-    background:#d4af37;
+    background:#d6ad45;
 }
 
 /* SOCIAL */
-
 .side-social{
     position:fixed;
     top:90px;
     left:15px;
-    z-index:1000;
+    z-index:900;
     display:flex;
     flex-direction:column;
     gap:9px;
+    direction:ltr;
 }
 
-.side-social a{
+.social-btn{
     width:43px;
     height:43px;
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:50%;
+    font-size:19px;
+    font-weight:900;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.25);
     background:#111;
-    border:1px solid #d4af37;
-    font-size:18px;
+    box-shadow:0 5px 18px rgba(0,0,0,.5);
     transition:.3s;
 }
 
-.side-social a:hover{
+.social-btn:hover{
     transform:scale(1.1);
-    background:#d4af37;
-    color:#000;
-}
-
-/* WELCOME */
-
-#welcome{
-    position:fixed;
-    inset:0;
-    z-index:99999;
-    background:
-        radial-gradient(circle at center,rgba(212,175,55,.16),transparent 35%),
-        #000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    transition:opacity 1s,visibility 1s;
-}
-
-#welcome.hide{
-    opacity:0;
-    visibility:hidden;
-}
-
-.welcome-box{
-    padding:30px;
-}
-
-.welcome-small{
-    color:#d4af37;
-    font-size:18px;
-    letter-spacing:5px;
-    margin-bottom:10px;
-}
-
-.welcome-title{
-    font-size:clamp(38px,8vw,80px);
-    font-weight:900;
-    color:#d4af37;
-    text-shadow:0 0 30px rgba(212,175,55,.4);
-}
-
-.welcome-sub{
-    margin-top:15px;
-    color:#eee;
-    font-family:'Noto Nastaliq Urdu',serif;
-    font-size:21px;
-}
-
-.welcome-build{
-    margin-top:18px;
-    color:#aaa;
-    font-size:13px;
+    border-color:#d6ad45;
 }
 
 /* HERO */
-
 .hero{
-    min-height:calc(100vh - 78px);
+    min-height:88vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
+    padding:80px 20px;
     position:relative;
     overflow:hidden;
     background:
-        radial-gradient(circle at 50% 40%,rgba(212,175,55,.12),transparent 30%),
-        linear-gradient(180deg,#080808,#020202);
+        radial-gradient(circle at 50% 35%,rgba(214,173,69,.14),transparent 30%),
+        linear-gradient(180deg,#080808,#030303);
 }
 
 .hero:before,
 .hero:after{
     content:"";
     position:absolute;
+    border:1px solid rgba(214,173,69,.15);
     border-radius:50%;
-    border:1px solid rgba(212,175,55,.12);
+    pointer-events:none;
 }
 
 .hero:before{
     width:500px;
     height:500px;
-    animation:spin 20s linear infinite;
 }
 
 .hero:after{
-    width:750px;
-    height:750px;
-    animation:spin 30s linear infinite reverse;
-}
-
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
+    width:760px;
+    height:760px;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-    max-width:850px;
+    max-width:900px;
 }
 
-.hero-tag{
-    color:#d4af37;
+.hero-label{
+    color:#d6ad45;
     letter-spacing:5px;
-    font-weight:700;
+    font-weight:800;
+    font-size:14px;
     margin-bottom:15px;
 }
 
 .hero h1{
-    font-size:clamp(45px,9vw,100px);
+    font-size:clamp(42px,8vw,90px);
     line-height:1;
     font-weight:900;
-    color:#fff;
-    text-shadow:0 0 25px rgba(212,175,55,.22);
+    letter-spacing:2px;
+    margin-bottom:20px;
 }
 
 .hero h1 span{
-    color:#d4af37;
+    color:#d6ad45;
 }
 
 .hero p{
-    margin:25px auto;
-    max-width:700px;
-    color:#ccc;
+    color:#cfcfcf;
     font-size:18px;
+    line-height:1.9;
+    max-width:700px;
+    margin:auto;
+}
+
+.hero-urdu{
+    font-family:'Noto Nastaliq Urdu',serif;
+    font-size:25px;
+    color:#e7d39c;
+    margin-top:12px;
 }
 
 .btn{
     display:inline-block;
+    margin-top:28px;
     padding:13px 25px;
-    border-radius:30px;
-    background:#d4af37;
+    background:#d6ad45;
     color:#000;
-    font-weight:800;
-    margin:6px;
+    font-weight:900;
+    border-radius:8px;
     transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px) scale(1.03);
-    box-shadow:0 8px 30px rgba(212,175,55,.25);
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(214,173,69,.25);
 }
 
-.btn.dark{
-    background:#111;
-    color:#fff;
-    border:1px solid #d4af37;
+/* SECTIONS */
+section{
+    padding:80px 20px;
 }
 
-/* TITLES */
+.container{
+    width:min(1100px,100%);
+    margin:auto;
+}
 
 .section-title{
     text-align:center;
     margin-bottom:45px;
 }
 
-.section-title small{
-    color:#d4af37;
+.section-title .small{
+    color:#d6ad45;
+    font-size:13px;
+    font-weight:800;
     letter-spacing:4px;
-    font-weight:700;
 }
 
 .section-title h2{
-    font-size:clamp(30px,5vw,50px);
+    font-size:clamp(30px,5vw,48px);
     margin-top:8px;
 }
 
 .section-title p{
-    color:#aaa;
-    margin-top:8px;
+    color:#999;
+    margin-top:10px;
 }
 
 /* VIDEOS */
-
 .video-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -325,270 +341,338 @@ nav a:hover{
 
 .video-card{
     background:#0d0d0d;
-    border:1px solid rgba(212,175,55,.25);
-    border-radius:20px;
+    border:1px solid rgba(214,173,69,.25);
+    border-radius:18px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    box-shadow:0 12px 35px rgba(0,0,0,.35);
 }
 
 .video-card video{
     width:100%;
     display:block;
     background:#000;
+    max-height:550px;
 }
 
-.video-card .video-info{
-    padding:17px;
+.video-info{
+    padding:18px;
 }
 
 .video-info h3{
-    color:#d4af37;
+    color:#d6ad45;
+    margin-bottom:6px;
 }
 
 .video-info p{
     color:#aaa;
-    margin-top:5px;
+    font-size:14px;
 }
 
 /* ABOUT */
-
 .about{
-    background:#080808;
+    background:
+        linear-gradient(rgba(0,0,0,.88),rgba(0,0,0,.94)),
+        url('yousaf-8.jpg') center/cover fixed;
 }
 
 .about-box{
     max-width:900px;
     margin:auto;
-    background:linear-gradient(145deg,#111,#080808);
-    border:1px solid rgba(212,175,55,.25);
-    border-radius:25px;
+    background:rgba(8,8,8,.82);
+    border:1px solid rgba(214,173,69,.25);
+    border-radius:20px;
     padding:35px;
-    line-height:2.2;
-    text-align:center;
 }
 
 .about-box p{
     color:#ddd;
+    line-height:2.1;
+    font-size:17px;
+    margin-bottom:15px;
+}
+
+.urdu-text{
     font-family:'Noto Nastaliq Urdu',serif;
-    font-size:18px;
+    line-height:2.5!important;
 }
 
 /* PEOPLE */
-
-.people-grid,
-.photo-grid,
-.review-grid,
-.game-grid{
+.people-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:22px;
 }
 
-.person-card,
-.photo-card,
-.review-card,
-.game-card{
-    background:#0d0d0d;
-    border:1px solid rgba(212,175,55,.22);
-    border-radius:20px;
+.person-card{
+    background:#0c0c0c;
+    border:1px solid rgba(214,173,69,.22);
+    border-radius:18px;
     overflow:hidden;
     transition:.35s;
 }
 
-.person-card:hover,
-.photo-card:hover,
-.review-card:hover,
-.game-card:hover{
+.person-card:hover{
     transform:translateY(-7px);
-    border-color:#d4af37;
-    box-shadow:0 12px 35px rgba(212,175,55,.12);
+    border-color:#d6ad45;
 }
 
-.person-card img,
-.photo-card img{
+.person-card img{
     width:100%;
-    height:260px;
+    height:280px;
     object-fit:cover;
-    display:block;
 }
 
-.person-info,
-.review-card,
-.game-card{
+.person-info{
     padding:20px;
+    text-align:center;
 }
 
 .person-info h3{
-    color:#d4af37;
+    color:#d6ad45;
+    margin-bottom:8px;
 }
 
-.person-info p,
-.review-card p{
+.person-info p{
     color:#aaa;
-    margin-top:7px;
+    font-size:14px;
+    line-height:1.8;
 }
 
 /* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
 
-.photo-card img{
+.gallery img{
+    width:100%;
     height:280px;
+    object-fit:cover;
+    border-radius:15px;
+    border:1px solid rgba(214,173,69,.2);
+    transition:.35s;
 }
 
-/* OFFICIAL */
+.gallery img:hover{
+    transform:scale(1.025);
+    border-color:#d6ad45;
+}
 
-.official{
+/* LOGO SECTION */
+.symbol-box{
     text-align:center;
-    background:
-        radial-gradient(circle,rgba(212,175,55,.08),transparent 40%),
-        #050505;
 }
 
-.official-logo{
+.symbol-box img{
     width:150px;
     height:150px;
     object-fit:contain;
+    margin:0 auto 25px;
     border-radius:50%;
-    border:2px solid #d4af37;
-    padding:10px;
-    background:#0a0a0a;
-    box-shadow:0 0 35px rgba(212,175,55,.15);
-    margin-bottom:20px;
+    border:2px solid #d6ad45;
+    padding:12px;
+    background:#0b0b0b;
+    filter:drop-shadow(0 0 18px rgba(214,173,69,.3));
 }
 
-.official h2{
-    color:#d4af37;
-    font-size:40px;
+.symbol-box h3{
+    color:#d6ad45;
+    font-size:28px;
 }
 
 /* REVIEWS */
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review{
+    background:#0c0c0c;
+    border:1px solid rgba(214,173,69,.22);
+    padding:25px;
+    border-radius:16px;
+}
 
 .stars{
-    color:#d4af37;
+    color:#d6ad45;
     font-size:20px;
-    margin-bottom:8px;
+    margin-bottom:12px;
 }
 
-.review-card strong{
+.review p{
+    color:#ccc;
+    line-height:1.8;
+}
+
+.review strong{
     display:block;
+    color:#d6ad45;
     margin-top:15px;
-    color:#fff;
-}
-
-.sample{
-    font-size:11px;
-    color:#777;
 }
 
 /* GAMES */
+.games{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 
-.game-card{
+.game{
+    background:#0c0c0c;
+    border:1px solid rgba(214,173,69,.2);
+    border-radius:16px;
+    padding:22px;
     text-align:center;
 }
 
-.game-card h3{
-    color:#d4af37;
-    margin-bottom:8px;
+.game h3{
+    color:#d6ad45;
+    margin-bottom:15px;
 }
 
-.game-card button{
+.game input{
+    width:100%;
+    padding:11px;
+    border-radius:8px;
+    border:1px solid #444;
+    background:#050505;
+    color:#fff;
+    margin-bottom:10px;
+    outline:none;
+}
+
+.game button{
     border:0;
-    cursor:pointer;
+    background:#d6ad45;
+    color:#000;
+    font-weight:900;
     padding:10px 18px;
-    border-radius:20px;
-    background:#d4af37;
-    font-weight:800;
-    margin-top:10px;
+    border-radius:7px;
+    cursor:pointer;
+    margin:4px;
 }
 
 .game-result{
-    margin-top:10px;
-    color:#ddd;
     min-height:25px;
+    margin-top:12px;
+    color:#ddd;
+    font-size:14px;
 }
 
 /* CONTACT */
-
 .contact{
-    text-align:center;
     background:#080808;
 }
 
-.contact p{
-    color:#aaa;
-    margin:12px 0 20px;
+.contact-box{
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+    padding:40px 20px;
+    border:1px solid rgba(214,173,69,.25);
+    border-radius:20px;
 }
 
-.contact-links{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
+.contact-box h2{
+    color:#d6ad45;
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.contact-box p{
+    color:#aaa;
+    line-height:1.9;
 }
 
 /* FOOTER */
-
 footer{
-    border-top:1px solid rgba(212,175,55,.25);
+    border-top:1px solid rgba(214,173,69,.2);
+    background:#000;
     text-align:center;
     padding:35px 20px;
-    background:#000;
-}
-
-footer .gold{
-    color:#d4af37;
-    font-weight:800;
-}
-
-footer p{
     color:#777;
-    margin-top:6px;
+    line-height:2;
 }
 
-/* MUSIC HIDDEN */
+footer strong{
+    color:#d6ad45;
+}
 
+.footer-urdu{
+    font-family:'Noto Nastaliq Urdu',serif;
+    color:#aaa;
+    font-size:18px;
+}
+
+/* MUSIC */
 #bgMusic{
     display:none;
 }
 
-/* MOBILE */
-
+/* RESPONSIVE */
 @media(max-width:900px){
 
+    .nav{
+        flex-direction:column;
+        padding-bottom:12px;
+    }
+
     nav{
-        display:none;
+        gap:3px;
+    }
+
+    nav a{
+        font-size:11px;
+        padding:7px 8px;
     }
 
     .people-grid,
-    .review-grid,
-    .game-grid{
+    .reviews,
+    .games{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery{
         grid-template-columns:1fr 1fr;
     }
 }
 
-@media(max-width:700px){
-
-    .navbar{
-        min-height:65px;
-    }
-
-    .brand{
-        font-size:17px;
-    }
-
-    .side-logo{
-        width:48px;
-        height:48px;
-    }
+@media(max-width:650px){
 
     .side-social{
         top:auto;
         bottom:18px;
-        left:12px;
+        left:15px;
         flex-direction:row;
     }
 
-    .side-social a{
-        width:39px;
-        height:39px;
+    .social-btn{
+        width:40px;
+        height:40px;
+    }
+
+    .brand img{
+        width:48px;
+        height:48px;
+    }
+
+    .brand-text{
+        font-size:18px;
+    }
+
+    .hero{
+        min-height:78vh;
+        padding:60px 18px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:15px;
     }
 
     section{
@@ -597,23 +681,22 @@ footer p{
 
     .video-grid,
     .people-grid,
-    .photo-grid,
-    .review-grid,
-    .game-grid{
+    .reviews,
+    .games,
+    .gallery{
         grid-template-columns:1fr;
     }
 
-    .hero{
-        min-height:85vh;
+    .gallery img{
+        height:320px;
     }
 
     .about-box{
-        padding:22px;
+        padding:23px 18px;
     }
 
-    .official-logo{
-        width:125px;
-        height:125px;
+    .about-box p{
+        font-size:15px;
     }
 }
 </style>
@@ -622,690 +705,488 @@ footer p{
 <body>
 
 <!-- WELCOME -->
-
 <div id="welcome">
-
     <div class="welcome-box">
-
-        <div class="welcome-small">
-            WELCOME TO
-        </div>
-
-        <div class="welcome-title">
-            SHAIKH YOUSAF
-        </div>
-
-        <div class="welcome-sub">
-            ✦ آفیشل ویب سائٹ ✦
-        </div>
-
-        <div class="welcome-build">
-            Build by Muhajir Hacker<br>
-            مہاجر ابو سفیان ملک
-        </div>
-
+        <div class="welcome-small">WELCOME TO</div>
+        <div class="welcome-title">SHAIKH YOUSAF</div>
+        <div class="welcome-sub">Build by Muhajir Hacker</div>
+        <div class="welcome-urdu">مہاجر ابو سفیان ملک</div>
+        <div class="welcome-line">✦ OFFICIAL WEBSITE ✦</div>
     </div>
-
 </div>
 
-
-<!-- BACKGROUND SONG -->
-
+<!-- BACKGROUND MUSIC -->
 <audio id="bgMusic" autoplay loop preload="auto">
     <source src="background.mp3" type="audio/mpeg">
 </audio>
 
-
-<!-- SOCIAL -->
-
+<!-- SOCIAL LINKS -->
 <div class="side-social">
+    <a class="social-btn"
+       href="https://t.me/Mujairhacker"
+       target="_blank"
+       aria-label="Telegram">✈</a>
 
-    <a href="https://t.me/Mujairhacker" target="_blank">
-        ✈
-    </a>
-
-    <a href="https://www.tiktok.com/@muhajir_0001" target="_blank">
-        ♪
-    </a>
-
+    <a class="social-btn"
+       href="https://www.tiktok.com/@muhajir_0001"
+       target="_blank"
+       aria-label="TikTok">♪</a>
 </div>
-
 
 <!-- HEADER -->
-
 <header>
+    <div class="nav">
 
-<div class="navbar">
+        <a href="#home" class="brand">
+            <img src="lion%20(1).png" alt="Shaikh Yousaf Logo">
+            <div class="brand-text">SHAIkH YOUSAF</div>
+        </a>
 
-    <a href="#home" class="brand">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#videos">Videos</a>
+            <a href="#about">About</a>
+            <a href="#people">People</a>
+            <a href="#gallery">Photos</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#games">Games</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <img
-            src="lion%20(1).png"
-            class="side-logo"
-            alt="Shaikh Yousaf Logo"
-        >
-
-        <span>SHAIkH YOUSAF</span>
-
-    </a>
-
-    <nav>
-
-        <a href="#home">Home</a>
-        <a href="#videos">Videos</a>
-        <a href="#about">Story</a>
-        <a href="#people">People</a>
-        <a href="#photos">Photos</a>
-        <a href="#official">Official</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#games">Games</a>
-        <a href="#contact">Contact</a>
-
-    </nav>
-
-</div>
-
+    </div>
 </header>
 
-
 <!-- HERO -->
-
 <section class="hero" id="home">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-    <div class="hero-tag">
-        ✦ OFFICIAL WEBSITE ✦
+        <div class="hero-label">✦ OFFICIAL WEBSITE ✦</div>
+
+        <h1>
+            SHAIkH <span>YOUSAF</span>
+        </h1>
+
+        <p>
+            Welcome to the official website of Shaikh Yousaf.
+            Explore his story, memories, videos, photos and important moments.
+        </p>
+
+        <div class="hero-urdu">
+            سادگی، جدوجہد، خاندان اور خوابوں کی ایک خوبصورت داستان
+        </div>
+
+        <a href="#videos" class="btn">
+            EXPLORE WEBSITE
+        </a>
+
     </div>
 
-    <h1>
-        SHAIKH <span>YOUSAF</span>
-    </h1>
-
-    <p>
-        Welcome to the official website of Shaikh Yousaf.
-        Stories, memories, videos, photos and important moments.
-    </p>
-
-    <a href="#videos" class="btn">
-        EXPLORE VIDEOS
-    </a>
-
-    <a href="#about" class="btn dark">
-        READ STORY
-    </a>
-
-</div>
-
 </section>
-
 
 <!-- VIDEOS -->
-
 <section id="videos">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-title">
+        <div class="section-title">
+            <div class="small">WATCH</div>
+            <h2>Featured Videos</h2>
+            <p>Shaikh Yousaf کے منتخب ویڈیوز</p>
+        </div>
 
-    <small>WATCH</small>
+        <div class="video-grid">
 
-    <h2>Featured Videos</h2>
+            <div class="video-card">
 
-    <p>
-        منتخب ویڈیوز اور خوبصورت یادیں
-    </p>
+                <video controls playsinline preload="metadata">
+                    <source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4"
+                            type="video/mp4">
+                    Your browser does not support video.
+                </video>
 
-</div>
+                <div class="video-info">
+                    <h3>Shaikh Yousaf</h3>
+                    <p>Official featured video</p>
+                </div>
 
-<div class="video-grid">
+            </div>
 
-    <div class="video-card">
+            <div class="video-card">
 
-        <video controls playsinline preload="metadata">
+                <video controls playsinline preload="metadata">
+                    <source src="foryoupage%20foryoupage.mp4"
+                            type="video/mp4">
+                    Your browser does not support video.
+                </video>
 
-            <source
-                src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4"
-                type="video/mp4"
-            >
+                <div class="video-info">
+                    <h3>Special Moments</h3>
+                    <p>Memories and special moments</p>
+                </div>
 
-        </video>
-
-        <div class="video-info">
-
-            <h3>Featured Video</h3>
-
-            <p>
-                Shaikh Yousaf Official
-            </p>
+            </div>
 
         </div>
 
     </div>
-
-
-    <div class="video-card">
-
-        <video controls playsinline preload="metadata">
-
-            <source
-                src="foryoupage%20foryoupage.mp4"
-                type="video/mp4"
-            >
-
-        </video>
-
-        <div class="video-info">
-
-            <h3>Special Moments</h3>
-
-            <p>
-                Memories & Moments
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</div>
 
 </section>
-
 
 <!-- ABOUT -->
+<section id="about" class="about">
 
-<section class="about" id="about">
+    <div class="container">
 
-<div class="container">
+        <div class="section-title">
+            <div class="small">STORY</div>
+            <h2>About Shaikh Yousaf</h2>
+        </div>
 
-<div class="section-title">
+        <div class="about-box">
 
-    <small>OUR STORY</small>
+            <p>
+                Shaikh Yousaf کی یہ ویب سائٹ ان کی زندگی، شخصیت،
+                یادوں، جدوجہد اور اہم لوگوں کو ایک خوبصورت انداز میں
+                محفوظ کرنے کے لیے بنائی گئی ہے۔
+            </p>
 
-    <h2>Shaikh Yousaf</h2>
+            <p>
+                یہ ایک Official Digital Space ہے جہاں ان کے متعلق
+                تصاویر، ویڈیوز، کہانی اور خاص لمحات ایک جگہ دیکھے جا سکتے ہیں۔
+            </p>
 
-</div>
+            <p class="urdu-text">
+                ہر انسان کی زندگی ایک کہانی ہوتی ہے، اور کچھ یادیں
+                ہمیشہ دل کے قریب رہتی ہیں۔
+            </p>
 
-<div class="about-box">
+        </div>
 
-<p>
-یہ ویب سائٹ شیخ یوسف کی زندگی، یادوں، اہم لمحات،
-تصاویر اور ویڈیوز کو ایک خوبصورت اور منفرد انداز میں
-محفوظ کرنے کے لیے بنائی گئی ہے۔
-<br><br>
-سادگی، محبت، یادیں اور اپنے لوگوں کے ساتھ گزارے ہوئے
-خوبصورت لمحات اس ویب سائٹ کا خاص حصہ ہیں۔
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
 
 <!-- PEOPLE -->
-
 <section id="people">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-title">
+        <div class="section-title">
+            <div class="small">IMPORTANT PEOPLE</div>
+            <h2>Family & Memories</h2>
+            <p>اہم لوگ اور خوبصورت یادیں</p>
+        </div>
 
-    <small>IMPORTANT PEOPLE</small>
+        <div class="people-grid">
 
-    <h2>Family & People</h2>
+            <div class="person-card">
 
-    <p>
-        اہم شخصیات اور یادگار لمحات
-    </p>
+                <img src="yousaf-8.jpg"
+                     alt="Shaikh Yousaf">
 
-</div>
+                <div class="person-info">
+                    <h3>Shaikh Yousaf</h3>
+                    <p>
+                        The main personality of this official website.
+                    </p>
+                </div>
 
-<div class="people-grid">
+            </div>
 
-    <div class="person-card">
+            <div class="person-card">
 
-        <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+                <img src="mudassir-5.jpg"
+                     alt="Mudassir">
 
-        <div class="person-info">
+                <div class="person-info">
+                    <h3>Mudassir</h3>
+                    <p>
+                        A special person connected with memories and moments.
+                    </p>
+                </div>
 
-            <h3>Shaikh Yousaf</h3>
+            </div>
 
-            <p>
-                Official Profile
-            </p>
+            <div class="person-card">
+
+                <img src="ustad-7.jpg"
+                     alt="Ustad">
+
+                <div class="person-info">
+                    <h3>Ustad</h3>
+                    <p>
+                        Respect, guidance and important memories.
+                    </p>
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
+</section>
 
-    <div class="person-card">
+<!-- GALLERY -->
+<section id="gallery">
 
-        <img src="mudassir-5.jpg" alt="Mudassir">
+    <div class="container">
 
-        <div class="person-info">
+        <div class="section-title">
+            <div class="small">MEMORIES</div>
+            <h2>Photo Gallery</h2>
+            <p>Beautiful moments of Shaikh Yousaf</p>
+        </div>
 
-            <h3>Mudassir</h3>
+        <div class="gallery">
 
-            <p>
-                Important Person
-            </p>
+            <img src="yousaf-8.jpg"
+                 alt="Shaikh Yousaf Photo">
+
+            <img src="mudassir-5.jpg"
+                 alt="Memory Photo">
+
+            <img src="ustad-7.jpg"
+                 alt="Ustad Photo">
 
         </div>
 
     </div>
 
+</section>
 
-    <div class="person-card">
+<!-- OFFICIAL SYMBOL -->
+<section>
 
-        <img src="ustad-7.jpg" alt="Ustad">
+    <div class="container">
 
-        <div class="person-info">
+        <div class="section-title">
+            <div class="small">IDENTITY</div>
+            <h2>Official Symbol</h2>
+        </div>
 
-            <h3>Ustad</h3>
+        <div class="symbol-box">
 
-            <p>
-                Respect & Memories
-            </p>
+            <img src="lion%20(1).png"
+                 alt="Shaikh Yousaf Official Logo">
+
+            <h3>SHAIkH YOUSAF</h3>
 
         </div>
 
     </div>
 
-</div>
-
-</div>
-
 </section>
-
-
-<!-- PHOTOS -->
-
-<section id="photos">
-
-<div class="container">
-
-<div class="section-title">
-
-    <small>MEMORIES</small>
-
-    <h2>Photo Gallery</h2>
-
-    <p>
-        Beautiful memories
-    </p>
-
-</div>
-
-<div class="photo-grid">
-
-    <div class="photo-card">
-        <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
-    </div>
-
-    <div class="photo-card">
-        <img src="mudassir-5.jpg" alt="Mudassir">
-    </div>
-
-    <div class="photo-card">
-        <img src="ustad-7.jpg" alt="Ustad">
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- OFFICIAL -->
-
-<section class="official" id="official">
-
-<div class="container">
-
-<div class="section-title">
-
-    <small>OFFICIAL SYMBOL</small>
-
-    <h2>SHAIkH YOUSAF</h2>
-
-</div>
-
-<img
-    src="lion%20(1).png"
-    class="official-logo"
-    alt="Official Symbol"
->
-
-<p style="color:#aaa;margin:10px 0 20px;">
-    ✦ SHAIKH YOUSAF OFFICIAL WEBSITE ✦
-</p>
-
-<a
-    href="https://shaikhmuhajir12.github.io/Shaikh-yousaf-Official-3chak-ala/"
-    target="_blank"
-    class="btn"
->
-    OPEN OFFICIAL WEBSITE
-</a>
-
-</div>
-
-</section>
-
 
 <!-- REVIEWS -->
-
 <section id="reviews">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-title">
-
-    <small>FEEDBACK</small>
-
-    <h2>Reviews</h2>
-
-    <p>
-        لوگوں کی رائے
-    </p>
-
-</div>
-
-<div class="review-grid">
-
-    <div class="review-card">
-
-        <div class="stars">
-            ★★★★★
+        <div class="section-title">
+            <div class="small">REVIEWS</div>
+            <h2>People's Reviews</h2>
+            <p>Sample reviews</p>
         </div>
 
-        <p>
-            بہت خوبصورت اور پروفیشنل ویب سائٹ۔
-        </p>
+        <div class="reviews">
 
-        <strong>Visitor</strong>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>
+                    بہت خوبصورت اور شاندار ویب سائٹ۔
+                    معلومات اور ڈیزائن دونوں بہترین ہیں۔
+                </p>
+                <strong>— Visitor</strong>
+            </div>
 
-        <span class="sample">
-            Sample Review
-        </span>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>
+                    تصاویر اور ویڈیوز بہت اچھے انداز میں
+                    ایک جگہ موجود ہیں۔
+                </p>
+                <strong>— Friend</strong>
+            </div>
 
-    </div>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>
+                    سادہ، خوبصورت اور یادگار website۔
+                </p>
+                <strong>— Guest</strong>
+            </div>
 
-
-    <div class="review-card">
-
-        <div class="stars">
-            ★★★★★
         </div>
 
-        <p>
-            ڈیزائن بہت اچھا اور یادیں خوبصورت انداز میں محفوظ ہیں۔
-        </p>
-
-        <strong>Friend</strong>
-
-        <span class="sample">
-            Sample Review
-        </span>
-
     </div>
-
-
-    <div class="review-card">
-
-        <div class="stars">
-            ★★★★★
-        </div>
-
-        <p>
-            بہت زبردست اور منفرد ویب سائٹ۔
-        </p>
-
-        <strong>Guest</strong>
-
-        <span class="sample">
-            Sample Review
-        </span>
-
-    </div>
-
-</div>
-
-</div>
 
 </section>
-
 
 <!-- GAMES -->
-
 <section id="games">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-title">
+        <div class="section-title">
+            <div class="small">FUN ZONE</div>
+            <h2>Mini Games</h2>
+            <p>Enjoy some simple games</p>
+        </div>
 
-    <small>FUN ZONE</small>
+        <div class="games">
 
-    <h2>Mini Games</h2>
+            <!-- NUMBER GUESS -->
+            <div class="game">
 
-    <p>
-        تھوڑی تفریح بھی ضروری ہے
-    </p>
+                <h3>Number Guess</h3>
 
-</div>
+                <p style="color:#aaa;font-size:13px;margin-bottom:12px;">
+                    Guess a number from 1 to 20
+                </p>
 
-<div class="game-grid">
+                <input
+                    type="number"
+                    id="guessInput"
+                    min="1"
+                    max="20"
+                    placeholder="1 - 20">
 
+                <button onclick="checkGuess()">
+                    Guess
+                </button>
 
-    <!-- NUMBER GUESS -->
+                <div id="guessResult" class="game-result"></div>
 
-    <div class="game-card">
+            </div>
 
-        <h3>
-            Number Guess
-        </h3>
+            <!-- ROCK PAPER SCISSORS -->
+            <div class="game">
 
-        <p style="color:#aaa;">
-            1 سے 20 کے درمیان نمبر guess کریں
-        </p>
+                <h3>Rock Paper Scissors</h3>
 
-        <input
-            id="guessInput"
-            type="number"
-            min="1"
-            max="20"
-            style="margin-top:12px;padding:10px;border-radius:10px;border:1px solid #d4af37;background:#111;color:#fff;width:120px;"
-        >
+                <button onclick="playRPS('Rock')">
+                    Rock
+                </button>
 
-        <br>
+                <button onclick="playRPS('Paper')">
+                    Paper
+                </button>
 
-        <button onclick="guessNumber()">
-            Guess
-        </button>
+                <button onclick="playRPS('Scissors')">
+                    Scissors
+                </button>
 
-        <div id="guessResult" class="game-result"></div>
+                <div id="rpsResult" class="game-result"></div>
 
-    </div>
+            </div>
 
+            <!-- TIC TAC TOE -->
+            <div class="game">
 
-    <!-- ROCK PAPER SCISSORS -->
+                <h3>Tic Tac Toe</h3>
 
-    <div class="game-card">
+                <div id="tttBoard"
+                     style="
+                     display:grid;
+                     grid-template-columns:repeat(3,55px);
+                     gap:5px;
+                     justify-content:center;
+                     margin:10px auto;
+                     direction:ltr;
+                     ">
+                </div>
 
-        <h3>
-            Rock Paper Scissors
-        </h3>
+                <button onclick="resetTTT()">
+                    Restart
+                </button>
 
-        <p style="color:#aaa;">
-            اپنا انتخاب کریں
-        </p>
+                <div id="tttResult" class="game-result"></div>
 
-        <button onclick="playRPS('Rock')">
-            🪨
-        </button>
+            </div>
 
-        <button onclick="playRPS('Paper')">
-            📄
-        </button>
-
-        <button onclick="playRPS('Scissors')">
-            ✂️
-        </button>
-
-        <div id="rpsResult" class="game-result"></div>
-
-    </div>
-
-
-    <!-- TIC TAC TOE -->
-
-    <div class="game-card">
-
-        <h3>
-            Tic Tac Toe
-        </h3>
-
-        <p style="color:#aaa;">
-            X اور O کھیلیں
-        </p>
-
-        <button onclick="ticTacToe()">
-            Start Game
-        </button>
-
-        <div id="ticResult" class="game-result"></div>
+        </div>
 
     </div>
-
-</div>
-
-</div>
 
 </section>
-
 
 <!-- CONTACT -->
+<section id="contact" class="contact">
 
-<section class="contact" id="contact">
+    <div class="container">
 
-<div class="container">
+        <div class="contact-box">
 
-<div class="section-title">
+            <h2>CONTACT</h2>
 
-    <small>CONTACT</small>
+            <p>
+                For official website information and updates,
+                visit the official website.
+            </p>
 
-    <h2>Stay Connected</h2>
+            <a
+                href="https://shaikhmuhajir12.github.io/Shaikh-yousaf-Official-3chak-ala/"
+                target="_blank"
+                class="btn">
+                OFFICIAL WEBSITE
+            </a>
 
-</div>
+        </div>
 
-<p>
-Shaikh Yousaf Official Website
-</p>
-
-<div class="contact-links">
-
-    <a
-        href="https://t.me/Mujairhacker"
-        target="_blank"
-        class="btn"
-    >
-        TELEGRAM
-    </a>
-
-    <a
-        href="https://www.tiktok.com/@muhajir_0001"
-        target="_blank"
-        class="btn dark"
-    >
-        TIKTOK
-    </a>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-
 <!-- FOOTER -->
-
 <footer>
 
-<p class="gold">
-© 2026 Shaikh Yousaf Official | All Rights Reserved
-</p>
+    <div>
+        © 2026 <strong>Shaikh Yousaf Official</strong>
+        | All Rights Reserved
+    </div>
 
-<p>
-Build by Muhajir Hacker
-</p>
+    <div>
+        Build by <strong>Muhajir Hacker</strong>
+    </div>
 
-<p>
-مہاجر ابو سفیان ملک
-</p>
+    <div class="footer-urdu">
+        مہاجر ابو سفیان ملک
+    </div>
 
-<p class="gold">
-✦ SHAIKH YOUSAF OFFICIAL WEBSITE ✦
-</p>
+    <div style="color:#d6ad45;margin-top:8px;">
+        ✦ SHAIkH YOUSAF OFFICIAL WEBSITE ✦
+    </div>
 
 </footer>
 
-
-<!-- JAVASCRIPT -->
-
 <script>
 
-/* WELCOME */
+/* WELCOME SCREEN */
+setTimeout(function(){
+    const welcome = document.getElementById("welcome");
 
-window.addEventListener("load",function(){
-
-    setTimeout(function(){
-
-        document
-        .getElementById("welcome")
-        .classList.add("hide");
-
-    },4000);
-
-});
+    if(welcome){
+        welcome.classList.add("hide");
+    }
+},4000);
 
 
 /* BACKGROUND MUSIC */
-
-const bgMusic =
-    document.getElementById("bgMusic");
+const bgMusic = document.getElementById("bgMusic");
 
 bgMusic.volume = 0.55;
-
-
-/*
-   Website کھلتے ہی music چلانے کی کوشش
-*/
 
 window.addEventListener("load",function(){
 
     bgMusic.play().catch(function(){
 
-        console.log(
-            "Browser نے autoplay block کیا ہے."
-        );
+        console.log("Browser نے autoplay block کیا ہے.");
 
     });
 
 });
-
-
-/*
-   اگر mobile browser autoplay روک دے،
-   تو پہلی touch/click پر music خود چل جائے گا۔
-
-   کوئی Play button نہیں ہے۔
-*/
 
 function startMusic(){
 
@@ -1327,26 +1208,22 @@ document.addEventListener(
 );
 
 
-/* NUMBER GUESS */
-
-let secretNumber =
+/* NUMBER GUESS GAME */
+const secretNumber =
     Math.floor(Math.random() * 20) + 1;
 
-function guessNumber(){
+function checkGuess(){
 
     const input =
-        Number(
-            document.getElementById(
-                "guessInput"
-            ).value
-        );
+        document.getElementById("guessInput");
 
     const result =
-        document.getElementById(
-            "guessResult"
-        );
+        document.getElementById("guessResult");
 
-    if(input < 1 || input > 20){
+    const guess =
+        Number(input.value);
+
+    if(!guess || guess < 1 || guess > 20){
 
         result.textContent =
             "1 سے 20 کے درمیان نمبر لکھیں۔";
@@ -1354,27 +1231,20 @@ function guessNumber(){
         return;
     }
 
-    if(input === secretNumber){
+    if(guess === secretNumber){
 
         result.textContent =
-            "🎉 بالکل درست!";
+            "🎉 درست! آپ نے صحیح نمبر پکڑ لیا۔";
 
-        secretNumber =
-            Math.floor(Math.random() * 20) + 1;
-
-    }
-
-    else if(input < secretNumber){
+    }else if(guess < secretNumber){
 
         result.textContent =
-            "⬆️ اس سے بڑا نمبر ہے۔";
+            "⬆️ تھوڑا بڑا نمبر try کریں۔";
 
-    }
-
-    else{
+    }else{
 
         result.textContent =
-            "⬇️ اس سے چھوٹا نمبر ہے۔";
+            "⬇️ تھوڑا چھوٹا نمبر try کریں۔";
 
     }
 
@@ -1382,15 +1252,10 @@ function guessNumber(){
 
 
 /* ROCK PAPER SCISSORS */
-
-function playRPS(user){
+function playRPS(player){
 
     const choices =
-        [
-            "Rock",
-            "Paper",
-            "Scissors"
-        ];
+        ["Rock","Paper","Scissors"];
 
     const computer =
         choices[
@@ -1401,67 +1266,170 @@ function playRPS(user){
 
     let result = "";
 
-    if(user === computer){
+    if(player === computer){
 
         result = "🤝 Draw!";
 
-    }
+    }else if(
 
-    else if(
-
-        (user === "Rock" &&
-         computer === "Scissors") ||
-
-        (user === "Paper" &&
-         computer === "Rock") ||
-
-        (user === "Scissors" &&
-         computer === "Paper")
+        (player === "Rock" && computer === "Scissors") ||
+        (player === "Paper" && computer === "Rock") ||
+        (player === "Scissors" && computer === "Paper")
 
     ){
 
         result = "🎉 You Win!";
 
-    }
-
-    else{
+    }else{
 
         result = "😄 Computer Wins!";
 
     }
 
-    document.getElementById(
-        "rpsResult"
-    ).textContent =
-        "You: " + user +
+    document.getElementById("rpsResult").textContent =
+        "You: " + player +
         " | Computer: " + computer +
         " — " + result;
-
 }
 
 
 /* TIC TAC TOE */
+let tttBoard = [
+    "","","",
+    "","","",
+    "","",""
+];
 
-function ticTacToe(){
+let tttPlayer = "X";
+let tttGameOver = false;
 
-    const result =
-        document.getElementById(
-            "ticResult"
-        );
+function createTTT(){
 
-    const answer =
-        prompt("X یا O منتخب کریں:");
+    const board =
+        document.getElementById("tttBoard");
 
-    if(answer){
+    board.innerHTML = "";
 
-        result.textContent =
-            "🎮 آپ نے " +
-            answer.toUpperCase() +
-            " منتخب کیا۔";
+    tttBoard.forEach(function(cell,index){
+
+        const button =
+            document.createElement("button");
+
+        button.textContent = cell;
+
+        button.style.width = "55px";
+        button.style.height = "55px";
+        button.style.padding = "0";
+        button.style.margin = "0";
+        button.style.fontSize = "22px";
+        button.style.fontWeight = "900";
+        button.style.background = "#111";
+        button.style.color = "#d6ad45";
+        button.style.border = "1px solid #444";
+        button.style.borderRadius = "6px";
+        button.style.cursor = "pointer";
+
+        button.onclick = function(){
+
+            makeTTTMove(index);
+
+        };
+
+        board.appendChild(button);
+
+    });
+
+}
+
+function makeTTTMove(index){
+
+    if(tttBoard[index] !== "" || tttGameOver){
+
+        return;
 
     }
 
+    tttBoard[index] = tttPlayer;
+
+    createTTT();
+
+    if(checkTTTWinner()){
+
+        document.getElementById("tttResult").textContent =
+            "🎉 " + tttPlayer + " Wins!";
+
+        tttGameOver = true;
+
+        return;
+    }
+
+    if(tttBoard.every(cell => cell !== "")){
+
+        document.getElementById("tttResult").textContent =
+            "🤝 Draw!";
+
+        tttGameOver = true;
+
+        return;
+    }
+
+    tttPlayer =
+        tttPlayer === "X" ? "O" : "X";
+
 }
+
+function checkTTTWinner(){
+
+    const wins = [
+
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+
+        [0,4,8],
+        [2,4,6]
+
+    ];
+
+    return wins.some(function(combo){
+
+        const a = combo[0];
+        const b = combo[1];
+        const c = combo[2];
+
+        return (
+            tttBoard[a] !== "" &&
+            tttBoard[a] === tttBoard[b] &&
+            tttBoard[a] === tttBoard[c]
+        );
+
+    });
+
+}
+
+function resetTTT(){
+
+    tttBoard = [
+        "","","",
+        "","","",
+        "","",""
+    ];
+
+    tttPlayer = "X";
+
+    tttGameOver = false;
+
+    document.getElementById("tttResult").textContent = "";
+
+    createTTT();
+
+}
+
+createTTT();
 
 </script>
 
