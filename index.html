@@ -63,55 +63,108 @@ header{
     display:flex;
     align-items:center;
     gap:20px;
-    min-height:58px;
+    min-height:65px;
     position:relative;
+    justify-content:center;
 }
 
-/* SOCIAL SIDE */
+/* ================= TOP SOCIAL ================= */
+/* Telegram + TikTok name کے اوپر */
 
 .side-social{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
     display:flex;
     align-items:center;
-    gap:8px;
+    justify-content:center;
+    gap:9px;
     direction:ltr;
-    flex-shrink:0;
+    z-index:5;
 }
 
-.side-social a,
-.side-logo{
-    width:42px;
-    height:42px;
+.side-social a{
+    width:31px;
+    height:31px;
     border-radius:50%;
     background:#0b0b0b;
-    border:2px solid #d4af37;
+    border:1px solid #d4af37;
     display:flex;
     align-items:center;
     justify-content:center;
     box-shadow:
-        0 0 12px rgba(212,175,55,.25),
-        inset 0 0 10px rgba(212,175,55,.05);
+        0 0 8px rgba(212,175,55,.30),
+        0 0 15px rgba(212,175,55,.10);
     transition:.35s ease;
 }
 
 .side-social a:hover{
-    transform:translateY(-3px) scale(1.06);
+    transform:translateY(-2px) scale(1.08);
     background:#d4af37;
-    box-shadow:0 0 20px rgba(212,175,55,.55);
+    box-shadow:
+        0 0 12px #d4af37,
+        0 0 24px rgba(212,175,55,.55);
 }
 
 .side-social svg{
-    width:22px;
-    height:22px;
+    width:17px;
+    height:17px;
 }
 
+/* ================= LION + NAME ================= */
+
+.brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:16px;
+    direction:ltr;
+}
+
+/* Lion اب circle نہیں ہے */
 .side-logo{
-    overflow:hidden;
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+    border:none;
+    overflow:visible;
 }
 
 .side-logo img{
     width:100%;
     height:100%;
-    object-fit:cover;
+    object-fit:contain;
+
+    /* Premium shining outline */
+    filter:
+        drop-shadow(0 0 2px #fff1a8)
+        drop-shadow(0 0 6px #d4af37)
+        drop-shadow(0 0 13px rgba(212,175,55,.75));
+
+    animation:lionShine 2.8s ease-in-out infinite;
+}
+
+@keyframes lionShine{
+
+    0%,100%{
+        filter:
+            drop-shadow(0 0 2px #fff1a8)
+            drop-shadow(0 0 6px #d4af37)
+            drop-shadow(0 0 13px rgba(212,175,55,.55));
+    }
+
+    50%{
+        filter:
+            drop-shadow(0 0 4px #fff)
+            drop-shadow(0 0 10px #d4af37)
+            drop-shadow(0 0 24px rgba(212,175,55,.90));
+    }
+
 }
 
 .logo{
@@ -120,7 +173,9 @@ header{
     font-weight:900;
     letter-spacing:1px;
     white-space:nowrap;
-    margin-right:auto;
+    margin:0;
+    text-shadow:
+        0 0 8px rgba(212,175,55,.25);
 }
 
 /* NAV */
@@ -130,6 +185,8 @@ nav{
     flex-wrap:wrap;
     gap:7px;
     justify-content:center;
+    position:absolute;
+    right:0;
 }
 
 nav a{
@@ -161,8 +218,6 @@ nav a:hover{
     url("yousaf-8.jpg") center/cover;
 }
 
-/* animated gold glow */
-
 .hero:before{
     content:"";
     position:absolute;
@@ -190,8 +245,6 @@ nav a:hover{
     position:relative;
     z-index:2;
 }
-
-/* HIGH QUALITY TITLE */
 
 .hero h1{
     font-size:clamp(40px,8vw,86px);
@@ -246,8 +299,6 @@ nav a:hover{
     font-size:18px;
     margin-bottom:25px;
 }
-
-/* OFFICIAL TEXT */
 
 .official-line{
     display:inline-block;
@@ -731,38 +782,46 @@ footer strong{
     }
 
     .nav{
+        min-height:67px;
         display:flex;
-        flex-wrap:wrap;
         justify-content:center;
-        gap:8px;
-        padding-bottom:4px;
+        padding:0 85px;
     }
 
     .side-social{
-        order:1;
+        top:0;
+        left:50%;
+    }
+
+    .side-social a{
+        width:27px;
+        height:27px;
+    }
+
+    .side-social svg{
+        width:15px;
+        height:15px;
+    }
+
+    .brand{
+        margin-top:15px;
+        gap:7px;
+    }
+
+    .side-logo{
+        width:39px;
+        height:39px;
     }
 
     .logo{
-        order:2;
-        width:100%;
+        font-size:17px;
+        width:auto;
         text-align:center;
         margin:0;
-        font-size:19px;
     }
 
     nav{
         display:none;
-    }
-
-    .side-social a,
-    .side-logo{
-        width:38px;
-        height:38px;
-    }
-
-    .side-social svg{
-        width:19px;
-        height:19px;
     }
 
     .hero{
@@ -816,11 +875,9 @@ footer strong{
 
 <div class="nav">
 
-    <!-- SIDE SOCIAL ICONS -->
+    <!-- TELEGRAM + TIKTOK ABOVE SHAIkH YOUSAF -->
 
     <div class="side-social">
-
-        <!-- TELEGRAM -->
 
         <a
         href="https://t.me/Mujairhacker"
@@ -835,8 +892,6 @@ footer strong{
 
         </a>
 
-        <!-- TIKTOK -->
-
         <a
         href="https://www.tiktok.com/@muhajir_0001"
         target="_blank"
@@ -850,7 +905,11 @@ footer strong{
 
         </a>
 
-        <!-- MUHAJIR OFFICIAL LOGO -->
+    </div>
+
+    <!-- LION LOGO + SHAIkH YOUSAF -->
+
+    <div class="brand">
 
         <div class="side-logo">
 
@@ -860,12 +919,10 @@ footer strong{
 
         </div>
 
-    </div>
+        <div class="logo">
+            SHAIkH YOUSAF
+        </div>
 
-    <!-- WEBSITE NAME -->
-
-    <div class="logo">
-        SHAIkH YOUSAF
     </div>
 
     <!-- NAVIGATION -->
