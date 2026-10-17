@@ -69,7 +69,6 @@ header{
 }
 
 /* ================= TOP SOCIAL ================= */
-/* Telegram + TikTok name کے اوپر */
 
 .side-social{
     position:absolute;
@@ -123,10 +122,11 @@ header{
     direction:ltr;
 }
 
-/* Lion اب circle نہیں ہے */
+/* صرف Front Lion logo بڑا کیا گیا ہے */
+
 .side-logo{
-    width:50px;
-    height:50px;
+    width:65px;
+    height:65px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -140,7 +140,6 @@ header{
     height:100%;
     object-fit:contain;
 
-    /* Premium shining outline */
     filter:
         drop-shadow(0 0 2px #fff1a8)
         drop-shadow(0 0 6px #d4af37)
@@ -782,7 +781,7 @@ footer strong{
     }
 
     .nav{
-        min-height:67px;
+        min-height:80px;
         display:flex;
         justify-content:center;
         padding:0 85px;
@@ -808,9 +807,11 @@ footer strong{
         gap:7px;
     }
 
+    /* Mobile پر بھی Lion تھوڑا بڑا */
+
     .side-logo{
-        width:39px;
-        height:39px;
+        width:48px;
+        height:48px;
     }
 
     .logo{
@@ -875,8 +876,6 @@ footer strong{
 
 <div class="nav">
 
-    <!-- TELEGRAM + TIKTOK ABOVE SHAIkH YOUSAF -->
-
     <div class="side-social">
 
         <a
@@ -907,8 +906,6 @@ footer strong{
 
     </div>
 
-    <!-- LION LOGO + SHAIkH YOUSAF -->
-
     <div class="brand">
 
         <div class="side-logo">
@@ -925,24 +922,15 @@ footer strong{
 
     </div>
 
-    <!-- NAVIGATION -->
-
     <nav>
 
         <a href="#home">Home</a>
-
         <a href="#story">زندگی</a>
-
         <a href="#videos">Videos</a>
-
         <a href="#family">Family</a>
-
         <a href="#gallery">Photos</a>
-
         <a href="#reviews">Reviews</a>
-
         <a href="#games">Games</a>
-
         <a href="#contact">Contact</a>
 
     </nav>
@@ -1223,9 +1211,7 @@ Memories & Moments
 
 <div class="family-card">
 
-<img
-src="yousaf-8.jpg"
-alt="Shaikh Yousaf">
+<img src="yousaf-8.jpg" alt="Shaikh Yousaf">
 
 <div>
 
@@ -1241,9 +1227,7 @@ alt="Shaikh Yousaf">
 
 <div class="family-card">
 
-<img
-src="mudassir-5.jpg"
-alt="Mudassir">
+<img src="mudassir-5.jpg" alt="Mudassir">
 
 <div>
 
@@ -1259,9 +1243,7 @@ alt="Mudassir">
 
 <div class="family-card">
 
-<img
-src="ustad-7.jpg"
-alt="Ustad">
+<img src="ustad-7.jpg" alt="Ustad">
 
 <div>
 
@@ -1299,17 +1281,11 @@ alt="Ustad">
 
 <div class="gallery">
 
-<img
-src="yousaf-8.jpg"
-alt="Shaikh Yousaf">
+<img src="yousaf-8.jpg" alt="Shaikh Yousaf">
 
-<img
-src="mudassir-5.jpg"
-alt="Mudassir">
+<img src="mudassir-5.jpg" alt="Mudassir">
 
-<img
-src="ustad-7.jpg"
-alt="Ustad">
+<img src="ustad-7.jpg" alt="Ustad">
 
 </div>
 
@@ -1496,8 +1472,6 @@ Free time کے لیے آسان اور چھوٹی چھوٹی games
 
 <div class="games-grid">
 
-<!-- TIC TAC TOE -->
-
 <div class="game">
 
 <h3>
@@ -1523,8 +1497,6 @@ New Game
 </div>
 
 </div>
-
-<!-- NUMBER GUESS -->
 
 <div class="game">
 
@@ -1552,8 +1524,6 @@ Guess
 <div id="guessResult" class="game-result"></div>
 
 </div>
-
-<!-- RPS -->
 
 <div class="game">
 
@@ -1609,8 +1579,6 @@ Shaikh Yousaf Official
 
 <div class="socials">
 
-<!-- TELEGRAM -->
-
 <a
 href="https://t.me/Mujairhacker"
 target="_blank"
@@ -1629,8 +1597,6 @@ class="btn social-btn">
 Telegram
 
 </a>
-
-<!-- TIKTOK -->
 
 <a
 href="https://www.tiktok.com/@muhajir_0001"
@@ -1702,8 +1668,6 @@ font-size:12px;
 
 <script>
 
-/* WELCOME */
-
 window.addEventListener("load",function(){
 
     setTimeout(function(){
@@ -1723,8 +1687,6 @@ window.addEventListener("load",function(){
 
 });
 
-
-/* NUMBER GUESS */
 
 let secretNumber =
 Math.floor(Math.random()*20)+1;
@@ -1778,8 +1740,6 @@ function guessNumber(){
 }
 
 
-/* ROCK PAPER SCISSORS */
-
 function rps(user){
 
     const choices=
@@ -1817,8 +1777,6 @@ function rps(user){
 
 }
 
-
-/* TIC TAC TOE */
 
 let ticBoard=
 ["","","","","","","","",""];
