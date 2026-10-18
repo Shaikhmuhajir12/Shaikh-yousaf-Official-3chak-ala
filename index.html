@@ -61,4 +61,455 @@ h3{color:var(--gold);margin:8px 0}
 .review-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .stars{color:var(--gold);font-size:20px}
 .game button{background:var(--gold);border:0;padding:9px 14px;border-radius:18px;margin:4px;font-weight:bold;cursor:pointer}
-.game input{width:90%;padding:10px;background:#111;color:#fff;border:1px solid
+.game input{width:90%;padding:10px;background:#111;color:#fff;border:1px solid var(--gold);border-radius:10px;margin:10px}
+.game-result{min-height:30px;margin-top:10px}
+.website-icon{font-size:45px}
+.socials{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:18px}
+footer{border-top:1px solid var(--gold);text-align:center;padding:30px 12px;color:#aaa}
+footer strong{color:var(--gold)}
+
+/* Welcome screen */
+#welcome{position:fixed;inset:0;z-index:99999;background:#030303;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;transition:opacity .8s}
+.welcome-content{animation:welcome 1.3s ease}
+.welcome-content h1{color:var(--gold);font-size:clamp(35px,8vw,70px)}
+.welcome-content h2{font-family:'Noto Nastaliq Urdu',serif;font-size:27px}
+@keyframes welcome{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+/* Fixed buttons */
+#musicButton,#yousafAIButton{position:fixed;right:12px;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15px #d4af3755}
+#musicButton{bottom:15px;padding:11px 16px;background:var(--gold);color:#000;border:0;cursor:pointer}
+#yousafAIButton{bottom:67px;padding:10px 14px;border:1px solid var(--gold);background:#111;color:#ffe28a;direction:ltr}
+#yousafAIButton:hover{box-shadow:0 0 22px #d4af37}
+
+/* Three separate Reels sections */
+.reel-card{padding:22px;text-align:center;transition:.3s}
+.reel-card:hover{transform:translateY(-5px);box-shadow:0 8px 28px #d4af3730}
+.reel-icon{font-size:46px}
+.reel-card p{color:#ccc;margin:10px 0 15px}
+.reel-card .reel-link{margin-top:5px}
+.reel-card.tiktok{border-color:#ff3b75}
+.reel-card.instagram{border-color:#d84bb8}
+.reel-card.youtube{border-color:#ff3333}
+.reel-note{font-size:12px;color:#999;text-align:center;margin-top:20px}
+.reel-embed{width:100%;max-width:400px;height:560px;border:1px solid var(--gold);border-radius:18px;background:#111;margin:15px auto;display:block}
+.reel-input{width:100%;max-width:500px;display:block;margin:10px auto;padding:12px;border:1px solid var(--gold);border-radius:12px;background:#111;color:#fff;font:inherit;direction:ltr}
+#reelPlayerArea{text-align:center}
+@media(max-width:700px){
+ section{padding:48px 5%}
+ .nav{justify-content:center}
+ nav{justify-content:center}
+ nav a{font-size:11px;padding:5px 7px}
+ .brand{justify-content:center}
+ .logo{font-size:17px}
+ .hero{min-height:75vh}
+ .hero p{font-size:14px}
+ .reel-embed{height:480px}
+ #musicButton{bottom:10px;right:8px;font-size:12px;padding:9px 12px}
+ #yousafAIButton{bottom:58px;right:8px;font-size:11px;padding:8px 11px}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop preload="none">
+  <source src="background.mp3" type="audio/mpeg">
+</audio>
+<button id="musicButton" onclick="toggleMusic()">🎵 میوزک چلائیں</button>
+
+<a id="yousafAIButton" href="https://yousaf-ai-assistant-2026.muhajirhackers.workers.dev/" target="_blank" rel="noopener noreferrer">🤖 Yousaf AI Assistant</a>
+
+<div id="welcome">
+  <div class="welcome-content">
+    <h1>WELCOME TO</h1>
+    <h2>SHAIKH YOUSAF</h2>
+    <p>Build by Muhajir Hacker</p>
+    <p class="urdu">مہاجر ابو سفیان ملک</p>
+    <p class="official-line">✦ SHAIKH YOUSAF OFFICIAL WEBSITE ✦</p>
+  </div>
+</div>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img class="side-logo" src="lion%20(1).png" alt="Muhajir Official Logo">
+      <div class="logo">SHAIKH YOUSAF</div>
+    </div>
+    <div class="social-top">
+      <a href="https://t.me/Mujairhacker" target="_blank" aria-label="Telegram">✈️</a>
+      <a href="https://www.tiktok.com/@muhajir_0001" target="_blank" aria-label="TikTok">♪</a>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#story">زندگی</a>
+      <a href="#videos">Videos</a>
+      <a href="#social-reels">Reels</a>
+      <a href="#family">Family</a>
+      <a href="#gallery">Photos</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#games">Games</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>SHAIKH YOUSAF OFFICIAL</h1>
+    <h2>ایک سادہ انسان، ایک خوبصورت داستان</h2>
+    <p>زندگی، جدوجہد، خاندان، محبت، یادیں اور بہتر مستقبل کے خواب۔</p>
+    <a href="#story" class="btn">زندگی کی داستان</a>
+    <a href="#social-reels" class="btn dark">🔥 Trending Reels</a>
+    <div class="official-line">✦ OFFICIAL WEBSITE ✦</div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="container">
+    <div class="section-title"><h2>زندگی کی داستان</h2><p>زندگی کے سفر کی چند خوبصورت اور یادگار باتیں</p></div>
+    <img src="yousaf-8.jpg" class="main-image" alt="Shaikh Yousaf">
+    <div class="story-grid">
+      <div class="story-card"><div class="icon">🏡</div><h3>گاؤں سے آغاز</h3><p>زندگی کا سفر سادگی، اپنے لوگوں اور اپنے گاؤں کی مٹی سے شروع ہوا۔</p></div>
+      <div class="story-card"><div class="icon">🤲</div><h3>والد کی محنت</h3><p>خاندان کے لیے محنت، قربانی اور ذمہ داری زندگی کا اہم حصہ رہی۔</p></div>
+      <div class="story-card"><div class="icon">👨‍👦</div><h3>بھائی مدثر</h3><p>بھائی مدثر کے ساتھ رشتہ، محبت اور یادیں اس سفر کی خوبصورت داستان ہیں۔</p></div>
+      <div class="story-card"><div class="icon">🧵</div><h3>شیخ صغیر کے ساتھ</h3><p>محنت اور ہنر کے سفر میں کام اور سیکھنے کا تجربہ اہم رہا۔</p></div>
+      <div class="story-card"><div class="icon">🌅</div><h3>امید اور مستقبل</h3><p>مشکلات کے باوجود امید قائم ہے اور بہتر کل کے لیے سفر جاری ہے۔</p></div>
+    </div>
+    <div class="letter" style="margin-top:25px"><p class="urdu">زندگی چاہے کتنی بھی مشکل ہو، انسان کو امید، محنت اور اپنے لوگوں کا ساتھ نہیں چھوڑنا چاہیے۔ ہر نیا دن ایک نئی امید لے کر آتا ہے۔</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title"><h2>زندگی کا سفر</h2><p>کچھ اہم مراحل</p></div>
+    <div class="timeline">
+      <div class="timeline-item"><h3>بچپن</h3><p>سادگی، خاندان اور اپنوں کے درمیان گزرا خوبصورت وقت۔</p></div>
+      <div class="timeline-item"><h3>محنت کا آغاز</h3><p>زندگی کی ذمہ داریوں کو سمجھتے ہوئے محنت کا سفر شروع ہوا۔</p></div>
+      <div class="timeline-item"><h3>مشکل وقت</h3><p>مشکلات آئیں مگر حوصلہ اور امید برقرار رہی۔</p></div>
+      <div class="timeline-item"><h3>آج</h3><p>نئے خواب اور بہتر مستقبل کی طرف سفر جاری ہے۔</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="container">
+    <div class="section-title"><h2>Official Videos</h2><p>آپ کی موجودہ ویڈیوز</p></div>
+    <div class="video-grid">
+      <div class="video-box">
+        <video controls playsinline preload="metadata">
+          <source src="a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
+          آپ کے براؤزر میں ویڈیو سپورٹ نہیں ہے۔
+        </video>
+        <h3>Shaikh Yousaf — Official Video</h3>
+      </div>
+      <div class="video-box">
+        <video controls playsinline preload="metadata">
+          <source src="foryoupage%20foryoupage.mp4" type="video/mp4">
+          آپ کے براؤزر میں ویڈیو سپورٹ نہیں ہے۔
+        </video>
+        <h3>Memories &amp; Moments</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REELS: Three separate feeds -->
+<section id="social-reels">
+  <div class="container">
+    <div class="section-title">
+      <h2>🔥 Trending Reels</h2>
+      <p>تین الگ سیکشن — ہر پلیٹ فارم کی اپنی ویڈیوز</p>
+    </div>
+
+    <div class="reels-grid">
+      <div class="reel-card tiktok">
+        <div class="reel-icon">🎵</div>
+        <h3>TikTok Reels</h3>
+        <p>Explore پر نئی اور مقبول ویڈیوز دیکھیں۔</p>
+        <a class="reel-link" href="https://www.tiktok.com/explore" target="_blank" rel="noopener noreferrer">▶ TikTok کھولیں</a>
+      </div>
+      <div class="reel-card instagram">
+        <div class="reel-icon">📸</div>
+        <h3>Instagram Reels</h3>
+        <p>Instagram Explore پر نئی Reels دریافت کریں۔</p>
+        <a class="reel-link" href="https://www.instagram.com/explore/" target="_blank" rel="noopener noreferrer">▶ Instagram کھولیں</a>
+      </div>
+      <div class="reel-card youtube">
+        <div class="reel-icon">▶️</div>
+        <h3>YouTube Shorts</h3>
+        <p>YouTube Shorts کی مختصر ویڈیوز دیکھیں۔</p>
+        <a class="reel-link" href="https://www.youtube.com/shorts/" target="_blank" rel="noopener noreferrer">▶ Shorts کھولیں</a>
+      </div>
+    </div>
+
+    <div class="letter" style="margin-top:25px">
+      <h3>اپنی پسندیدہ Reel یہاں چلائیں</h3>
+      <p>اگر کسی Reel کا قابلِ استعمال لنک موجود ہو تو اسے نیچے پیسٹ کریں۔ ہر پلیٹ فارم کے تمام لنکس ایمبیڈ نہیں ہو سکتے۔</p>
+      <input id="reelUrl" class="reel-input" type="url" placeholder="Reel / Short کا لنک یہاں پیسٹ کریں" dir="ltr">
+      <button class="btn" onclick="loadReel()">▶ ویڈیو کھولیں</button>
+      <div id="reelPlayerArea"></div>
+      <p class="reel-note">نوٹ: اصل آج کی مقبول ویڈیوز خودکار طور پر لانے کی ضمانت نہیں۔ پلیٹ فارم کی پابندیوں کے مطابق کچھ ویڈیوز اپنی اصل ایپ یا ویب سائٹ میں کھل سکتی ہیں۔</p>
+    </div>
+  </div>
+</section>
+
+<section id="family">
+  <div class="container">
+    <div class="section-title"><h2>Family &amp; Important People</h2><p>زندگی کے اہم رشتے اور لوگ</p></div>
+    <div class="family-grid">
+      <div class="family-card"><img src="yousaf-8.jpg" alt="Shaikh Yousaf"><div><h3>Shaikh Yousaf</h3><p>زندگی کی اس داستان کا مرکزی کردار۔</p></div></div>
+      <div class="family-card"><img src="mudassir-5.jpg" alt="Mudassir"><div><h3>Mudassir</h3><p>بھائی، ساتھی اور خوبصورت یادوں کا حصہ۔</p></div></div>
+      <div class="family-card"><img src="ustad-7.jpg" alt="Ustad"><div><h3>Ustad / Shaikh Sagheer</h3><p>محنت اور ہنر کے سفر میں اہم شخصیت۔</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-title"><h2>Photo Gallery</h2><p>یادگار تصاویر</p></div>
+    <div class="gallery">
+      <img src="yousaf-8.jpg" alt="Shaikh Yousaf">
+      <img src="mudassir-5.jpg" alt="Mudassir">
+      <img src="ustad-7.jpg" alt="Ustad">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container lion-box">
+    <div class="section-title"><h2>Official Symbol</h2><p>MUHAJIR OFFICIAL</p></div>
+    <img src="lion%20(1).png" alt="Muhajir Official Lion Logo">
+    <p style="margin-top:12px;color:#aaa">✦ MUHAJIR OFFICIAL ✦</p>
+  </div>
+</section>
+
+<section id="website">
+  <div class="container">
+    <div class="website-box">
+      <div class="website-icon">🌐</div>
+      <div class="section-title"><h2>Official Website</h2><p>Shaikh Yousaf Official Website</p></div>
+      <a href="https://shaikhmuhajir12.github.io/Shaikh-yousaf-Official-3chak-ala/" target="_blank" rel="noopener noreferrer" class="btn">🌐 WEBSITE OPEN کریں</a>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <div class="section-title"><h2>Comments &amp; Reviews</h2><p>Website کے بارے میں تاثرات</p></div>
+    <div class="review-grid">
+      <div class="review"><div class="stars">★★★★★</div><h3>Ahmed</h3><p>بہت خوبصورت اور سادہ website ہے۔</p></div>
+      <div class="review"><div class="stars">★★★★★</div><h3>Muhammad</h3><p>زندگی کی داستان اور تصاویر اچھی طرح پیش کی گئی ہیں۔</p></div>
+      <div class="review"><div class="stars">★★★★★</div><h3>Shahid</h3><p>Videos اور gallery کا انداز اچھا ہے۔</p></div>
+    </div>
+    <p style="text-align:center;color:#777;font-size:12px;margin-top:15px">* یہ نمونہ (Sample) Reviews ہیں۔</p>
+  </div>
+</section>
+
+<section id="games">
+  <div class="container">
+    <div class="section-title"><h2>🎮 Easy Games</h2><p>Free time کے لیے چھوٹی چھوٹی games</p></div>
+    <div class="games-grid">
+      <div class="game">
+        <h3>⭕ Tic Tac Toe</h3>
+        <div id="board" style="display:grid;grid-template-columns:repeat(3,60px);justify-content:center;gap:5px;margin:15px auto"></div>
+        <button onclick="resetTic()">New Game</button>
+        <div id="ticResult" class="game-result">آپ کی باری ہے</div>
+      </div>
+      <div class="game">
+        <h3>🔢 Number Guess</h3>
+        <p>1 سے 20 کے درمیان نمبر guess کریں</p>
+        <input type="number" id="guessInput" min="1" max="20" placeholder="نمبر لکھیں">
+        <button onclick="guessNumber()">Guess</button>
+        <div id="guessResult" class="game-result"></div>
+      </div>
+      <div class="game">
+        <h3>✊ Rock Paper Scissors</h3>
+        <button onclick="rps('Rock')">✊ Rock</button>
+        <button onclick="rps('Paper')">✋ Paper</button>
+        <button onclick="rps('Scissors')">✌️ Scissors</button>
+        <div id="rpsResult" class="game-result"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div class="section-title"><h2>Contact</h2><p>Shaikh Yousaf Official</p></div>
+      <p>رابطے اور سوشل میڈیا کے لیے نیچے دیے گئے بٹن استعمال کریں۔</p>
+      <div class="socials">
+        <a href="https://t.me/Mujairhacker" target="_blank" rel="noopener noreferrer" class="btn">✈️ Telegram</a>
+        <a href="https://www.tiktok.com/@muhajir_0001" target="_blank" rel="noopener noreferrer" class="btn dark">♪ TikTok</a>
+        <a href="https://www.instagram.com/explore/" target="_blank" rel="noopener noreferrer" class="btn dark">📸 Instagram</a>
+        <a href="https://www.youtube.com/shorts/" target="_blank" rel="noopener noreferrer" class="btn dark">▶ YouTube Shorts</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <strong>Shaikh Yousaf Official</strong> | All Rights Reserved</p>
+  <p style="margin-top:8px">Build by <strong>Muhajir Hacker</strong></p>
+  <p class="urdu" style="margin-top:8px;color:#d4af37;font-size:22px">مہاجر ابو سفیان ملک</p>
+  <p style="margin-top:8px;color:#777;font-size:12px">✦ SHAIKH YOUSAF OFFICIAL WEBSITE ✦</p>
+</footer>
+
+<script>
+/* Welcome screen */
+window.addEventListener("load",function(){
+  setTimeout(function(){
+    const welcome=document.getElementById("welcome");
+    if(!welcome)return;
+    welcome.style.opacity="0";
+    setTimeout(function(){welcome.style.display="none";},800);
+  },3500);
+});
+
+/* Music */
+const bgMusic=document.getElementById("bgMusic");
+const musicButton=document.getElementById("musicButton");
+bgMusic.volume=.5;
+function toggleMusic(){
+  if(bgMusic.paused){
+    bgMusic.play().then(function(){
+      musicButton.textContent="🔊 میوزک بند کریں";
+    }).catch(function(){
+      musicButton.textContent="▶ میوزک چلائیں";
+    });
+  }else{
+    bgMusic.pause();
+    musicButton.textContent="🎵 میوزک چلائیں";
+  }
+}
+
+/* Load supported video links */
+function loadReel(){
+  const input=document.getElementById("reelUrl");
+  const area=document.getElementById("reelPlayerArea");
+  const raw=input.value.trim();
+  if(!raw){
+    area.innerHTML="<p style='color:#ffcc66;margin-top:15px'>پہلے ویڈیو کا لنک پیسٹ کریں۔</p>";
+    return;
+  }
+  let url;
+  try{url=new URL(raw);}catch(e){
+    area.innerHTML="<p style='color:#ffcc66'>درست لنک درج کریں۔</p>";
+    return;
+  }
+  const host=url.hostname.toLowerCase();
+  let embed="";
+  if(host==="youtu.be"||host.endsWith("youtube.com")){
+    let id="";
+    if(host==="youtu.be")id=url.pathname.split("/").filter(Boolean)[0]||"";
+    else if(url.pathname.startsWith("/shorts/"))id=url.pathname.split("/")[2]||"";
+    else if(url.pathname.startsWith("/embed/"))id=url.pathname.split("/")[2]||"";
+    else id=url.searchParams.get("v")||"";
+    if(id && /^[A-Za-z0-9_-]{6,20}$/.test(id)){
+      embed="https://www.youtube-nocookie.com/embed/"+id;
+    }
+  }else if(host.endsWith("instagram.com")){
+    if(url.pathname.includes("/reel/")||url.pathname.includes("/p/")){
+      embed=url.origin+url.pathname.replace(/\/?$/,"/")+"embed";
+    }
+  }else if(host.endsWith("tiktok.com")){
+    const match=url.pathname.match(/\/video\/(\d+)/);
+    if(match)embed="https://www.tiktok.com/player/v1/"+match[1];
+  }
+  if(!embed){
+    area.innerHTML="<p style='color:#ffcc66;margin-top:15px'>یہ لنک ایمبیڈ کے لیے موزوں نہیں۔ ویڈیو اصل پلیٹ فارم پر کھول کر دیکھیں۔</p><a class='btn' href='"+url.href.replace(/&/g,"&amp;")+"' target='_blank' rel='noopener noreferrer'>اصل ویڈیو کھولیں</a>";
+    return;
+  }
+  area.innerHTML="";
+  const frame=document.createElement("iframe");
+  frame.className="reel-embed";
+  frame.src=embed;
+  frame.title="Social media video";
+  frame.loading="lazy";
+  frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  frame.allowFullscreen=true;
+  frame.referrerPolicy="strict-origin-when-cross-origin";
+  area.appendChild(frame);
+}
+
+/* Number Guess */
+let secretNumber=Math.floor(Math.random()*20)+1;
+function guessNumber(){
+  const input=document.getElementById("guessInput");
+  const result=document.getElementById("guessResult");
+  const guess=Number(input.value);
+  if(!input.value.trim()){result.innerText="پہلے نمبر لکھیں۔";return;}
+  if(guess<1||guess>20){result.innerText="1 سے 20 کے درمیان نمبر لکھیں۔";return;}
+  if(guess===secretNumber){
+    result.innerText="🎉 بالکل صحیح! آپ جیت گئے۔";
+    secretNumber=Math.floor(Math.random()*20)+1;
+  }else if(guess<secretNumber){
+    result.innerText="⬆️ تھوڑا بڑا نمبر آزمائیں۔";
+  }else{
+    result.innerText="⬇️ تھوڑا چھوٹا نمبر آزمائیں۔";
+  }
+}
+
+/* Rock Paper Scissors */
+function rps(user){
+  const choices=["Rock","Paper","Scissors"];
+  const computer=choices[Math.floor(Math.random()*3)];
+  const result=document.getElementById("rpsResult");
+  if(user===computer){
+    result.innerText="🤝 Draw! دونوں نے "+computer+" منتخب کیا۔";return;
+  }
+  if((user==="Rock"&&computer==="Scissors")||
+     (user==="Paper"&&computer==="Rock")||
+     (user==="Scissors"&&computer==="Paper")){
+    result.innerText="🎉 آپ جیت گئے! Computer نے "+computer+" منتخب کیا۔";
+  }else{
+    result.innerText="😄 Computer جیت گیا! اس نے "+computer+" منتخب کیا۔";
+  }
+}
+
+/* Tic Tac Toe */
+let ticBoard=["","","","","","","","",""];
+let ticTurn="X";
+let ticGameOver=false;
+function createTic(){
+  const board=document.getElementById("board");
+  board.innerHTML="";
+  ticBoard.forEach(function(value,index){
+    const cell=document.createElement("button");
+    cell.style.cssText="width:60px;height:60px;font-size:25px;font-weight:bold;background:#111;color:#d4af37;border:1px solid #d4af37;border-radius:8px;cursor:pointer";
+    cell.textContent=value;
+    cell.onclick=function(){playTic(index);};
+    board.appendChild(cell);
+  });
+}
+function playTic(index){
+  if(ticBoard[index]!==""||ticGameOver)return;
+  ticBoard[index]=ticTurn;
+  if(checkTicWin()){
+    document.getElementById("ticResult").innerText="🎉 "+ticTurn+" جیت گیا!";
+    ticGameOver=true;createTic();return;
+  }
+  if(!ticBoard.includes("")){
+    document.getElementById("ticResult").innerText="🤝 Game Draw ہو گیا۔";
+    ticGameOver=true;createTic();return;
+  }
+  ticTurn=ticTurn==="X"?"O":"X";
+  document.getElementById("ticResult").innerText="اب "+ticTurn+" کی باری ہے۔";
+  createTic();
+}
+function checkTicWin(){
+  const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  return wins.some(function(c){
+    return ticBoard[c[0]]&&ticBoard[c[0]]===ticBoard[c[1]]&&ticBoard[c[1]]===ticBoard[c[2]];
+  });
+}
+function resetTic(){
+  ticBoard=["","","","","","","","",""];
+  ticTurn="X";ticGameOver=false;
+  document.getElementById("ticResult").innerText="آپ کی باری ہے";
+  createTic();
+}
+createTic();
+</script>
+</body>
+</html>
