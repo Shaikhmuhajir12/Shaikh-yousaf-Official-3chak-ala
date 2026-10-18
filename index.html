@@ -3,386 +3,653 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Shaikh Yousaf | Official Website</title>
-
 <meta name="description" content="Shaikh Yousaf Official Website — زندگی، جدوجہد، خاندان، یادیں اور خواب">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-background:#050505;
-color:#fff;
-font-family:'Cairo',sans-serif;
-line-height:1.8;
-}
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-section{
-padding:75px 7%;
-position:relative;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:#050505;color:#fff;font-family:'Cairo',sans-serif;line-height:1.8}
+a{text-decoration:none;color:inherit}
+section{padding:75px 7%;position:relative}
+.container{max-width:1200px;margin:auto}
 
 /* HEADER */
+header{position:sticky;top:0;z-index:999;background:rgba(0,0,0,.97);backdrop-filter:blur(14px);border-bottom:1px solid #d4af37;padding:9px 4%;box-shadow:0 4px 25px rgba(212,175,55,.08)}
+.nav{max-width:1300px;margin:auto;display:flex;align-items:center;gap:20px;min-height:65px;position:relative;justify-content:center}
+.side-social{position:absolute;top:0;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:9px;direction:ltr;z-index:5}
+.side-social a{width:31px;height:31px;border-radius:50%;background:#0b0b0b;border:1px solid #d4af37;display:flex;align-items:center;justify-content:center;box-shadow:0 0 8px rgba(212,175,55,.3),0 0 15px rgba(212,175,55,.1);transition:.35s}
+.side-social a:hover{transform:translateY(-2px) scale(1.08);background:#d4af37;box-shadow:0 0 12px #d4af37,0 0 24px rgba(212,175,55,.55)}
+.side-social svg{width:17px;height:17px}
+.brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;direction:ltr}
+.side-logo{width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;overflow:visible}
+.side-logo img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 2px #fff1a8) drop-shadow(0 0 6px #d4af37) drop-shadow(0 0 13px rgba(212,175,55,.75));animation:lionShine 2.8s ease-in-out infinite}
+@keyframes lionShine{0%,100%{filter:drop-shadow(0 0 2px #fff1a8) drop-shadow(0 0 6px #d4af37) drop-shadow(0 0 13px rgba(212,175,55,.55))}50%{filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 10px #d4af37) drop-shadow(0 0 24px rgba(212,175,55,.9))}}
+.logo{color:#d4af37;font-size:22px;font-weight:900;letter-spacing:1px;white-space:nowrap;margin:0;text-shadow:0 0 8px rgba(212,175,55,.25)}
+nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;position:absolute;right:0}
+nav a{padding:7px 11px;border-radius:20px;color:#fff;font-size:13px;transition:.3s}
+nav a:hover{background:#d4af37;color:#000}
 
-header{
-position:sticky;
-top:0;
-z-index:999;
-background:rgba(0,0,0,.97);
-backdrop-filter:blur(14px);
-border-bottom:1px solid #d4af37;
-padding:9px 4%;
-box-shadow:0 4px 25px rgba(212,175,55,.08);
+/* HERO */
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.93)),url("yousaf-8.jpg") center/cover}
+.hero:before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(212,175,55,.08);filter:blur(80px);animation:heroGlow 5s infinite alternate ease-in-out}
+@keyframes heroGlow{from{transform:scale(.8);opacity:.3}to{transform:scale(1.3);opacity:.7}}
+.hero-content{max-width:950px;position:relative;z-index:2}
+.hero h1{font-size:clamp(40px,8vw,86px);color:#d4af37;font-weight:900;letter-spacing:3px;background:linear-gradient(90deg,#8d6a18,#fff1a8,#d4af37,#fff1a8,#8d6a18);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:goldText 5s linear infinite,titleFloat 3s ease-in-out infinite;text-shadow:0 0 18px rgba(212,175,55,.2)}
+@keyframes goldText{to{background-position:300% center}}
+@keyframes titleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hero h2{font-size:clamp(25px,5vw,50px);margin:5px 0 15px}
+.hero p{color:#ddd;font-size:18px;margin-bottom:25px}
+.official-line{display:inline-block;margin-top:8px;padding:6px 20px;border-top:1px solid #d4af37;border-bottom:1px solid #d4af37;color:#d4af37;letter-spacing:4px;font-size:13px;animation:officialPulse 3s infinite}
+@keyframes officialPulse{0%,100%{box-shadow:0 0 0 rgba(212,175,55,0)}50%{box-shadow:0 0 22px rgba(212,175,55,.18)}}
+.btn{display:inline-block;padding:12px 24px;margin:6px;border-radius:30px;background:linear-gradient(135deg,#d4af37,#a47d17);color:#000;font-weight:800;transition:.3s}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 25px rgba(212,175,55,.3)}
+.btn.dark{background:#111;color:#fff;border:1px solid #d4af37}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+.social-icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center}
+.social-icon svg{width:22px;height:22px;fill:currentColor}
+
+/* SECTION TITLES */
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{color:#d4af37;font-size:34px;font-weight:900;display:inline-block;padding:0 18px 8px;border-bottom:2px solid #d4af37;text-shadow:0 0 15px rgba(212,175,55,.18)}
+.section-title p{color:#aaa;margin-top:7px}
+.story-grid,.family-grid,.gallery,.video-grid,.review-grid,.games-grid{position:relative}
+.story-card,.family-card,.video-box,.review,.game,.website-box,.contact-box,.letter{border:1px solid rgba(212,175,55,.65);box-shadow:0 0 0 1px rgba(212,175,55,.03),0 12px 35px rgba(0,0,0,.35)}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.story-card{background:linear-gradient(145deg,#111,#080808);border-radius:20px;padding:25px;text-align:center;transition:.3s}
+.story-card:hover{transform:translateY(-7px);border-color:#f0cf64;box-shadow:0 10px 35px rgba(212,175,55,.16)}
+.story-card .icon{font-size:40px;margin-bottom:10px}
+.story-card h3{color:#d4af37;margin-bottom:10px}
+.main-image{width:100%;max-width:700px;display:block;margin:0 auto 30px;border-radius:25px;border:2px solid #d4af37;box-shadow:0 0 35px rgba(212,175,55,.15)}
+
+/* TIMELINE */
+.timeline{max-width:850px;margin:auto;position:relative}
+.timeline:before{content:"";position:absolute;right:20px;top:0;bottom:0;width:2px;background:#d4af37}
+.timeline-item{position:relative;padding:0 60px 30px 0}
+.timeline-item:before{content:"";position:absolute;right:12px;top:8px;width:18px;height:18px;border-radius:50%;background:#d4af37;box-shadow:0 0 12px #d4af37}
+.timeline-item h3{color:#d4af37}
+
+/* FAMILY */
+.family-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.family-card{background:#0d0d0d;border-radius:20px;overflow:hidden}
+.family-card img{width:100%;height:270px;object-fit:cover}
+.family-card div{padding:20px}
+.family-card h3{color:#d4af37}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.gallery img{width:100%;height:260px;object-fit:cover;border-radius:18px;border:1px solid #d4af37;transition:.3s}
+.gallery img:hover{transform:scale(1.03);box-shadow:0 0 25px rgba(212,175,55,.2)}
+
+/* VIDEOS */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.video-box{background:#0c0c0c;padding:12px;border-radius:20px}
+.video-box video{width:100%;border-radius:14px;display:block}
+.video-box h3{color:#d4af37;padding:12px 5px 3px}
+
+/* =========================
+   REELS / SHORT VIDEOS
+   ========================= */
+
+.reels-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+position:relative;
 }
+
+.reel-box{
+background:#0c0c0c;
+padding:10px;
+border-radius:22px;
+border:1px solid rgba(212,175,55,.65);
+box-shadow:0 12px 35px rgba(0,0,0,.35);
+overflow:hidden;
+}
+
+.reel-video{
+width:100%;
+aspect-ratio:9/16;
+object-fit:cover;
+display:block;
+border-radius:15px;
+background:#000;
+}
+
+.reel-box h3{
+color:#d4af37;
+text-align:center;
+padding:12px 5px 3px;
+font-size:17px;
+}
+
+.reel-info{
+text-align:center;
+color:#888;
+font-size:12px;
+margin-top:20px;
+}
+
+/* LION */
+.lion-box{text-align:center}
+.lion-box img{width:150px;height:150px;object-fit:contain;border-radius:50%;border:2px solid #d4af37;padding:8px;background:#111;box-shadow:0 0 30px rgba(212,175,55,.15)}
+
+/* LETTER */
+.letter{max-width:850px;margin:auto;background:linear-gradient(145deg,#121212,#080808);border-radius:25px;padding:35px;text-align:center}
+.urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:21px;line-height:2.4}
+
+/* REVIEWS */
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.review{background:#0d0d0d;border-radius:20px;padding:25px}
+.stars{color:#d4af37;font-size:20px}
+.review h3{color:#d4af37;margin-top:8px}
+
+/* WEBSITE */
+.website-box{text-align:center;max-width:800px;margin:auto;background:linear-gradient(145deg,#111,#070707);padding:40px 20px;border-radius:25px}
+.website-icon{font-size:55px;margin-bottom:10px}
+
+/* GAMES */
+.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.game{background:#0e0e0e;border-radius:20px;padding:25px;text-align:center}
+.game h3{color:#d4af37;margin-bottom:10px}
+.game button{border:none;background:#d4af37;color:#000;padding:9px 16px;margin:4px;border-radius:20px;font-weight:bold;cursor:pointer}
+.game input{width:80%;padding:10px;border-radius:10px;border:1px solid #d4af37;background:#111;color:#fff;text-align:center;margin:8px}
+.game-result{min-height:30px;color:#fff;margin-top:10px}
+
+/* CONTACT */
+.contact-box{max-width:800px;margin:auto;text-align:center;background:#0c0c0c;padding:35px 20px;border-radius:25px}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px}
+
+/* FOOTER */
+footer{background:#000;border-top:1px solid #d4af37;padding:35px 15px;text-align:center;color:#aaa}
+footer strong{color:#d4af37}
+
+/* WELCOME FIX */
+#welcome{
+position:fixed;
+inset:0;
+background:#030303;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+transition:opacity .8s,visibility .8s;
+}
+
+#welcome.hide{
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+}
+
+.welcome-content{animation:welcome 1.3s ease}
+.welcome-content h1{color:#d4af37;font-size:clamp(35px,8vw,75px)}
+.welcome-content h2{font-family:'Noto Nastaliq Urdu',serif;font-size:28px;margin:10px}
+.welcome-content p{color:#aaa}
+
+@keyframes welcome{
+from{opacity:0;transform:scale(.8)}
+to{opacity:1;transform:scale(1)}
+}
+
+/* MUSIC BUTTON */
+#musicButton{position:fixed;bottom:20px;right:15px;z-index:99998;background:linear-gradient(135deg,#fff1a8,#d4af37,#a47d17);color:#000;border:1px solid #fff1a8;border-radius:30px;padding:12px 18px;font-family:'Cairo',sans-serif;font-size:14px;font-weight:900;cursor:pointer;box-shadow:0 0 18px rgba(212,175,55,.55)}
+#musicButton:hover{transform:translateY(-3px);box-shadow:0 0 25px rgba(212,175,55,.8)}
+
+/* YOUSAF AI ASSISTANT BUTTON */
+#yousafAIButton{
+position:fixed;
+right:14px;
+bottom:82px;
+z-index:99997;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+max-width:calc(100vw - 28px);
+padding:11px 16px;
+border:2px solid #d4af37;
+border-radius:40px;
+background:linear-gradient(135deg,#1b1b1b,#050505);
+color:#ffe28a;
+font-family:'Cairo',sans-serif;
+font-size:13px;
+font-weight:900;
+text-decoration:none;
+box-shadow:0 0 14px rgba(212,175,55,.35);
+transition:transform .25s ease,box-shadow .25s ease;
+direction:ltr;
+}
+
+#yousafAIButton:hover{
+transform:translateY(-3px);
+box-shadow:0 0 24px rgba(212,175,55,.7);
+}
+
+#yousafAIButton .ai-button-icon{
+font-size:20px;
+line-height:1
+}
+
+@media(max-width:700px){
+
+section{padding:55px 5%}
 
 .nav{
-max-width:1300px;
-margin:auto;
+min-height:67px;
 display:flex;
-align-items:center;
-gap:20px;
-min-height:65px;
-position:relative;
 justify-content:center;
+padding:0 85px
 }
 
-.side-social{
-position:absolute;
-top:0;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-align-items:center;
-justify-content:center;
-gap:9px;
-direction:ltr;
-z-index:5;
-}
+.side-social{top:0;left:50%}
 
 .side-social a{
-width:31px;
-height:31px;
-border-radius:50%;
-background:#0b0b0b;
-border:1px solid #d4af37;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 0 8px rgba(212,175,55,.3);
-transition:.35s;
-}
-
-.side-social a:hover{
-transform:translateY(-2px) scale(1.08);
-background:#d4af37;
+width:27px;
+height:27px
 }
 
 .side-social svg{
-width:17px;
-height:17px;
+width:15px;
+height:15px
 }
 
 .brand{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-margin-top:16px;
-direction:ltr;
+margin-top:15px;
+gap:7px
 }
 
 .side-logo{
-width:50px;
-height:50px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.side-logo img{
-width:100%;
-height:100%;
-object-fit:contain;
-filter:drop-shadow(0 0 6px #d4af37);
-animation:lionShine 2.8s ease-in-out infinite;
-}
-
-@keyframes lionShine{
-0%,100%{
-filter:drop-shadow(0 0 4px #d4af37);
-}
-50%{
-filter:drop-shadow(0 0 18px #d4af37);
-}
+width:39px;
+height:39px
 }
 
 .logo{
-color:#d4af37;
-font-size:22px;
-font-weight:900;
-letter-spacing:1px;
-white-space:nowrap;
+font-size:17px;
+width:auto;
+text-align:center;
+margin:0
 }
 
 nav{
-display:flex;
-flex-wrap:wrap;
-gap:7px;
-justify-content:center;
-position:absolute;
-right:0;
+display:none
 }
-
-nav a{
-padding:7px 11px;
-border-radius:20px;
-color:#fff;
-font-size:13px;
-transition:.3s;
-}
-
-nav a:hover{
-background:#d4af37;
-color:#000;
-}
-
-/* HERO */
 
 .hero{
-min-height:90vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-overflow:hidden;
-background:
-linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.93)),
-url("yousaf-8.jpg") center/cover;
-}
-
-.hero-content{
-max-width:950px;
-position:relative;
-z-index:2;
-}
-
-.hero h1{
-font-size:clamp(40px,8vw,86px);
-color:#d4af37;
-font-weight:900;
-letter-spacing:3px;
-background:linear-gradient(
-90deg,
-#8d6a18,
-#fff1a8,
-#d4af37,
-#fff1a8,
-#8d6a18
-);
-background-size:300% auto;
--webkit-background-clip:text;
-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:goldText 5s linear infinite;
-}
-
-@keyframes goldText{
-to{
-background-position:300% center;
-}
-}
-
-.hero h2{
-font-size:clamp(25px,5vw,50px);
-margin:5px 0 15px;
+min-height:85vh
 }
 
 .hero p{
-color:#ddd;
-font-size:18px;
-margin-bottom:25px;
+font-size:15px
 }
 
-.official-line{
-display:inline-block;
-margin-top:8px;
-padding:6px 20px;
-border-top:1px solid #d4af37;
-border-bottom:1px solid #d4af37;
-color:#d4af37;
-letter-spacing:4px;
-font-size:13px;
-}
-
-.btn{
-display:inline-block;
-padding:12px 24px;
-margin:6px;
-border-radius:30px;
-background:linear-gradient(135deg,#d4af37,#a47d17);
-color:#000;
-font-weight:800;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 8px 25px rgba(212,175,55,.3);
-}
-
-.btn.dark{
-background:#111;
-color:#fff;
-border:1px solid #d4af37;
-}
-
-/* TITLES */
-
-.section-title{
-text-align:center;
-margin-bottom:45px;
+.urdu{
+font-size:18px
 }
 
 .section-title h2{
-color:#d4af37;
-font-size:34px;
-font-weight:900;
-display:inline-block;
-padding:0 18px 8px;
-border-bottom:2px solid #d4af37;
+font-size:28px
 }
 
-.section-title p{
-color:#aaa;
-margin-top:7px;
+#musicButton{
+bottom:12px;
+right:10px;
+padding:10px 14px;
+font-size:12px
 }
 
-/* STORY */
-
-.story-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
+#yousafAIButton{
+right:10px;
+bottom:65px;
+padding:10px 12px;
+font-size:11px;
+gap:6px
 }
 
-.story-card{
-background:linear-gradient(145deg,#111,#080808);
-border:1px solid rgba(212,175,55,.65);
-border-radius:20px;
-padding:25px;
-text-align:center;
-transition:.3s;
+#yousafAIButton .ai-button-icon{
+font-size:18px
 }
 
-.story-card:hover{
-transform:translateY(-7px);
+.reels-grid{
+grid-template-columns:1fr;
 }
 
-.story-card .icon{
-font-size:40px;
-margin-bottom:10px;
-}
-
-.story-card h3{
-color:#d4af37;
-margin-bottom:10px;
-}
-
-.main-image{
-width:100%;
-max-width:700px;
-display:block;
-margin:0 auto 30px;
-border-radius:25px;
-border:2px solid #d4af37;
-}
-
-/* TIMELINE */
-
-.timeline{
-max-width:850px;
+.reel-box{
+max-width:360px;
 margin:auto;
-position:relative;
-}
-
-.timeline:before{
-content:"";
-position:absolute;
-right:20px;
-top:0;
-bottom:0;
-width:2px;
-background:#d4af37;
-}
-
-.timeline-item{
-position:relative;
-padding:0 60px 30px 0;
-}
-
-.timeline-item:before{
-content:"";
-position:absolute;
-right:12px;
-top:8px;
-width:18px;
-height:18px;
-border-radius:50%;
-background:#d4af37;
-box-shadow:0 0 12px #d4af37;
-}
-
-.timeline-item h3{
-color:#d4af37;
-}
-
-/* FAMILY */
-
-.family-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.family-card{
-background:#0d0d0d;
-border:1px solid rgba(212,175,55,.65);
-border-radius:20px;
-overflow:hidden;
-}
-
-.family-card img{
 width:100%;
-height:270px;
-object-fit:cover;
 }
 
-.family-card div{
-padding:20px;
 }
 
-.family-card h3{
-color
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="background.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" onclick="toggleMusic()">🎵 Play Music</button>
+
+<!-- YOUSAF AI ASSISTANT BUTTON -->
+<a id="yousafAIButton"
+   href="https://yousaf-ai-assistant-2026.muhajirhackers.workers.dev/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Open Yousaf AI Assistant 2026">
+   <span class="ai-button-icon">🤖</span>
+   <span>Yousaf AI Assistant</span>
+</a>
+
+<!-- WELCOME -->
+<div id="welcome">
+    <div class="welcome-content">
+        <h1>WELCOME TO</h1>
+        <h2>SHAIKH YOUSAF</h2>
+        <p>Build by Muhajir Hacker</p>
+        <p class="urdu">مہاجر ابو سفیان ملک</p>
+        <p class="official-line">✦ SHAIkH YOUSAF OFFICIAL WEBSITE ✦</p>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header>
+<div class="nav">
+
+    <div class="side-social">
+
+        <a href="https://t.me/Mujairhacker"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Telegram">
+
+            <svg viewBox="0 0 24 24" fill="#229ED9">
+
+                <path d="M21.8 4.2 18.7 19c-.2 1-.8 1.3-1.6.8l-4.6-3.4-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.7 8.5-7.7c.4-.4-.1-.6-.6-.2L7.2 13.1l-4.6-1.5c-1-.3-1-1 .2-1.5L20.7 3c.9-.3 1.7.2 1.1 1.2z"/>
+
+            </svg>
+
+        </a>
+
+        <a href="https://www.tiktok.com/@muhajir_0001"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="TikTok">
+
+            <svg viewBox="0 0 24 24" fill="#fff">
+
+                <path d="M16.6 3c.3 1.8 1.3 3.2 3.1 3.8v3.2c-1.4-.1-2.7-.5-3.8-1.3v6.8c0 4.3-3.2 6.5-6.2 6.5-3 0-5.7-2.1-5.7-5.5 0-3.4 2.7-5.8 6.1-5.8.3 0 .7 0 1 .1v3.2c-.3-.1-.6-.1-1-.1-1.6 0-2.8 1-2.8 2.5 0 1.4 1.1 2.4 2.5 2.4 1.5 0 2.8-1 2.8-3V3h4z"/>
+
+            </svg>
+
+        </a>
+
+    </div>
+
+
+    <div class="brand">
+
+        <div class="side-logo">
+
+            <img src="lion%20(1).png"
+                 alt="Muhajir Official">
+
+        </div>
+
+        <div class="logo">
+            SHAIkH YOUSAF
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#story">زندگی</a>
+
+        <a href="#videos">Videos</a>
+
+        <a href="#reels">Reels</a>
+
+        <a href="#family">Family</a>
+
+        <a href="#gallery">Photos</a>
+
+        <a href="#reviews">Reviews</a>
+
+        <a href="#games">Games</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+    <h1>SHAIkH YOUSAF OFFICIAL</h1>
+
+    <h2 class="urdu">
+        ایک سادہ انسان، ایک خوبصورت داستان
+    </h2>
+
+    <p>
+        زندگی، جدوجہد، خاندان، محبت، یادیں اور بہتر مستقبل کے خواب۔
+    </p>
+
+    <a href="#story" class="btn">
+        زندگی کی داستان
+    </a>
+
+    <a href="#website" class="btn dark">
+        🌐 Website
+    </a>
+
+    <div class="official-line">
+        ✦ OFFICIAL WEBSITE ✦
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- LIFE STORY -->
+<section id="story">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            زندگی کی داستان
+        </h2>
+
+        <p>
+            زندگی کے سفر کی چند خوبصورت اور یادگار باتیں
+        </p>
+
+    </div>
+
+
+    <img src="yousaf-8.jpg"
+         class="main-image"
+         alt="Shaikh Yousaf">
+
+
+    <div class="story-grid">
+
+        <div class="story-card">
+
+            <div class="icon">🏡</div>
+
+            <h3>
+                گاؤں سے آغاز
+            </h3>
+
+            <p>
+                زندگی کا سفر سادگی، اپنے لوگوں اور اپنے گاؤں کی مٹی سے شروع ہوا۔
+            </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <div class="icon">🤲</div>
+
+            <h3>
+                والد کی محنت
+            </h3>
+
+            <p>
+                خاندان کے لیے محنت، قربانی اور ذمہ داری زندگی کا ایک اہم حصہ رہی۔
+            </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <div class="icon">👨‍👦</div>
+
+            <h3>
+                بھائی مدثر
+            </h3>
+
+            <p>
+                بھائی مدثر کے ساتھ رشتہ، محبت اور یادیں اس سفر کی خوبصورت داستان ہیں۔
+            </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <div class="icon">🧵</div>
+
+            <h3>
+                شیخ صغیر کے ساتھ
+            </h3>
+
+            <p>
+                محنت اور ہنر کے سفر میں شیخ صغیر کے ساتھ کام اور سیکھنے کا تجربہ بھی اہم رہا۔
+            </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <div class="icon">🌅</div>
+
+            <h3>
+                امید اور بہتر مستقبل
+            </h3>
+
+            <p>
+                مشکلات کے باوجود امید قائم ہے اور بہتر آنے والے کل کے لیے سفر جاری ہے۔
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="letter" style="margin-top:30px">
+
+        <p class="urdu">
+            زندگی چاہے کتنی بھی مشکل ہو، انسان کو امید، محنت اور اپنے لوگوں کا ساتھ نہیں چھوڑنا چاہیے۔ ہر نیا دن ایک نئی امید لے کر آتا ہے۔
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- JOURNEY -->
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            زندگی کا سفر
+        </h2>
+
+        <p>
+            کچھ اہم مراحل
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>
+                بچپن
+            </h3>
+
+            <p>
+                سادگی، خاندان اور اپنوں کے درمیان گزرا خوبصورت وقت۔
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                محنت کا آغاز
+            </h3>
+
+            <p>
+                زندگی کی ذمہ داریوں کو سمجھتے ہوئے محنت کا سفر شروع ہوا۔
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                مشکل وقت
+            </h3>
+
+            <p>
+                مشکلات آئیں مگر حوصلہ اور امید برقرار رہی۔
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                آج
+            </h3>
+
+            <p>
+                نئے خواب، نئی امید اور بہتر مستقبل کی طرف سفر جاری ہے۔
+            </p
