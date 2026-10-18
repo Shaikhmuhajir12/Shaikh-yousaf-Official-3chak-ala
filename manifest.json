@@ -1,1 +1,22 @@
 
+
+{
+  "id": "./",
+  "name": "Shaikh Yousaf Official",
+  "short_name": "Yousaf Official",
+  "description": "Shaikh Yousaf Official Website",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090909",
+  "theme_color": "#e8bd58",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./lion%20(1).png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
