@@ -1081,4 +1081,3080 @@ footer strong{
 .install-step{
  padding:17px;
  background:var(--panel);
- border:1px
+ border:1px solid var(--line);
+ border-radius:14px;
+}
+
+.install-step b{
+ color:var(--gold);
+ display:block;
+ margin-bottom:6px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+ .nav-links{
+  width:100%;
+  justify-content:center;
+  gap:9px;
+  font-size:10px;
+ }
+
+ .hero{
+  min-height:72vh;
+  padding:35px 5%;
+ }
+
+ .hero-inner{
+  grid-template-columns:78px 1fr;
+  gap:13px;
+ }
+
+ .hero-side-logo{
+  width:76px;
+  height:76px;
+ }
+
+ .hero-copy h1{
+  font-size:29px;
+ }
+
+ .hero-copy p{
+  font-size:13px;
+ }
+
+ .profile-row{
+  grid-template-columns:1fr;
+  gap:0;
+ }
+
+ .profile-photo{
+  height:300px;
+ }
+
+ .profile-details{
+  padding:18px;
+ }
+
+ .reels-container{
+  height:73svh;
+  min-height:390px;
+ }
+
+ .video-card video{
+  height:72svh;
+ }
+
+ .lyrics-player{
+  padding:12px;
+ }
+
+ .lyrics-list{
+  height:390px;
+ }
+
+ #currentLyric{
+  font-size:24px;
+ }
+
+ .lyric-line{
+  font-size:16px;
+ }
+
+ .lyric-line.active{
+  font-size:20px;
+ }
+}
+
+@media(prefers-reduced-motion:reduce){
+ *,
+ *:before,
+ *:after{
+  animation:none!important;
+  scroll-behavior:auto!important;
+  transition:none!important;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= WELCOME ================= -->
+
+<div id="welcome">
+ <div class="welcome-box">
+
+  <img
+   class="welcome-logo"
+   src="./lion%20(1).png"
+   alt="Lion logo"
+  >
+
+  <div style="color:#ffe8ad;letter-spacing:3px;font-size:12px" dir="ltr">
+   WELCOME TO MY WORLD
+  </div>
+
+  <h1>SHAIKH YOUSAF</h1>
+
+  <div class="urdu">
+   شیخ یوسف آفیشل ویب سائٹ
+  </div>
+
+  <div id="welcome-decoration"></div>
+
+  <div class="credit">
+   Manage and Build by Muhajir Hacker
+  </div>
+
+  <div class="urdu">
+   مہاجر ابو سفیان ملک
+  </div>
+
+  <p class="small-line">
+   کہانی • یادیں • خاندان • خواب
+  </p>
+
+  <p id="countdown" style="color:#ffe8ad">
+   ویب سائٹ 5 سیکنڈ میں کھلے گی
+  </p>
+
+  <button class="btn" id="enterWebsite">
+   ویب سائٹ کھولیں ✨
+  </button>
+
+ </div>
+</div>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+ <nav class="nav">
+
+  <a class="brand" href="#home">
+
+   <img
+    id="navLogo"
+    src="./lion%20(1).png"
+    alt="Lion logo"
+   >
+
+   <span>
+    SHAIKH YOUSAF
+    <small style="display:block;font-size:10px;color:var(--muted)">
+     OFFICIAL
+    </small>
+   </span>
+
+  </a>
+
+  <button id="themeToggle" aria-label="تھیم تبدیل کریں">
+   ☼
+  </button>
+
+  <div class="nav-links">
+
+   <a href="#home">ہوم</a>
+   <a href="#story">کہانی</a>
+   <a href="#people">شخصیات</a>
+   <a href="#videos">ویڈیوز</a>
+   <a href="#lyrics">Lyrics</a>
+   <a href="#reels">ریلز</a>
+   <a href="#gallery">گیلری</a>
+   <a href="#games">گیمز</a>
+   <a href="#comments">کمنٹس</a>
+   <a href="#install">انسٹال</a>
+   <a href="#contact">رابطہ</a>
+
+  </div>
+
+ </nav>
+
+</header>
+
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+ <div class="hero-inner">
+
+  <img
+   class="hero-side-logo"
+   src="./lion%20(1).png"
+   alt="Lion logo"
+  >
+
+  <div class="hero-copy">
+
+   <div class="hero-kicker">
+    OFFICIAL PERSONAL WEBSITE
+   </div>
+
+   <h1>
+    خوش آمدید
+    <span class="gold">
+     شیخ یوسف
+    </span>
+   </h1>
+
+   <p>
+    زندگی کی کہانی، خاندان کی یادیں اور کامیابی کی جانب سفر۔
+   </p>
+
+   <div class="hero-buttons">
+
+    <a class="btn" href="#story">
+     میری مکمل کہانی
+    </a>
+
+    <a class="btn btn-outline" href="#lyrics">
+     🎵 Lyrics سنیں
+    </a>
+
+   </div>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= STORY ================= -->
+
+<section class="section" id="story">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>یوسف کی مکمل کہانی</h2>
+   <p>زندگی، خاندان، جدوجہد اور خواب</p>
+  </div>
+
+  <div class="profile-row">
+
+   <img
+    class="profile-photo"
+    src="./yousaf-8.jpg"
+    alt="یوسف کی تصویر"
+   >
+
+   <div class="panel story-text">
+
+    <h3 class="gold" style="margin-top:0">
+     شیخ یوسف — میرا سفر
+    </h3>
+
+    <p>
+     ہر انسان کی زندگی ایک کہانی ہوتی ہے۔
+     اس کہانی میں خوشیاں، مشکلات، خاندان کی محبت،
+     دوستوں کی یادیں اور مستقبل کے خواب شامل ہوتے ہیں۔
+    </p>
+
+    <p>
+     زندگی کا ہر مرحلہ انسان کو کچھ نیا سکھاتا ہے۔
+     کامیابی صرف منزل تک پہنچنے کا نام نہیں بلکہ مسلسل کوشش،
+     صبر، اپنے کردار کی بہتری اور اپنوں کی عزت کرنے کا نام بھی ہے۔
+    </p>
+
+    <p>
+     خاندان اور اچھے رشتے زندگی کی اصل دولت ہیں۔
+     یادگار لمحات کو محفوظ رکھنا، اچھے لوگوں کی قدر کرنا
+     اور اپنے خوابوں کے لیے محنت کرنا اس سفر کا اہم حصہ ہے۔
+    </p>
+
+    <p>
+     یہ آفیشل ویب سائٹ میری تصاویر، ویڈیوز، گیلری،
+     پسندیدہ باتوں اور ذاتی یادوں کے لیے ایک ڈیجیٹل جگہ ہے۔
+    </p>
+
+    <p class="story-highlight">
+     میرا مقصد: سیکھتے رہنا، آگے بڑھتے رہنا اور اپنی یادوں کو محفوظ رکھنا۔
+    </p>
+
+   </div>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= PEOPLE ================= -->
+
+<section class="section" id="people">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>ہماری شخصیات</h2>
+   <p>تصویر پوری نظر آئے گی، تفصیلات ساتھ موجود ہوں گی</p>
+  </div>
+
+
+  <article class="profile-row">
+
+   <img
+    class="profile-photo"
+    src="./ustad-7.jpg"
+    alt="استاد صغیر بھائی"
+   >
+
+   <div class="panel profile-details">
+
+    <h3>استاد صغیر بھائی</h3>
+
+    <p>
+     ایک محترم شخصیت کے لیے مخصوص یادگاری حصہ۔
+    </p>
+
+    <ul class="detail-list">
+     <li><b>نام:</b> استاد صغیر بھائی</li>
+     <li><b>تعارف:</b> استاد اور قابلِ احترام شخصیت</li>
+     <li><b>یادگار پہلو:</b> عزت، رہنمائی اور اچھے تعلقات</li>
+    </ul>
+
+   </div>
+
+  </article>
+
+
+  <article class="profile-row">
+
+   <img
+    class="profile-photo"
+    src="./mudassir-5.jpg"
+    alt="مدثر بھائی"
+   >
+
+   <div class="panel profile-details">
+
+    <h3>مدثر بھائی</h3>
+
+    <p>
+     مدثر بھائی کے لیے تصاویر اور تعارف کا خصوصی حصہ۔
+    </p>
+
+    <ul class="detail-list">
+     <li><b>نام:</b> مدثر</li>
+     <li><b>تعارف:</b> خاندان اور یادوں سے وابستہ شخصیت</li>
+     <li><b>اس صفحے میں:</b> تصویر، مختصر تعارف اور یادگار باتیں</li>
+    </ul>
+
+   </div>
+
+  </article>
+
+
+  <article class="profile-row">
+
+   <img
+    class="profile-photo"
+    src="./yousaf-8.jpg"
+    alt="شیخ یوسف"
+   >
+
+   <div class="panel profile-details">
+
+    <h3>شیخ یوسف</h3>
+
+    <p>
+     اس ویب سائٹ کا مرکزی تعارف اور یادوں کا حصہ۔
+    </p>
+
+    <ul class="detail-list">
+     <li><b>ویب سائٹ:</b> Shaikh Yousaf Official</li>
+     <li><b>مواد:</b> کہانی، تصاویر، ویڈیوز اور گیلری</li>
+     <li><b>مقصد:</b> یادوں کو محفوظ کرنا</li>
+    </ul>
+
+    <a class="btn" href="#story">
+     مکمل کہانی پڑھیں
+    </a>
+
+   </div>
+
+  </article>
+
+ </div>
+
+</section>
+
+
+<!-- ================= JOURNEY ================= -->
+
+<section class="section" id="journey">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>زندگی کا سفر</h2>
+   <p>محنت، امید اور بہتر مستقبل</p>
+  </div>
+
+  <div class="cards">
+
+   <article class="card">
+    <div class="card-body">
+     <h3>آغاز</h3>
+     <p class="muted">
+      ہر بڑی منزل ایک چھوٹے قدم سے شروع ہوتی ہے۔
+     </p>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="card-body">
+     <h3>محنت</h3>
+     <p class="muted">
+      صبر اور مسلسل کوشش انسان کو مضبوط بناتے ہیں۔
+     </p>
+    </div>
+   </article>
+
+   <article class="card">
+    <div class="card-body">
+     <h3>امید</h3>
+     <p class="muted">
+      اپنے خوابوں کے لیے کوشش جاری رکھیں۔
+     </p>
+    </div>
+   </article>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= VIDEOS ================= -->
+
+<section class="section" id="videos">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>ویڈیو کلیکشن</h2>
+   <p>ویڈیو مکمل نظر آئے گی</p>
+  </div>
+
+  <div class="video-grid">
+
+   <article class="video-card">
+
+    <video controls playsinline preload="metadata">
+
+     <source
+      src="./a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4"
+      type="video/mp4"
+     >
+
+    </video>
+
+    <div class="video-caption">
+     <h3>شیخ یوسف ویڈیو</h3>
+     <p>Official video collection</p>
+    </div>
+
+   </article>
+
+
+   <article class="video-card">
+
+    <video controls playsinline preload="metadata">
+
+     <source
+      src="./foryoupage%20foryoupage.mp4"
+      type="video/mp4"
+     >
+
+    </video>
+
+    <div class="video-caption">
+     <h3>یادگار لمحات</h3>
+     <p>ویڈیو کلیکشن</p>
+    </div>
+
+   </article>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- =====================================================
+     COMPLETE LYRICS SECTION
+===================================================== -->
+
+<section class="section lyrics-section" id="lyrics">
+
+ <div class="container">
+
+  <div class="section-title">
+
+   <h2>🎵 گانے کے ساتھ مکمل Lyrics</h2>
+
+   <p>
+    گانا چلائیں اور Lyrics کو ساتھ ساتھ دیکھیں
+   </p>
+
+  </div>
+
+
+  <div class="lyrics-player">
+
+
+   <div class="lyrics-top">
+
+    <div class="lyrics-badge">
+     🎵 LIVE LYRICS
+    </div>
+
+    <div class="lyrics-song-name">
+     امیرالمومنین
+    </div>
+
+   </div>
+
+
+   <!-- CURRENT LINE -->
+
+   <div class="lyrics-current">
+
+    <div id="currentLyric">
+     🎵 گانا چلانے کے لیے Play دبائیں
+    </div>
+
+   </div>
+
+
+   <!-- PROGRESS -->
+
+   <div class="lyrics-progress-wrap">
+
+    <input
+     type="range"
+     id="lyricsProgress"
+     min="0"
+     max="100"
+     value="0"
+     step="0.1"
+    >
+
+    <div class="lyrics-time">
+
+     <span id="currentTime">
+      00:00
+     </span>
+
+     <span id="totalTime">
+      00:00
+     </span>
+
+    </div>
+
+   </div>
+
+
+   <!-- CONTROLS -->
+
+   <div class="lyrics-controls">
+
+    <button
+     class="lyrics-control"
+     id="prevLyric"
+     type="button"
+    >
+     ⏮
+    </button>
+
+    <button
+     class="lyrics-control"
+     id="restartMusic"
+     type="button"
+    >
+     ↻
+    </button>
+
+    <button
+     class="lyrics-control main"
+     id="mainPlay"
+     type="button"
+    >
+     ▶
+    </button>
+
+    <button
+     class="lyrics-control"
+     id="nextLyric"
+     type="button"
+    >
+     ⏭
+    </button>
+
+   </div>
+
+
+   <div class="lyrics-options">
+
+    <button
+     id="autoScrollBtn"
+     class="active"
+     type="button"
+    >
+     Auto Scroll: ON
+    </button>
+
+    <button
+     id="fullLyricsBtn"
+     type="button"
+    >
+     📜 مکمل Lyrics
+    </button>
+
+   </div>
+
+
+   <div id="lyricsStatus" class="lyrics-status">
+    background.mp3 لوڈ ہونے کا انتظار ہے...
+   </div>
+
+
+   <!-- FULL LYRICS -->
+
+   <div
+    class="lyrics-list"
+    id="lyricsList"
+   ></div>
+
+
+   <div class="lyrics-note">
+    Lyrics آپ کے فراہم کردہ متن کے مطابق شامل کیے گئے ہیں۔
+    Audio duration کے مطابق automatic approximate synchronization استعمال ہو رہی ہے۔
+   </div>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= REELS ================= -->
+
+<section class="section" id="reels">
+
+ <div class="container">
+
+  <div class="section-title">
+
+   <h2>عمودی ریلز</h2>
+
+   <p>
+    اگلی ویڈیو کے لیے ریلز باکس کے اندر سوائپ کریں
+   </p>
+
+  </div>
+
+
+  <div class="reels-container">
+
+
+   <article class="reel">
+
+    <video controls playsinline preload="metadata">
+
+     <source
+      src="./a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4"
+      type="video/mp4"
+     >
+
+    </video>
+
+    <div class="reel-shade"></div>
+
+    <div class="reel-label">
+     <strong>@ShaikhYousaf</strong>
+     <p>شیخ یوسف آفیشل · ویڈیو 1</p>
+    </div>
+
+    <div class="reel-actions">
+
+     <button class="reel-action likeBtn" type="button">
+      ♡
+      <small>
+       لائک <span>0</span>
+      </small>
+     </button>
+
+     <button class="reel-action commentBtn" type="button">
+      💬
+      <small>کمنٹ</small>
+     </button>
+
+     <button class="reel-action shareReelBtn" type="button">
+      ↗
+      <small>شیئر</small>
+     </button>
+
+    </div>
+
+   </article>
+
+
+   <article class="reel">
+
+    <video controls playsinline preload="metadata">
+
+     <source
+      src="./foryoupage%20foryoupage.mp4"
+      type="video/mp4"
+     >
+
+    </video>
+
+    <div class="reel-shade"></div>
+
+    <div class="reel-label">
+     <strong>@ShaikhYousaf</strong>
+     <p>شیخ یوسف آفیشل · ویڈیو 2</p>
+    </div>
+
+    <div class="reel-actions">
+
+     <button class="reel-action likeBtn" type="button">
+      ♡
+      <small>
+       لائک <span>0</span>
+      </small>
+     </button>
+
+     <button class="reel-action commentBtn" type="button">
+      💬
+      <small>کمنٹ</small>
+     </button>
+
+     <button class="reel-action shareReelBtn" type="button">
+      ↗
+      <small>شیئر</small>
+     </button>
+
+    </div>
+
+   </article>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="section" id="gallery">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>فوٹو گیلری</h2>
+   <p>تصویر پر دبائیں تاکہ بڑی نظر آئے</p>
+  </div>
+
+  <div class="gallery-grid">
+
+   <img src="./yousaf-8.jpg" alt="یوسف" loading="lazy">
+   <img src="./mudassir-5.jpg" alt="مدثر" loading="lazy">
+   <img src="./ustad-7.jpg" alt="استاد صغیر" loading="lazy">
+   <img src="./lion%20(1).png" alt="Lion logo" loading="lazy">
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= QUOTES ================= -->
+
+<section class="section" id="quotes">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>خوبصورت باتیں</h2>
+  </div>
+
+  <div class="quote">
+   “صبر اور محنت انسان کو منزل کے قریب لے جاتے ہیں۔”
+  </div>
+
+  <div class="quote">
+   “اپنوں کی عزت کریں اور رشتوں کی قدر کریں۔”
+  </div>
+
+  <div class="quote">
+   “ہر نیا دن ایک نیا موقع لے کر آتا ہے۔”
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= DUA ================= -->
+
+<section class="section" id="dua">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>دعا</h2>
+  </div>
+
+  <div class="panel" style="text-align:center">
+
+   <p style="
+    font-family:'Noto Nastaliq Urdu',serif;
+    font-size:30px;
+    color:var(--gold)
+   ">
+    رَبِّ زِدْنِي عِلْمًا
+   </p>
+
+   <p>
+    اے میرے رب! میرے علم میں اضافہ فرما۔
+   </p>
+
+   <p>
+    اللہ ہم سب کو صحت، عزت، سکون اور کامیابی عطا فرمائے۔ آمین۔
+   </p>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= COMMENTS ================= -->
+
+<section class="section" id="comments">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>کمنٹس اور رائے</h2>
+   <p>اپنی رائے لکھیں</p>
+  </div>
+
+  <form class="form" id="commentForm">
+
+   <input
+    class="field"
+    id="commentName"
+    maxlength="60"
+    placeholder="آپ کا نام"
+    required
+   >
+
+   <textarea
+    class="field"
+    id="commentText"
+    maxlength="1000"
+    rows="4"
+    placeholder="اپنا پیغام لکھیں..."
+    required
+   ></textarea>
+
+   <button class="btn" type="submit">
+    کمنٹ محفوظ کریں
+   </button>
+
+  </form>
+
+  <p
+   class="muted"
+   style="text-align:center;font-size:12px"
+  >
+   کمنٹس اس براؤزر میں محفوظ ہوتے ہیں۔
+  </p>
+
+  <div
+   id="commentList"
+   class="comment-list"
+  ></div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= GAMES ================= -->
+
+<section class="section" id="games">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>گیمز</h2>
+   <p>تفریح کے لیے کھیلیں</p>
+  </div>
+
+  <div class="cards">
+
+
+   <div class="game-box">
+
+    <h3>نمبر گیس کریں</h3>
+
+    <p class="muted">
+     1 سے 10 کے درمیان نمبر تلاش کریں۔
+    </p>
+
+    <form id="guessForm" class="game-row">
+
+     <input
+      class="field"
+      id="guessInput"
+      type="number"
+      min="1"
+      max="10"
+      placeholder="نمبر"
+      required
+     >
+
+     <button class="btn">
+      چیک
+     </button>
+
+    </form>
+
+    <p id="guessMessage"></p>
+
+    <button
+     class="btn btn-outline"
+     id="newGuess"
+     type="button"
+    >
+     نیا نمبر
+    </button>
+
+   </div>
+
+
+   <div class="game-box">
+
+    <h3>Tic Tac Toe</h3>
+
+    <div id="ticBoard">
+
+     <button type="button" data-cell="0"></button>
+     <button type="button" data-cell="1"></button>
+     <button type="button" data-cell="2"></button>
+
+     <button type="button" data-cell="3"></button>
+     <button type="button" data-cell="4"></button>
+     <button type="button" data-cell="5"></button>
+
+     <button type="button" data-cell="6"></button>
+     <button type="button" data-cell="7"></button>
+     <button type="button" data-cell="8"></button>
+
+    </div>
+
+    <p id="gameMessage">
+     X کی باری
+    </p>
+
+    <button
+     class="btn btn-outline"
+     id="resetTic"
+     type="button"
+    >
+     دوبارہ کھیلیں
+    </button>
+
+   </div>
+
+
+   <div class="game-box">
+
+    <h3>راک پیپر سیزر</h3>
+
+    <div class="game-row">
+
+     <button
+      class="btn"
+      type="button"
+      data-rps="rock"
+     >
+      ✊
+     </button>
+
+     <button
+      class="btn"
+      type="button"
+      data-rps="paper"
+     >
+      ✋
+     </button>
+
+     <button
+      class="btn"
+      type="button"
+      data-rps="scissors"
+     >
+      ✌
+     </button>
+
+    </div>
+
+    <p id="rpsMessage"></p>
+
+   </div>
+
+
+   <div class="game-box">
+
+    <h3>ریاضی چیلنج</h3>
+
+    <p id="mathQuestion"></p>
+
+    <form id="mathForm" class="game-row">
+
+     <input
+      class="field"
+      id="mathAnswer"
+      type="number"
+      placeholder="جواب"
+      required
+     >
+
+     <button class="btn">
+      جواب
+     </button>
+
+    </form>
+
+    <p id="mathMessage"></p>
+
+    <button
+     class="btn btn-outline"
+     id="newMath"
+     type="button"
+    >
+     نیا سوال
+    </button>
+
+   </div>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= INSTALL ================= -->
+
+<section class="section" id="install">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>ایپ انسٹال کریں</h2>
+   <p>اپنی ویب سائٹ کو موبائل کی ہوم اسکرین پر شامل کریں</p>
+  </div>
+
+  <div class="panel">
+
+   <h3 class="gold">
+    Shaikh Yousaf Official — Home Screen App
+   </h3>
+
+   <p class="muted">
+    اگر براؤزر میں انسٹال کا آپشن دستیاب ہو تو ویب سائٹ کو
+    موبائل کی ہوم اسکرین پر شامل کیا جا سکتا ہے۔
+   </p>
+
+   <div class="install-steps">
+
+    <div class="install-step">
+     <b>مرحلہ 1</b>
+     Chrome میں اپنی ویب سائٹ کھولیں۔
+    </div>
+
+    <div class="install-step">
+     <b>مرحلہ 2</b>
+     اوپر دائیں طرف تین نقطوں والے مینو پر دبائیں۔
+    </div>
+
+    <div class="install-step">
+     <b>مرحلہ 3</b>
+     Install app یا Add to Home screen منتخب کریں۔
+    </div>
+
+    <div class="install-step">
+     <b>مرحلہ 4</b>
+     Install یا Add کی تصدیق کریں۔
+    </div>
+
+   </div>
+
+   <br>
+
+   <button class="btn" id="installNow" type="button">
+    📲 انسٹال کرنے کی کوشش کریں
+   </button>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+ <div class="container">
+
+  <div class="section-title">
+   <h2>رابطہ کریں</h2>
+   <p>آفیشل سوشل لنکس</p>
+  </div>
+
+  <div class="panel" style="text-align:center">
+
+   <h3 class="gold">
+    Shaikh Yousaf | Official
+   </h3>
+
+   <div class="socials">
+
+    <a
+     class="social-link"
+     href="https://t.me/Mujairhacker"
+     target="_blank"
+     rel="noopener"
+    >
+     ✈ Telegram
+    </a>
+
+    <a
+     class="social-link"
+     href="https://www.tiktok.com/@muhajir_0001"
+     target="_blank"
+     rel="noopener"
+    >
+     ♪ TikTok
+    </a>
+
+    <a
+     class="social-link"
+     href="https://wa.me/"
+     target="_blank"
+     rel="noopener"
+    >
+     ☏ WhatsApp
+    </a>
+
+    <button
+     class="social-link"
+     id="contactShare"
+     type="button"
+    >
+     ↗ ویب سائٹ شیئر کریں
+    </button>
+
+   </div>
+
+   <p dir="ltr" class="gold">
+    Manage and Build by Muhajir Hacker
+   </p>
+
+   <p>
+    مہاجر ابو سفیان ملک
+   </p>
+
+  </div>
+
+ </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+ <strong>
+  SHAIKH YOUSAF | OFFICIAL
+ </strong>
+
+ <p dir="ltr">
+  Manage and Build by Muhajir Hacker
+ </p>
+
+ <p>
+  مہاجر ابو سفیان ملک
+ </p>
+
+ <p>
+  © <span id="year"></span> All Rights Reserved
+ </p>
+
+</footer>
+
+
+<!-- ================= FLOATING MUSIC ================= -->
+
+<div id="floatingTools">
+
+
+ <div id="musicPanel">
+
+  <div class="panel-title">
+   🎵 میوزک + Live Lyrics
+  </div>
+
+  <div class="music-buttons">
+
+   <button id="prevSong" type="button">
+    ⏮
+   </button>
+
+   <button id="playSong" type="button">
+    ▶
+   </button>
+
+   <button id="stopSong" type="button">
+    ■
+   </button>
+
+   <button id="nextSong" type="button">
+    ⏭
+   </button>
+
+  </div>
+
+  <div id="miniLyrics">
+   🎶 گانا چلانے کے لیے Play دبائیں
+  </div>
+
+  <div id="lyricsStatus">
+   Audio: background.mp3
+  </div>
+
+  <button
+   class="btn"
+   id="openFullLyrics"
+   type="button"
+   style="width:100%;margin-top:9px;font-size:12px"
+  >
+   📜 مکمل Lyrics دیکھیں
+  </button>
+
+ </div>
+
+
+ <button
+  class="float-btn"
+  id="musicToggle"
+  type="button"
+  aria-label="میوزک"
+ >
+  ♫
+ </button>
+
+
+ <div id="sharePopup">
+
+  <div class="panel-title">
+   🔗 شیئر کریں
+  </div>
+
+  <div class="share-grid">
+
+   <a
+    id="shareWhatsApp"
+    href="#"
+    target="_blank"
+    rel="noopener"
+   >
+    WhatsApp
+   </a>
+
+   <a
+    id="shareTelegram"
+    href="#"
+    target="_blank"
+    rel="noopener"
+   >
+    Telegram
+   </a>
+
+   <a
+    id="shareFacebook"
+    href="#"
+    target="_blank"
+    rel="noopener"
+   >
+    Facebook
+   </a>
+
+   <button id="copyLink" type="button">
+    لنک کاپی
+   </button>
+
+  </div>
+
+ </div>
+
+
+ <button
+  class="float-btn"
+  id="shareToggle"
+  type="button"
+  aria-label="شیئر کریں"
+ >
+  ↗
+ </button>
+
+
+ <button
+  class="float-btn"
+  id="installFloat"
+  type="button"
+  aria-label="ایپ انسٹال کریں"
+ >
+  📲
+ </button>
+
+
+ <button
+  class="float-btn"
+  id="topFloat"
+  type="button"
+  aria-label="اوپر جائیں"
+ >
+  ⬆
+ </button>
+
+</div>
+
+
+<!-- ================= LIGHTBOX ================= -->
+
+<div id="lightbox">
+
+ <button
+  class="btn"
+  id="closeLightbox"
+  type="button"
+ >
+  ✕ بند کریں
+ </button>
+
+ <img
+  id="lightboxImage"
+  alt="بڑی تصویر"
+ >
+
+</div>
+
+
+<div id="toast" role="status"></div>
+
+
+<!-- IMPORTANT AUDIO FILE -->
+
+<audio
+ id="musicPlayer"
+ src="./background.mp3"
+ preload="metadata"
+></audio>
+
+
+<script>
+
+(() => {
+
+"use strict";
+
+
+/* =====================================================
+   BASIC HELPERS
+===================================================== */
+
+const $ = id => document.getElementById(id);
+
+const toast = message => {
+
+ const t = $("toast");
+
+ t.textContent = message;
+ t.style.display = "block";
+
+ clearTimeout(window.syToastTimer);
+
+ window.syToastTimer = setTimeout(() => {
+  t.style.display = "none";
+ },2800);
+
+};
+
+$("year").textContent = new Date().getFullYear();
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+let welcomeClosed = false;
+
+function closeWelcome(){
+
+ if(welcomeClosed) return;
+
+ welcomeClosed = true;
+
+ $("welcome").classList.add("hide");
+
+ try{
+  sessionStorage.setItem("syWelcomeSeen","1");
+ }catch(e){}
+
+}
+
+$("enterWebsite").addEventListener(
+ "click",
+ closeWelcome
+);
+
+try{
+
+ if(sessionStorage.getItem("syWelcomeSeen")==="1"){
+
+  closeWelcome();
+
+ }else{
+
+  let seconds = 5;
+
+  const timer = setInterval(() => {
+
+   seconds--;
+
+   if(seconds <= 0){
+
+    clearInterval(timer);
+    closeWelcome();
+
+   }else{
+
+    $("countdown").textContent =
+     "ویب سائٹ "+seconds+" سیکنڈ میں کھلے گی";
+
+   }
+
+  },1000);
+
+ }
+
+}catch(e){
+
+ setTimeout(closeWelcome,5000);
+
+}
+
+
+/* =====================================================
+   THEME
+===================================================== */
+
+$("themeToggle").addEventListener("click",() => {
+
+ document.body.classList.toggle("light");
+
+ $("themeToggle").textContent =
+  document.body.classList.contains("light")
+  ? "☾"
+  : "☼";
+
+});
+
+
+/* =====================================================
+   ONE VIDEO AT A TIME
+===================================================== */
+
+document.querySelectorAll("video").forEach(video => {
+
+ video.addEventListener("play",() => {
+
+  document.querySelectorAll("video").forEach(other => {
+
+   if(other !== video){
+    other.pause();
+   }
+
+  });
+
+ });
+
+});
+
+
+/* =====================================================
+   REELS
+===================================================== */
+
+document.querySelectorAll(".likeBtn").forEach(button => {
+
+ button.addEventListener("click",() => {
+
+  const liked =
+   button.classList.toggle("liked");
+
+  button.firstChild.textContent =
+   liked ? "♥" : "♡";
+
+  const count =
+   button.querySelector("span");
+
+  count.textContent =
+   String(
+    Math.max(
+     0,
+     Number(count.textContent) +
+     (liked ? 1 : -1)
+    )
+   );
+
+ });
+
+});
+
+
+document.querySelectorAll(".commentBtn").forEach(button => {
+
+ button.addEventListener("click",() => {
+
+  $("comments").scrollIntoView({
+   behavior:"smooth"
+  });
+
+  setTimeout(
+   () => $("commentText").focus(),
+   400
+  );
+
+ });
+
+});
+
+
+/* =====================================================
+   SHARE
+===================================================== */
+
+async function shareWebsite(){
+
+ try{
+
+  if(navigator.share){
+
+   await navigator.share({
+
+    title:"Shaikh Yousaf Official",
+
+    text:"شیخ یوسف کی آفیشل ویب سائٹ",
+
+    url:location.href
+
+   });
+
+  }else if(
+   navigator.clipboard &&
+   window.isSecureContext
+  ){
+
+   await navigator.clipboard.writeText(
+    location.href
+   );
+
+   toast("ویب سائٹ کا لنک کاپی ہوگیا");
+
+  }else{
+
+   window.prompt(
+    "ویب سائٹ کا لنک کاپی کریں:",
+    location.href
+   );
+
+  }
+
+ }catch(e){
+
+  if(e.name !== "AbortError"){
+
+   window.prompt(
+    "ویب سائٹ کا لنک:",
+    location.href
+   );
+
+  }
+
+}
+
+}
+
+
+document.querySelectorAll(".shareReelBtn")
+.forEach(button => {
+
+ button.addEventListener(
+  "click",
+  shareWebsite
+ );
+
+});
+
+
+$("contactShare").addEventListener(
+ "click",
+ shareWebsite
+);
+
+
+/* =====================================================
+   SHARE POPUP
+===================================================== */
+
+const encodedURL =
+ encodeURIComponent(location.href);
+
+$("shareWhatsApp").href =
+ "https://wa.me/?text="+
+ encodeURIComponent(
+  "Shaikh Yousaf Official: "+
+  location.href
+ );
+
+$("shareTelegram").href =
+ "https://t.me/share/url?url="+
+ encodedURL;
+
+$("shareFacebook").href =
+ "https://www.facebook.com/sharer/sharer.php?u="+
+ encodedURL;
+
+
+$("shareToggle").addEventListener("click",() => {
+
+ $("sharePopup").classList.toggle("open");
+
+ $("musicPanel").classList.remove("open");
+
+});
+
+
+$("copyLink").addEventListener(
+ "click",
+ async() => {
+
+  try{
+
+   if(
+    navigator.clipboard &&
+    window.isSecureContext
+   ){
+
+    await navigator.clipboard.writeText(
+     location.href
+    );
+
+    toast("لنک کاپی ہوگیا");
+
+   }else{
+
+    window.prompt(
+     "لنک کاپی کریں:",
+     location.href
+    );
+
+   }
+
+  }catch(e){
+
+   window.prompt(
+    "لنک کاپی کریں:",
+    location.href
+   );
+
+  }
+
+ }
+);
+
+
+/* =====================================================
+   ================= FULL LYRICS SYSTEM ================
+===================================================== */
+
+/*
+  IMPORTANT:
+  یہ وہی Lyrics ہیں جو آپ نے فراہم کیے ہیں۔
+*/
+
+const lyricsText = [
+
+ "امیرالمومنین",
+
+ "جن کی ہیبت اور جلال سے شیطان بھی دوسری گلی چلا جاتا تھا۔",
+
+ "جن کی ہیبت اور جلال کے ڈنڈے سے زمین ہلتی ہوئی رک گئی۔",
+
+ "اور جن کے خط کے جلال سے دریائے نیل چل پڑا۔",
+
+ "جن کے ایسے دیکھنے سے سورج بے نور ہو گیا۔",
+
+ "جن کے ایسے دیکھنے سے سورج بے نور ہو گیا۔",
+
+ "امیر المومنین",
+
+ "شیر نگر تو جانو جگر تو میرا فخر تو مولا عمر تو",
+
+ "جس نام سے ہر کام ہے باطل بھی پریشان",
+
+ "مرفات نہ ہے ایران",
+
+ "سردار ہے وہ پیار ہے وہ سنیوں کی جان",
+
+ "مرفات نہ ہے ایران",
+
+ "میرا سردار عمر",
+
+ "اللہ کے مبوب کا وہ یار ہے پیارا",
+
+ "جو ہے سننی وہ کہے گا یہ نعرہ ہر سو لگے گا",
+
+ "ہم منافق تو جلے گا",
+
+ "ہم منافق تو جلے گا",
+
+ "اس نارے سے ہو جاتی ہیں نسلوں کی بھی پیچا",
+
+ "نسلوں کی بھی پیچا",
+
+ "میرا سردار عمر میرا دلدار عمر",
+
+ "جب زلزل آیا تھا مدینے کی زمیں پر",
+
+ "درہ جو لگایا میرے مولا نے اسی پر",
+
+ "رک جاتا کہ وہ زلزلہ اس وقت وغی پر",
+
+ "دیکھا نہیں ایسا کوئی حاکم ہے کہیں پر",
+
+ "عمر ہے وہ جری ہے وہی مراد نبی ہے",
+
+ "وہی داماد علی ہے وہی داماد علی ہے",
+
+ "یہ صحیحیتہ زہرا کبھی داماد علی شاہ",
+
+ "داماد علی شاہ",
+
+ "کلمہ جو پڑا نارائی تک بھی لگا ہے",
+
+ "عمر ہوا مومن یہ اعلان ہوا ہے",
+
+ "اسلام دشمنوں کا ستیانہ سوا ہے",
+
+ "آیا گے عمر خادم سرکار بنا ہے",
+
+ "میں بینوکر ہوں عمر کا",
+
+ "میں سناگر ہوں عمر کا",
+
+ "ہوں عمر نام تو ہی بھاگتا شیطان",
+
+ "میں عمر فاطمہ ہے ہیرہ",
+
+ "میں عمر فاطمہ ہے ہیرہ",
+
+ "میرا سرکار عمر",
+
+ "میرا سردار مر میرا دلدار مر",
+
+ "نعمت صدقی میری زبا پر ہے ترانا",
+
+ "عاشق میں عمر کا ہوں مجھے جان زمانا",
+
+ "لو کر ہوں میں عبدار ہوں عاشق میں دیوانا",
+
+ "عمر فاطمہ ہے ایران",
+
+ "میرا سردار عمر میرا بلدار عمر",
+
+ "اسلام سے ہر کام ہے باطل بھی پریشان",
+
+ "عمر فاطمہ ہے ایران",
+
+ "سردار ہے وہ پیار ہے وہ سنیوں کی جان",
+
+ "میرا سردار عمر میرا دلدار عمر",
+
+ "شیر نیڈر تو جانو جگر تو میرا فخر تو مولا عمر تو",
+
+ "شیریں نہیں ڈر تو جانو جگر تو میرا فخر تو مولا عمر تو"
+
+];
+
+
+/* Render all lyrics */
+
+const lyricsList =
+ $("lyricsList");
+
+
+lyricsText.forEach((text,index) => {
+
+ const line =
+  document.createElement("div");
+
+ line.className = "lyric-line";
+
+ line.dataset.index = index;
+
+ line.textContent = text;
+
+ line.addEventListener("click",() => {
+
+  if(
+   Array.isArray(lyricTimes) &&
+   lyricTimes[index] !== undefined
+  ){
+
+   music.currentTime =
+    lyricTimes[index];
+
+   if(music.paused){
+    playMusic();
+   }
+
+  }
+
+ });
+
+ lyricsList.appendChild(line);
+
+});
+
+
+const lyricElements =
+ Array.from(
+  document.querySelectorAll(".lyric-line")
+ );
+
+
+/* =====================================================
+   LYRIC TIMING
+===================================================== */
+
+const music =
+ $("musicPlayer");
+
+let lyricTimes = [];
+
+let currentLyricIndex = -1;
+
+let autoScroll = true;
+
+
+/*
+  یہ function audio duration ملنے کے بعد
+  Lyrics کو پوری audio duration میں
+  automatically distribute کرتا ہے۔
+*/
+
+function buildLyricTiming(){
+
+ const duration = music.duration;
+
+ if(
+  !Number.isFinite(duration) ||
+  duration <= 0
+ ){
+
+  lyricTimes = [];
+
+  $("lyricsStatus").textContent =
+   "background.mp3 کی duration دستیاب نہیں۔";
+
+  return;
+
+ }
+
+
+ const total =
+  lyricsText.length;
+
+
+ /*
+  شروع اور آخر میں تھوڑا breathing space
+  رکھا گیا ہے تاکہ پہلی/آخری لائن
+  فوراً cut نہ ہو۔
+ */
+
+ const intro =
+  Math.min(2, duration * 0.03);
+
+ const outro =
+  Math.min(3, duration * 0.04);
+
+ const usable =
+  Math.max(
+   1,
+   duration - intro - outro
+  );
+
+
+ lyricTimes =
+  lyricsText.map((line,index) => {
+
+   return intro +
+    (usable * index / total);
+
+  });
+
+
+ $("totalTime").textContent =
+  formatTime(duration);
+
+ $("lyricsStatus").textContent =
+  "✓ "+lyricsText.length+
+  " Lyrics lines تیار ہیں — Audio کے ساتھ automatic sync فعال ہے۔";
+
+}
+
+
+music.addEventListener(
+ "loadedmetadata",
+ buildLyricTiming
+);
+
+
+/* =====================================================
+   FORMAT TIME
+===================================================== */
+
+function formatTime(seconds){
+
+ if(
+  !Number.isFinite(seconds) ||
+  seconds < 0
+ ){
+  return "00:00";
+ }
+
+ const mins =
+  Math.floor(seconds / 60);
+
+ const secs =
+  Math.floor(seconds % 60);
+
+ return String(mins).padStart(2,"0")+
+  ":"+
+  String(secs).padStart(2,"0");
+
+}
+
+
+/* =====================================================
+   FIND CURRENT LYRIC
+===================================================== */
+
+function getLyricIndex(time){
+
+ if(!lyricTimes.length){
+  return -1;
+ }
+
+ let index = 0;
+
+ for(let i=0;i<lyricTimes.length;i++){
+
+  if(time >= lyricTimes[i]){
+   index = i;
+  }else{
+   break;
+  }
+
+ }
+
+ return index;
+
+}
+
+
+/* =====================================================
+   HIGHLIGHT LYRIC
+===================================================== */
+
+function showLyric(index){
+
+ if(index < 0) return;
+
+ if(index === currentLyricIndex){
+
+  const line =
+   lyricsText[index];
+
+  if($("currentLyric").textContent !== line){
+
+   $("currentLyric").textContent = line;
+
+  }
+
+  return;
+
+ }
+
+
+ currentLyricIndex = index;
+
+ lyricElements.forEach(
+  element =>
+   element.classList.remove("active")
+ );
+
+
+ const active =
+  lyricElements[index];
+
+ if(active){
+
+  active.classList.add("active");
+
+  if(autoScroll){
+
+   active.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+   });
+
+  }
+
+ }
+
+
+ $("currentLyric").textContent =
+  lyricsText[index];
+
+ $("miniLyrics").textContent =
+  lyricsText[index];
+
+}
+
+
+/* =====================================================
+   AUDIO TIME UPDATE
+===================================================== */
+
+music.addEventListener(
+ "timeupdate",
+ () => {
+
+  const duration =
+   music.duration;
+
+  if(
+   !Number.isFinite(duration) ||
+   duration <= 0
+  ){
+   return;
+  }
+
+
+  const time =
+   music.currentTime;
+
+
+  $("currentTime").textContent =
+   formatTime(time);
+
+  $("totalTime").textContent =
+   formatTime(duration);
+
+
+  $("lyricsProgress").value =
+   (time / duration) * 100;
+
+
+  const index =
+   getLyricIndex(time);
+
+
+  if(index >= 0){
+   showLyric(index);
+  }
+
+ }
+);
+
+
+/* =====================================================
+   PROGRESS SEEK
+===================================================== */
+
+$("lyricsProgress").addEventListener(
+ "input",
+ () => {
+
+  const duration =
+   music.duration;
+
+  if(
+   Number.isFinite(duration) &&
+   duration > 0
+  ){
+
+   music.currentTime =
+    duration *
+    (
+     Number(
+      $("lyricsProgress").value
+     ) / 100
+    );
+
+  }
+
+ }
+);
+
+
+/* =====================================================
+   PLAY MUSIC
+===================================================== */
+
+async function playMusic(){
+
+ try{
+
+  await music.play();
+
+  updateMusicButtons();
+
+ }catch(error){
+
+  toast(
+   "گانا نہیں چلا۔ background.mp3 فائل چیک کریں۔"
+  );
+
+  $("lyricsStatus").textContent =
+   "⚠ background.mp3 فائل موجود نہیں یا لوڈ نہیں ہو رہی۔";
+
+ }
+
+}
+
+
+function updateMusicButtons(){
+
+ const paused =
+  music.paused;
+
+ $("playSong").textContent =
+  paused ? "▶" : "⏸";
+
+ $("mainPlay").textContent =
+  paused ? "▶" : "⏸";
+
+
+ if(!paused){
+
+  $("lyricsStatus").textContent =
+   "🎵 گانا چل رہا ہے — Lyrics automatic sync میں ہیں۔";
+
+ }
+
+}
+
+
+music.addEventListener(
+ "play",
+ updateMusicButtons
+);
+
+music.addEventListener(
+ "pause",
+ updateMusicButtons
+);
+
+
+/* =====================================================
+   MAIN PLAY
+===================================================== */
+
+$("mainPlay").addEventListener(
+ "click",
+ () => {
+
+  if(music.paused){
+   playMusic();
+  }else{
+   music.pause();
+  }
+
+ }
+);
+
+
+/* =====================================================
+   FLOATING PLAY
+===================================================== */
+
+$("playSong").addEventListener(
+ "click",
+ () => {
+
+  if(music.paused){
+   playMusic();
+  }else{
+   music.pause();
+  }
+
+ }
+);
+
+
+/* =====================================================
+   STOP
+===================================================== */
+
+$("stopSong").addEventListener(
+ "click",
+ () => {
+
+  music.pause();
+
+  music.currentTime = 0;
+
+  $("lyricsProgress").value = 0;
+
+  currentLyricIndex = -1;
+
+  $("currentLyric").textContent =
+   "🎵 گانا چلانے کے لیے Play دبائیں";
+
+  $("miniLyrics").textContent =
+   "🎶 گانا چلانے کے لیے Play دبائیں";
+
+  lyricElements.forEach(
+   element =>
+    element.classList.remove("active")
+  );
+
+  updateMusicButtons();
+
+  toast("میوزک بند ہوگیا");
+
+ }
+);
+
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+$("restartMusic").addEventListener(
+ "click",
+ () => {
+
+  music.currentTime = 0;
+
+  currentLyricIndex = -1;
+
+  playMusic();
+
+ }
+);
+
+
+/* =====================================================
+   PREVIOUS LINE
+===================================================== */
+
+$("prevLyric").addEventListener(
+ "click",
+ () => {
+
+  if(!lyricTimes.length) return;
+
+  let index =
+   getLyricIndex(music.currentTime);
+
+  index =
+   Math.max(0,index - 1);
+
+  music.currentTime =
+   lyricTimes[index];
+
+  showLyric(index);
+
+ }
+);
+
+
+/* =====================================================
+   NEXT LINE
+===================================================== */
+
+$("nextLyric").addEventListener(
+ "click",
+ () => {
+
+  if(!lyricTimes.length) return;
+
+  let index =
+   getLyricIndex(music.currentTime);
+
+  index =
+   Math.min(
+    lyricsText.length - 1,
+    index + 1
+   );
+
+  music.currentTime =
+   lyricTimes[index];
+
+  showLyric(index);
+
+ }
+);
+
+
+/* =====================================================
+   FLOATING MUSIC PANEL
+===================================================== */
+
+$("musicToggle").addEventListener(
+ "click",
+ () => {
+
+  $("musicPanel").classList.toggle("open");
+
+  $("sharePopup").classList.remove("open");
+
+ }
+);
+
+
+/* =====================================================
+   OPEN FULL LYRICS
+===================================================== */
+
+function openLyricsSection(){
+
+ $("lyrics").scrollIntoView({
+  behavior:"smooth"
+ });
+
+}
+
+
+$("openFullLyrics").addEventListener(
+ "click",
+ openLyricsSection
+);
+
+
+$("fullLyricsBtn").addEventListener(
+ "click",
+ openLyricsSection
+);
+
+
+/* =====================================================
+   AUTO SCROLL
+===================================================== */
+
+$("autoScrollBtn").addEventListener(
+ "click",
+ () => {
+
+  autoScroll =
+   !autoScroll;
+
+  const button =
+   $("autoScrollBtn");
+
+  button.textContent =
+   autoScroll
+   ? "Auto Scroll: ON"
+   : "Auto Scroll: OFF";
+
+  button.classList.toggle(
+   "active",
+   autoScroll
+ );
+
+ }
+);
+
+
+/* =====================================================
+   PREVIOUS / NEXT SONG
+===================================================== */
+
+$("prevSong").addEventListener(
+ "click",
+ () => {
+
+  music.currentTime = 0;
+
+  playMusic();
+
+  toast(
+   "موجودہ گانا دوبارہ شروع ہوگیا"
+  );
+
+ }
+);
+
+
+$("nextSong").addEventListener(
+ "click",
+ () => {
+
+  music.currentTime = 0;
+
+  playMusic();
+
+  toast(
+   "یہ اس وقت واحد configured audio ہے"
+  );
+
+ });
+
+
+/* =====================================================
+   AUDIO ERROR
+===================================================== */
+
+music.addEventListener(
+ "error",
+ () => {
+
+  $("lyricsStatus").textContent =
+   "⚠ background.mp3 نہیں مل رہی۔ GitHub میں background.mp3 اسی جگہ Upload کریں۔";
+
+  $("currentLyric").textContent =
+   "⚠ background.mp3 فائل نہیں ملی";
+
+ }
+);
+
+
+/* =====================================================
+   COMMENTS
+===================================================== */
+
+const commentKey =
+ "syOfficialCommentsV4";
+
+
+function getComments(){
+
+ try{
+
+  const items =
+   JSON.parse(
+    localStorage.getItem(commentKey) || "[]"
+   );
+
+  return Array.isArray(items)
+   ? items
+   : [];
+
+ }catch(e){
+
+  return [];
+
+ }
+
+}
+
+
+function renderComments(){
+
+ const list =
+  $("commentList");
+
+ list.replaceChildren();
+
+ getComments()
+  .slice()
+  .reverse()
+  .forEach(item => {
+
+   const article =
+    document.createElement("article");
+
+   article.className =
+    "comment-item";
+
+   const name =
+    document.createElement("strong");
+
+   name.textContent =
+    item.name;
+
+   const date =
+    document.createElement("small");
+
+   date.textContent =
+    " · "+item.date;
+
+   const text =
+    document.createElement("p");
+
+   text.textContent =
+    item.text;
+
+   article.append(
+    name,
+    date,
+    text
+   );
+
+   list.append(article);
+
+  });
+
+}
+
+
+$("commentForm").addEventListener(
+ "submit",
+ event => {
+
+  event.preventDefault();
+
+  const name =
+   $("commentName")
+    .value
+    .trim();
+
+  const text =
+   $("commentText")
+    .value
+    .trim();
+
+  if(!name || !text){
+   return;
+  }
+
+  const items =
+   getComments();
+
+  items.push({
+
+   name:name.slice(0,60),
+
+   text:text.slice(0,1000),
+
+   date:new Date()
+    .toLocaleDateString()
+
+  });
+
+  try{
+
+   localStorage.setItem(
+    commentKey,
+    JSON.stringify(
+     items.slice(-100)
+    )
+   );
+
+   $("commentText").value = "";
+
+   renderComments();
+
+   toast("کمنٹ محفوظ ہوگیا");
+
+  }catch(e){
+
+   toast("کمنٹ محفوظ نہیں ہوسکا");
+
+  }
+
+ });
+
+
+renderComments();
+
+
+/* =====================================================
+   GUESS GAME
+===================================================== */
+
+let secret =
+ Math.floor(
+  Math.random()*10
+ )+1;
+
+
+$("guessForm").addEventListener(
+ "submit",
+ event => {
+
+  event.preventDefault();
+
+  const n =
+   Number(
+    $("guessInput").value
+   );
+
+  $("guessMessage").textContent =
+   n === secret
+   ? "🎉 درست جواب!"
+   : n < secret
+   ? "اس سے بڑا نمبر آزمائیں۔"
+   : "اس سے چھوٹا نمبر آزمائیں۔";
+
+ });
+
+
+$("newGuess").addEventListener(
+ "click",
+ () => {
+
+  secret =
+   Math.floor(
+    Math.random()*10
+   )+1;
+
+  $("guessInput").value = "";
+
+  $("guessMessage").textContent =
+   "نیا نمبر منتخب ہوگیا۔";
+
+ });
+
+
+/* =====================================================
+   TIC TAC TOE
+===================================================== */
+
+let board =
+ Array(9).fill("");
+
+let player = "X";
+
+let gameOver = false;
+
+const winLines = [
+
+ [0,1,2],
+ [3,4,5],
+ [6,7,8],
+ [0,3,6],
+ [1,4,7],
+ [2,5,8],
+ [0,4,8],
+ [2,4,6]
+
+];
+
+
+function resetTic(){
+
+ board =
+  Array(9).fill("");
+
+ player = "X";
+
+ gameOver = false;
+
+ document
+  .querySelectorAll("#ticBoard button")
+  .forEach(
+   b => b.textContent = ""
+  );
+
+ $("gameMessage").textContent =
+  "X کی باری";
+
+}
+
+
+document
+ .querySelectorAll("#ticBoard button")
+ .forEach(button => {
+
+  button.addEventListener(
+   "click",
+   () => {
+
+    const i =
+     Number(button.dataset.cell);
+
+    if(gameOver || board[i]){
+     return;
+    }
+
+    board[i] = player;
+
+    button.textContent =
+     player;
+
+    if(
+     winLines.some(
+      line =>
+       line.every(
+        n =>
+         board[n] === player
+       )
+     )
+    ){
+
+     $("gameMessage").textContent =
+      player+" جیت گیا! 🎉";
+
+     gameOver = true;
+
+    }else if(
+     board.every(Boolean)
+    ){
+
+     $("gameMessage").textContent =
+      "میچ برابر ہوگیا!";
+
+     gameOver = true;
+
+    }else{
+
+     player =
+      player === "X"
+      ? "O"
+      : "X";
+
+     $("gameMessage").textContent =
+      player+" کی باری";
+
+    }
+
+   }
+  );
+
+ });
+
+
+$("resetTic").addEventListener(
+ "click",
+ resetTic
+);
+
+
+/* =====================================================
+   ROCK PAPER SCISSORS
+===================================================== */
+
+const rpsNames = {
+
+ rock:"✊ پتھر",
+ paper:"✋ کاغذ",
+ scissors:"✌ قینچی"
+
+};
+
+
+document
+ .querySelectorAll("[data-rps]")
+ .forEach(button => {
+
+  button.addEventListener(
+   "click",
+   () => {
+
+    const p =
+     button.dataset.rps;
+
+    const options =
+     ["rock","paper","scissors"];
+
+    const c =
+     options[
+      Math.floor(
+       Math.random()*3
+      )
+     ];
+
+    const win =
+     (
+      p==="rock" &&
+      c==="scissors"
+     ) ||
+     (
+      p==="paper" &&
+      c==="rock"
+     ) ||
+     (
+      p==="scissors" &&
+      c==="paper"
+     );
+
+    const result =
+     p===c
+     ? "میچ برابر!"
+     : win
+     ? "آپ جیت گئے! 🎉"
+     : "کمپیوٹر جیت گیا۔";
+
+    $("rpsMessage").textContent =
+     "آپ: "+
+     rpsNames[p]+
+     " | کمپیوٹر: "+
+     rpsNames[c]+
+     " — "+
+     result;
+
+   }
+  );
+
+ });
+
+
+/* =====================================================
+   MATH GAME
+===================================================== */
+
+let mathAnswer = 0;
+
+
+function newMath(){
+
+ let a =
+  Math.floor(
+   Math.random()*20
+  )+1;
+
+ let b =
+  Math.floor(
+   Math.random()*20
+  )+1;
+
+
+ if(Math.random() > .5){
+
+  mathAnswer =
+   a+b;
+
+  $("mathQuestion").textContent =
+   a+" + "+b+" = ?";
+
+ }else{
+
+  if(b>a){
+   [a,b] = [b,a];
+  }
+
+  mathAnswer =
+   a-b;
+
+  $("mathQuestion").textContent =
+   a+" − "+b+" = ?";
+
+ }
+
+
+ $("mathAnswer").value = "";
+
+ $("mathMessage").textContent = "";
+
+}
+
+
+$("mathForm").addEventListener(
+ "submit",
+ event => {
+
+  event.preventDefault();
+
+  $("mathMessage").textContent =
+   Number(
+    $("mathAnswer").value
+   ) === mathAnswer
+   ? "درست جواب! 🎉"
+   : "دوبارہ کوشش کریں۔";
+
+ });
+
+
+$("newMath").addEventListener(
+ "click",
+ newMath
+);
+
+
+newMath();
+
+
+/* =====================================================
+   INSTALL APP
+===================================================== */
+
+let installPrompt = null;
+
+
+window.addEventListener(
+ "beforeinstallprompt",
+ event => {
+
+  event.preventDefault();
+
+  installPrompt = event;
+
+ }
+);
+
+
+async function installApp(){
+
+ if(installPrompt){
+
+  installPrompt.prompt();
+
+  try{
+   await installPrompt.userChoice;
+  }catch(e){}
+
+  installPrompt = null;
+
+ }else{
+
+  $("install").scrollIntoView({
+   behavior:"smooth"
+  });
+
+  toast(
+   "Install طریقے دیکھنے کے لیے سیکشن کھول دیا گیا۔"
+  );
+
+ }
+
+}
+
+
+$("installFloat").addEventListener(
+ "click",
+ installApp
+);
+
+
+$("installNow").addEventListener(
+ "click",
+ installApp
+);
+
+
+/* =====================================================
+   TOP
+===================================================== */
+
+$("topFloat").addEventListener(
+ "click",
+ () => {
+
+  window.scrollTo({
+   top:0,
+   behavior:"smooth"
+  });
+
+ }
+);
+
+
+/* =====================================================
+   GALLERY LIGHTBOX
+===================================================== */
+
+document
+ .querySelectorAll(".gallery-grid img")
+ .forEach(img => {
+
+  img.addEventListener(
+   "click",
+   () => {
+
+    $("lightboxImage").src =
+     img.src;
+
+    $("lightbox").style.display =
+     "flex";
+
+   }
+  );
+
+ });
+
+
+$("closeLightbox").addEventListener(
+ "click",
+ () => {
+
+  $("lightbox").style.display =
+   "none";
+
+ }
+);
+
+
+$("lightbox").addEventListener(
+ "click",
+ event => {
+
+  if(
+   event.target ===
+   $("lightbox")
+  ){
+
+   $("lightbox").style.display =
+    "none";
+
+  }
+
+ });
+
+
+/* =====================================================
+   INITIAL MUSIC STATE
+===================================================== */
+
+updateMusicButtons();
+
+
+})();
+</script>
+
+</body>
+</html>
