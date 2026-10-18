@@ -3,295 +3,146 @@
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090909">
-<meta name="description" content="Shaikh Yousaf Official — کہانی، یادیں، ویڈیوز، فیملی اور مہاجر ہیکر">
-<title>Shaikh Yousaf | Official Website</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="description" content="Shaikh Yousaf Official Website">
+<title>Shaikh Yousaf | Official</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#080808;
-  --panel:#141414;
-  --gold:#d9b45b;
-  --gold2:#ffe5a0;
-  --text:#f8f3e8;
-  --muted:#b9b0a0;
-  --border:rgba(217,180,91,.25);
-}
+:root{--bg:#080808;--panel:#141414;--gold:#d9b45b;--text:#f8f3e8;--muted:#b9b0a0;--border:#d9b45b45}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:'Cairo',sans-serif;line-height:1.9;overflow-x:hidden
-}
-body.light{
-  --bg:#f4efe4;--panel:#fffaf0;--text:#201b12;
-  --muted:#675e4f;--border:rgba(130,92,20,.25)
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Cairo,sans-serif;line-height:1.9}
+body.light{--bg:#f5efe3;--panel:#fffaf0;--text:#211b12;--muted:#675e4f}
 a{color:inherit;text-decoration:none}
 button,input,textarea{font:inherit}
 button{cursor:pointer}
-img,video{max-width:100%}
 .gold{color:var(--gold)}
-.section{padding:75px 6%;scroll-margin-top:75px}
-.section-title{text-align:center;margin-bottom:32px}
-.section-title h2{color:var(--gold);font-size:clamp(25px,4vw,39px);margin:0}
-.section-title p{color:var(--muted);margin-top:5px}
+.section{padding:65px 5%;scroll-margin-top:75px}
 .container{max-width:1150px;margin:auto}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  color:#171108;border:0;border-radius:30px;padding:11px 23px;
-  font-weight:800;transition:.25s
-}
-.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
-.btn-outline{
-  background:transparent;color:var(--gold);
-  border:1px solid var(--gold)
-}
+.section-title{text-align:center;margin-bottom:30px}
+.section-title h2{color:var(--gold);font-size:clamp(25px,4vw,38px);margin:0}
+.section-title p{color:var(--muted)}
+.btn{display:inline-block;border:1px solid var(--gold);border-radius:28px;padding:10px 22px;background:linear-gradient(135deg,#ffe5a0,#d9b45b);color:#171108;font-weight:800}
+.btn-outline{background:transparent;color:var(--gold)}
+.card,.text-panel,.game-box{background:var(--panel);border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.card-body{padding:17px}
+.card h3,.game-box h3{color:var(--gold);margin:0 0 8px}
+.card p,.text-panel p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px}
+.card img{width:100%;height:260px;object-fit:contain;object-position:center;background:#080808;display:block}
+.text-panel{padding:25px}
 
-/* Welcome screen */
-#welcome{
-  position:fixed;inset:0;z-index:99999;display:flex;
-  align-items:center;justify-content:center;text-align:center;
-  padding:22px;background:
-  radial-gradient(ellipse at center,rgba(110,76,19,.28),transparent 60%),#050505;
-  transition:opacity .8s,visibility .8s
-}
+/* Welcome page */
+#welcome{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;background:radial-gradient(ellipse at center,#30230d,#050505 75%);transition:opacity .7s,visibility .7s}
 #welcome.hide{opacity:0;visibility:hidden;pointer-events:none}
 .welcome-inner{max-width:620px}
-.welcome-logo{
-  width:125px;height:125px;border-radius:50%;object-fit:cover;
-  border:3px solid var(--gold);padding:4px;
-  box-shadow:0 0 35px #d9b45b45;margin-bottom:18px
-}
-#welcome h1{font-size:clamp(27px,7vw,48px);color:var(--gold);margin:5px}
-#welcome .welcome-urdu{font-family:'Amiri',serif;font-size:clamp(24px,5vw,37px)}
-#welcome .credit{
-  color:var(--gold2);font-size:14px;letter-spacing:.4px;margin:10px 0
-}
+#welcome h1{font-size:clamp(30px,7vw,48px);color:var(--gold);margin:10px 0}
+#welcome .urdu{font-family:Amiri,serif;font-size:clamp(24px,5vw,36px);color:#e9cb82}
+#welcome .credit{color:#ffe5a0;font-size:14px}
 #welcome .sub{color:#c8c0b0}
-#countdown{color:var(--gold);font-size:13px;margin:12px}
+#welcomeLogo{width:140px;height:140px;object-fit:contain;display:block;margin:0 auto 15px;border:0;border-radius:0;padding:0;box-shadow:none;background:transparent}
 
 /* Header */
-header{
-  position:sticky;top:0;z-index:1000;
-  background:rgba(8,8,8,.94);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border)
-}
-body.light header{background:rgba(255,250,240,.94)}
-.nav{
-  max-width:1300px;margin:auto;padding:10px 4%;
-  display:flex;align-items:center;justify-content:space-between;gap:14px
-}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--gold)}
-.brand img{width:43px;height:43px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
-.nav-links{display:flex;gap:17px;flex-wrap:wrap;font-size:13px}
+header{position:sticky;top:0;z-index:1000;background:#090909ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+body.light header{background:#fffaf0ed}
+.nav{max-width:1300px;margin:auto;padding:10px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:800}
+#navLogo{width:48px;height:48px;object-fit:contain;border:0;border-radius:0;padding:0;background:transparent}
+.nav-links{display:flex;gap:14px;flex-wrap:wrap;font-size:12px}
 .nav-links a:hover{color:var(--gold)}
-#themeToggle{border:1px solid var(--border);border-radius:50%;background:var(--panel);color:var(--gold);width:40px;height:40px}
+#themeToggle{background:var(--panel);color:var(--gold);border:1px solid var(--border);border-radius:50%;width:40px;height:40px}
 
 /* Hero */
-.hero{
-  min-height:82vh;display:grid;place-items:center;text-align:center;
-  padding:70px 6%;position:relative;overflow:hidden;
-  background:linear-gradient(180deg,#080808bb,#080808ef),
-  url('./yousaf-8.jpg') center/cover no-repeat
-}
-.hero:after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at center,transparent 10%,#0008 90%)
-}
-.hero-content{position:relative;z-index:1;max-width:850px}
-.hero-logo{
-  width:130px;height:130px;object-fit:cover;border-radius:50%;
-  border:3px solid var(--gold);padding:4px;
-  box-shadow:0 0 45px #d9b45b40;animation:float 4s ease-in-out infinite
-}
-.hero h1{font-size:clamp(33px,7vw,67px);line-height:1.35;margin:20px 0 8px}
-.hero p{color:#ded3bd;font-size:clamp(15px,2.5vw,20px)}
-.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
-@keyframes float{50%{transform:translateY(-10px)}}
-@keyframes glow{50%{box-shadow:0 0 23px #d9b45b85}}
-@keyframes updown{50%{transform:translateY(-6px)}}
+.hero{min-height:80vh;display:grid;place-items:center;text-align:center;padding:55px 5%;background:linear-gradient(#050505bb,#050505df),url('./yousaf-8.jpg') center/cover no-repeat}
+.hero-content{max-width:850px}
+#heroLogo{width:145px;height:145px;object-fit:contain;border:0;border-radius:0;padding:0;background:transparent;box-shadow:none}
+.hero h1{font-size:clamp(32px,7vw,65px);line-height:1.4;margin:15px 0;color:#fff}
+.hero p{color:#e5d9c2}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 
-/* General cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px}
-.card{
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:18px;overflow:hidden;transition:transform .25s,border-color .25s
-}
-.card:hover{transform:translateY(-5px);border-color:var(--gold)}
-.card img{width:100%;height:245px;object-fit:cover;display:block}
-.card-body{padding:18px}
-.card h3{margin:0 0 7px;color:var(--gold)}
-.card p{color:var(--muted);margin:0 0 12px}
-.text-panel{
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:20px;padding:clamp(20px,4vw,38px)
-}
+/* Full portraits, never crop faces */
+.portrait{width:100%;height:380px;object-fit:contain!important;object-position:center!important;background:#080808;display:block}
+.story-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:25px;align-items:center}
+.story-copy{padding:25px}
+.story-copy h2{color:var(--gold)}
+#family .card img{height:300px;object-fit:contain!important}
 
-/* Story */
-.story-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:center}
-.story-photo{width:100%;height:420px;object-fit:cover;border-radius:20px;border:1px solid var(--border)}
-.story-copy p{color:var(--muted)}
-
-/* Video collection */
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:22px}
+/* Videos */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
 .video-card{background:var(--panel);border:1px solid var(--border);border-radius:18px;overflow:hidden}
-.video-card video{width:100%;aspect-ratio:9/16;max-height:570px;object-fit:contain;background:#000;display:block}
-.video-caption{padding:13px 17px}
+.video-card video{display:block;width:100%;height:min(78svh,750px);object-fit:contain!important;object-position:center;background:#000}
+.video-caption{padding:14px}
 .video-caption h3{color:var(--gold);margin:0}
-.video-caption p{color:var(--muted);margin:3px 0}
+.video-caption p{color:var(--muted);margin:0}
 
-/* TikTok-like vertical reels */
-#reels{background:linear-gradient(180deg,transparent,#15110955,transparent)}
-.reels-container{
-  width:min(100%,520px);height:min(78svh,800px);min-height:450px;
-  margin:0 auto;overflow-y:auto;overscroll-behavior-y:contain;
-  scroll-snap-type:y mandatory;border-radius:20px;
-  scrollbar-width:thin;scrollbar-color:var(--gold) #111
-}
-.reel{
-  height:100%;min-height:100%;position:relative;scroll-snap-align:start;
-  scroll-snap-stop:always;background:#000;overflow:hidden;border-radius:20px;
-  border:1px solid var(--border)
-}
-.reel video{width:100%;height:100%;object-fit:contain;background:#000;display:block}
-.reel-gradient{
-  position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(0deg,#000c,transparent 38%,#0002)
-}
-.reel-label{position:absolute;bottom:18px;right:15px;left:80px;z-index:2}
-.reel-label strong{color:white;font-size:17px}
-.reel-label p{color:#eee;font-size:12px;margin:3px 0}
-.reel-actions{
-  position:absolute;bottom:22px;left:10px;z-index:3;
-  display:flex;flex-direction:column;gap:13px;align-items:center
-}
-.reel-action{
-  display:flex;flex-direction:column;align-items:center;gap:2px;
-  background:#111a;color:#fff;border:1px solid #ffffff38;
-  border-radius:25px;width:49px;min-height:48px;padding:6px 3px;font-size:21px
-}
-.reel-action small{font-size:10px}
+/* Vertical swipe reels */
+.reels-container{width:min(100%,520px);height:80svh;min-height:400px;margin:auto;overflow-y:auto;overscroll-behavior-y:contain;scroll-snap-type:y mandatory;scrollbar-color:var(--gold) #111;border-radius:18px}
+.reel{position:relative;height:100%;min-height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;border:1px solid var(--border);border-radius:18px;background:#000}
+.reel video{width:100%;height:100%;display:block;object-fit:contain!important;object-position:center;background:#000}
+.reel-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,#000c,transparent 40%,#0003)}
+.reel-label{position:absolute;right:14px;bottom:16px;left:78px;color:#fff;z-index:2}
+.reel-label p{font-size:12px;margin:0}
+.reel-actions{position:absolute;left:9px;bottom:20px;z-index:3;display:flex;flex-direction:column;gap:12px}
+.reel-action{width:49px;min-height:48px;border-radius:26px;border:1px solid #ffffff50;background:#111b;color:#fff;font-size:20px;padding:5px}
+.reel-action small{display:block;font-size:10px}
 .reel-action.liked{color:#ff5276}
-.reel-play-hint{position:absolute;top:14px;right:14px;z-index:3;color:#fff;background:#0008;border-radius:20px;padding:4px 12px;font-size:12px}
 
 /* Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.gallery-grid img{width:100%;height:240px;object-fit:cover;border-radius:14px;border:1px solid var(--border);cursor:pointer;transition:.25s}
-.gallery-grid img:hover{transform:scale(1.02)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.gallery-grid img{width:100%;height:250px;object-fit:contain!important;object-position:center;background:#080808;border:1px solid var(--border);border-radius:12px;cursor:pointer}
 
-/* Quotes */
-.quote{
-  border-right:4px solid var(--gold);padding:18px 23px;
-  margin:15px 0;background:var(--panel);border-radius:8px 16px 16px 8px;
-  color:var(--muted);font-family:'Amiri',serif;font-size:22px
-}
-
-/* Comments */
+/* Quotes and comments */
+.quote{padding:18px;border-right:4px solid var(--gold);background:var(--panel);border-radius:10px;margin:14px 0;font-family:Amiri,serif;font-size:22px;color:var(--muted)}
 .comment-form{display:grid;gap:12px;max-width:750px;margin:auto}
-.field{
-  width:100%;padding:13px 15px;background:var(--panel);
-  border:1px solid var(--border);border-radius:12px;color:var(--text)
-}
-.comment-list{display:grid;gap:12px;margin-top:25px}
-.comment-item{background:var(--panel);border:1px solid var(--border);padding:14px;border-radius:12px}
+.field{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text)}
+.comment-list{display:grid;gap:12px;margin-top:20px}
+.comment-item{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--panel);overflow-wrap:anywhere}
 .comment-item strong{color:var(--gold)}
-.comment-item p{margin:4px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.comment-item p{white-space:pre-wrap;margin:5px 0}
 .comment-item small{color:var(--muted)}
 
 /* Games */
-.game-box{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:20px}
-.game-box h3{color:var(--gold)}
-.game-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.game-box{padding:20px}
+.game-row{display:flex;gap:8px;flex-wrap:wrap}
 .game-row input{flex:1;min-width:100px}
-#ticBoard{display:grid;grid-template-columns:repeat(3,70px);gap:6px;justify-content:center;margin:15px auto}
-#ticBoard button{height:70px;border:1px solid var(--gold);background:var(--bg);color:var(--gold);font-size:28px;border-radius:10px}
-#gameMessage{color:var(--gold);text-align:center}
+#ticBoard{display:grid;grid-template-columns:repeat(3,65px);gap:6px;justify-content:center;margin:15px auto}
+#ticBoard button{height:65px;background:var(--bg);border:1px solid var(--gold);color:var(--gold);font-size:28px;border-radius:10px}
+#gameMessage,#guessMessage,#mathMessage,#rpsMessage{color:var(--gold)}
 
-/* Contact */
-.socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:20px 0}
-.social-link{border:1px solid var(--border);border-radius:25px;padding:9px 16px;color:var(--gold)}
-.social-link:hover{background:var(--gold);color:#111}
-
-/* Bottom-left floating controls */
-#floatingTools{
-  position:fixed;left:12px;bottom:15px;z-index:5000;
-  display:flex;flex-direction:column;align-items:flex-start;gap:8px
-}
-.float-btn{
-  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
-  border:1px solid var(--gold);background:#111;color:var(--gold);
-  box-shadow:0 3px 16px #0007;font-size:21px;animation:glow 3s infinite
-}
-.float-btn:hover{transform:scale(1.07)}
-#topFloat{animation:updown 1.8s infinite}
-#installFloat{font-size:19px}
-#musicPanel,#sharePopup{
-  display:none;width:245px;background:#101010;color:#f8f3e8;
-  border:1px solid var(--gold);border-radius:16px;padding:13px;
-  box-shadow:0 8px 35px #000a
-}
+/* Floating tools */
+#floatingTools{position:fixed;left:12px;bottom:14px;z-index:5000;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.float-btn{width:45px;height:45px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;background:#101010;color:var(--gold);font-size:21px;box-shadow:0 3px 14px #0009}
+#musicPanel,#sharePopup{display:none;width:245px;background:#101010;color:#fff;border:1px solid var(--gold);border-radius:15px;padding:12px;box-shadow:0 8px 25px #0009}
 #musicPanel.open,#sharePopup.open{display:block}
-.panel-title{color:var(--gold);font-weight:800;margin-bottom:7px}
-.music-buttons{display:flex;gap:6px;justify-content:space-between}
-.music-buttons button{
-  flex:1;background:#262116;color:#ffe5a0;border:1px solid #66532b;
-  border-radius:9px;padding:8px 2px
-}
-#lyricsBox{font-family:'Amiri',serif;font-size:15px;background:#211c11;border-radius:9px;padding:8px;margin-top:9px;color:#f6d98d}
-.share-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.share-grid button,.share-grid a{
-  border:1px solid #65522b;border-radius:9px;padding:8px;text-align:center;
-  color:#ffe5a0;background:#201b12;font-size:12px
-}
-#toast{
-  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
-  background:#d9b45b;color:#111;padding:10px 18px;border-radius:25px;
-  z-index:100000;display:none;font-weight:700
-}
-footer{text-align:center;padding:35px 15px;border-top:1px solid var(--border);color:var(--muted)}
+.panel-title{color:var(--gold);font-weight:800;margin-bottom:8px}
+.music-buttons,.share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.music-buttons button,.share-grid button,.share-grid a{background:#211c12;color:#ffe5a0;border:1px solid #66532b;border-radius:8px;padding:8px 3px;text-align:center;font-size:12px}
+#lyricsBox{font-family:Amiri,serif;color:#f5d991;background:#211c12;border-radius:8px;padding:8px;margin-top:9px;font-size:15px}
+#toast{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100000;background:var(--gold);color:#111;padding:9px 16px;border-radius:25px;font-weight:700;max-width:90%;text-align:center}
+#lightbox{display:none;position:fixed;inset:0;z-index:9000;background:#000e;align-items:center;justify-content:center;padding:15px}
+#lightbox img{max-width:95vw;max-height:90vh;object-fit:contain}
+#lightbox button{position:absolute;top:12px;left:12px}
+.socials{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.social-link{padding:8px 14px;border:1px solid var(--border);border-radius:22px;color:var(--gold);background:transparent}
+footer{text-align:center;padding:30px 12px;border-top:1px solid var(--border);color:var(--muted)}
 footer strong{color:var(--gold)}
-#lightbox{
-  display:none;position:fixed;inset:0;background:#000e;z-index:9000;
-  align-items:center;justify-content:center;padding:15px
-}
-#lightbox img{max-height:90vh;max-width:95vw;object-fit:contain}
-#lightbox button{position:absolute;top:15px;left:15px;background:#222;color:white;border:1px solid var(--gold);border-radius:30px;padding:9px 15px}
-
-@media(max-width:760px){
-  .nav{flex-wrap:wrap}
-  .nav-links{order:3;width:100%;justify-content:center;gap:12px;font-size:12px}
-  .story-grid{grid-template-columns:1fr}
-  .story-photo{height:310px}
-  .section{padding:55px 5%}
-  .hero{min-height:75vh}
-  .reels-container{height:72svh;min-height:420px}
-  .card img{height:220px}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
-}
+@media(max-width:700px){.nav-links{width:100%;justify-content:center;gap:10px}.story-grid{grid-template-columns:1fr}.portrait{height:300px}.hero{min-height:72vh}.reels-container{height:75svh;min-height:400px}.video-card video{height:75svh}}
 </style>
 </head>
 
 <body>
-
 <!-- Welcome -->
-<div id="welcome" role="dialog" aria-label="Welcome">
+<div id="welcome">
   <div class="welcome-inner">
-    <img class="welcome-logo" src="./lion%20(1).png" alt="Yousaf logo"
-         onerror="this.onerror=null;this.src='./yousaf-8.jpg'">
+    <img id="welcomeLogo" src="./lion%20(1).png" alt="Lion logo">
     <h1>SHAIKH YOUSAF</h1>
-    <div class="welcome-urdu">شیخ یوسف آفیشل ویب سائٹ</div>
+    <div class="urdu">شیخ یوسف آفیشل</div>
     <p class="credit" dir="ltr">Manage and Build by Muhajir Hacker</p>
-    <p class="welcome-urdu" style="color:#e0bd69">مہاجر ابو سفیان ملک</p>
+    <div class="urdu">مہاجر ابو سفیان ملک</div>
     <p class="sub">کہانی، یادیں، محبت اور سفر</p>
-    <div id="countdown">ویب سائٹ 5 سیکنڈ میں کھل جائے گی…</div>
+    <p id="countdown">ویب سائٹ 5 سیکنڈ میں کھل جائے گی</p>
     <button class="btn" id="enterWebsite">ویب سائٹ کھولیں ✨</button>
   </div>
 </div>
@@ -299,53 +150,41 @@ footer strong{color:var(--gold)}
 <header>
   <nav class="nav">
     <a class="brand" href="#home">
-      <img src="./lion%20(1).png" alt="SY Logo" onerror="this.src='./yousaf-8.jpg'">
-      <span>SHAIKH YOUSAF <small style="display:block;font-size:10px;color:var(--muted)">OFFICIAL</small></span>
+      <img id="navLogo" src="./lion%20(1).png" alt="Lion logo">
+      <span>SHAIKH YOUSAF<small style="display:block;font-size:10px;color:var(--muted)">OFFICIAL</small></span>
     </a>
-    <button id="themeToggle" aria-label="Theme تبدیل کریں">☼</button>
+    <button id="themeToggle" aria-label="تھیم تبدیل کریں">☼</button>
     <div class="nav-links">
-      <a href="#home">ہوم</a>
-      <a href="#story">کہانی</a>
-      <a href="#family">فیملی</a>
-      <a href="#videos">ویڈیوز</a>
-      <a href="#reels">ریلز</a>
-      <a href="#gallery">گیلری</a>
-      <a href="#games">گیمز</a>
-      <a href="#comments">کمنٹس</a>
-      <a href="#contact">رابطہ</a>
+      <a href="#home">ہوم</a><a href="#story">کہانی</a><a href="#family">فیملی</a>
+      <a href="#videos">ویڈیوز</a><a href="#reels">ریلز</a><a href="#gallery">گیلری</a>
+      <a href="#games">گیمز</a><a href="#comments">کمنٹس</a><a href="#contact">رابطہ</a>
     </div>
   </nav>
 </header>
 
 <main>
-<!-- Home -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <img class="hero-logo" src="./yousaf-8.jpg" alt="Shaikh Yousaf">
+    <img id="heroLogo" src="./lion%20(1).png" alt="Lion logo">
     <h1>خوش آمدید <span class="gold">شیخ یوسف</span></h1>
     <p>ایک خوبصورت سفر، یادیں، رشتے اور زندگی کی کہانی</p>
     <p dir="ltr">WELCOME TO MY OFFICIAL WEBSITE</p>
     <div class="hero-buttons">
-      <a class="btn" href="#story">میری کہانی پڑھیں</a>
+      <a class="btn" href="#story">میری کہانی</a>
       <a class="btn btn-outline" href="#reels">ویڈیوز دیکھیں ▶</a>
     </div>
   </div>
 </section>
 
-<!-- Story -->
 <section class="section" id="story">
   <div class="container">
-    <div class="section-title">
-      <h2>میری کہانی</h2>
-      <p>زندگی کے سفر کی چند باتیں</p>
-    </div>
+    <div class="section-title"><h2>میری کہانی</h2><p>زندگی کے سفر کی چند باتیں</p></div>
     <div class="story-grid">
-      <img class="story-photo" src="./yousaf-8.jpg" alt="Shaikh Yousaf"
-           onerror="this.style.display='none'">
+      <img class="portrait" src="./yousaf-8.jpg" alt="Yousaf">
       <div class="text-panel story-copy">
-        <h2 class="gold">شیخ یوسف — ایک خوبصورت سفر</h2>
-        <p>زندگی صرف منزل کا نام نہیں بلکہ ان یادوں، رشتوں، تجربات اور کوششوں کا نام ہے جو ہمارے سفر کو خوبصورت بناتے ہیں۔</p>
-        <p>یہ ویب سائٹ میری کہانی، میری پسندیدہ یادوں، ویڈیوز اور زندگی سے جڑی خوبصورت باتوں کو محفوظ رکھنے کے لیے ہے۔</p>
+        <h2>شیخ یوسف — ایک خوبصورت سفر</h2>
+        <p>زندگی صرف منزل کا نام نہیں بلکہ یادوں، رشتوں، تجربات اور کوششوں کا نام ہے۔</p>
+        <p>یہ ویب سائٹ میری کہانی، پسندیدہ یادوں، ویڈیوز اور زندگی سے جڑی خوبصورت باتوں کو محفوظ رکھنے کے لیے ہے۔</p>
         <p>ہر دن ایک نیا سبق ہے، ہر مشکل ایک نئی طاقت اور ہر اچھا رشتہ ایک قیمتی نعمت ہے۔</p>
         <a class="btn" href="#gallery">یادیں دیکھیں</a>
       </div>
@@ -353,287 +192,169 @@ footer strong{color:var(--gold)}
   </div>
 </section>
 
-<!-- Family -->
 <section class="section" id="family">
   <div class="container">
-    <div class="section-title">
-      <h2>فیملی اور یادیں</h2>
-      <p>رشتے زندگی کا سب سے قیمتی سرمایہ ہیں</p>
-    </div>
+    <div class="section-title"><h2>فیملی اور یادیں</h2><p>رشتے زندگی کا قیمتی سرمایہ ہیں</p></div>
     <div class="cards">
-      <article class="card">
-        <img src="./mudassir-5.jpg" alt="فیملی یاد"
-             onerror="this.onerror=null;this.src='./yousaf-8.jpg'">
-        <div class="card-body">
-          <h3>قیمتی یادیں</h3>
-          <p>وہ لمحات جو ہمیشہ دل کے قریب رہتے ہیں۔</p>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./ustad-7.jpg" alt="یادگار شخصیت"
-             onerror="this.onerror=null;this.src='./yousaf-8.jpg'">
-        <div class="card-body">
-          <h3>محترم شخصیات</h3>
-          <p>اچھے لوگ اور اچھے استاد زندگی کا قیمتی حصہ ہوتے ہیں۔</p>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./yousaf-8.jpg" alt="شیخ یوسف">
-        <div class="card-body">
-          <h3>میرا سفر</h3>
-          <p>کوشش، امید اور بہتر مستقبل کی جانب سفر۔</p>
-        </div>
-      </article>
+      <article class="card"><img src="./mudassir-5.jpg" alt="Mudassir"><div class="card-body"><h3>مدثر</h3><p>یادگار لمحات اور قیمتی یادیں۔</p></div></article>
+      <article class="card"><img src="./yousaf-8.jpg" alt="Yousaf"><div class="card-body"><h3>یوسف</h3><p>زندگی کے سفر کی خوبصورت یادیں۔</p></div></article>
+      <article class="card"><img src="./ustad-7.jpg" alt="Sagheer" onerror="this.onerror=null;this.src='./mudassir-5.jpg'"><div class="card-body"><h3>صغیر</h3><p>اپنوں کے ساتھ یادگار لمحات۔</p></div></article>
     </div>
   </div>
 </section>
 
-<!-- Journey -->
 <section class="section" id="journey">
   <div class="container">
-    <div class="section-title">
-      <h2>زندگی کا سفر</h2>
-      <p>آگے بڑھتے رہیں، سیکھتے رہیں</p>
-    </div>
+    <div class="section-title"><h2>زندگی کا سفر</h2><p>آگے بڑھتے رہیں، سیکھتے رہیں</p></div>
     <div class="cards">
-      <article class="card"><div class="card-body">
-        <h3>01 — آغاز</h3><p>ہر بڑی منزل کا آغاز ایک چھوٹے قدم سے ہوتا ہے۔</p>
-      </div></article>
-      <article class="card"><div class="card-body">
-        <h3>02 — محنت</h3><p>مسلسل محنت اور صبر انسان کو مضبوط بناتے ہیں۔</p>
-      </div></article>
-      <article class="card"><div class="card-body">
-        <h3>03 — امید</h3><p>اپنے خوابوں پر یقین رکھیں اور کوشش جاری رکھیں۔</p>
-      </div></article>
+      <article class="card"><div class="card-body"><h3>آغاز</h3><p>ہر بڑی منزل کا آغاز ایک چھوٹے قدم سے ہوتا ہے۔</p></div></article>
+      <article class="card"><div class="card-body"><h3>محنت</h3><p>صبر اور مسلسل کوشش انسان کو مضبوط بناتے ہیں۔</p></div></article>
+      <article class="card"><div class="card-body"><h3>امید</h3><p>اپنے خوابوں پر یقین رکھیں اور کوشش جاری رکھیں۔</p></div></article>
     </div>
   </div>
 </section>
 
-<!-- Videos -->
 <section class="section" id="videos">
   <div class="container">
-    <div class="section-title">
-      <h2>ویڈیو کلیکشن</h2>
-      <p>ویڈیوز چلانے کے لیے پلے بٹن دبائیں</p>
-    </div>
+    <div class="section-title"><h2>ویڈیو کلیکشن</h2><p>پوری ویڈیو دیکھنے کے لیے پلے بٹن دبائیں</p></div>
     <div class="video-grid">
       <article class="video-card">
-        <video controls playsinline preload="metadata">
-          <source src="./a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
-          آپ کا براؤزر ویڈیو نہیں چلا سکتا۔
-        </video>
-        <div class="video-caption">
-          <h3>میری ویڈیو</h3><p>Official video collection</p>
-        </div>
+        <video controls playsinline preload="metadata"><source src="./a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4"></video>
+        <div class="video-caption"><h3>میری ویڈیو</h3><p>Official video collection</p></div>
       </article>
       <article class="video-card">
-        <video controls playsinline preload="metadata">
-          <source src="./foryoupage%20foryoupage.mp4" type="video/mp4">
-          آپ کا براؤزر ویڈیو نہیں چلا سکتا۔
-        </video>
-        <div class="video-caption">
-          <h3>یادگار لمحات</h3><p>Watch and enjoy</p>
-        </div>
+        <video controls playsinline preload="metadata"><source src="./foryoupage%20foryoupage.mp4" type="video/mp4"></video>
+        <div class="video-caption"><h3>یادگار لمحات</h3><p>Watch and enjoy</p></div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- TikTok-style Reels -->
 <section class="section" id="reels">
   <div class="container">
-    <div class="section-title">
-      <h2>ریلز کلیکشن</h2>
-      <p>اگلی ویڈیو دیکھنے کے لیے باکس کے اندر اوپر یا نیچے سوائپ کریں۔</p>
-    </div>
+    <div class="section-title"><h2>ریلز کلیکشن</h2><p>اگلی ویڈیو کے لیے باکس کے اندر اوپر یا نیچے سوائپ کریں</p></div>
     <div class="reels-container" id="reelsContainer">
       <article class="reel">
-        <video controls playsinline preload="metadata">
-          <source src="./a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4">
-        </video>
-        <div class="reel-gradient"></div>
-        <div class="reel-play-hint">▶ ویڈیو دیکھیں</div>
-        <div class="reel-label">
-          <strong>@ShaikhYousaf</strong>
-          <p>شیخ یوسف آفیشل · ویڈیو 1</p>
-        </div>
+        <video controls playsinline preload="metadata"><source src="./a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4" type="video/mp4"></video>
+        <div class="reel-shade"></div>
+        <div class="reel-label"><strong>@ShaikhYousaf</strong><p>شیخ یوسف آفیشل · ویڈیو 1</p></div>
         <div class="reel-actions">
-          <button class="reel-action likeBtn" aria-label="Like">♡<small>لائک <span>0</span></small></button>
-          <button class="reel-action commentBtn" aria-label="Comment">💬<small>کمنٹ</small></button>
-          <button class="reel-action shareReelBtn" aria-label="Share">↗<small>شیئر</small></button>
+          <button class="reel-action likeBtn" type="button">♡<small>لائک <span>0</span></small></button>
+          <button class="reel-action commentBtn" type="button">💬<small>کمنٹ</small></button>
+          <button class="reel-action shareReelBtn" type="button">↗<small>شیئر</small></button>
         </div>
       </article>
       <article class="reel">
-        <video controls playsinline preload="metadata">
-          <source src="./foryoupage%20foryoupage.mp4" type="video/mp4">
-        </video>
-        <div class="reel-gradient"></div>
-        <div class="reel-play-hint">▶ ویڈیو دیکھیں</div>
-        <div class="reel-label">
-          <strong>@ShaikhYousaf</strong>
-          <p>شیخ یوسف آفیشل · ویڈیو 2</p>
-        </div>
+        <video controls playsinline preload="metadata"><source src="./foryoupage%20foryoupage.mp4" type="video/mp4"></video>
+        <div class="reel-shade"></div>
+        <div class="reel-label"><strong>@ShaikhYousaf</strong><p>شیخ یوسف آفیشل · ویڈیو 2</p></div>
         <div class="reel-actions">
-          <button class="reel-action likeBtn" aria-label="Like">♡<small>لائک <span>0</span></small></button>
-          <button class="reel-action commentBtn" aria-label="Comment">💬<small>کمنٹ</small></button>
-          <button class="reel-action shareReelBtn" aria-label="Share">↗<small>شیئر</small></button>
+          <button class="reel-action likeBtn" type="button">♡<small>لائک <span>0</span></small></button>
+          <button class="reel-action commentBtn" type="button">💬<small>کمنٹ</small></button>
+          <button class="reel-action shareReelBtn" type="button">↗<small>شیئر</small></button>
         </div>
       </article>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:12px">نوٹ: لائکس اس براؤزر میں دکھائے جاتے ہیں۔ آن لائن مشترکہ لائکس کے لیے سرور درکار ہے۔</p>
   </div>
 </section>
 
-<!-- Tailoring / work -->
 <section class="section" id="tailoring">
   <div class="container">
-    <div class="section-title">
-      <h2>ہنر اور محنت</h2>
-      <p>ہر ہنر اپنی جگہ ایک پہچان ہے</p>
-    </div>
-    <div class="text-panel">
-      <h3 class="gold">محنت، عزت اور کامیابی</h3>
-      <p>اپنے کام سے محبت کریں، اپنے وعدے پورے کریں اور ہر روز کچھ نیا سیکھنے کی کوشش کریں۔ اصل کامیابی اچھے کردار اور مسلسل کوشش میں ہے۔</p>
-    </div>
+    <div class="section-title"><h2>ہنر اور محنت</h2><p>ہر ہنر اپنی جگہ ایک پہچان ہے</p></div>
+    <div class="text-panel"><h3 class="gold">محنت، عزت اور کامیابی</h3><p>اپنے کام سے محبت کریں، وعدے پورے کریں اور ہر روز کچھ نیا سیکھنے کی کوشش کریں۔</p></div>
   </div>
 </section>
 
-<!-- Gallery -->
 <section class="section" id="gallery">
   <div class="container">
-    <div class="section-title">
-      <h2>فوٹو گیلری</h2>
-      <p>تصویر پر دبائیں تاکہ بڑی نظر آئے</p>
-    </div>
+    <div class="section-title"><h2>فوٹو گیلری</h2><p>تصویر پر دبائیں تاکہ بڑی نظر آئے</p></div>
     <div class="gallery-grid">
-      <img src="./yousaf-8.jpg" alt="یادگار تصویر" loading="lazy">
-      <img src="./mudassir-5.jpg" alt="یادگار تصویر" loading="lazy">
-      <img src="./ustad-7.jpg" alt="یادگار تصویر" loading="lazy">
-      <img src="./lion%20(1).png" alt="SY لوگو" loading="lazy">
+      <img src="./yousaf-8.jpg" alt="یوسف" loading="lazy">
+      <img src="./mudassir-5.jpg" alt="مدثر" loading="lazy">
+      <img src="./ustad-7.jpg" alt="صغیر" loading="lazy">
+      <img src="./lion%20(1).png" alt="Lion logo" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- Quotes -->
 <section class="section" id="quotes">
   <div class="container">
-    <div class="section-title">
-      <h2>خوبصورت باتیں</h2>
-      <p>دل سے پڑھیے، زندگی میں اپنائیے</p>
-    </div>
-    <div class="quote">“صبر اور محنت وہ راستے ہیں جو انسان کو اس کی منزل کے قریب لے جاتے ہیں۔”</div>
-    <div class="quote">“اپنے والدین کی عزت کریں، رشتوں کی قدر کریں اور ہمیشہ سچ کا ساتھ دیں۔”</div>
-    <div class="quote">“امید کبھی نہ چھوڑیں؛ ایک نیا دن ایک نیا موقع لے کر آتا ہے۔”</div>
+    <div class="section-title"><h2>خوبصورت باتیں</h2><p>دل سے پڑھیے، زندگی میں اپنائیے</p></div>
+    <div class="quote">“صبر اور محنت انسان کو منزل کے قریب لے جاتے ہیں۔”</div>
+    <div class="quote">“رشتوں کی قدر کریں اور ہمیشہ سچ کا ساتھ دیں۔”</div>
+    <div class="quote">“امید نہ چھوڑیں؛ ہر نیا دن ایک نیا موقع ہے۔”</div>
   </div>
 </section>
 
-<!-- Dua -->
 <section class="section" id="dua">
   <div class="container">
     <div class="section-title"><h2>دعا</h2></div>
     <div class="text-panel" style="text-align:center">
-      <p style="font-family:'Amiri',serif;font-size:28px;color:var(--gold)">رَبِّ زِدْنِي عِلْمًا</p>
+      <p style="font-family:Amiri,serif;font-size:29px;color:var(--gold)">رَبِّ زِدْنِي عِلْمًا</p>
       <p>اے میرے رب! میرے علم میں اضافہ فرما۔</p>
-      <p>اللہ تعالیٰ ہم سب کو صحت، عزت، رزقِ حلال، سکون اور کامیابی عطا فرمائے۔ آمین۔</p>
+      <p>اللہ ہم سب کو صحت، عزت، رزقِ حلال، سکون اور کامیابی عطا فرمائے۔ آمین۔</p>
     </div>
   </div>
 </section>
 
-<!-- Comments -->
 <section class="section" id="comments">
   <div class="container">
-    <div class="section-title">
-      <h2>کمنٹس اور رائے</h2>
-      <p>اپنی رائے یہاں لکھیں</p>
-    </div>
+    <div class="section-title"><h2>کمنٹس اور رائے</h2><p>اپنی رائے یہاں لکھیں</p></div>
     <form id="commentForm" class="comment-form">
       <input class="field" id="commentName" maxlength="60" placeholder="آپ کا نام" required>
       <textarea class="field" id="commentText" rows="4" maxlength="1000" placeholder="اپنا پیغام لکھیں..." required></textarea>
       <button class="btn" type="submit">کمنٹ محفوظ کریں</button>
     </form>
-    <div id="commentNotice" style="text-align:center;color:var(--muted);font-size:12px;margin-top:10px">
-      کمنٹس اسی براؤزر میں محفوظ ہوں گے، تمام وزیٹرز کے درمیان مشترکہ نہیں۔
-    </div>
-    <div class="comment-list" id="commentList"></div>
+    <p style="text-align:center;color:var(--muted);font-size:12px">کمنٹس اس براؤزر میں محفوظ ہوتے ہیں۔ مشترکہ آن لائن کمنٹس کے لیے ڈیٹابیس درکار ہے۔</p>
+    <div id="commentList" class="comment-list"></div>
   </div>
 </section>
 
-<!-- Games -->
 <section class="section" id="games">
   <div class="container">
-    <div class="section-title">
-      <h2>چھوٹی چھوٹی گیمز</h2>
-      <p>تفریح کے لیے کھیلیں</p>
-    </div>
+    <div class="section-title"><h2>گیمز</h2><p>تفریح کے لیے کھیلیں</p></div>
     <div class="cards">
       <div class="game-box">
-        <h3>نمبر گیس کریں</h3>
-        <p>1 سے 10 کے درمیان نمبر تلاش کریں۔</p>
-        <form id="guessForm" class="game-row">
-          <input class="field" id="guessInput" type="number" min="1" max="10" placeholder="نمبر" required>
-          <button class="btn" type="submit">چیک</button>
-        </form>
-        <p id="guessMessage"></p>
-        <button class="btn btn-outline" id="newGuess" type="button">نیا نمبر</button>
+        <h3>نمبر گیس کریں</h3><p>1 سے 10 کے درمیان نمبر تلاش کریں۔</p>
+        <form id="guessForm" class="game-row"><input class="field" id="guessInput" type="number" min="1" max="10" required placeholder="نمبر"><button class="btn">چیک</button></form>
+        <p id="guessMessage"></p><button class="btn btn-outline" id="newGuess" type="button">نیا نمبر</button>
       </div>
       <div class="game-box">
-        <h3>Tic Tac Toe</h3>
-        <p>دو کھلاڑی باری باری X اور O لگائیں۔</p>
+        <h3>Tic Tac Toe</h3><p>دو کھلاڑی X اور O کھیلیں۔</p>
         <div id="ticBoard">
-          <button type="button" data-cell="0"></button>
-          <button type="button" data-cell="1"></button>
-          <button type="button" data-cell="2"></button>
-          <button type="button" data-cell="3"></button>
-          <button type="button" data-cell="4"></button>
-          <button type="button" data-cell="5"></button>
-          <button type="button" data-cell="6"></button>
-          <button type="button" data-cell="7"></button>
-          <button type="button" data-cell="8"></button>
+          <button type="button" data-cell="0"></button><button type="button" data-cell="1"></button><button type="button" data-cell="2"></button>
+          <button type="button" data-cell="3"></button><button type="button" data-cell="4"></button><button type="button" data-cell="5"></button>
+          <button type="button" data-cell="6"></button><button type="button" data-cell="7"></button><button type="button" data-cell="8"></button>
         </div>
-        <p id="gameMessage">X کی باری</p>
-        <button class="btn btn-outline" id="resetTic" type="button">دوبارہ کھیلیں</button>
+        <p id="gameMessage">X کی باری</p><button class="btn btn-outline" id="resetTic" type="button">دوبارہ کھیلیں</button>
       </div>
       <div class="game-box">
-        <h3>راک پیپر سیزر</h3>
-        <p>اپنا انتخاب کریں:</p>
-        <div class="game-row">
-          <button class="btn" data-rps="rock" type="button">✊</button>
-          <button class="btn" data-rps="paper" type="button">✋</button>
-          <button class="btn" data-rps="scissors" type="button">✌</button>
-        </div>
+        <h3>راک پیپر سیزر</h3><p>اپنا انتخاب کریں:</p>
+        <div class="game-row"><button class="btn" data-rps="rock" type="button">✊</button><button class="btn" data-rps="paper" type="button">✋</button><button class="btn" data-rps="scissors" type="button">✌</button></div>
         <p id="rpsMessage"></p>
       </div>
       <div class="game-box">
-        <h3>ریاضی چیلنج</h3>
-        <p id="mathQuestion"></p>
-        <form id="mathForm" class="game-row">
-          <input class="field" id="mathAnswer" type="number" placeholder="جواب" required>
-          <button class="btn" type="submit">جواب</button>
-        </form>
-        <p id="mathMessage"></p>
-        <button class="btn btn-outline" id="newMath" type="button">نیا سوال</button>
+        <h3>ریاضی چیلنج</h3><p id="mathQuestion"></p>
+        <form id="mathForm" class="game-row"><input class="field" id="mathAnswer" type="number" required placeholder="جواب"><button class="btn">جواب</button></form>
+        <p id="mathMessage"></p><button class="btn btn-outline" id="newMath" type="button">نیا سوال</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
 <section class="section" id="contact">
   <div class="container">
-    <div class="section-title">
-      <h2>رابطہ کریں</h2>
-      <p>آفیشل سوشل لنکس</p>
-    </div>
+    <div class="section-title"><h2>رابطہ کریں</h2><p>آفیشل سوشل لنکس</p></div>
     <div class="text-panel" style="text-align:center">
       <h3 class="gold">Shaikh Yousaf | Official</h3>
-      <p>ویڈیوز، یادوں اور مزید اپڈیٹس کے لیے سوشل میڈیا پر رابطہ کریں۔</p>
+      <p>مزید اپڈیٹس کے لیے رابطہ کریں۔</p>
       <div class="socials">
         <a class="social-link" href="https://t.me/Mujairhacker" target="_blank" rel="noopener">✈ Telegram</a>
         <a class="social-link" href="https://www.tiktok.com/@muhajir_0001" target="_blank" rel="noopener">♪ TikTok</a>
         <a class="social-link" href="https://wa.me/" target="_blank" rel="noopener">☏ WhatsApp</a>
-        <button class="social-link" id="contactShare" type="button">↗ ویب سائٹ شیئر کریں</button>
+        <button class="social-link" id="contactShare" type="button">↗ شیئر کریں</button>
       </div>
-      <p class="gold" dir="ltr">Manage and Build by Muhajir Hacker</p>
+      <p dir="ltr" class="gold">Manage and Build by Muhajir Hacker</p>
       <p>مہاجر ابو سفیان ملک</p>
     </div>
   </div>
@@ -641,24 +362,23 @@ footer strong{color:var(--gold)}
 </main>
 
 <footer>
-  <p><strong>SHAIKH YOUSAF | OFFICIAL</strong></p>
+  <strong>SHAIKH YOUSAF | OFFICIAL</strong>
   <p dir="ltr">Manage and Build by Muhajir Hacker</p>
   <p>مہاجر ابو سفیان ملک</p>
   <p>© <span id="year"></span> All Rights Reserved</p>
 </footer>
 
-<!-- Floating controls -->
 <div id="floatingTools">
   <div id="musicPanel">
     <div class="panel-title">🎵 میوزک کنٹرول</div>
     <div class="music-buttons">
-      <button id="prevSong" type="button" title="پچھلا گانا">⏮</button>
-      <button id="playSong" type="button" title="چلائیں / روکیں">▶</button>
-      <button id="stopSong" type="button" title="بند کریں">■</button>
-      <button id="nextSong" type="button" title="اگلا گانا">⏭</button>
+      <button id="prevSong" type="button">⏮</button>
+      <button id="playSong" type="button">▶</button>
+      <button id="stopSong" type="button">■</button>
+      <button id="nextSong" type="button">⏭</button>
     </div>
-    <div id="lyricsBox">🎶 گانا چلنے پر یہاں بول یا پیغام دکھائی دے گا۔</div>
-    <small style="color:#b9b0a0">اس فائل میں فی الحال ایک ہی گانا موجود ہے۔</small>
+    <div id="lyricsBox">🎶 گانا چلانے کے لیے ▶ دبائیں۔</div>
+    <small>فی الحال ایک آڈیو فائل موجود ہے۔</small>
   </div>
   <button class="float-btn" id="musicToggle" type="button" aria-label="میوزک">♫</button>
 
@@ -668,7 +388,7 @@ footer strong{color:var(--gold)}
       <a id="shareWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp</a>
       <a id="shareTelegram" href="#" target="_blank" rel="noopener">Telegram</a>
       <a id="shareFacebook" href="#" target="_blank" rel="noopener">Facebook</a>
-      <button id="copyLink" type="button">لنک کاپی کریں</button>
+      <button id="copyLink" type="button">لنک کاپی</button>
     </div>
   </div>
   <button class="float-btn" id="shareToggle" type="button" aria-label="شیئر کریں">↗</button>
@@ -676,378 +396,206 @@ footer strong{color:var(--gold)}
   <button class="float-btn" id="topFloat" type="button" aria-label="اوپر جائیں">⬆</button>
 </div>
 
-<div id="lightbox">
-  <button id="closeLightbox" type="button">✕ بند کریں</button>
-  <img id="lightboxImage" src="" alt="بڑی تصویر">
-</div>
+<div id="lightbox"><button class="btn" id="closeLightbox" type="button">✕ بند کریں</button><img id="lightboxImage" alt="بڑی تصویر"></div>
 <div id="toast" role="status"></div>
-
 <audio id="musicPlayer" src="./background.mp3" loop preload="none"></audio>
 
 <script>
 (() => {
-  "use strict";
+"use strict";
+const $=id=>document.getElementById(id);
+const toast=msg=>{
+  const t=$("toast");t.textContent=msg;t.style.display="block";
+  clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",2600);
+};
+$("year").textContent=new Date().getFullYear();
 
-  const $ = id => document.getElementById(id);
-  const toast = message => {
-    const el = $("toast");
-    el.textContent = message;
-    el.style.display = "block";
-    clearTimeout(window.__toastTimer);
-    window.__toastTimer = setTimeout(() => el.style.display = "none", 2600);
-  };
-
-  $("year").textContent = new Date().getFullYear();
-
-  /* Welcome: automatic close after five seconds */
-  const welcome = $("welcome");
-  let welcomeClosed = false;
-  function closeWelcome() {
-    if (welcomeClosed) return;
-    welcomeClosed = true;
-    welcome.classList.add("hide");
-    try { sessionStorage.setItem("syWelcomeSeen", "1"); } catch(e) {}
+/* Welcome: close automatically after five seconds */
+let welcomeClosed=false;
+function closeWelcome(){
+  if(welcomeClosed)return;
+  welcomeClosed=true;$("welcome").classList.add("hide");
+  try{sessionStorage.setItem("syWelcomeSeen","1")}catch(e){}
+}
+$("enterWebsite").addEventListener("click",closeWelcome);
+try{
+  if(sessionStorage.getItem("syWelcomeSeen")==="1")closeWelcome();
+  else{
+    let s=5;
+    const timer=setInterval(()=>{
+      s--;
+      if(s<=0){clearInterval(timer);closeWelcome()}
+      else $("countdown").textContent="ویب سائٹ "+s+" سیکنڈ میں کھل جائے گی";
+    },1000);
   }
-  $("enterWebsite").addEventListener("click", closeWelcome);
+}catch(e){setTimeout(closeWelcome,5000)}
 
-  try {
-    if (sessionStorage.getItem("syWelcomeSeen") === "1") {
-      closeWelcome();
-    } else {
-      let seconds = 5;
-      const countdown = $("countdown");
-      const tick = setInterval(() => {
-        seconds--;
-        if (seconds <= 0) {
-          clearInterval(tick);
-          closeWelcome();
-        } else {
-          countdown.textContent = "ویب سائٹ " + seconds + " سیکنڈ میں کھل جائے گی…";
-        }
-      }, 1000);
-    }
-  } catch(e) {
-    setTimeout(closeWelcome, 5000);
-  }
+/* Theme */
+$("themeToggle").addEventListener("click",()=>{
+  document.body.classList.toggle("light");
+  $("themeToggle").textContent=document.body.classList.contains("light")?"☾":"☼";
+});
 
-  /* Theme toggle */
-  $("themeToggle").addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    $("themeToggle").textContent =
-      document.body.classList.contains("light") ? "☾" : "☼";
+/* Only one video plays at a time */
+document.querySelectorAll("video").forEach(v=>{
+  v.addEventListener("play",()=>document.querySelectorAll("video").forEach(other=>{if(other!==v)other.pause()}));
+});
+
+/* Reels */
+document.querySelectorAll(".likeBtn").forEach(b=>b.addEventListener("click",()=>{
+  const liked=b.classList.toggle("liked");
+  b.firstChild.textContent=liked?"♥":"♡";
+  const count=b.querySelector("span");
+  count.textContent=String(Math.max(0,Number(count.textContent)+(liked?1:-1)));
+}));
+document.querySelectorAll(".commentBtn").forEach(b=>b.addEventListener("click",()=>{
+  $("comments").scrollIntoView({behavior:"smooth"});
+  setTimeout(()=>$("commentText").focus(),400);
+}));
+
+async function sharePage(){
+  try{
+    if(navigator.share)await navigator.share({title:"Shaikh Yousaf Official",text:"شیخ یوسف آفیشل ویب سائٹ",url:location.href});
+    else if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(location.href);toast("لنک کاپی ہوگیا")}
+    else window.prompt("ویب سائٹ کا لنک کاپی کریں:",location.href);
+  }catch(e){if(e.name!=="AbortError")window.prompt("ویب سائٹ کا لنک:",location.href)}
+}
+document.querySelectorAll(".shareReelBtn").forEach(b=>b.addEventListener("click",sharePage));
+$("contactShare").addEventListener("click",sharePage);
+
+/* Share popup */
+const encoded=encodeURIComponent(location.href);
+$("shareWhatsApp").href="https://wa.me/?text="+encodeURIComponent("Shaikh Yousaf Official: "+location.href);
+$("shareTelegram").href="https://t.me/share/url?url="+encoded;
+$("shareFacebook").href="https://www.facebook.com/sharer/sharer.php?u="+encoded;
+$("shareToggle").addEventListener("click",()=>{
+  $("sharePopup").classList.toggle("open");$("musicPanel").classList.remove("open");
+});
+$("copyLink").addEventListener("click",async()=>{
+  try{
+    if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(location.href);toast("لنک کاپی ہوگیا")}
+    else window.prompt("لنک کاپی کریں:",location.href);
+  }catch(e){window.prompt("لنک کاپی کریں:",location.href)}
+});
+
+/* Music: one song configured */
+const music=$("musicPlayer");
+function updateMusic(){
+  $("playSong").textContent=music.paused?"▶":"⏸";
+  $("lyricsBox").textContent=music.paused?"🎶 گانا چلانے کے لیے ▶ دبائیں۔":"🎶 گانا چل رہا ہے۔ اصل بول ابھی شامل نہیں ہیں۔";
+}
+async function playMusic(){
+  try{await music.play();updateMusic()}
+  catch(e){toast("background.mp3 فائل چیک کریں۔")}
+}
+$("musicToggle").addEventListener("click",()=>{
+  $("musicPanel").classList.toggle("open");$("sharePopup").classList.remove("open");
+});
+$("playSong").addEventListener("click",()=>music.paused?playMusic():(music.pause(),updateMusic()));
+$("stopSong").addEventListener("click",()=>{music.pause();music.currentTime=0;updateMusic();toast("میوزک بند ہوگیا")});
+$("prevSong").addEventListener("click",()=>{music.currentTime=0;playMusic()});
+$("nextSong").addEventListener("click",()=>{music.currentTime=0;playMusic();toast("ایک ہی گانا موجود ہے")});
+music.addEventListener("play",updateMusic);music.addEventListener("pause",updateMusic);
+
+/* Install */
+let installPrompt=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();installPrompt=e});
+$("installFloat").addEventListener("click",async()=>{
+  if(installPrompt){
+    installPrompt.prompt();
+    try{await installPrompt.userChoice}catch(e){}
+    installPrompt=null;
+  }else toast("براؤزر مینو میں Add to Home screen دیکھیں۔");
+});
+
+/* Back to top */
+$("topFloat").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+
+/* Gallery */
+document.querySelectorAll(".gallery-grid img").forEach(img=>img.addEventListener("click",()=>{
+  $("lightboxImage").src=img.src;$("lightbox").style.display="flex";
+}));
+$("closeLightbox").addEventListener("click",()=>$("lightbox").style.display="none");
+$("lightbox").addEventListener("click",e=>{if(e.target===$("lightbox"))$("lightbox").style.display="none"});
+
+/* Local browser comments */
+const commentKey="syOfficialCommentsV2";
+function readComments(){
+  try{const x=JSON.parse(localStorage.getItem(commentKey)||"[]");return Array.isArray(x)?x:[]}catch(e){return []}
+}
+function renderComments(){
+  const list=$("commentList");list.replaceChildren();
+  readComments().slice().reverse().forEach(c=>{
+    const article=document.createElement("article");article.className="comment-item";
+    const name=document.createElement("strong");name.textContent=c.name;
+    const date=document.createElement("small");date.textContent=" · "+c.date;
+    const text=document.createElement("p");text.textContent=c.text;
+    article.append(name,date,text);list.append(article);
   });
+}
+$("commentForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=$("commentName").value.trim(),text=$("commentText").value.trim();
+  if(!name||!text)return;
+  const comments=readComments();comments.push({name:name.slice(0,60),text:text.slice(0,1000),date:new Date().toLocaleDateString()});
+  try{
+    localStorage.setItem(commentKey,JSON.stringify(comments.slice(-100)));
+    $("commentText").value="";renderComments();toast("کمنٹ محفوظ ہوگیا");
+  }catch(err){toast("کمنٹ محفوظ نہیں ہوسکا")}
+});
+renderComments();
 
-  /* One video plays at a time */
-  document.querySelectorAll("video").forEach(video => {
-    video.addEventListener("play", () => {
-      document.querySelectorAll("video").forEach(other => {
-        if (other !== video) other.pause();
-      });
-    });
-  });
+/* Number guessing */
+let secret=Math.floor(Math.random()*10)+1;
+$("guessForm").addEventListener("submit",e=>{
+  e.preventDefault();const n=Number($("guessInput").value);
+  $("guessMessage").textContent=n===secret?"🎉 درست جواب!":n<secret?"اس سے بڑا نمبر آزمائیں۔":"اس سے چھوٹا نمبر آزمائیں۔";
+});
+$("newGuess").addEventListener("click",()=>{
+  secret=Math.floor(Math.random()*10)+1;$("guessInput").value="";$("guessMessage").textContent="نیا نمبر منتخب ہوگیا۔";
+});
 
-  /* Reel likes, comments and share */
-  document.querySelectorAll(".likeBtn").forEach(button => {
-    button.addEventListener("click", () => {
-      const liked = button.classList.toggle("liked");
-      button.firstChild.textContent = liked ? "♥" : "♡";
-      const count = button.querySelector("span");
-      count.textContent = String(Math.max(0, Number(count.textContent) + (liked ? 1 : -1)));
-      button.setAttribute("aria-pressed", String(liked));
-    });
-  });
+/* Tic Tac Toe */
+let board=Array(9).fill(""),player="X",finished=false;
+const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+function resetTic(){
+  board=Array(9).fill("");player="X";finished=false;
+  document.querySelectorAll("#ticBoard button").forEach(b=>b.textContent="");
+  $("gameMessage").textContent="X کی باری";
+}
+document.querySelectorAll("#ticBoard button").forEach(b=>b.addEventListener("click",()=>{
+  const i=Number(b.dataset.cell);if(finished||board[i])return;
+  board[i]=player;b.textContent=player;
+  if(wins.some(line=>line.every(n=>board[n]===player))){
+    $("gameMessage").textContent=player+" جیت گیا! 🎉";finished=true;
+  }else if(board.every(Boolean)){
+    $("gameMessage").textContent="میچ برابر ہوگیا!";finished=true;
+  }else{player=player==="X"?"O":"X";$("gameMessage").textContent=player+" کی باری"}
+}));
+$("resetTic").addEventListener("click",resetTic);
 
-  document.querySelectorAll(".commentBtn").forEach(button => {
-    button.addEventListener("click", () => {
-      $("comments").scrollIntoView({behavior:"smooth"});
-      setTimeout(() => $("commentText").focus(), 500);
-    });
-  });
+/* Rock Paper Scissors */
+const rpsNames={rock:"✊ پتھر",paper:"✋ کاغذ",scissors:"✌ قینچی"};
+document.querySelectorAll("[data-rps]").forEach(b=>b.addEventListener("click",()=>{
+  const p=b.dataset.rps,opts=["rock","paper","scissors"],c=opts[Math.floor(Math.random()*3)];
+  let result=p===c?"میچ برابر!":
+    ((p==="rock"&&c==="scissors")||(p==="paper"&&c==="rock")||(p==="scissors"&&c==="paper"))?"آپ جیت گئے! 🎉":"کمپیوٹر جیت گیا۔";
+  $("rpsMessage").textContent="آپ: "+rpsNames[p]+" | کمپیوٹر: "+rpsNames[c]+" — "+result;
+}));
 
-  async function sharePage() {
-    const shareData = {
-      title: "Shaikh Yousaf | Official",
-      text: "شیخ یوسف کی آفیشل ویب سائٹ دیکھیں",
-      url: location.href
-    };
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-      } else if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(location.href);
-        toast("ویب سائٹ کا لنک کاپی ہوگیا");
-      } else {
-        window.prompt("یہ لنک کاپی کریں:", location.href);
-      }
-    } catch(e) {
-      if (e.name !== "AbortError") {
-        window.prompt("ویب سائٹ کا لنک:", location.href);
-      }
-    }
-  }
-
-  document.querySelectorAll(".shareReelBtn").forEach(button => {
-    button.addEventListener("click", sharePage);
-  });
-  $("contactShare").addEventListener("click", sharePage);
-
-  /* Share popup */
-  const sharePopup = $("sharePopup");
-  const shareUrl = encodeURIComponent(location.href);
-  $("shareWhatsApp").href = "https://wa.me/?text=" + encodeURIComponent("شیخ یوسف آفیشل ویب سائٹ: " + location.href);
-  $("shareTelegram").href = "https://t.me/share/url?url=" + shareUrl + "&text=" + encodeURIComponent("Shaikh Yousaf Official");
-  $("shareFacebook").href = "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl;
-
-  $("shareToggle").addEventListener("click", () => {
-    sharePopup.classList.toggle("open");
-    $("musicPanel").classList.remove("open");
-  });
-  $("copyLink").addEventListener("click", async () => {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(location.href);
-        toast("لنک کاپی ہوگیا");
-      } else {
-        window.prompt("لنک کاپی کریں:", location.href);
-      }
-    } catch(e) {
-      window.prompt("لنک کاپی کریں:", location.href);
-    }
-  });
-
-  /* Music controls */
-  const music = $("musicPlayer");
-  const musicPanel = $("musicPanel");
-  function updateMusicButton() {
-    $("playSong").textContent = music.paused ? "▶" : "⏸";
-    $("lyricsBox").textContent = music.paused
-      ? "🎶 گانا چلانے کے لیے ▶ دبائیں۔"
-      : "🎶 آپ کا گانا چل رہا ہے۔ اصل بول شامل کرنے کے لیے lyrics فراہم کریں۔";
-  }
-
-  $("musicToggle").addEventListener("click", () => {
-    musicPanel.classList.toggle("open");
-    sharePopup.classList.remove("open");
-  });
-
-  async function playMusic() {
-    try {
-      await music.play();
-      updateMusicButton();
-    } catch(e) {
-      toast("گانا نہیں چلا۔ background.mp3 فائل GitHub میں چیک کریں۔");
-    }
-  }
-
-  $("playSong").addEventListener("click", () => {
-    if (music.paused) playMusic();
-    else { music.pause(); updateMusicButton(); }
-  });
-  $("stopSong").addEventListener("click", () => {
-    music.pause();
-    music.currentTime = 0;
-    updateMusicButton();
-    toast("میوزک بند ہوگیا");
-  });
-  $("prevSong").addEventListener("click", () => {
-    music.currentTime = 0;
-    playMusic();
-    toast("موجودہ گانا دوبارہ چل رہا ہے");
-  });
-  $("nextSong").addEventListener("click", () => {
-    music.currentTime = 0;
-    playMusic();
-    toast("صرف ایک آڈیو فائل موجود ہے؛ اسی گانے کو دوبارہ چلایا گیا");
-  });
-  music.addEventListener("play", updateMusicButton);
-  music.addEventListener("pause", updateMusicButton);
-
-  /* Install button: site must be installable for native install prompt */
-  let installPrompt = null;
-  window.addEventListener("beforeinstallprompt", event => {
-    event.preventDefault();
-    installPrompt = event;
-  });
-
-  $("installFloat").addEventListener("click", async () => {
-    if (installPrompt) {
-      installPrompt.prompt();
-      try { await installPrompt.userChoice; } catch(e) {}
-      installPrompt = null;
-    } else {
-      toast("اگر انسٹال کا آپشن دستیاب ہو تو براؤزر مینو سے Add to Home screen منتخب کریں۔");
-    }
-  });
-
-  /* Back to top */
-  $("topFloat").addEventListener("click", () => {
-    window.scrollTo({top:0,behavior:"smooth"});
-  });
-
-  /* Gallery lightbox */
-  document.querySelectorAll(".gallery-grid img").forEach(img => {
-    img.addEventListener("click", () => {
-      $("lightboxImage").src = img.src;
-      $("lightbox").style.display = "flex";
-    });
-  });
-  $("closeLightbox").addEventListener("click", () => $("lightbox").style.display = "none");
-  $("lightbox").addEventListener("click", e => {
-    if (e.target === $("lightbox")) $("lightbox").style.display = "none";
-  });
-
-  /* Comments saved in this browser */
-  const STORAGE_KEY = "shaikhYousafCommentsV1";
-  function getComments() {
-    try {
-      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      return Array.isArray(data) ? data : [];
-    } catch(e) { return []; }
-  }
-  function renderComments() {
-    const list = $("commentList");
-    list.replaceChildren();
-    getComments().slice().reverse().forEach(item => {
-      const article = document.createElement("article");
-      article.className = "comment-item";
-      const name = document.createElement("strong");
-      name.textContent = item.name;
-      const date = document.createElement("small");
-      date.textContent = " · " + item.date;
-      const message = document.createElement("p");
-      message.textContent = item.text;
-      article.append(name, date, message);
-      list.appendChild(article);
-    });
-  }
-
-  $("commentForm").addEventListener("submit", event => {
-    event.preventDefault();
-    const name = $("commentName").value.trim();
-    const text = $("commentText").value.trim();
-    if (!name || !text) return;
-
-    const comments = getComments();
-    comments.push({
-      name: name.slice(0,60),
-      text: text.slice(0,1000),
-      date: new Date().toLocaleDateString()
-    });
-
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(comments.slice(-100)));
-      $("commentText").value = "";
-      renderComments();
-      toast("آپ کا کمنٹ اس براؤزر میں محفوظ ہوگیا");
-    } catch(e) {
-      toast("کمنٹ محفوظ نہیں ہوسکا؛ براہ کرم دوبارہ کوشش کریں۔");
-    }
-  });
-  renderComments();
-
-  /* Number guessing game */
-  let secretNumber = Math.floor(Math.random() * 10) + 1;
-  $("guessForm").addEventListener("submit", event => {
-    event.preventDefault();
-    const guess = Number($("guessInput").value);
-    if (guess === secretNumber) {
-      $("guessMessage").textContent = "🎉 بالکل درست! آپ جیت گئے۔";
-    } else {
-      $("guessMessage").textContent = guess < secretNumber ? "اس سے بڑا نمبر آزمائیں۔" : "اس سے چھوٹا نمبر آزمائیں۔";
-    }
-  });
-  $("newGuess").addEventListener("click", () => {
-    secretNumber = Math.floor(Math.random() * 10) + 1;
-    $("guessInput").value = "";
-    $("guessMessage").textContent = "نیا نمبر منتخب ہوگیا۔";
-  });
-
-  /* Tic Tac Toe */
-  let board = Array(9).fill("");
-  let currentPlayer = "X";
-  let ticOver = false;
-  const wins = [
-    [0,1,2],[3,4,5],[6,7,8],
-    [0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]
-  ];
-  function resetTic() {
-    board = Array(9).fill("");
-    currentPlayer = "X";
-    ticOver = false;
-    document.querySelectorAll("#ticBoard button").forEach(b => b.textContent = "");
-    $("gameMessage").textContent = "X کی باری";
-  }
-  document.querySelectorAll("#ticBoard button").forEach(button => {
-    button.addEventListener("click", () => {
-      const i = Number(button.dataset.cell);
-      if (ticOver || board[i]) return;
-      board[i] = currentPlayer;
-      button.textContent = currentPlayer;
-      const winner = wins.find(line => line.every(n => board[n] === currentPlayer));
-      if (winner) {
-        $("gameMessage").textContent = currentPlayer + " جیت گیا! 🎉";
-        ticOver = true;
-      } else if (board.every(Boolean)) {
-        $("gameMessage").textContent = "میچ برابر ہوگیا!";
-        ticOver = true;
-      } else {
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-        $("gameMessage").textContent = currentPlayer + " کی باری";
-      }
-    });
-  });
-  $("resetTic").addEventListener("click", resetTic);
-
-  /* Rock paper scissors */
-  const rpsNames = {rock:"✊ پتھر",paper:"✋ کاغذ",scissors:"✌ قینچی"};
-  document.querySelectorAll("[data-rps]").forEach(button => {
-    button.addEventListener("click", () => {
-      const player = button.dataset.rps;
-      const options = ["rock","paper","scissors"];
-      const computer = options[Math.floor(Math.random()*3)];
-      let result;
-      if (player === computer) result = "میچ برابر!";
-      else if (
-        (player==="rock" && computer==="scissors") ||
-        (player==="paper" && computer==="rock") ||
-        (player==="scissors" && computer==="paper")
-      ) result = "آپ جیت گئے! 🎉";
-      else result = "کمپیوٹر جیت گیا۔";
-      $("rpsMessage").textContent =
-        "آپ: " + rpsNames[player] + " | کمپیوٹر: " + rpsNames[computer] + " — " + result;
-    });
-  });
-
-  /* Math challenge */
-  let mathCorrect = 0;
-  function newMath() {
-    const a = Math.floor(Math.random()*20)+1;
-    const b = Math.floor(Math.random()*20)+1;
-    const subtract = Math.random() > .5;
-    if (subtract && b > a) {
-      mathCorrect = b-a;
-      $("mathQuestion").textContent = b + " − " + a + " = ?";
-    } else if (subtract) {
-      mathCorrect = a-b;
-      $("mathQuestion").textContent = a + " − " + b + " = ?";
-    } else {
-      mathCorrect = a+b;
-      $("mathQuestion").textContent = a + " + " + b + " = ?";
-    }
-    $("mathAnswer").value = "";
-    $("mathMessage").textContent = "";
-  }
-  $("mathForm").addEventListener("submit", event => {
-    event.preventDefault();
-    if (Number($("mathAnswer").value) === mathCorrect) {
-      $("mathMessage").textContent = "درست جواب! 🎉";
-    } else {
-      $("mathMessage").textContent = "دوبارہ کوشش کریں۔";
-    }
-  });
-  $("newMath").addEventListener("click", newMath);
-  newMath();
-
+/* Math challenge */
+let answer=0;
+function newMath(){
+  let a=Math.floor(Math.random()*20)+1,b=Math.floor(Math.random()*20)+1;
+  if(Math.random()>.5){answer=a+b;$("mathQuestion").textContent=a+" + "+b+" = ?"}
+  else{if(b>a)[a,b]=[b,a];answer=a-b;$("mathQuestion").textContent=a+" − "+b+" = ?"}
+  $("mathAnswer").value="";$("mathMessage").textContent="";
+}
+$("mathForm").addEventListener("submit",e=>{
+  e.preventDefault();$("mathMessage").textContent=Number($("mathAnswer").value)===answer?"درست جواب! 🎉":"دوبارہ کوشش کریں۔";
+});
+$("newMath").addEventListener("click",newMath);
+newMath();
 })();
 </script>
 </body>
