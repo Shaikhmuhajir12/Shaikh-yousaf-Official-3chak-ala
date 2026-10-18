@@ -8,11 +8,12 @@
 <meta name="description" content="Shaikh Yousaf Official — زندگی، ویڈیوز، Reels، تصاویر، فلمیں اور Yousaf AI Assistant">
 <title>Shaikh Yousaf | Official Website</title>
 
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./lion%20(1).png" type="image/png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
-
-<link rel="manifest" id="appManifest">
 
 <style>
 :root{
@@ -56,9 +57,7 @@ nav a:hover{background:var(--gold);color:#000}
 .urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.4}
 .story-grid,.family-grid,.gallery,.video-grid,.review-grid,.games-grid{position:relative}
 .story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.story-card,.game,.review,.family-card,.video-box,.movie-card,.letter,.website-box,.contact-box,.quote-card{
-background:linear-gradient(145deg,var(--panel),#080808);border:1px solid var(--line);border-radius:19px;overflow:hidden
-}
+.story-card,.game,.review,.family-card,.video-box,.movie-card,.letter,.website-box,.contact-box,.quote-card{background:linear-gradient(145deg,var(--panel),#080808);border:1px solid var(--line);border-radius:19px;overflow:hidden}
 .story-card{padding:22px;text-align:center;transition:.3s}
 .story-card:hover{transform:translateY(-5px);border-color:var(--gold)}
 .story-card .icon{font-size:35px}
@@ -146,9 +145,7 @@ footer strong{color:var(--gold)}
 .welcome-content h1{color:var(--gold);font-size:clamp(34px,8vw,72px)}
 .welcome-content h2{font-family:'Noto Nastaliq Urdu',serif;font-size:27px}
 .welcome-content p{color:#aaa}
-#musicButton,#yousafAIButton,#shareButton,#themeButton,#installButton{
-position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15px #d4af3730
-}
+#musicButton,#yousafAIButton,#shareButton,#themeButton,#installButton{position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15px #d4af3730}
 #musicButton{bottom:15px;left:12px;background:linear-gradient(135deg,#fff1a8,#d4af37);color:#000;border:1px solid #fff1a8;padding:10px 14px}
 #yousafAIButton{right:12px;bottom:67px;background:#111;border:1px solid var(--gold);color:var(--gold2);padding:10px 14px;font-size:12px}
 #shareButton{right:12px;bottom:119px;background:#111;border:1px solid var(--gold);color:var(--gold2);padding:8px 12px}
@@ -200,14 +197,13 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
 <button id="themeButton" onclick="toggleTheme()">🌗 Theme</button>
 <button id="shareButton" onclick="shareWebsite()">↗ Share</button>
 <button id="installButton" onclick="installWebsite()">📲 Install App</button>
-
 <a id="yousafAIButton" href="https://yousaf-ai-assistant-2026.muhajirhackers.workers.dev/" target="_blank" rel="noopener noreferrer">🤖 Yousaf AI Assistant</a>
 
 <div id="welcome">
  <div class="welcome-content">
   <h1>WELCOME TO</h1><h2>SHAIKH YOUSAF</h2>
   <p>Build by Muhajir Hacker</p><p class="urdu">مہاجر ابو سفیان ملک</p>
-  <p class="official-line">✦ SHAIkH YOUSAF OFFICIAL WEBSITE ✦</p>
+  <p class="official-line">✦ SHAIKH YOUSAF OFFICIAL WEBSITE ✦</p>
  </div>
 </div>
 
@@ -224,7 +220,7 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
    </div>
    <div class="brand">
     <div class="side-logo"><img src="lion%20(1).png" alt="Muhajir Official logo"></div>
-    <div class="logo">SHAIkH YOUSAF</div>
+    <div class="logo">SHAIKH YOUSAF</div>
    </div>
   </div>
   <nav aria-label="Main navigation">
@@ -238,7 +234,7 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
 
 <section class="hero" id="home">
  <div class="hero-content">
-  <h1>SHAIkH YOUSAF OFFICIAL</h1>
+  <h1>SHAIKH YOUSAF OFFICIAL</h1>
   <h2 class="urdu">ایک سادہ انسان، ایک خوبصورت داستان</h2>
   <p>زندگی، جدوجہد، خاندان، محبت، یادیں اور بہتر مستقبل کے خواب۔</p>
   <a href="#story" class="btn">زندگی کی داستان</a>
@@ -247,14 +243,10 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
  </div>
 </section>
 
-<!-- SMART SEARCH -->
 <section id="search">
  <div class="container">
   <div class="section-title"><h2>🔎 Smart Search</h2><p>ویب سائٹ کے سیکشنز تلاش کریں</p></div>
-  <div class="search-wrap">
-   <input id="siteSearch" type="search" placeholder="مثلاً ویڈیوز، خاندان، فلمیں..." aria-label="Search website">
-   <button class="btn" onclick="searchSite()">تلاش</button>
-  </div>
+  <div class="search-wrap"><input id="siteSearch" type="search" placeholder="مثلاً ویڈیوز، خاندان، فلمیں..." aria-label="Search website"><button class="btn" onclick="searchSite()">تلاش</button></div>
   <div id="searchResults" aria-live="polite">تلاش کے لیے کوئی لفظ لکھیں۔</div>
  </div>
 </section>
@@ -317,47 +309,23 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
  </div>
 </section>
 
-<!-- MOVIES -->
 <section id="movies" class="movies-section">
  <div class="container">
   <div class="section-title"><h2>🎬 Movies &amp; Web Series</h2><p>Pakistani Cinema • Indian Movies • Web Series • Licensed Films</p></div>
   <div class="movies-intro"><h3>✨ اپنی پسند کی فلمی دنیا دریافت کریں</h3><p>یہاں فلمی کیٹیگریز کے نمائندہ پوسٹر اور متعلقہ قانونی پلیٹ فارمز کے لنکس موجود ہیں۔</p></div>
   <div class="movie-filters">
-   <button class="movie-filter active" data-filter="all">تمام کلیکشن</button>
-   <button class="movie-filter" data-filter="pakistan">🇵🇰 پاکستانی</button>
-   <button class="movie-filter" data-filter="india">🇮🇳 بھارتی</button>
-   <button class="movie-filter" data-filter="series">📺 Web Series</button>
-   <button class="movie-filter" data-filter="public">🎞️ Public Domain</button>
-   <button class="movie-filter" data-filter="creative">🌍 Creative Commons</button>
+   <button class="movie-filter active" data-filter="all">تمام کلیکشن</button><button class="movie-filter" data-filter="pakistan">🇵🇰 پاکستانی</button><button class="movie-filter" data-filter="india">🇮🇳 بھارتی</button><button class="movie-filter" data-filter="series">📺 Web Series</button><button class="movie-filter" data-filter="public">🎞️ Public Domain</button><button class="movie-filter" data-filter="creative">🌍 Creative Commons</button>
   </div>
   <div class="movie-grid" id="movieGrid">
-   <article class="movie-card" data-category="pakistan">
-    <div class="movie-poster"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85" alt="Cinema illustration" loading="lazy"><span class="movie-category">PAKISTANI CINEMA</span><div class="movie-poster-title">Pakistani Movies</div></div>
-    <div class="movie-info"><h3>پاکستانی فلمیں</h3><p>پاکستانی فلموں اور ڈراموں کے آفیشل چینلز اور قانونی پلیٹ فارمز تلاش کریں۔</p><div class="movie-tags"><span>Pakistani</span><span>Official Sources</span></div><div class="movie-buttons"><a class="btn" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a><a class="btn dark" href="https://tamashaweb.com/" target="_blank" rel="noopener noreferrer">Tamasha</a></div></div>
-   </article>
-   <article class="movie-card" data-category="india">
-    <div class="movie-poster"><img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=900&q=85" alt="Film scene illustration" loading="lazy"><span class="movie-category">INDIAN CINEMA</span><div class="movie-poster-title">Indian Movies</div></div>
-    <div class="movie-info"><h3>بھارتی فلمیں</h3><p>بھارتی سینما کے لیے آفیشل اسٹریمنگ پلیٹ فارمز اور قانونی فلمی کلیکشن دیکھیں۔</p><div class="movie-tags"><span>Indian</span><span>Movies</span></div><div class="movie-buttons"><a class="btn" href="https://www.zee5.com/" target="_blank" rel="noopener noreferrer">ZEE5</a><a class="btn dark" href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer">Prime Video</a></div></div>
-   </article>
-   <article class="movie-card" data-category="series">
-    <div class="movie-poster"><img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=900&q=85" alt="Web series illustration" loading="lazy"><span class="movie-category">WEB SERIES</span><div class="movie-poster-title">Web Series</div></div>
-    <div class="movie-info"><h3>Web Series &amp; Dramas</h3><p>ویب سیریز اور ڈراموں کے لیے آفیشل پلیٹ فارمز استعمال کریں۔ سبسکرپشن درکار ہو سکتی ہے۔</p><div class="movie-tags"><span>Series</span><span>Official Streaming</span></div><div class="movie-buttons"><a class="btn" href="https://www.netflix.com/" target="_blank" rel="noopener noreferrer">Netflix</a><a class="btn dark" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a></div></div>
-   </article>
-   <article class="movie-card" data-category="public">
-    <div class="movie-poster"><img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=85" alt="Classic cinema illustration" loading="lazy"><span class="movie-category">PUBLIC DOMAIN</span><div class="movie-poster-title">Classic Cinema</div></div>
-    <div class="movie-info"><h3>Public Domain Movies</h3><p>کلاسک فلموں کا کلیکشن۔ ہر فلم کے صفحے پر حقوق اور دوبارہ استعمال کی اجازت چیک کریں۔</p><div class="movie-tags"><span>Classic Films</span><span>Rights Check</span></div><div class="movie-buttons"><a class="btn" href="https://commons.wikimedia.org/wiki/Category:Videos_of_films_in_the_public_domain" target="_blank" rel="noopener noreferrer">فلمیں دیکھیں</a><a class="btn dark" href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia</a></div></div>
-   </article>
-   <article class="movie-card" data-category="public">
-    <div class="movie-poster"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=85" alt="Film archive illustration" loading="lazy"><span class="movie-category">FILM ARCHIVE</span><div class="movie-poster-title">Movie Archive</div></div>
-    <div class="movie-info"><h3>Archive Movies</h3><p>آرکائیو میں دستیاب فلموں کے فارمیٹس مختلف ہو سکتے ہیں۔ ڈاؤن لوڈ سے پہلے حقوق دیکھیں۔</p><div class="movie-tags"><span>Archive</span><span>Check License</span></div><div class="movie-buttons"><a class="btn" href="https://archive.org/details/movies" target="_blank" rel="noopener noreferrer">Archive</a><a class="btn dark" href="https://archivesupport.zendesk.com/hc/en-us/articles/360014759692-Rights" target="_blank" rel="noopener noreferrer">Rights Guide</a></div></div>
-   </article>
-   <article class="movie-card" data-category="creative">
-    <div class="movie-poster"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=85" alt="Independent film illustration" loading="lazy"><span class="movie-category">CREATIVE COMMONS</span><div class="movie-poster-title">Independent Films</div></div>
-    <div class="movie-info"><h3>Creative Commons Films</h3><p>آزاد لائسنس والے مواد کے لیے سورس دیکھیں۔ کچھ لائسنس کریڈٹ یا مخصوص شرائط کا تقاضا کرتے ہیں۔</p><div class="movie-tags"><span>Open Media</span><span>License Terms</span></div><div class="movie-buttons"><a class="btn" href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Browse Media</a><a class="btn dark" href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank" rel="noopener noreferrer">License Guide</a></div></div>
-   </article>
+   <article class="movie-card" data-category="pakistan"><div class="movie-poster"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Cinema illustration" loading="lazy"><span class="movie-category">PAKISTANI CINEMA</span><div class="movie-poster-title">Pakistani Movies</div></div><div class="movie-info"><h3>پاکستانی فلمیں</h3><p>پاکستانی فلموں اور ڈراموں کے آفیشل چینلز اور قانونی پلیٹ فارمز تلاش کریں۔</p><div class="movie-tags"><span>Pakistani</span><span>Official Sources</span></div><div class="movie-buttons"><a class="btn" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a><a class="btn dark" href="https://tamashaweb.com/" target="_blank" rel="noopener noreferrer">Tamasha</a></div></div></article>
+   <article class="movie-card" data-category="india"><div class="movie-poster"><img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Film scene illustration" loading="lazy"><span class="movie-category">INDIAN CINEMA</span><div class="movie-poster-title">Indian Movies</div></div><div class="movie-info"><h3>بھارتی فلمیں</h3><p>بھارتی سینما کے لیے آفیشل اسٹریمنگ پلیٹ فارمز اور قانونی فلمی کلیکشن دیکھیں۔</p><div class="movie-tags"><span>Indian</span><span>Movies</span></div><div class="movie-buttons"><a class="btn" href="https://www.zee5.com/" target="_blank" rel="noopener noreferrer">ZEE5</a><a class="btn dark" href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer">Prime Video</a></div></div></article>
+   <article class="movie-card" data-category="series"><div class="movie-poster"><img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Web series illustration" loading="lazy"><span class="movie-category">WEB SERIES</span><div class="movie-poster-title">Web Series</div></div><div class="movie-info"><h3>Web Series &amp; Dramas</h3><p>ویب سیریز اور ڈراموں کے لیے آفیشل پلیٹ فارمز استعمال کریں۔ سبسکرپشن درکار ہو سکتی ہے۔</p><div class="movie-tags"><span>Series</span><span>Official Streaming</span></div><div class="movie-buttons"><a class="btn" href="https://www.netflix.com/" target="_blank" rel="noopener noreferrer">Netflix</a><a class="btn dark" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a></div></div></article>
+   <article class="movie-card" data-category="public"><div class="movie-poster"><img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Classic cinema illustration" loading="lazy"><span class="movie-category">PUBLIC DOMAIN</span><div class="movie-poster-title">Classic Cinema</div></div><div class="movie-info"><h3>Public Domain Movies</h3><p>کلاسک فلموں کا کلیکشن۔ ہر فلم کے صفحے پر حقوق اور دوبارہ استعمال کی اجازت چیک کریں۔</p><div class="movie-tags"><span>Classic Films</span><span>Rights Check</span></div><div class="movie-buttons"><a class="btn" href="https://commons.wikimedia.org/wiki/Category:Videos_of_films_in_the_public_domain" target="_blank" rel="noopener noreferrer">فلمیں دیکھیں</a><a class="btn dark" href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia</a></div></div></article>
+   <article class="movie-card" data-category="public"><div class="movie-poster"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Film archive illustration" loading="lazy"><span class="movie-category">FILM ARCHIVE</span><div class="movie-poster-title">Movie Archive</div></div><div class="movie-info"><h3>Archive Movies</h3><p>آرکائیو میں دستیاب فلموں کے فارمیٹس مختلف ہو سکتے ہیں۔ ڈاؤن لوڈ سے پہلے حقوق دیکھیں۔</p><div class="movie-tags"><span>Archive</span><span>Check License</span></div><div class="movie-buttons"><a class="btn" href="https://archive.org/details/movies" target="_blank" rel="noopener noreferrer">Archive</a><a class="btn dark" href="https://archivesupport.zendesk.com/hc/en-us/articles/360014759692-Rights" target="_blank" rel="noopener noreferrer">Rights Guide</a></div></div></article>
+   <article class="movie-card" data-category="creative"><div class="movie-poster"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Independent film illustration" loading="lazy"><span class="movie-category">CREATIVE COMMONS</span><div class="movie-poster-title">Independent Films</div></div><div class="movie-info"><h3>Creative Commons Films</h3><p>آزاد لائسنس والے مواد کے لیے سورس دیکھیں۔ کچھ لائسنس کریڈٹ یا مخصوص شرائط کا تقاضا کرتے ہیں۔</p><div class="movie-tags"><span>Open Media</span><span>License Terms</span></div><div class="movie-buttons"><a class="btn" href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Browse Media</a><a class="btn dark" href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank" rel="noopener noreferrer">License Guide</a></div></div></article>
   </div>
   <div class="movie-empty" id="movieEmpty">اس کیٹیگری میں کوئی کارڈ موجود نہیں۔</div>
-  <div class="movie-disclaimer"><strong>ضروری نوٹ:</strong> یہ ویب سائٹ فلمی فائلیں ہوسٹ نہیں کرتی۔ پوسٹرز کیٹیگری کے نمائندہ تصاویر ہیں، لازماً اصل فلموں کے آفیشل پوسٹر نہیں۔ HD یا ڈاؤن لوڈ کی سہولت متعلقہ پلیٹ فارم پر منحصر ہے۔ حقوق اور لائسنس ہمیشہ چیک کریں۔</div>
+  <div class="movie-disclaimer"><strong>ضروری نوٹ:</strong> یہ ویب سائٹ فلمی فائلیں ہوسٹ نہیں کرتی۔ پوسٹرز کیٹیگری کی نمائندہ تصاویر ہیں، لازماً اصل فلموں کے آفیشل پوسٹر نہیں۔ HD یا ڈاؤن لوڈ کی سہولت متعلقہ پلیٹ فارم پر منحصر ہے۔ حقوق اور لائسنس ہمیشہ چیک کریں۔</div>
  </div>
 </section>
 
@@ -391,14 +359,12 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
  </div>
 </section>
 
-<!-- DAILY QUOTE -->
 <section id="quotes">
  <div class="container">
   <div class="section-title"><h2>🌟 اردو اقوال</h2><p>حوصلہ، امید اور زندگی</p></div>
   <div class="quote-card">
    <p class="urdu" id="quoteText">محنت کبھی ضائع نہیں ہوتی، ہر کوشش انسان کو کچھ نہ کچھ سکھاتی ہے۔</p>
-   <button class="btn" onclick="newQuote()">✨ نیا قول</button>
-   <button class="btn dark" onclick="shareQuote()">↗ قول شیئر کریں</button>
+   <button class="btn" onclick="newQuote()">✨ نیا قول</button><button class="btn dark" onclick="shareQuote()">↗ قول شیئر کریں</button>
   </div>
  </div>
 </section>
@@ -406,8 +372,7 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
 <section id="website">
  <div class="container">
   <div class="website-box">
-   <div class="website-icon">🌐</div>
-   <div class="section-title"><h2>Official Website</h2><p>Shaikh Yousaf Official Website</p></div>
+   <div class="website-icon">🌐</div><div class="section-title"><h2>Official Website</h2><p>Shaikh Yousaf Official Website</p></div>
    <a href="https://shaikhmuhajir12.github.io/Shaikh-yousaf-Official-3chak-ala/" target="_blank" rel="noopener noreferrer" class="btn">🌐 WEBSITE OPEN کریں</a>
   </div>
  </div>
@@ -422,11 +387,8 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
    <div class="review"><div class="stars">★★★★★</div><h3>Shahid</h3><p>Videos اور gallery کا انداز اچھا ہے۔</p></div>
   </div>
   <div class="game" style="max-width:650px;margin:22px auto">
-   <h3>💬 اپنا تبصرہ لکھیں</h3>
-   <input id="commentName" maxlength="40" placeholder="آپ کا نام">
-   <textarea id="commentText" maxlength="500" rows="3" placeholder="اپنا تبصرہ لکھیں"></textarea>
-   <button onclick="addComment()">تبصرہ شامل کریں</button>
-   <p class="game-result" id="commentStatus">یہ ڈیمو تبصرے اسی براؤزر میں محفوظ ہوں گے، سرور پر نہیں۔</p>
+   <h3>💬 اپنا تبصرہ لکھیں</h3><input id="commentName" maxlength="40" placeholder="آپ کا نام"><textarea id="commentText" maxlength="500" rows="3" placeholder="اپنا تبصرہ لکھیں"></textarea>
+   <button onclick="addComment()">تبصرہ شامل کریں</button><p class="game-result" id="commentStatus">یہ ڈیمو تبصرے اسی براؤزر میں محفوظ ہوں گے، سرور پر نہیں۔</p>
   </div>
  </div>
 </section>
@@ -435,29 +397,10 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
  <div class="container">
   <div class="section-title"><h2>🎮 Easy Games</h2><p>چھوٹی چھوٹی گیمز کھیلیں</p></div>
   <div class="games-grid">
-   <div class="game">
-    <h3>⭕ Tic Tac Toe</h3>
-    <div id="board" style="display:grid;grid-template-columns:repeat(3,60px);justify-content:center;gap:5px;margin:15px auto"></div>
-    <button onclick="resetTic()">New Game</button><div id="ticResult" class="game-result">آپ کی باری ہے</div>
-   </div>
-   <div class="game">
-    <h3>🔢 Number Guess</h3><p>1 سے 20 کے درمیان نمبر guess کریں</p>
-    <input type="number" id="guessInput" min="1" max="20" placeholder="نمبر لکھیں">
-    <button onclick="guessNumber()">Guess</button><button onclick="resetGuess()">نئی گیم</button>
-    <div id="guessResult" class="game-result"></div>
-   </div>
-   <div class="game">
-    <h3>✊ Rock Paper Scissors</h3>
-    <button onclick="rps('Rock')">✊ Rock</button><button onclick="rps('Paper')">✋ Paper</button><button onclick="rps('Scissors')">✌️ Scissors</button>
-    <div id="rpsResult" class="game-result"></div>
-   </div>
-   <div class="game">
-    <h3>🧠 Quick Math</h3>
-    <p id="mathQuestion">تیار ہیں؟</p>
-    <input id="mathAnswer" type="number" placeholder="جواب">
-    <button onclick="checkMath()">جواب چیک کریں</button><button onclick="newMath()">نیا سوال</button>
-    <div id="mathResult" class="game-result"></div>
-   </div>
+   <div class="game"><h3>⭕ Tic Tac Toe</h3><div id="board" style="display:grid;grid-template-columns:repeat(3,60px);justify-content:center;gap:5px;margin:15px auto"></div><button onclick="resetTic()">New Game</button><div id="ticResult" class="game-result">آپ کی باری ہے</div></div>
+   <div class="game"><h3>🔢 Number Guess</h3><p>1 سے 20 کے درمیان نمبر guess کریں</p><input type="number" id="guessInput" min="1" max="20" placeholder="نمبر لکھیں"><button onclick="guessNumber()">Guess</button><button onclick="resetGuess()">نئی گیم</button><div id="guessResult" class="game-result"></div></div>
+   <div class="game"><h3>✊ Rock Paper Scissors</h3><button onclick="rps('Rock')">✊ Rock</button><button onclick="rps('Paper')">✋ Paper</button><button onclick="rps('Scissors')">✌️ Scissors</button><div id="rpsResult" class="game-result"></div></div>
+   <div class="game"><h3>🧠 Quick Math</h3><p id="mathQuestion">تیار ہیں؟</p><input id="mathAnswer" type="number" placeholder="جواب"><button onclick="checkMath()">جواب چیک کریں</button><button onclick="newMath()">نیا سوال</button><div id="mathResult" class="game-result"></div></div>
   </div>
  </div>
 </section>
@@ -465,13 +408,8 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
 <section id="contact">
  <div class="container">
   <div class="contact-box">
-   <div class="section-title"><h2>Contact</h2><p>Shaikh Yousaf Official</p></div>
-   <p>رابطے اور سوشل میڈیا کے لیے نیچے دیے گئے بٹن استعمال کریں۔</p>
-   <div class="socials">
-    <a href="https://t.me/Mujairhacker" target="_blank" rel="noopener noreferrer" class="btn">✈️ Telegram</a>
-    <a href="https://www.tiktok.com/@muhajir_0001" target="_blank" rel="noopener noreferrer" class="btn dark">♪ TikTok</a>
-    <button class="btn" onclick="shareWebsite()">↗ ویب سائٹ شیئر کریں</button>
-   </div>
+   <div class="section-title"><h2>Contact</h2><p>Shaikh Yousaf Official</p></div><p>رابطے اور سوشل میڈیا کے لیے نیچے دیے گئے بٹن استعمال کریں۔</p>
+   <div class="socials"><a href="https://t.me/Mujairhacker" target="_blank" rel="noopener noreferrer" class="btn">✈️ Telegram</a><a href="https://www.tiktok.com/@muhajir_0001" target="_blank" rel="noopener noreferrer" class="btn dark">♪ TikTok</a><button class="btn" onclick="shareWebsite()">↗ ویب سائٹ شیئر کریں</button></div>
   </div>
  </div>
 </section>
@@ -480,33 +418,25 @@ position:fixed;z-index:9998;border-radius:30px;font-weight:900;box-shadow:0 0 15
  <p>© 2026 <strong>Shaikh Yousaf Official</strong> | All Rights Reserved</p>
  <p style="margin-top:8px">Build by <strong>Muhajir Hacker</strong></p>
  <p class="urdu" style="margin-top:8px;color:var(--gold);font-size:22px">مہاجر ابو سفیان ملک</p>
- <p style="margin-top:8px;color:#777;font-size:12px">✦ SHAIkH YOUSAF OFFICIAL WEBSITE ✦</p>
+ <p style="margin-top:8px;color:#777;font-size:12px">✦ SHAIKH YOUSAF OFFICIAL WEBSITE ✦</p>
  <button class="btn dark" onclick="openAdminInfo()">⚙️ Admin / Website Management</button>
 </footer>
 
-<div id="lightbox" onclick="if(event.target===this)closeLightbox()">
- <button onclick="closeLightbox()">✕ بند کریں</button><img id="lightboxImage" alt="Expanded gallery photo">
-</div>
-
-<div id="adminPanel">
- <div class="admin-inner">
-  <h2 style="color:var(--gold)">Website Management</h2>
-  <p style="color:#bbb;margin:10px 0">یہ فرنٹ اینڈ ڈیمو ہے۔ محفوظ Admin Panel کے لیے سرور، لاگ اِن اور ڈیٹابیس ضروری ہیں۔</p>
-  <p style="color:#aaa;font-size:13px">یہ بٹن آپ کی ویب سائٹ میں انتظامی ڈیش بورڈ کی ضرورت یاد دلانے کے لیے ہے؛ یہ لاگ اِن یا حقیقی ایڈمن کنٹرول نہیں بناتا۔</p>
-  <button class="btn" onclick="document.getElementById('adminPanel').style.display='none'">بند کریں</button>
- </div>
-</div>
+<div id="lightbox" onclick="if(event.target===this)closeLightbox()"><button onclick="closeLightbox()">✕ بند کریں</button><img id="lightboxImage" alt="Expanded gallery photo"></div>
+<div id="adminPanel"><div class="admin-inner"><h2 style="color:var(--gold)">Website Management</h2><p style="color:#bbb;margin:10px 0">یہ فرنٹ اینڈ ڈیمو ہے۔ محفوظ Admin Panel کے لیے سرور، لاگ اِن اور ڈیٹابیس ضروری ہیں۔</p><p style="color:#aaa;font-size:13px">یہ بٹن انتظامی ڈیش بورڈ کی ضرورت یاد دلانے کے لیے ہے؛ یہ حقیقی ایڈمن کنٹرول نہیں بناتا۔</p><button class="btn" onclick="document.getElementById('adminPanel').style.display='none'">بند کریں</button></div></div>
 
 <script>
-/* WELCOME */
-window.addEventListener("load",function(){
- setTimeout(function(){
+"use strict";
+
+/* Welcome screen */
+window.addEventListener("load",()=>{
+ setTimeout(()=>{
   const w=document.getElementById("welcome");
   if(w){w.style.opacity="0";setTimeout(()=>w.style.display="none",800);}
  },4000);
 });
 
-/* MUSIC */
+/* Music */
 const bgMusic=document.getElementById("bgMusic");
 const musicButton=document.getElementById("musicButton");
 bgMusic.volume=.5;
@@ -516,14 +446,14 @@ function toggleMusic(){
  }else{bgMusic.pause();musicButton.textContent="🔇 Music Off";}
 }
 
-/* THEME */
+/* Theme */
 function toggleTheme(){
  document.body.classList.toggle("light-theme");
  try{localStorage.setItem("sy-theme",document.body.classList.contains("light-theme")?"light":"dark");}catch(e){}
 }
 try{if(localStorage.getItem("sy-theme")==="light")document.body.classList.add("light-theme");}catch(e){}
 
-/* WEBSITE SHARE */
+/* Share */
 async function shareWebsite(){
  const data={title:"Shaikh Yousaf Official",text:"Shaikh Yousaf Official Website",url:location.href};
  if(navigator.share){try{await navigator.share(data);}catch(e){}}
@@ -531,12 +461,11 @@ async function shareWebsite(){
  else prompt("ویب سائٹ کا لنک کاپی کریں:",location.href);
 }
 function shareReel(title){
- const data={title:title,text:title+" — Shaikh Yousaf Official",url:location.href};
- if(navigator.share)navigator.share(data).catch(()=>{});
- else shareWebsite();
+ const data={title,text:title+" — Shaikh Yousaf Official",url:location.href};
+ if(navigator.share)navigator.share(data).catch(()=>{});else shareWebsite();
 }
 
-/* REELS */
+/* Reels */
 const reelVideos=document.querySelectorAll(".reel-video");
 if("IntersectionObserver" in window){
  const reelObserver=new IntersectionObserver(entries=>{
@@ -557,16 +486,13 @@ reelVideos.forEach(video=>{
  });
  video.addEventListener("click",()=>video.paused?video.play().catch(()=>{}):video.pause());
 });
-function likeReel(btn){
- btn.classList.toggle("liked");
- btn.textContent=btn.classList.contains("liked")?"♥":"♡";
-}
+function likeReel(btn){btn.classList.toggle("liked");btn.textContent=btn.classList.contains("liked")?"♥":"♡";}
 function toggleReelSound(btn){
  const video=btn.closest(".reel-card").querySelector("video");
  video.muted=!video.muted;btn.textContent=video.muted?"🔇":"🔊";
 }
 
-/* MOVIE FILTERS */
+/* Movie filters */
 const movieFilterButtons=document.querySelectorAll(".movie-filter");
 const movieCards=document.querySelectorAll(".movie-card");
 const movieEmpty=document.getElementById("movieEmpty");
@@ -583,7 +509,7 @@ movieFilterButtons.forEach(button=>{
  });
 });
 
-/* SMART SEARCH */
+/* Search */
 function searchSite(){
  const q=document.getElementById("siteSearch").value.trim().toLowerCase();
  const results=document.getElementById("searchResults");
@@ -595,22 +521,18 @@ function searchSite(){
  found.slice(0,8).forEach(s=>{
   const a=document.createElement("a");
   a.href="#"+(s.id||"home");
-  a.textContent=(s.querySelector("h2")?.innerText||s.id||"Section")+"  ↗";
-  a.className="btn dark";
-  results.appendChild(a);
+  a.textContent=(s.querySelector("h2")?.innerText||s.id||"Section")+" ↗";
+  a.className="btn dark";results.appendChild(a);
  });
 }
 document.getElementById("siteSearch").addEventListener("keydown",e=>{if(e.key==="Enter")searchSite();});
 
-/* PHOTO LIGHTBOX */
-function openLightbox(src){
- document.getElementById("lightboxImage").src=src;
- document.getElementById("lightbox").style.display="flex";
-}
+/* Gallery lightbox */
+function openLightbox(src){document.getElementById("lightboxImage").src=src;document.getElementById("lightbox").style.display="flex";}
 function closeLightbox(){document.getElementById("lightbox").style.display="none";}
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeLightbox();document.getElementById("adminPanel").style.display="none";}});
 
-/* QUOTES */
+/* Quotes */
 const quotes=[
  "محنت کبھی ضائع نہیں ہوتی، ہر کوشش انسان کو کچھ نہ کچھ سکھاتی ہے۔",
  "امید کا دامن تھامے رکھیں، مشکل وقت ہمیشہ نہیں رہتا۔",
@@ -620,10 +542,7 @@ const quotes=[
  "اپنی منزل پر نظر رکھیں اور محنت جاری رکھیں۔"
 ];
 let currentQuote=0;
-function newQuote(){
- currentQuote=(currentQuote+1)%quotes.length;
- document.getElementById("quoteText").textContent=quotes[currentQuote];
-}
+function newQuote(){currentQuote=(currentQuote+1)%quotes.length;document.getElementById("quoteText").textContent=quotes[currentQuote];}
 function shareQuote(){
  const text=document.getElementById("quoteText").textContent+" — Shaikh Yousaf Official";
  if(navigator.share)navigator.share({title:"اردو قول",text,url:location.href}).catch(()=>{});
@@ -631,37 +550,32 @@ function shareQuote(){
  else prompt("کاپی کریں:",text);
 }
 
-/* LOCAL DEMO COMMENTS: only saved in this browser */
+/* Demo comments — saved only in this browser */
+function renderComment(item){
+ const card=document.createElement("div");card.className="review";
+ const stars=document.createElement("div");stars.className="stars";stars.textContent="★★★★★";
+ const h=document.createElement("h3");h.textContent=item.name;
+ const p=document.createElement("p");p.textContent=item.comment;
+ card.append(stars,h,p);document.getElementById("reviewGrid").appendChild(card);
+}
 function addComment(){
  const name=document.getElementById("commentName").value.trim();
  const comment=document.getElementById("commentText").value.trim();
  const status=document.getElementById("commentStatus");
  if(!name||!comment){status.textContent="براہ کرم نام اور تبصرہ دونوں لکھیں۔";return;}
- const card=document.createElement("div");card.className="review";
- const stars=document.createElement("div");stars.className="stars";stars.textContent="★★★★★";
- const h=document.createElement("h3");h.textContent=name;
- const p=document.createElement("p");p.textContent=comment;
- card.append(stars,h,p);
- document.getElementById("reviewGrid").appendChild(card);
+ const item={name,comment};
+ renderComment(item);
  try{
   const saved=JSON.parse(localStorage.getItem("sy-comments")||"[]");
-  saved.push({name,comment});localStorage.setItem("sy-comments",JSON.stringify(saved));
+  saved.push(item);localStorage.setItem("sy-comments",JSON.stringify(saved));
  }catch(e){}
  document.getElementById("commentName").value="";
  document.getElementById("commentText").value="";
  status.textContent="تبصرہ اس براؤزر میں شامل ہو گیا ہے۔ دوسرے وزیٹرز کو دکھانے کے لیے بیک اینڈ درکار ہے۔";
 }
-try{
- JSON.parse(localStorage.getItem("sy-comments")||"[]").forEach(item=>{
-  const card=document.createElement("div");card.className="review";
-  const stars=document.createElement("div");stars.className="stars";stars.textContent="★★★★★";
-  const h=document.createElement("h3");h.textContent=item.name;
-  const p=document.createElement("p");p.textContent=item.comment;
-  card.append(stars,h,p);document.getElementById("reviewGrid").appendChild(card);
- });
-}catch(e){}
+try{JSON.parse(localStorage.getItem("sy-comments")||"[]").forEach(renderComment);}catch(e){}
 
-/* NUMBER GUESS */
+/* Number guessing */
 let secretNumber=Math.floor(Math.random()*20)+1;
 function guessNumber(){
  const input=document.getElementById("guessInput"),result=document.getElementById("guessResult");
@@ -673,7 +587,7 @@ function guessNumber(){
 }
 function resetGuess(){secretNumber=Math.floor(Math.random()*20)+1;document.getElementById("guessInput").value="";document.getElementById("guessResult").textContent="نیا نمبر منتخب کر لیا گیا ہے۔";}
 
-/* ROCK PAPER SCISSORS */
+/* Rock Paper Scissors */
 function rps(user){
  const choices=["Rock","Paper","Scissors"],computer=choices[Math.floor(Math.random()*3)];
  const result=document.getElementById("rpsResult");
@@ -682,7 +596,7 @@ function rps(user){
  else result.textContent="😄 Computer جیت گیا! اس نے "+computer+" منتخب کیا۔";
 }
 
-/* TIC TAC TOE */
+/* Tic Tac Toe */
 let ticBoard=["","","","","","","","",""],ticTurn="X",ticGameOver=false;
 function createTic(){
  const board=document.getElementById("board");board.innerHTML="";
@@ -708,7 +622,7 @@ function playTic(i){
 function resetTic(){ticBoard=["","","","","","","","",""];ticTurn="X";ticGameOver=false;document.getElementById("ticResult").textContent="آپ کی باری ہے";createTic();}
 createTic();
 
-/* QUICK MATH */
+/* Quick Math */
 let mathCorrect=0;
 function newMath(){
  const a=Math.floor(Math.random()*20)+1,b=Math.floor(Math.random()*20)+1;
@@ -725,35 +639,37 @@ function checkMath(){
 }
 newMath();
 
-/* ADMIN INFO */
+/* Admin info */
 function openAdminInfo(){document.getElementById("adminPanel").style.display="flex";}
 
-/* INSTALL PROMPT: works only if browser considers site installable */
+/* Install prompt */
 let installPrompt=null;
+const installButton=document.getElementById("installButton");
 window.addEventListener("beforeinstallprompt",e=>{
- e.preventDefault();installPrompt=e;document.getElementById("installButton").style.display="block";
+ e.preventDefault();installPrompt=e;installButton.style.display="block";
+});
+window.addEventListener("appinstalled",()=>{
+ installPrompt=null;installButton.style.display="none";
 });
 async function installWebsite(){
- if(!installPrompt){alert("اگر Install کا آپشن دستیاب نہیں تو Chrome کے مینو میں 'Add to Home screen' آزمائیں۔");return;}
- installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;
- document.getElementById("installButton").style.display="none";
+ if(installPrompt){
+  installPrompt.prompt();
+  await installPrompt.userChoice;
+  installPrompt=null;
+  installButton.style.display="none";
+ }else{
+  alert("Chrome کے مینو (⋮) میں جا کر 'Add to Home screen' یا 'Install app' منتخب کریں۔");
+ }
 }
 
-/* Basic app manifest. A service worker is required for full offline PWA support. */
-const manifest={
- name:"Shaikh Yousaf Official",
- short_name:"Shaikh Yousaf",
- start_url:".",
- display:"standalone",
- background_color:"#050505",
- theme_color:"#d4af37",
- description:"Shaikh Yousaf Official Website",
- icons:[]
-};
-try{
- const blob=new Blob([JSON.stringify(manifest)],{type:"application/manifest+json"});
- document.getElementById("appManifest").href=URL.createObjectURL(blob);
-}catch(e){}
+/* Service worker: enables the PWA caching/offline layer */
+if("serviceWorker" in navigator){
+ window.addEventListener("load",()=>{
+  navigator.serviceWorker.register("./service-worker.js",{scope:"./"})
+   .then(()=>console.log("Shaikh Yousaf Official service worker ready."))
+   .catch(error=>console.error("Service worker registration failed:",error));
+ });
+}
 </script>
 </body>
 </html>
