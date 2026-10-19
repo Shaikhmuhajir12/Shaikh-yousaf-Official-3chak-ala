@@ -1,55 +1,67 @@
+const CACHE_NAME = "shaikh-yousaf-official-v2";
 
-const CACHE_NAME = "shaikh-yousaf-official-v3";
-
-const ASSETS = [
+const FILES_TO_CACHE = [
   "./",
   "./index.html",
-  "./manifest.json"
+  "./manifest.json",
+  "./lion%20(1).png",
+  "./background.mp3",
+  "./a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4",
+  "./foryoupage%20foryoupage.mp4"
 ];
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(FILES_TO_CACHE).catch(error => {
+        console.log("Some files could not be cached:", error);
+      });
+    })
   );
+
   self.skipWaiting();
 });
 
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
+    caches.keys().then(keys => {
+      return Promise.all(
         keys
           .filter(key => key !== CACHE_NAME)
           .map(key => caches.delete(key))
-      )
-    )
+      );
+    })
   );
+
   self.clients.claim();
 });
 
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
 
-  const url = new URL(event.request.url);
-  if (url.origin !== self.location.origin) return;
-
   event.respondWith(
-    fetch(event.request).then(response => {
-      if (response && response.ok) {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then(cache =>
-          cache.put(event.request, copy)
-        );
+    caches.match(event.request).then(cachedResponse => {
+      if (cachedResponse) {
+        return cachedResponse;
       }
-      return response;
-    }).catch(() =>
-      caches.match(event.request).then(cached =>
-        cached || (
-          event.request.mode === "navigate"
-            ? caches.match("./")
-            : undefined
-        )
-      )
-    )
+
+      return fetch(event.request)
+        .then(response => {
+          if (
+            response &&
+            response.status === 200 &&
+            response.type === "basic"
+          ) {
+            const responseClone = response.clone();
+
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, responseClone);
+            });
+          }
+
+          return response;
+        })
+        .catch(() => caches.match("./index.html"));
+    })
   );
 });
