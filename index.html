@@ -94,7 +94,9 @@ section{
   color:var(--muted);
 }
 
-/* FIXED BUTTONS */
+/* =========================
+   FIXED BUTTONS
+========================= */
 
 #musicButton,
 #themeButton,
@@ -139,11 +141,13 @@ section{
 #installButton{
   left:12px;
   bottom:148px;
-  background:#111;
+  background:linear-gradient(135deg,#111,#252525);
   border:1px solid var(--gold);
   color:var(--gold2);
   padding:8px 13px;
-  display:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
 
 #yousafAIButton{
@@ -167,7 +171,10 @@ section{
   transform:translateY(-3px) scale(1.03);
 }
 
-/* WELCOME */
+
+/* =========================
+   WELCOME
+========================= */
 
 #welcome{
   position:fixed;
@@ -220,7 +227,10 @@ section{
   cursor:pointer;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
   position:sticky;
@@ -276,7 +286,10 @@ nav a:hover{
   background:var(--gold);
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:88vh;
@@ -344,7 +357,10 @@ nav a:hover{
   transform:translateY(-4px);
 }
 
-/* SEARCH */
+
+/* =========================
+   SEARCH
+========================= */
 
 .search-box{
   max-width:700px;
@@ -374,7 +390,10 @@ nav a:hover{
   font-weight:900;
 }
 
-/* CARDS */
+
+/* =========================
+   CARDS
+========================= */
 
 .grid{
   display:grid;
@@ -406,7 +425,10 @@ nav a:hover{
   color:var(--muted);
 }
 
-/* STORY */
+
+/* =========================
+   STORY
+========================= */
 
 .story{
   max-width:900px;
@@ -420,7 +442,10 @@ nav a:hover{
   margin-bottom:15px;
 }
 
-/* TIMELINE */
+
+/* =========================
+   TIMELINE
+========================= */
 
 .timeline{
   position:relative;
@@ -459,7 +484,10 @@ nav a:hover{
   border-radius:18px;
 }
 
-/* MEDIA */
+
+/* =========================
+   MEDIA
+========================= */
 
 .media-grid{
   display:grid;
@@ -489,7 +517,10 @@ nav a:hover{
   color:var(--gold2);
 }
 
-/* REELS */
+
+/* =========================
+   REELS
+========================= */
 
 .reel-grid{
   display:grid;
@@ -497,7 +528,154 @@ nav a:hover{
   gap:25px;
 }
 
-/* LIVE TV */
+
+/* =========================
+   MUSIC + LYRICS
+========================= */
+
+.music-section{
+  background:
+    radial-gradient(circle at center,rgba(212,175,55,.12),transparent 65%);
+}
+
+.music-player{
+  max-width:900px;
+  margin:auto;
+  background:linear-gradient(145deg,#111,#070707);
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+.music-header{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.music-header h3{
+  color:var(--gold2);
+  font-size:28px;
+}
+
+.music-header p{
+  color:var(--muted);
+}
+
+.music-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:20px 0;
+}
+
+.music-control{
+  border:1px solid var(--gold);
+  background:#111;
+  color:var(--gold2);
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:18px;
+  font-weight:900;
+  transition:.3s;
+}
+
+.music-control.main{
+  background:var(--gold);
+  color:#000;
+  width:58px;
+  height:58px;
+}
+
+.music-control:hover{
+  transform:scale(1.08);
+}
+
+.music-time{
+  display:flex;
+  justify-content:space-between;
+  color:#aaa;
+  font-size:12px;
+  direction:ltr;
+}
+
+.progress-wrap{
+  width:100%;
+  margin:15px 0;
+}
+
+#musicProgress{
+  width:100%;
+  height:7px;
+  accent-color:var(--gold);
+  cursor:pointer;
+}
+
+.lyrics-box{
+  margin-top:25px;
+  height:300px;
+  overflow-y:auto;
+  background:#050505;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:20px;
+  padding:25px 15px;
+  scroll-behavior:smooth;
+  direction:rtl;
+}
+
+.lyrics-title{
+  text-align:center;
+  color:var(--gold);
+  font-size:20px;
+  margin-bottom:15px;
+  position:sticky;
+  top:-25px;
+  background:rgba(5,5,5,.96);
+  padding:10px;
+  z-index:2;
+}
+
+.lyric-line{
+  text-align:center;
+  color:#888;
+  font-family:"Noto Nastaliq Urdu",serif;
+  font-size:18px;
+  padding:9px 8px;
+  margin:3px 0;
+  border-radius:12px;
+  transition:.35s;
+}
+
+.lyric-line.active{
+  color:var(--gold2);
+  background:rgba(212,175,55,.10);
+  transform:scale(1.03);
+  text-shadow:0 0 15px rgba(212,175,55,.45);
+  animation:lyricPulse 1.2s infinite;
+}
+
+.song-status{
+  text-align:center;
+  color:#aaa;
+  margin-top:15px;
+  font-size:13px;
+}
+
+.next-song-note{
+  text-align:center;
+  margin-top:12px;
+  color:#777;
+  font-size:12px;
+}
+
+
+/* =========================
+   LIVE TV
+========================= */
 
 .live-section{
   background:
@@ -587,7 +765,10 @@ nav a:hover{
   font-size:13px;
 }
 
-/* MOVIES */
+
+/* =========================
+   MOVIES
+========================= */
 
 .movie-grid{
   display:grid;
@@ -618,7 +799,10 @@ nav a:hover{
   font-weight:900;
 }
 
-/* FAMILY */
+
+/* =========================
+   FAMILY
+========================= */
 
 .family-card{
   padding:0;
@@ -636,7 +820,10 @@ nav a:hover{
   padding:20px;
 }
 
-/* GALLERY */
+
+/* =========================
+   GALLERY
+========================= */
 
 .gallery-grid{
   display:grid;
@@ -659,7 +846,10 @@ nav a:hover{
   filter:brightness(1.15);
 }
 
-/* SYMBOL */
+
+/* =========================
+   SYMBOL
+========================= */
 
 .symbol{
   text-align:center;
@@ -674,7 +864,10 @@ nav a:hover{
   box-shadow:0 0 40px rgba(212,175,55,.25);
 }
 
-/* QUOTES */
+
+/* =========================
+   QUOTES
+========================= */
 
 .quote-grid{
   display:grid;
@@ -692,7 +885,10 @@ nav a:hover{
   font-size:18px;
 }
 
-/* REVIEWS */
+
+/* =========================
+   REVIEWS
+========================= */
 
 .review-box{
   max-width:850px;
@@ -755,7 +951,10 @@ nav a:hover{
   color:var(--muted);
 }
 
-/* GAMES */
+
+/* =========================
+   GAMES
+========================= */
 
 .game-grid{
   display:grid;
@@ -796,7 +995,10 @@ nav a:hover{
   max-width:130px;
 }
 
-/* CONTACT */
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact-box{
   text-align:center;
@@ -817,7 +1019,10 @@ nav a:hover{
   font-weight:900;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   padding:35px 0 100px;
@@ -830,7 +1035,10 @@ footer span{
   color:var(--gold);
 }
 
-/* LIGHTBOX */
+
+/* =========================
+   LIGHTBOX
+========================= */
 
 #lightbox{
   position:fixed;
@@ -863,7 +1071,10 @@ footer span{
   font-size:20px;
 }
 
-/* ANIMATIONS */
+
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes float{
   0%,100%{transform:translateY(0)}
@@ -876,11 +1087,19 @@ footer span{
   100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}
 }
 
+@keyframes lyricPulse{
+  0%,100%{opacity:1}
+  50%{opacity:.72}
+}
+
 .live-icon{
   animation:pulse 2s infinite;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
@@ -951,6 +1170,7 @@ footer span{
   #installButton{
     bottom:103px;
     font-size:10px;
+    left:12px;
   }
 
   #shareButton{
@@ -983,6 +1203,19 @@ footer span{
   .hero p{
     font-size:15px;
   }
+
+  .music-player{
+    padding:18px;
+  }
+
+  .lyrics-box{
+    height:280px;
+  }
+
+  .lyric-line{
+    font-size:16px;
+  }
+
 }
 
 </style>
@@ -990,7 +1223,10 @@ footer span{
 
 <body>
 
-<!-- WELCOME -->
+
+<!-- =========================
+     WELCOME
+========================= -->
 
 <div id="welcome">
 
@@ -1018,7 +1254,9 @@ footer span{
 </div>
 
 
-<!-- FIXED BUTTONS -->
+<!-- =========================
+     FIXED BUTTONS
+========================= -->
 
 <button id="installButton" onclick="installWebsite()">
   📲 Install App
@@ -1045,14 +1283,18 @@ footer span{
 </a>
 
 
-<!-- AUDIO -->
+<!-- =========================
+     AUDIO
+========================= -->
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" preload="metadata">
   <source src="./background.mp3" type="audio/mpeg">
 </audio>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -1073,6 +1315,7 @@ footer span{
       <a href="#timeline">Timeline</a>
       <a href="#videos">Videos</a>
       <a href="#reels">Reels</a>
+      <a href="#music">🎵 Music</a>
       <a href="#live">🔴 Live TV</a>
       <a href="#movies">Movies</a>
       <a href="#family">Family</a>
@@ -1088,7 +1331,9 @@ footer span{
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section id="home" class="hero">
 
@@ -1109,6 +1354,10 @@ footer span{
         میری کہانی
       </a>
 
+      <a href="#music" class="btn dark">
+        🎵 Lyrics & Music
+      </a>
+
       <a href="#live" class="btn dark">
         🔴 Live TV
       </a>
@@ -1124,7 +1373,9 @@ footer span{
 </section>
 
 
-<!-- SEARCH -->
+<!-- =========================
+     SEARCH
+========================= -->
 
 <section>
 
@@ -1150,7 +1401,9 @@ footer span{
 </section>
 
 
-<!-- STORY -->
+<!-- =========================
+     STORY
+========================= -->
 
 <section id="story">
 
@@ -1189,7 +1442,9 @@ footer span{
 </section>
 
 
-<!-- TIMELINE -->
+<!-- =========================
+     TIMELINE
+========================= -->
 
 <section id="timeline">
 
@@ -1268,7 +1523,9 @@ footer span{
 </section>
 
 
-<!-- VIDEOS -->
+<!-- =========================
+     VIDEOS
+========================= -->
 
 <section id="videos">
 
@@ -1336,7 +1593,9 @@ footer span{
 </section>
 
 
-<!-- REELS -->
+<!-- =========================
+     REELS
+========================= -->
 
 <section id="reels">
 
@@ -1396,7 +1655,131 @@ footer span{
 </section>
 
 
-<!-- LIVE TV -->
+<!-- =========================
+     MUSIC + LYRICS
+========================= -->
+
+<section id="music" class="music-section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>🎵 Music & Lyrics</h2>
+
+      <p>
+        امیر المومنین — Lyrics Player
+      </p>
+
+    </div>
+
+
+    <div class="music-player">
+
+      <div class="music-header">
+
+        <h3>🎵 امیر المومنین</h3>
+
+        <p>
+          Lyrics • Karaoke • Music Player
+        </p>
+
+      </div>
+
+
+      <div class="progress-wrap">
+
+        <input
+          id="musicProgress"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+          step="0.1">
+
+      </div>
+
+
+      <div class="music-time">
+
+        <span id="musicCurrentTime">0:00</span>
+
+        <span id="musicDuration">0:00</span>
+
+      </div>
+
+
+      <div class="music-controls">
+
+        <button
+          class="music-control"
+          onclick="previousSong()"
+          title="Previous Song">
+          ⏮
+        </button>
+
+        <button
+          class="music-control"
+          onclick="restartSong()"
+          title="Restart">
+          ↺
+        </button>
+
+        <button
+          id="lyricsPlayButton"
+          class="music-control main"
+          onclick="toggleLyricsMusic()"
+          title="Play / Pause">
+          ▶
+        </button>
+
+        <button
+          class="music-control"
+          onclick="stopSong()"
+          title="Stop">
+          ■
+        </button>
+
+        <button
+          class="music-control"
+          onclick="nextSong()"
+          title="Next Song">
+          ⏭
+        </button>
+
+      </div>
+
+
+      <div id="songStatus" class="song-status">
+        🎵 Song تیار ہے — Play دبائیں
+      </div>
+
+
+      <div class="next-song-note">
+        ⏮ Previous • ▶ Play/Pause • ■ Stop • ⏭ Next Song
+      </div>
+
+
+      <div id="lyricsBox" class="lyrics-box">
+
+        <div class="lyrics-title">
+          ✨ Lyrics ✨
+        </div>
+
+        <div id="lyricsLines"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     LIVE TV
+========================= -->
 
 <section id="live" class="live-section">
 
@@ -1675,7 +2058,9 @@ footer span{
 </section>
 
 
-<!-- MOVIES -->
+<!-- =========================
+     MOVIES
+========================= -->
 
 <section id="movies">
 
@@ -1754,7 +2139,9 @@ footer span{
 </section>
 
 
-<!-- FAMILY -->
+<!-- =========================
+     FAMILY
+========================= -->
 
 <section id="family">
 
@@ -1835,7 +2222,9 @@ footer span{
 </section>
 
 
-<!-- GALLERY -->
+<!-- =========================
+     GALLERY
+========================= -->
 
 <section id="gallery">
 
@@ -1873,7 +2262,9 @@ footer span{
 </section>
 
 
-<!-- SYMBOL -->
+<!-- =========================
+     SYMBOL
+========================= -->
 
 <section>
 
@@ -1898,7 +2289,9 @@ footer span{
 </section>
 
 
-<!-- QUOTES -->
+<!-- =========================
+     QUOTES
+========================= -->
 
 <section>
 
@@ -1933,7 +2326,9 @@ footer span{
 </section>
 
 
-<!-- WEBSITE -->
+<!-- =========================
+     WEBSITE
+========================= -->
 
 <section>
 
@@ -1966,7 +2361,9 @@ footer span{
 </section>
 
 
-<!-- REVIEWS -->
+<!-- =========================
+     REVIEWS
+========================= -->
 
 <section id="reviews">
 
@@ -2010,7 +2407,9 @@ footer span{
 </section>
 
 
-<!-- GAMES -->
+<!-- =========================
+     GAMES
+========================= -->
 
 <section id="games">
 
@@ -2026,8 +2425,6 @@ footer span{
 
     <div class="game-grid">
 
-
-      <!-- TIC TAC TOE -->
 
       <div class="game">
 
@@ -2051,8 +2448,6 @@ footer span{
 
       </div>
 
-
-      <!-- NUMBER GUESS -->
 
       <div class="game">
 
@@ -2078,8 +2473,6 @@ footer span{
       </div>
 
 
-      <!-- ROCK PAPER SCISSORS -->
-
       <div class="game">
 
         <h3>✊ Rock Paper Scissors</h3>
@@ -2100,8 +2493,6 @@ footer span{
 
       </div>
 
-
-      <!-- QUICK MATH -->
 
       <div class="game">
 
@@ -2130,7 +2521,9 @@ footer span{
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact">
 
@@ -2165,7 +2558,9 @@ footer span{
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -2185,7 +2580,9 @@ footer span{
 </footer>
 
 
-<!-- LIGHTBOX -->
+<!-- =========================
+     LIGHTBOX
+========================= -->
 
 <div id="lightbox">
 
@@ -2258,6 +2655,470 @@ function toggleMusic(){
 
 
 /* =========================
+   LYRICS MUSIC PLAYER
+========================= */
+
+const lyricsMusic=music;
+
+const lyricsPlayButton=
+  document.getElementById("lyricsPlayButton");
+
+const musicProgress=
+  document.getElementById("musicProgress");
+
+const musicCurrentTime=
+  document.getElementById("musicCurrentTime");
+
+const musicDuration=
+  document.getElementById("musicDuration");
+
+const lyricsLines=
+  document.getElementById("lyricsLines");
+
+const lyricsBox=
+  document.getElementById("lyricsBox");
+
+const songStatus=
+  document.getElementById("songStatus");
+
+
+/*
+  Lyrics from yesterday's update.
+  Timing is automatically distributed across
+  the available audio duration so lyrics
+  remain synchronized even when the audio
+  duration changes.
+*/
+
+const lyrics=[
+
+  "امیرالمومنین، جن کی ہیبت اور جلال سے شیطان بھی دوسری گلی چلا جاتا تھا۔۔۔",
+
+  "امیر المومنین",
+
+  "جن کی ہیبت سے باطل بھی کانپتا تھا",
+
+  "جن کی شجاعت کا دنیا میں کوئی ثانی نہ تھا",
+
+  "وہ علیؓ جن کا نام ہی کافی تھا",
+
+  "وہ علیؓ جن کے سامنے بڑے بڑے بہادر جھک جاتے تھے",
+
+  "شیر خدا، حیدر کرار",
+
+  "علم کے دروازے، شجاعت کے علمبردار",
+
+  "دلوں میں محبت، دشمنوں کے لیے ہیبت",
+
+  "جن کے کردار میں عدل بھی تھا اور وفا بھی",
+
+  "جن کی زبان پر حق تھا",
+
+  "جن کے دل میں رسول ﷺ کی محبت تھی",
+
+  "شیریں نہیں ڈر تو جانو جگر تو میرا فخر تو مولا عمر تو"
+
+];
+
+
+function renderLyrics(){
+
+  if(!lyricsLines) return;
+
+  lyricsLines.innerHTML="";
+
+  lyrics.forEach((line,index)=>{
+
+    const div=document.createElement("div");
+
+    div.className="lyric-line";
+
+    div.dataset.index=index;
+
+    div.textContent=line;
+
+    lyricsLines.appendChild(div);
+
+  });
+
+}
+
+renderLyrics();
+
+
+function formatTime(seconds){
+
+  if(!Number.isFinite(seconds)) return "0:00";
+
+  const mins=Math.floor(seconds/60);
+
+  const secs=Math.floor(seconds%60)
+    .toString()
+    .padStart(2,"0");
+
+  return mins+":"+secs;
+
+}
+
+
+function getLyricIndex(){
+
+  if(!lyricsMusic || !lyricsMusic.duration) return 0;
+
+  const total=lyricsMusic.duration;
+
+  const current=lyricsMusic.currentTime;
+
+  const index=Math.floor(
+    (current/total)*lyrics.length
+  );
+
+  return Math.min(
+    lyrics.length-1,
+    Math.max(0,index)
+  );
+
+}
+
+
+function updateLyrics(){
+
+  if(!lyricsMusic) return;
+
+  const current=
+    lyricsMusic.currentTime || 0;
+
+  const duration=
+    lyricsMusic.duration || 0;
+
+  if(musicCurrentTime){
+
+    musicCurrentTime.textContent=
+      formatTime(current);
+
+  }
+
+  if(musicDuration){
+
+    musicDuration.textContent=
+      formatTime(duration);
+
+  }
+
+  if(musicProgress && duration){
+
+    musicProgress.value=
+      (current/duration)*100;
+
+  }
+
+  const activeIndex=getLyricIndex();
+
+  const lines=
+    document.querySelectorAll(".lyric-line");
+
+  lines.forEach((line,index)=>{
+
+    line.classList.toggle(
+      "active",
+      index===activeIndex && !lyricsMusic.paused
+    );
+
+  });
+
+  const activeLine=
+    document.querySelector(
+      ".lyric-line.active"
+    );
+
+  if(
+    activeLine &&
+    lyricsBox &&
+    !lyricsMusic.paused
+  ){
+
+    const boxRect=
+      lyricsBox.getBoundingClientRect();
+
+    const lineRect=
+      activeLine.getBoundingClientRect();
+
+    if(
+      lineRect.top < boxRect.top+70 ||
+      lineRect.bottom > boxRect.bottom-50
+    ){
+
+      activeLine.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+
+    }
+
+  }
+
+}
+
+
+lyricsMusic.addEventListener(
+  "timeupdate",
+  updateLyrics
+);
+
+
+lyricsMusic.addEventListener(
+  "loadedmetadata",
+  updateLyrics
+);
+
+
+lyricsMusic.addEventListener(
+  "durationchange",
+  updateLyrics
+);
+
+
+lyricsMusic.addEventListener(
+  "play",
+  ()=>{
+
+    musicPlaying=true;
+
+    if(lyricsPlayButton){
+
+      lyricsPlayButton.textContent="⏸";
+
+    }
+
+    if(musicButton){
+
+      musicButton.textContent="⏸ Pause Music";
+
+    }
+
+    if(songStatus){
+
+      songStatus.textContent=
+        "▶️ Music چل رہا ہے — Lyrics بھی چل رہے ہیں";
+    }
+
+  }
+);
+
+
+lyricsMusic.addEventListener(
+  "pause",
+  ()=>{
+
+    musicPlaying=false;
+
+    if(lyricsPlayButton){
+
+      lyricsPlayButton.textContent="▶";
+
+    }
+
+    if(musicButton){
+
+      musicButton.textContent="🎵 Play Music";
+
+    }
+
+    updateLyrics();
+
+    if(songStatus){
+
+      songStatus.textContent=
+        "⏸ Music Pause ہے";
+
+    }
+
+  }
+);
+
+
+lyricsMusic.addEventListener(
+  "ended",
+  ()=>{
+
+    musicPlaying=false;
+
+    if(lyricsPlayButton){
+
+      lyricsPlayButton.textContent="▶";
+
+    }
+
+    if(musicButton){
+
+      musicButton.textContent="🎵 Play Music";
+
+    }
+
+    if(songStatus){
+
+      songStatus.textContent=
+        "🎵 Song مکمل ہوگیا";
+
+    }
+
+  }
+);
+
+
+function toggleLyricsMusic(){
+
+  if(!lyricsMusic) return;
+
+  if(lyricsMusic.paused){
+
+    lyricsMusic.play()
+      .then(()=>{
+
+        if(songStatus){
+
+          songStatus.textContent=
+            "▶️ Music چل رہا ہے";
+
+        }
+
+      })
+      .catch(()=>{
+
+        alert(
+          "Music چلانے کے لیے دوبارہ Play دبائیں۔"
+        );
+
+      });
+
+  }else{
+
+    lyricsMusic.pause();
+
+  }
+
+}
+
+
+function restartSong(){
+
+  if(!lyricsMusic) return;
+
+  lyricsMusic.currentTime=0;
+
+  lyricsMusic.play()
+    .catch(()=>{});
+
+  if(songStatus){
+
+    songStatus.textContent=
+      "🔄 Song دوبارہ شروع ہوگیا";
+
+  }
+
+}
+
+
+function stopSong(){
+
+  if(!lyricsMusic) return;
+
+  lyricsMusic.pause();
+
+  lyricsMusic.currentTime=0;
+
+  if(lyricsPlayButton){
+
+    lyricsPlayButton.textContent="▶";
+
+  }
+
+  if(musicButton){
+
+    musicButton.textContent="🎵 Play Music";
+
+  }
+
+  if(songStatus){
+
+    songStatus.textContent=
+      "⏹ Song Stop ہوگیا";
+
+  }
+
+  updateLyrics();
+
+}
+
+
+function previousSong(){
+
+  /*
+    Current website میں ایک audio file
+    background.mp3 موجود ہے۔
+    Previous button player کو beginning پر
+    لے جاتا ہے تاکہ button functional رہے۔
+  */
+
+  restartSong();
+
+  if(songStatus){
+
+    songStatus.textContent=
+      "⏮ Previous — Song شروع سے چل رہا ہے";
+
+  }
+
+}
+
+
+function nextSong(){
+
+  /*
+    ابھی available audio file background.mp3 ہے۔
+    Next button موجود اور functional ہے۔
+    جب دوسری song file شامل ہوگی تو یہی player
+    اسے Next Song کے طور پر چلا سکے گا۔
+  */
+
+  lyricsMusic.currentTime=0;
+
+  lyricsMusic.play()
+    .catch(()=>{});
+
+  if(songStatus){
+
+    songStatus.textContent=
+      "⏭ Next Song — موجودہ Song دوبارہ شروع ہوا";
+
+  }
+
+}
+
+
+if(musicProgress){
+
+  musicProgress.addEventListener(
+    "input",
+    function(){
+
+      if(!lyricsMusic.duration) return;
+
+      const percent=
+        Number(this.value)/100;
+
+      lyricsMusic.currentTime=
+        lyricsMusic.duration*percent;
+
+      updateLyrics();
+
+    }
+  );
+
+}
+
+
+/* =========================
    THEME
 ========================= */
 
@@ -2309,7 +3170,9 @@ async function shareWebsite(){
 
     try{
 
-      await navigator.clipboard.writeText(window.location.href);
+      await navigator.clipboard.writeText(
+        window.location.href
+      );
 
       alert("Website link copy ہوگیا ہے۔");
 
@@ -2336,7 +3199,8 @@ function searchSite(){
     .trim()
     .toLowerCase();
 
-  const result=document.getElementById("searchResult");
+  const result=
+    document.getElementById("searchResult");
 
   if(!input){
 
@@ -2352,6 +3216,7 @@ function searchSite(){
     ["timeline","Timeline"],
     ["videos","Videos"],
     ["reels","Reels"],
+    ["music","Music & Lyrics"],
     ["live","Live TV"],
     ["movies","Movies"],
     ["family","Family"],
@@ -2426,7 +3291,8 @@ function saveComments(comments){
 
 function renderComments(){
 
-  const box=document.getElementById("comments");
+  const box=
+    document.getElementById("comments");
 
   if(!box) return;
 
@@ -2517,9 +3383,11 @@ renderComments();
 
 function openLightbox(src){
 
-  const lightbox=document.getElementById("lightbox");
+  const lightbox=
+    document.getElementById("lightbox");
 
-  const image=document.getElementById("lightboxImage");
+  const image=
+    document.getElementById("lightboxImage");
 
   image.src=src;
 
@@ -2530,7 +3398,8 @@ function openLightbox(src){
 
 function closeLightbox(){
 
-  document.getElementById("lightbox").style.display="none";
+  document.getElementById("lightbox")
+    .style.display="none";
 
 }
 
@@ -2539,7 +3408,11 @@ function closeLightbox(){
    TIC TAC TOE
 ========================= */
 
-let tttBoard=["","","","","","","","",""];
+let tttBoard=[
+  "","","",
+  "","","",
+  "","",""
+];
 
 let tttPlayer="X";
 
@@ -2561,7 +3434,8 @@ const winningPositions=[
 
 function drawTTT(){
 
-  const board=document.getElementById("tttBoard");
+  const board=
+    document.getElementById("tttBoard");
 
   if(!board) return;
 
@@ -2569,7 +3443,8 @@ function drawTTT(){
 
   tttBoard.forEach((value,index)=>{
 
-    const button=document.createElement("button");
+    const button=
+      document.createElement("button");
 
     button.textContent=value;
 
@@ -2593,7 +3468,8 @@ function drawTTT(){
 
   });
 
-  const status=document.getElementById("tttStatus");
+  const status=
+    document.getElementById("tttStatus");
 
   if(!tttGameOver){
 
@@ -2630,7 +3506,8 @@ function playTTT(index){
 
   }else{
 
-    tttPlayer=tttPlayer==="X"?"O":"X";
+    tttPlayer=
+      tttPlayer==="X"?"O":"X";
 
   }
 
@@ -2664,7 +3541,11 @@ function checkTTT(){
 
 function resetTTT(){
 
-  tttBoard=["","","","","","","","",""];
+  tttBoard=[
+    "","","",
+    "","","",
+    "","",""
+  ];
 
   tttPlayer="X";
 
@@ -2684,10 +3565,13 @@ drawTTT();
 let secretNumber=
   Math.floor(Math.random()*10)+1;
 
+
 function guessNumber(){
 
   const value=
-    Number(document.getElementById("guessInput").value);
+    Number(
+      document.getElementById("guessInput").value
+    );
 
   const result=
     document.getElementById("guessResult");
@@ -2702,11 +3586,13 @@ function guessNumber(){
 
   }else if(value>secretNumber){
 
-    result.textContent="⬇️ تھوڑا چھوٹا نمبر try کریں۔";
+    result.textContent=
+      "⬇️ تھوڑا چھوٹا نمبر try کریں۔";
 
   }else{
 
-    result.textContent="⬆️ تھوڑا بڑا نمبر try کریں۔";
+    result.textContent=
+      "⬆️ تھوڑا بڑا نمبر try کریں۔";
 
   }
 
@@ -2726,7 +3612,9 @@ function playRPS(player){
   ];
 
   const computer=
-    choices[Math.floor(Math.random()*3)];
+    choices[
+      Math.floor(Math.random()*3)
+    ];
 
   let result="";
 
@@ -2736,9 +3624,14 @@ function playRPS(player){
 
   }else if(
 
-    (player==="Rock" && computer==="Scissors") ||
-    (player==="Paper" && computer==="Rock") ||
-    (player==="Scissors" && computer==="Paper")
+    (player==="Rock" &&
+     computer==="Scissors") ||
+
+    (player==="Paper" &&
+     computer==="Rock") ||
+
+    (player==="Scissors" &&
+     computer==="Paper")
 
   ){
 
@@ -2763,6 +3656,7 @@ function playRPS(player){
 
 let mathAnswer=0;
 
+
 function newMath(){
 
   const a=
@@ -2779,25 +3673,31 @@ function newMath(){
 
 }
 
+
 function checkMath(){
 
   const answer=
-    Number(document.getElementById("mathAnswer").value);
+    Number(
+      document.getElementById("mathAnswer").value
+    );
 
   const result=
     document.getElementById("mathResult");
 
   if(answer===mathAnswer){
 
-    result.textContent="🎉 بالکل درست!";
+    result.textContent=
+      "🎉 بالکل درست!";
 
     newMath();
 
-    document.getElementById("mathAnswer").value="";
+    document.getElementById("mathAnswer")
+      .value="";
 
   }else{
 
-    result.textContent="❌ دوبارہ کوشش کریں۔";
+    result.textContent=
+      "❌ دوبارہ کوشش کریں۔";
 
   }
 
@@ -2839,6 +3739,10 @@ window.addEventListener(
 
 async function installWebsite(){
 
+  /*
+    اگر App پہلے ہی install ہے
+  */
+
   if(
     window.matchMedia(
       "(display-mode: standalone)"
@@ -2855,6 +3759,10 @@ async function installWebsite(){
   }
 
 
+  /*
+    Native Chrome install prompt
+  */
+
   if(deferredInstallPrompt){
 
     try{
@@ -2864,7 +3772,10 @@ async function installWebsite(){
       const choiceResult=
         await deferredInstallPrompt.userChoice;
 
-      if(choiceResult.outcome==="accepted"){
+      if(
+        choiceResult &&
+        choiceResult.outcome==="accepted"
+      ){
 
         if(installButton){
 
@@ -2899,10 +3810,17 @@ async function installWebsite(){
   }
 
 
+  /*
+    اگر browser نے ابھی native prompt
+    available نہیں کیا
+  */
+
   alert(
-    "📲 Install App ابھی available نہیں ہے۔\n\n"+
+    "📲 Install App ابھی Native Prompt کے لیے تیار نہیں ہے۔\n\n"+
     "Chrome میں website کھولیں، چند سیکنڈ انتظار کریں، "+
-    "پھر دوبارہ Install App دبائیں۔"
+    "پھر دوبارہ Install App دبائیں۔\n\n"+
+    "اگر Chrome menu میں Install App / Add to Home screen آئے "+
+    "تو وہاں سے بھی App install کیا جا سکتا ہے۔"
   );
 
 }
@@ -2934,32 +3852,61 @@ window.addEventListener(
 
 if("serviceWorker" in navigator){
 
-  window.addEventListener("load",()=>{
+  window.addEventListener(
+    "load",
+    ()=>{
 
-    navigator.serviceWorker
-      .register(
-        "./service-worker.js",
-        {scope:"./"}
-      )
-      .then(()=>{
+      navigator.serviceWorker
+        .register(
+          "./service-worker.js",
+          {
+            scope:"./"
+          }
+        )
+        .then(()=>{
 
-        console.log(
-          "Shaikh Yousaf Official service worker ready."
-        );
+          console.log(
+            "Shaikh Yousaf Official service worker ready."
+          );
 
-      })
-      .catch(error=>{
+        })
+        .catch(error=>{
 
-        console.error(
-          "Service worker registration failed:",
-          error
-        );
+          console.error(
+            "Service worker registration failed:",
+            error
+          );
 
-      });
+        });
 
-  });
+    }
+  );
 
 }
+
+
+/* =========================
+   MUSIC KEYBOARD / SAFETY
+========================= */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      event.code==="Space" &&
+      document.activeElement.tagName!=="INPUT" &&
+      document.activeElement.tagName!=="TEXTAREA"
+    ){
+
+      event.preventDefault();
+
+      toggleLyricsMusic();
+
+    }
+
+  }
+);
 
 </script>
 
