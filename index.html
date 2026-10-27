@@ -300,9 +300,11 @@ nav a:hover{
   max-width:700px;
   height:500px;
   object-fit:cover;
+  object-position:center;
   margin:0 auto 25px;
   border:2px solid var(--gold);
   border-radius:22px;
+  image-rendering:auto;
 }
 
 .quote-box{
@@ -581,8 +583,11 @@ nav a:hover{
 
 .family-card img{
   width:100%;
-  height:270px;
+  height:300px;
   object-fit:cover;
+  object-position:center;
+  display:block;
+  image-rendering:auto;
 }
 
 .family-card div{
@@ -602,11 +607,14 @@ nav a:hover{
 
 .gallery img{
   width:100%;
-  height:250px;
+  height:280px;
   object-fit:cover;
+  object-position:center;
   border:1px solid var(--gold);
   border-radius:14px;
   cursor:zoom-in;
+  display:block;
+  image-rendering:auto;
 }
 
 /* QUOTES */
@@ -688,6 +696,109 @@ nav a:hover{
   font-weight:bold;
 }
 
+/* MUSIC + LYRICS */
+.music-player{
+  max-width:900px;
+  margin:0 auto;
+  padding:25px;
+  background:linear-gradient(145deg,#151515,#080808);
+  border:1px solid var(--gold);
+  border-radius:22px;
+  box-shadow:0 0 25px #d4af3720;
+}
+
+.music-title{
+  text-align:center;
+  color:var(--gold);
+  font-size:25px;
+  font-weight:900;
+}
+
+.music-status{
+  text-align:center;
+  color:#aaa;
+  margin:5px 0 15px;
+}
+
+.music-progress{
+  width:100%;
+  height:7px;
+  background:#333;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  margin:12px 0;
+}
+
+.music-progress span{
+  display:block;
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+}
+
+.music-times{
+  display:flex;
+  justify-content:space-between;
+  direction:ltr;
+  color:#aaa;
+  font-size:12px;
+}
+
+.music-controls{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:15px 0;
+}
+
+.music-control{
+  width:50px;
+  height:50px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  background:#111;
+  color:var(--gold2);
+  font-size:20px;
+}
+
+.music-control.main{
+  width:62px;
+  height:62px;
+  background:var(--gold);
+  color:#000;
+}
+
+.lyrics-box{
+  max-height:430px;
+  overflow-y:auto;
+  margin-top:20px;
+  padding:10px;
+  border-top:1px solid var(--line);
+}
+
+.lyric-line{
+  padding:12px 10px;
+  margin:5px 0;
+  border-radius:12px;
+  text-align:center;
+  color:#aaa;
+  transition:.3s;
+  font-family:"Noto Nastaliq Urdu",serif;
+  font-size:18px;
+  line-height:2.2;
+}
+
+.lyric-line.active{
+  background:linear-gradient(90deg,#d4af3718,#d4af3750,#d4af3718);
+  border:1px solid var(--gold);
+  color:var(--gold2);
+  transform:scale(1.02);
+  text-shadow:0 0 12px #d4af3755;
+}
+
 /* FLOATING */
 .float{
   position:fixed;
@@ -713,7 +824,7 @@ nav a:hover{
 #install{
   left:10px;
   bottom:106px;
-  display:none;
+  display:block;
 }
 
 #share{
@@ -769,6 +880,7 @@ nav a:hover{
   max-height:88vh;
   border:2px solid var(--gold);
   border-radius:15px;
+  object-fit:contain;
 }
 
 #lightbox button{
@@ -855,6 +967,14 @@ footer strong{
     height:400px;
   }
 
+  .family-card img{
+    height:330px;
+  }
+
+  .gallery img{
+    height:300px;
+  }
+
   .reel{
     flex-basis:82vw;
     height:125vw;
@@ -874,6 +994,15 @@ footer strong{
     font-size:10px;
     min-height:75px;
   }
+
+  .lyric-line{
+    font-size:17px;
+  }
+
+  .music-controls{
+    gap:6px;
+  }
+
 }
 
 @media(max-width:400px){
@@ -885,6 +1014,14 @@ footer strong{
   .main-photo{
     height:330px;
   }
+
+  .family-card img{
+    height:300px;
+  }
+
+  .gallery img{
+    height:270px;
+  }
 }
 </style>
 </head>
@@ -892,7 +1029,7 @@ footer strong{
 <body>
 
 <!-- BACKGROUND MUSIC -->
-<audio id="bgMusic" loop preload="none">
+<audio id="bgMusic" preload="metadata">
   <source src="background.mp3" type="audio/mpeg">
 </audio>
 
@@ -966,6 +1103,7 @@ SHAIKH YOUSAF
 <a href="#movies">Movies</a>
 <a href="#family">Family</a>
 <a href="#gallery">Photos</a>
+<a href="#lyrics">Lyrics</a>
 <a href="#quotes">اقوال</a>
 <a href="#reviews">Reviews</a>
 <a href="#games">Games</a>
@@ -1060,68 +1198,39 @@ Shaikh Yousaf کی زندگی اور سفر
 <img
 src="yousaf-8.jpg"
 class="main-photo"
-alt="Shaikh Yousaf">
+alt="Shaikh Yousaf"
+loading="eager">
 
 <div class="story-grid">
 
 <div class="card story-card">
-
 <div class="icon">🏡</div>
-
 <h3>گاؤں سے آغاز</h3>
-
-<p>
-زندگی کا سفر سادگی، خاندان اور اپنے لوگوں کے درمیان شروع ہوا۔
-</p>
-
+<p>زندگی کا سفر سادگی، خاندان اور اپنے لوگوں کے درمیان شروع ہوا۔</p>
 </div>
 
 <div class="card story-card">
-
 <div class="icon">🤲</div>
-
 <h3>والد کی محنت</h3>
-
-<p>
-خاندان کی ذمہ داری، محنت اور قربانی زندگی کا اہم حصہ رہی۔
-</p>
-
+<p>خاندان کی ذمہ داری، محنت اور قربانی زندگی کا اہم حصہ رہی۔</p>
 </div>
 
 <div class="card story-card">
-
 <div class="icon">👨‍👦</div>
-
 <h3>بھائی مدثر</h3>
-
-<p>
-بھائی مدثر کے ساتھ محبت اور یادوں کا خوبصورت رشتہ۔
-</p>
-
+<p>بھائی مدثر کے ساتھ محبت اور یادوں کا خوبصورت رشتہ۔</p>
 </div>
 
 <div class="card story-card">
-
 <div class="icon">🧵</div>
-
 <h3>ہنر اور محنت</h3>
-
-<p>
-محنت، کام اور تجربے سے سیکھنے کا سفر جاری رہا۔
-</p>
-
+<p>محنت، کام اور تجربے سے سیکھنے کا سفر جاری رہا۔</p>
 </div>
 
 <div class="card story-card">
-
 <div class="icon">🌅</div>
-
 <h3>مستقبل</h3>
-
-<p>
-مشکلات کے باوجود امید اور بہتر مستقبل کا خواب قائم ہے۔
-</p>
-
+<p>مشکلات کے باوجود امید اور بہتر مستقبل کا خواب قائم ہے۔</p>
 </div>
 
 </div>
@@ -1147,52 +1256,30 @@ alt="Shaikh Yousaf">
 
 <h2>زندگی کا سفر</h2>
 
-<p>
-اہم مراحل
-</p>
+<p>اہم مراحل</p>
 
 </div>
 
 <div class="timeline">
 
 <div class="timeline-item">
-
 <h3>بچپن</h3>
-
-<p>
-سادگی، خاندان اور اپنوں کے درمیان گزرا خوبصورت وقت۔
-</p>
-
+<p>سادگی، خاندان اور اپنوں کے درمیان گزرا خوبصورت وقت۔</p>
 </div>
 
 <div class="timeline-item">
-
 <h3>محنت کا آغاز</h3>
-
-<p>
-زندگی کی ذمہ داریوں کو سمجھتے ہوئے محنت کا سفر شروع ہوا۔
-</p>
-
+<p>زندگی کی ذمہ داریوں کو سمجھتے ہوئے محنت کا سفر شروع ہوا۔</p>
 </div>
 
 <div class="timeline-item">
-
 <h3>مشکل وقت</h3>
-
-<p>
-مشکلات آئیں لیکن حوصلہ اور امید برقرار رہی۔
-</p>
-
+<p>مشکلات آئیں لیکن حوصلہ اور امید برقرار رہی۔</p>
 </div>
 
 <div class="timeline-item">
-
 <h3>آج</h3>
-
-<p>
-نئے خواب اور بہتر مستقبل کی طرف سفر جاری ہے۔
-</p>
-
+<p>نئے خواب اور بہتر مستقبل کی طرف سفر جاری ہے۔</p>
 </div>
 
 </div>
@@ -1210,9 +1297,7 @@ alt="Shaikh Yousaf">
 
 <h2>🎥 Official Videos</h2>
 
-<p>
-Shaikh Yousaf کی ویڈیوز
-</p>
+<p>Shaikh Yousaf کی ویڈیوز</p>
 
 </div>
 
@@ -1228,9 +1313,7 @@ type="video/mp4">
 
 </video>
 
-<h3>
-Shaikh Yousaf Official Video
-</h3>
+<h3>Shaikh Yousaf Official Video</h3>
 
 </div>
 
@@ -1244,9 +1327,7 @@ type="video/mp4">
 
 </video>
 
-<h3>
-Memories & Moments
-</h3>
+<h3>Memories & Moments</h3>
 
 </div>
 
@@ -1265,9 +1346,7 @@ Memories & Moments
 
 <h2>🎬 Professional Reels</h2>
 
-<p>
-Like • Sound • Share • Auto Play • Progress
-</p>
+<p>Like • Sound • Share • Auto Play • Progress</p>
 
 </div>
 
@@ -1277,15 +1356,8 @@ Like • Sound • Share • Auto Play • Progress
 <div class="reel">
 
 <div class="reel-top">
-
-<div class="badge">
-✦ OFFICIAL REEL
-</div>
-
-<div class="reel-number">
-01
-</div>
-
+<div class="badge">✦ OFFICIAL REEL</div>
+<div class="reel-number">01</div>
 </div>
 
 <video
@@ -1304,41 +1376,20 @@ type="video/mp4">
 
 <div class="reel-actions">
 
-<button
-class="reel-btn like"
-onclick="likeReel(this)">
-♡
-</button>
+<button class="reel-btn like" onclick="likeReel(this)">♡</button>
 
-<button
-class="reel-btn"
-onclick="soundReel(this)">
-🔇
-</button>
+<button class="reel-btn" onclick="soundReel(this)">🔇</button>
 
-<button
-class="reel-btn"
-onclick="shareReel()">
-↗
-</button>
+<button class="reel-btn" onclick="shareReel()">↗</button>
 
 </div>
 
 <div class="reel-info">
-
-<h3>
-Shaikh Yousaf
-</h3>
-
-<p>
-✦ Official Short Reel
-</p>
-
+<h3>Shaikh Yousaf</h3>
+<p>✦ Official Short Reel</p>
 </div>
 
-<div class="progress">
-<span></span>
-</div>
+<div class="progress"><span></span></div>
 
 </div>
 
@@ -1346,15 +1397,8 @@ Shaikh Yousaf
 <div class="reel">
 
 <div class="reel-top">
-
-<div class="badge">
-✦ OFFICIAL REEL
-</div>
-
-<div class="reel-number">
-02
-</div>
-
+<div class="badge">✦ OFFICIAL REEL</div>
+<div class="reel-number">02</div>
 </div>
 
 <video
@@ -1373,41 +1417,20 @@ type="video/mp4">
 
 <div class="reel-actions">
 
-<button
-class="reel-btn like"
-onclick="likeReel(this)">
-♡
-</button>
+<button class="reel-btn like" onclick="likeReel(this)">♡</button>
 
-<button
-class="reel-btn"
-onclick="soundReel(this)">
-🔇
-</button>
+<button class="reel-btn" onclick="soundReel(this)">🔇</button>
 
-<button
-class="reel-btn"
-onclick="shareReel()">
-↗
-</button>
+<button class="reel-btn" onclick="shareReel()">↗</button>
 
 </div>
 
 <div class="reel-info">
-
-<h3>
-Memories & Moments
-</h3>
-
-<p>
-✦ Shaikh Yousaf Official Reel
-</p>
-
+<h3>Memories & Moments</h3>
+<p>✦ Shaikh Yousaf Official Reel</p>
 </div>
 
-<div class="progress">
-<span></span>
-</div>
+<div class="progress"><span></span></div>
 
 </div>
 
@@ -1430,43 +1453,17 @@ Memories & Moments
 
 <h2>🎬 Movies & Web Series</h2>
 
-<p>
-Legal / Official platforms
-</p>
+<p>Legal / Official platforms</p>
 
 </div>
 
 <div class="filters">
 
-<button
-class="filter active"
-onclick="filterMovies('all',this)">
-تمام
-</button>
-
-<button
-class="filter"
-onclick="filterMovies('pakistan',this)">
-🇵🇰 پاکستانی
-</button>
-
-<button
-class="filter"
-onclick="filterMovies('india',this)">
-🇮🇳 بھارتی
-</button>
-
-<button
-class="filter"
-onclick="filterMovies('series',this)">
-📺 Series
-</button>
-
-<button
-class="filter"
-onclick="filterMovies('public',this)">
-🎞️ Public Domain
-</button>
+<button class="filter active" onclick="filterMovies('all',this)">تمام</button>
+<button class="filter" onclick="filterMovies('pakistan',this)">🇵🇰 پاکستانی</button>
+<button class="filter" onclick="filterMovies('india',this)">🇮🇳 بھارتی</button>
+<button class="filter" onclick="filterMovies('series',this)">📺 Series</button>
+<button class="filter" onclick="filterMovies('public',this)">🎞️ Public Domain</button>
 
 </div>
 
@@ -1476,23 +1473,16 @@ onclick="filterMovies('public',this)">
 
 <img
 src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85"
-alt="Pakistani Cinema">
+alt="Pakistani Cinema"
+loading="lazy">
 
 <div class="movie-content">
 
 <h3>پاکستانی فلمیں</h3>
 
-<p>
-پاکستانی فلموں اور ڈراموں کے official platforms۔
-</p>
+<p>پاکستانی فلموں اور ڈراموں کے official platforms۔</p>
 
-<a
-class="btn"
-href="https://www.youtube.com/"
-target="_blank"
-rel="noopener">
-YouTube
-</a>
+<a class="btn" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
 
 </div>
 
@@ -1502,23 +1492,16 @@ YouTube
 
 <img
 src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=900&q=85"
-alt="Indian Cinema">
+alt="Indian Cinema"
+loading="lazy">
 
 <div class="movie-content">
 
 <h3>بھارتی فلمیں</h3>
 
-<p>
-بھارتی cinema کے official streaming platforms۔
-</p>
+<p>بھارتی cinema کے official streaming platforms۔</p>
 
-<a
-class="btn"
-href="https://www.zee5.com/"
-target="_blank"
-rel="noopener">
-ZEE5
-</a>
+<a class="btn" href="https://www.zee5.com/" target="_blank" rel="noopener">ZEE5</a>
 
 </div>
 
@@ -1528,23 +1511,16 @@ ZEE5
 
 <img
 src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=900&q=85"
-alt="Web Series">
+alt="Web Series"
+loading="lazy">
 
 <div class="movie-content">
 
 <h3>Web Series</h3>
 
-<p>
-Web series کے official platforms۔
-</p>
+<p>Web series کے official platforms۔</p>
 
-<a
-class="btn"
-href="https://www.netflix.com/"
-target="_blank"
-rel="noopener">
-Netflix
-</a>
+<a class="btn" href="https://www.netflix.com/" target="_blank" rel="noopener">Netflix</a>
 
 </div>
 
@@ -1554,23 +1530,16 @@ Netflix
 
 <img
 src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=85"
-alt="Classic Cinema">
+alt="Classic Cinema"
+loading="lazy">
 
 <div class="movie-content">
 
 <h3>Public Domain</h3>
 
-<p>
-Public-domain content کے لیے Wikimedia۔
-</p>
+<p>Public-domain content کے لیے Wikimedia۔</p>
 
-<a
-class="btn"
-href="https://commons.wikimedia.org/"
-target="_blank"
-rel="noopener">
-Wikimedia
-</a>
+<a class="btn" href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia</a>
 
 </div>
 
@@ -1579,9 +1548,7 @@ Wikimedia
 </div>
 
 <div class="note">
-<strong style="color:var(--gold)">
-نوٹ:
-</strong>
+<strong style="color:var(--gold)">نوٹ:</strong>
 یہ website copyrighted فلمیں خود host نہیں کرتی۔ ہمیشہ official/legal source استعمال کریں۔
 </div>
 
@@ -1598,9 +1565,7 @@ Wikimedia
 
 <h2>👨‍👩‍👦 Family & Important People</h2>
 
-<p>
-Shaikh Yousaf کی زندگی کے اہم لوگ
-</p>
+<p>Shaikh Yousaf کی زندگی کے اہم لوگ</p>
 
 </div>
 
@@ -1608,84 +1573,44 @@ Shaikh Yousaf کی زندگی کے اہم لوگ
 
 <div class="family-card">
 
-<img
-src="yousaf-8.jpg"
-alt="Shaikh Yousaf"
-loading="lazy">
+<img src="yousaf-8.jpg" alt="Shaikh Yousaf" loading="lazy">
 
 <div>
-
-<h3>
-Shaikh Yousaf
-</h3>
-
-<p>
-اس داستان کا مرکزی کردار۔
-</p>
-
+<h3>Shaikh Yousaf</h3>
+<p>اس داستان کا مرکزی کردار۔</p>
 </div>
 
 </div>
 
 <div class="family-card">
 
-<img
-src="yousaf-walid.jpg"
-alt="Shaikh Yousaf Father"
-loading="lazy">
+<img src="yousaf-walid.jpg" alt="Shaikh Yousaf Father" loading="lazy">
 
 <div>
-
-<h3>
-شیخ یوسف کے والد صاحب
-</h3>
-
-<p>
-خاندان کے بزرگ اور Shaikh Yousaf کی زندگی میں اہم شخصیت۔
-</p>
-
+<h3>شیخ یوسف کے والد صاحب</h3>
+<p>خاندان کے بزرگ اور Shaikh Yousaf کی زندگی میں اہم شخصیت۔</p>
 </div>
 
 </div>
 
 <div class="family-card">
 
-<img
-src="mudassir-5.jpg"
-alt="Mudassir"
-loading="lazy">
+<img src="mudassir-5.jpg" alt="Mudassir" loading="lazy">
 
 <div>
-
-<h3>
-Mudassir
-</h3>
-
-<p>
-بھائی اور خوبصورت یادوں کا حصہ۔
-</p>
-
+<h3>Mudassir</h3>
+<p>بھائی اور خوبصورت یادوں کا حصہ۔</p>
 </div>
 
 </div>
 
 <div class="family-card">
 
-<img
-src="ustad-7.jpg"
-alt="Shaikh Sagheer"
-loading="lazy">
+<img src="ustad-7.jpg" alt="Shaikh Sagheer" loading="lazy">
 
 <div>
-
-<h3>
-Ustad / Shaikh Sagheer
-</h3>
-
-<p>
-محنت اور ہنر کے سفر میں اہم شخصیت۔
-</p>
-
+<h3>Ustad / Shaikh Sagheer</h3>
+<p>محنت اور ہنر کے سفر میں اہم شخصیت۔</p>
 </div>
 
 </div>
@@ -1705,37 +1630,86 @@ Ustad / Shaikh Sagheer
 
 <h2>📸 Photo Gallery</h2>
 
-<p>
-تصویر پر کلک کریں
-</p>
+<p>تصویر پر کلک کریں</p>
 
 </div>
 
 <div class="gallery">
 
-<img
-src="yousaf-8.jpg"
-alt="Shaikh Yousaf"
-onclick="openPhoto(this.src)"
-loading="lazy">
+<img src="yousaf-8.jpg" alt="Shaikh Yousaf" onclick="openPhoto(this.src)" loading="lazy">
 
-<img
-src="yousaf-walid.jpg"
-alt="Shaikh Yousaf Father"
-onclick="openPhoto(this.src)"
-loading="lazy">
+<img src="yousaf-walid.jpg" alt="Shaikh Yousaf Father" onclick="openPhoto(this.src)" loading="lazy">
 
-<img
-src="mudassir-5.jpg"
-alt="Mudassir"
-onclick="openPhoto(this.src)"
-loading="lazy">
+<img src="mudassir-5.jpg" alt="Mudassir" onclick="openPhoto(this.src)" loading="lazy">
 
-<img
-src="ustad-7.jpg"
-alt="Shaikh Sagheer"
-onclick="openPhoto(this.src)"
-loading="lazy">
+<img src="ustad-7.jpg" alt="Shaikh Sagheer" onclick="openPhoto(this.src)" loading="lazy">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MUSIC + URDU LYRICS -->
+<section id="lyrics">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>🎵 Urdu Lyrics & Music</h2>
+
+<p>Play • Pause • Previous • Next • Progress • Auto Sync</p>
+
+</div>
+
+<div class="music-player">
+
+<div class="music-title">
+🎵 Shaikh Yousaf Official Music
+</div>
+
+<div class="music-status" id="musicStatus">
+Music تیار ہے — Play دبائیں
+</div>
+
+<div
+class="music-progress"
+id="musicProgress"
+onclick="seekMusic(event)">
+
+<span id="musicProgressBar"></span>
+
+</div>
+
+<div class="music-times">
+
+<span id="musicCurrent">00:00</span>
+<span id="musicDuration">00:00</span>
+
+</div>
+
+<div class="music-controls">
+
+<button class="music-control" onclick="previousLyric()" title="Previous">
+⏮
+</button>
+
+<button class="music-control main" id="musicPlayButton" onclick="toggleMusicPlayer()" title="Play/Pause">
+▶
+</button>
+
+<button class="music-control" onclick="nextLyric()" title="Next">
+⏭
+</button>
+
+<button class="music-control" onclick="restartMusic()" title="Restart">
+↻
+</button>
+
+</div>
+
+<div class="lyrics-box" id="lyricsBox"></div>
 
 </div>
 
@@ -1752,15 +1726,14 @@ loading="lazy">
 
 <h2>🦁 Official Symbol</h2>
 
-<p>
-MUHAJIR OFFICIAL
-</p>
+<p>MUHAJIR OFFICIAL</p>
 
 </div>
 
 <img
 src="lion%20(1).png"
 alt="Official Lion"
+loading="lazy"
 style="
 width:160px;
 height:160px;
@@ -1787,33 +1760,21 @@ padding:8px;
 
 <h2>🌟 اردو اقوال</h2>
 
-<p>
-حوصلہ، امید اور زندگی
-</p>
+<p>حوصلہ، امید اور زندگی</p>
 
 </div>
 
 <div class="big-quote">
 
-<p
-class="urdu"
-id="quote">
+<p class="urdu" id="quote">
 محنت کبھی ضائع نہیں ہوتی، ہر کوشش انسان کو کچھ نہ کچھ سکھاتی ہے۔
 </p>
 
 <br>
 
-<button
-class="btn"
-onclick="newQuote()">
-✨ نیا قول
-</button>
+<button class="btn" onclick="newQuote()">✨ نیا قول</button>
 
-<button
-class="btn dark"
-onclick="shareQuote()">
-↗ Share
-</button>
+<button class="btn dark" onclick="shareQuote()">↗ Share</button>
 
 </div>
 
@@ -1828,26 +1789,20 @@ onclick="shareQuote()">
 
 <div class="quote-box">
 
-<div style="font-size:45px">
-🌐
-</div>
+<div style="font-size:45px">🌐</div>
 
 <h2 style="color:var(--gold)">
 Official Website
 </h2>
 
-<p>
-Shaikh Yousaf Official Website
-</p>
+<p>Shaikh Yousaf Official Website</p>
 
 <a
 class="btn"
 href="https://shaikhmuhajir12.github.io/Shaikh-yousaf-Official-3chak-ala/"
 target="_blank"
 rel="noopener">
-
 🌐 Website Open
-
 </a>
 
 </div>
@@ -1865,77 +1820,45 @@ rel="noopener">
 
 <h2>⭐ Reviews & Comments</h2>
 
-<p>
-اپنا تبصرہ لکھیں
-</p>
+<p>اپنا تبصرہ لکھیں</p>
 
 </div>
 
-<div
-class="review-grid"
-id="reviewsList">
+<div class="review-grid" id="reviewsList">
 
 <div class="review">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
-<h3>
-Ahmed
-</h3>
+<h3>Ahmed</h3>
 
-<p>
-بہت خوبصورت website ہے۔
-</p>
+<p>بہت خوبصورت website ہے۔</p>
 
 </div>
 
 <div class="review">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
-<h3>
-Muhammad
-</h3>
+<h3>Muhammad</h3>
 
-<p>
-بہت اچھی presentation ہے۔
-</p>
+<p>بہت اچھی presentation ہے۔</p>
 
 </div>
 
 </div>
 
-<div
-class="game"
-style="max-width:650px;margin:20px auto">
+<div class="game" style="max-width:650px;margin:20px auto">
 
-<h3>
-💬 اپنا تبصرہ
-</h3>
+<h3>💬 اپنا تبصرہ</h3>
 
-<input
-id="name"
-maxlength="40"
-placeholder="آپ کا نام">
+<input id="name" maxlength="40" placeholder="آپ کا نام">
 
-<textarea
-id="comment"
-maxlength="500"
-rows="3"
-placeholder="اپنا تبصرہ لکھیں"></textarea>
+<textarea id="comment" maxlength="500" rows="3" placeholder="اپنا تبصرہ لکھیں"></textarea>
 
-<button onclick="addComment()">
-تبصرہ شامل کریں
-</button>
+<button onclick="addComment()">تبصرہ شامل کریں</button>
 
-<p
-id="commentStatus"
-style="color:#aaa">
-</p>
+<p id="commentStatus" style="color:#aaa"></p>
 
 </div>
 
@@ -1952,20 +1875,15 @@ style="color:#aaa">
 
 <h2>🎮 Games</h2>
 
-<p>
-وقت گزارنے کے لیے چھوٹی games
-</p>
+<p>وقت گزارنے کے لیے چھوٹی games</p>
 
 </div>
 
 <div class="games">
 
-<!-- TIC TAC TOE -->
 <div class="game">
 
-<h3>
-⭕ Tic Tac Toe
-</h3>
+<h3>⭕ Tic Tac Toe</h3>
 
 <div
 id="board"
@@ -1977,90 +1895,53 @@ gap:5px;
 margin:15px auto">
 </div>
 
-<button onclick="resetTic()">
-New Game
-</button>
+<button onclick="resetTic()">New Game</button>
 
-<p id="ticResult">
-آپ کی باری ہے
-</p>
+<p id="ticResult">آپ کی باری ہے</p>
 
 </div>
 
-<!-- NUMBER GUESS -->
 <div class="game">
 
-<h3>
-🔢 Number Guess
-</h3>
+<h3>🔢 Number Guess</h3>
 
-<p>
-1 سے 20 کے درمیان نمبر
-</p>
+<p>1 سے 20 کے درمیان نمبر</p>
 
-<input
-id="guess"
-type="number"
-min="1"
-max="20"
-placeholder="نمبر">
+<input id="guess" type="number" min="1" max="20" placeholder="نمبر">
 
-<button onclick="guessNumber()">
-Guess
-</button>
+<button onclick="guessNumber()">Guess</button>
 
-<button onclick="newGuess()">
-New
-</button>
+<button onclick="newGuess()">New</button>
 
 <p id="guessResult"></p>
 
 </div>
 
-<!-- RPS -->
 <div class="game">
 
-<h3>
-✊ Rock Paper Scissors
-</h3>
+<h3>✊ Rock Paper Scissors</h3>
 
-<button onclick="rps('Rock')">
-✊ Rock
-</button>
+<button onclick="rps('Rock')">✊ Rock</button>
 
-<button onclick="rps('Paper')">
-✋ Paper
-</button>
+<button onclick="rps('Paper')">✋ Paper</button>
 
-<button onclick="rps('Scissors')">
-✌️ Scissors
-</button>
+<button onclick="rps('Scissors')">✌️ Scissors</button>
 
 <p id="rpsResult"></p>
 
 </div>
 
-<!-- MATH -->
 <div class="game">
 
-<h3>
-🧠 Quick Math
-</h3>
+<h3>🧠 Quick Math</h3>
 
 <p id="mathQuestion"></p>
 
-<input
-id="mathAnswer"
-type="number"
-placeholder="جواب">
+<input id="mathAnswer" type="number" placeholder="جواب">
 
-<button onclick="checkMath()">
-Check
-</button>
+<button onclick="checkMath()">Check</button>
 
-<button onclick="newMath()">
-New
-</button>
+<button onclick="newMath()">New</button>
 
 <p id="mathResult"></p>
 
@@ -2083,9 +1964,7 @@ New
 
 <h2>📞 Contact</h2>
 
-<p>
-Shaikh Yousaf Official
-</p>
+<p>Shaikh Yousaf Official</p>
 
 </div>
 
@@ -2107,9 +1986,7 @@ rel="noopener">
 ♪ TikTok
 </a>
 
-<button
-class="btn"
-onclick="shareSite()">
+<button class="btn" onclick="shareSite()">
 ↗ Share Website
 </button>
 
@@ -2126,27 +2003,19 @@ onclick="shareSite()">
 
 <p>
 © 2026
-<strong>
-Shaikh Yousaf Official
-</strong>
+<strong>Shaikh Yousaf Official</strong>
 </p>
 
 <p>
 Build by
-<strong>
-Muhajir Hacker
-</strong>
+<strong>Muhajir Hacker</strong>
 </p>
 
-<p
-class="urdu"
-style="color:var(--gold);font-size:21px">
+<p class="urdu" style="color:var(--gold);font-size:21px">
 مہاجر ابو سفیان ملک
 </p>
 
-<button
-class="btn dark"
-onclick="openAdmin()">
+<button class="btn dark" onclick="openAdmin()">
 ⚙️ Admin Info
 </button>
 
@@ -2157,13 +2026,9 @@ onclick="openAdmin()">
 id="lightbox"
 onclick="if(event.target===this)closePhoto()">
 
-<button onclick="closePhoto()">
-✕ بند کریں
-</button>
+<button onclick="closePhoto()">✕ بند کریں</button>
 
-<img
-id="lightboxImg"
-alt="Photo">
+<img id="lightboxImg" alt="Photo">
 
 </div>
 
@@ -2172,20 +2037,14 @@ alt="Photo">
 
 <div class="admin-box">
 
-<h2>
-Website Management
-</h2>
+<h2>Website Management</h2>
 
 <p style="color:#aaa;margin:12px 0">
-
 یہ front-end website ہے۔
 اصل secure admin panel کے لیے server/database/login system درکار ہوگا۔
-
 </p>
 
-<button
-class="btn"
-onclick="closeAdmin()">
+<button class="btn" onclick="closeAdmin()">
 بند کریں
 </button>
 
@@ -2213,16 +2072,15 @@ welcome.style.display="none";
 /* MUSIC */
 
 const music=document.getElementById("bgMusic");
+const musicButton=document.getElementById("music");
 
 function toggleMusic(){
-
-const button=document.getElementById("music");
 
 if(music.paused){
 
 music.play()
 .then(function(){
-button.textContent="🔊 Music On";
+musicButton.textContent="🔊 Music On";
 })
 .catch(function(){
 alert("پہلے browser میں music کی اجازت دیں۔");
@@ -2231,10 +2089,276 @@ alert("پہلے browser میں music کی اجازت دیں۔");
 }else{
 
 music.pause();
-
-button.textContent="🔇 Music Off";
+musicButton.textContent="🔇 Music Off";
 
 }
+
+}
+
+
+/* NEW MUSIC PLAYER */
+
+const musicPlayButton=document.getElementById("musicPlayButton");
+const musicStatus=document.getElementById("musicStatus");
+const musicProgressBar=document.getElementById("musicProgressBar");
+const musicCurrent=document.getElementById("musicCurrent");
+const musicDuration=document.getElementById("musicDuration");
+const lyricsBox=document.getElementById("lyricsBox");
+
+/*
+  یہاں اپنے اصل lyrics کی lines بعد میں paste کی جا سکتی ہیں۔
+  ابھی player مکمل کام کرتا ہے اور demo/original lines موجود ہیں۔
+*/
+
+const lyricsData=[
+ {time:0,text:"امید کا سفر ہمیشہ جاری رہتا ہے۔"},
+ {time:5,text:"محنت انسان کو منزل کے قریب لے جاتی ہے۔"},
+ {time:10,text:"اپنوں کی محبت زندگی کی خوبصورتی ہے۔"},
+ {time:15,text:"مشکل وقت میں حوصلہ نہیں چھوڑنا چاہیے۔"},
+ {time:20,text:"ہر نیا دن نئی امید لے کر آتا ہے۔"},
+ {time:25,text:"اپنے خوابوں کے لیے محنت کرتے رہو۔"},
+ {time:30,text:"صبر کے ساتھ راستہ آسان ہوتا جاتا ہے۔"},
+ {time:35,text:"اچھا کردار انسان کی اصل پہچان ہے۔"},
+ {time:40,text:"اپنے والدین کی قدر ہمیشہ کریں۔"},
+ {time:45,text:"زندگی ایک خوبصورت سفر کا نام ہے۔"},
+ {time:50,text:"محبت اور احترام دلوں کو قریب کرتے ہیں۔"},
+ {time:55,text:"اللہ پر بھروسہ اور محنت ساتھ رکھیں۔"},
+ {time:60,text:"مشکل راستے ہی مضبوط انسان بناتے ہیں۔"},
+ {time:65,text:"کامیابی مسلسل کوشش سے حاصل ہوتی ہے۔"},
+ {time:70,text:"اپنے لوگوں کو کبھی نہ بھولیں۔"},
+ {time:75,text:"یادیں ہمیشہ دل میں زندہ رہتی ہیں۔"},
+ {time:80,text:"خواب دیکھیں اور انہیں پورا کرنے کی کوشش کریں۔"},
+ {time:85,text:"حوصلہ انسان کی سب سے بڑی طاقت ہے۔"},
+ {time:90,text:"وقت بدلتا ہے، امید قائم رکھیں۔"},
+ {time:95,text:"ہر کوشش اپنے اندر ایک سبق رکھتی ہے۔"}
+];
+
+let activeLyric=-1;
+
+function renderLyrics(){
+
+lyricsBox.innerHTML="";
+
+lyricsData.forEach(function(line,index){
+
+const div=document.createElement("div");
+
+div.className="lyric-line";
+
+div.dataset.index=index;
+div.dataset.time=line.time;
+
+div.textContent=line.text;
+
+div.onclick=function(){
+
+music.currentTime=line.time;
+music.play().catch(function(){});
+
+};
+
+lyricsBox.appendChild(div);
+
+});
+
+}
+
+renderLyrics();
+
+
+function formatTime(seconds){
+
+if(!isFinite(seconds)) return "00:00";
+
+const m=Math.floor(seconds/60);
+const s=Math.floor(seconds%60);
+
+return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+
+}
+
+
+function updateMusicPlayer(){
+
+if(music.duration){
+
+musicProgressBar.style.width=
+(music.currentTime/music.duration*100)+"%";
+
+musicCurrent.textContent=
+formatTime(music.currentTime);
+
+musicDuration.textContent=
+formatTime(music.duration);
+
+}
+
+let current=-1;
+
+for(let i=0;i<lyricsData.length;i++){
+
+if(music.currentTime>=lyricsData[i].time){
+current=i;
+}else{
+break;
+}
+
+}
+
+if(current!==activeLyric){
+
+activeLyric=current;
+
+document
+.querySelectorAll(".lyric-line")
+.forEach(function(line,index){
+
+line.classList.toggle(
+"active",
+index===activeLyric
+);
+
+});
+
+const active=
+document.querySelector(
+'.lyric-line[data-index="'+activeLyric+'"]'
+);
+
+if(active){
+
+active.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+
+}
+
+}
+
+
+music.addEventListener("timeupdate",updateMusicPlayer);
+
+music.addEventListener("loadedmetadata",function(){
+
+musicDuration.textContent=
+formatTime(music.duration);
+
+});
+
+music.addEventListener("play",function(){
+
+musicPlayButton.textContent="⏸";
+musicStatus.textContent="🎵 Music چل رہا ہے";
+
+musicButton.textContent="🔊 Music On";
+
+});
+
+music.addEventListener("pause",function(){
+
+musicPlayButton.textContent="▶";
+musicStatus.textContent="⏸ Music Paused";
+
+musicButton.textContent="🔇 Music Off";
+
+});
+
+music.addEventListener("ended",function(){
+
+musicPlayButton.textContent="▶";
+musicStatus.textContent="Music ختم ہوگیا";
+
+});
+
+
+function toggleMusicPlayer(){
+
+if(music.paused){
+
+music.play()
+.then(function(){
+
+musicPlayButton.textContent="⏸";
+
+})
+.catch(function(){
+
+alert("Music چلانے کے لیے Play دوبارہ دبائیں۔");
+
+});
+
+}else{
+
+music.pause();
+
+}
+
+}
+
+
+function previousLyric(){
+
+if(!lyricsData.length)return;
+
+let target=activeLyric-1;
+
+if(target<0)target=0;
+
+music.currentTime=lyricsData[target].time;
+
+activeLyric=target;
+
+music.play().catch(function(){});
+
+}
+
+
+function nextLyric(){
+
+if(!lyricsData.length)return;
+
+let target=activeLyric+1;
+
+if(target>=lyricsData.length){
+
+target=0;
+
+}
+
+music.currentTime=lyricsData[target].time;
+
+activeLyric=target;
+
+music.play().catch(function(){});
+
+}
+
+
+function restartMusic(){
+
+music.currentTime=0;
+
+activeLyric=-1;
+
+music.play().catch(function(){});
+
+}
+
+
+function seekMusic(event){
+
+if(!music.duration)return;
+
+const rect=event.currentTarget.getBoundingClientRect();
+
+const percent=
+(event.clientX-rect.left)/rect.width;
+
+music.currentTime=
+Math.max(0,Math.min(1,percent))*music.duration;
 
 }
 
@@ -2325,6 +2449,9 @@ const sections=[
 ["خاندان","family"],
 ["photo","gallery"],
 ["تصویر","gallery"],
+["lyrics","lyrics"],
+["lyric","lyrics"],
+["موسیقی","lyrics"],
 ["اقوال","quotes"],
 ["quote","quotes"],
 ["review","reviews"],
@@ -3051,7 +3178,9 @@ function(){
 
 installPrompt=null;
 
-installButton.style.display="none";
+installButton.style.display="block";
+
+installButton.textContent="✅ App Installed";
 
 }
 );
@@ -3070,12 +3199,12 @@ await installPrompt.userChoice;
 
 installPrompt=null;
 
-installButton.style.display="none";
+installButton.style.display="block";
 
 }else{
 
 alert(
-"Chrome کے ⋮ menu میں جا کر Install app یا Add to Home screen منتخب کریں۔"
+"اگر Install window نہ آئے تو Chrome کے ⋮ menu میں جا کر 'Install app' یا 'Add to Home screen' منتخب کریں۔"
 );
 
 }
