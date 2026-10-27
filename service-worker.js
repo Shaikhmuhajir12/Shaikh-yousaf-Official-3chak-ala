@@ -1,67 +1,11 @@
-const CACHE_NAME = "shaikh-yousaf-official-v2";
-
-const FILES_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./lion%20(1).png",
-  "./background.mp3",
-  "./a13e474caf0e62eeb8b82846bca5f081_1792137751535.mp4",
-  "./foryoupage%20foryoupage.mp4"
-];
-
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(FILES_TO_CACHE).catch(error => {
-        console.log("Some files could not be cached:", error);
-      });
-    })
-  );
-
-  self.skipWaiting();
-});
-
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(
-        keys
-          .filter(key => key !== CACHE_NAME)
-          .map(key => caches.delete(key))
-      );
-    })
-  );
-
-  self.clients.claim();
-});
-
-self.addEventListener("fetch", event => {
-  if (event.request.method !== "GET") return;
-
-  event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      return fetch(event.request)
-        .then(response => {
-          if (
-            response &&
-            response.status === 200 &&
-            response.type === "basic"
-          ) {
-            const responseClone = response.clone();
-
-            caches.open(CACHE_NAME).then(cache => {
-              cache.put(event.request, responseClone);
-            });
-          }
-
-          return response;
-        })
-        .catch(() => caches.match("./index.html"));
-    })
-  );
+const CACHE_NAME="shaikh-yousaf-official-v2026-1";
+const CORE=["./","./index.html","./manifest.json","./lion%20(1).png","./yousaf-8.jpg","./yousaf-walid.jpg","./mudassir-5.jpg","./ustad-7.jpg","./background.mp3"];
+self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(CORE).catch(()=>{})));self.skipWaiting()});
+self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))));self.clients.claim()});
+self.addEventListener("fetch",e=>{
+ if(e.request.method!=="GET")return;
+ e.respondWith(caches.match(e.request).then(cached=>{
+  const network=fetch(e.request).then(r=>{if(r&&r.ok)caches.open(CACHE_NAME).then(c=>c.put(e.request,r.clone()));return r}).catch(()=>cached);
+  return cached||network;
+ }));
 });
