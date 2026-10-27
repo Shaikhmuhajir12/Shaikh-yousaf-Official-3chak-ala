@@ -2105,11 +2105,6 @@ const musicCurrent=document.getElementById("musicCurrent");
 const musicDuration=document.getElementById("musicDuration");
 const lyricsBox=document.getElementById("lyricsBox");
 
-/*
-  یہاں اپنے اصل lyrics کی lines بعد میں paste کی جا سکتی ہیں۔
-  ابھی player مکمل کام کرتا ہے اور demo/original lines موجود ہیں۔
-*/
-
 const lyricsData=[
  {time:0,text:"امید کا سفر ہمیشہ جاری رہتا ہے۔"},
  {time:5,text:"محنت انسان کو منزل کے قریب لے جاتی ہے۔"},
@@ -3152,64 +3147,218 @@ document.getElementById("admin")
 }
 
 
-/* PWA INSTALL */
+/* =====================================================
+   PWA INSTALL — FIXED
+   ===================================================== */
 
-let installPrompt=null;
+let installPrompt = null;
 
-const installButton=
-document.getElementById("install");
+const installButton = document.getElementById("install");
 
+
+/* Check whether app is already installed */
+function isAppInstalled(){
+
+return (
+  window.matchMedia("(display-mode: standalone)").matches ||
+  window.matchMedia("(display-mode: fullscreen)").matches ||
+  window.navigator.standalone === true
+);
+
+}
+
+
+/* Chrome gives this event only when the site is installable */
 window.addEventListener(
 "beforeinstallprompt",
 function(event){
 
 event.preventDefault();
 
-installPrompt=event;
+installPrompt = event;
 
-installButton.style.display="block";
+if(installButton){
+
+installButton.style.display = "block";
+installButton.textContent = "📲 Install App";
+
+}
+
+console.log("✅ Native PWA install prompt is ready.");
 
 }
 );
 
+
+/* User presses Install App */
+async function installApp(){
+
+/* Already installed */
+if(isAppInstalled()){
+
+if(installButton){
+
+installButton.textContent = "✅ App Installed";
+
+}
+
+return;
+
+}
+
+
+/* Native Chrome install prompt available */
+if(installPrompt){
+
+try{
+
+installPrompt.prompt();
+
+const result = await installPrompt.userChoice;
+
+if(result && result.outcome === "accepted"){
+
+installButton.textContent = "✅ Installing...";
+
+}else{
+
+installButton.textContent = "📲 Install App";
+
+}
+
+}catch(error){
+
+console.log("PWA Install Error:",error);
+
+}finally{
+
+installPrompt = null;
+
+}
+
+return;
+
+}
+
+
+/*
+  Chrome has not supplied beforeinstallprompt.
+  We do NOT use the old alert.
+  Instead we show a small in-page installation guide.
+*/
+
+showInstallGuide();
+
+}
+
+
+/* Install guide */
+function showInstallGuide(){
+
+let guide=document.getElementById("installGuide");
+
+if(guide){
+
+guide.style.display="flex";
+return;
+
+}
+
+guide=document.createElement("div");
+
+guide.id="installGuide";
+
+guide.style.cssText=
+"position:fixed;inset:0;z-index:100005;background:#000c;display:flex;align-items:center;justify-content:center;padding:20px;";
+
+guide.innerHTML=
+`
+<div style="
+max-width:430px;
+width:100%;
+background:#101010;
+border:2px solid #d4af37;
+border-radius:22px;
+padding:25px;
+text-align:center;
+box-shadow:0 0 30px #d4af3744;
+">
+
+<div style="font-size:48px;margin-bottom:10px;">📲</div>
+
+<h2 style="
+color:#d4af37;
+margin-bottom:12px;
+font-family:Cairo,sans-serif;
+">
+Install Shaikh Yousaf App
+</h2>
+
+<p style="
+color:#fff;
+line-height:2;
+font-family:Cairo,sans-serif;
+">
+Chrome کے اوپر <b style="color:#ffe28a">⋮</b> menu کھولیں،
+پھر <b style="color:#ffe28a">Install app</b>
+یا
+<b style="color:#ffe28a">Add to Home screen</b>
+منتخب کریں۔
+</p>
+
+<button
+onclick="closeInstallGuide()"
+style="
+margin-top:18px;
+padding:10px 25px;
+border:1px solid #d4af37;
+border-radius:25px;
+background:#d4af37;
+color:#000;
+font-weight:900;
+font-size:15px;
+">
+ٹھیک ہے
+</button>
+
+</div>
+`;
+
+document.body.appendChild(guide);
+
+}
+
+
+function closeInstallGuide(){
+
+const guide=document.getElementById("installGuide");
+
+if(guide){
+
+guide.remove();
+
+}
+
+}
+
+
+/* App installed successfully */
 window.addEventListener(
 "appinstalled",
 function(){
 
 installPrompt=null;
 
-installButton.style.display="block";
+if(installButton){
 
 installButton.textContent="✅ App Installed";
 
 }
-);
 
-async function installApp(){
-
-if(installPrompt){
-
-installPrompt.prompt();
-
-try{
-
-await installPrompt.userChoice;
-
-}catch(e){}
-
-installPrompt=null;
-
-installButton.style.display="block";
-
-}else{
-
-alert(
-"اگر Install window نہ آئے تو Chrome کے ⋮ menu میں جا کر 'Install app' یا 'Add to Home screen' منتخب کریں۔"
-);
+console.log("✅ Shaikh Yousaf App Installed Successfully.");
 
 }
-
-}
+);
 
 
 /* SERVICE WORKER */
@@ -3225,11 +3374,19 @@ navigator.serviceWorker
 "./service-worker.js",
 {scope:"./"}
 )
-.then(function(){
+.then(function(registration){
 
 console.log(
-"Shaikh Yousaf PWA Service Worker Ready"
+"✅ Shaikh Yousaf PWA Service Worker Ready:",
+registration.scope
 );
+
+/* Ask service worker to update if a new version exists */
+if(registration.update){
+
+registration.update().catch(function(){});
+
+}
 
 })
 .catch(function(error){
@@ -3256,6 +3413,7 @@ if(event.key==="Escape"){
 
 closePhoto();
 closeAdmin();
+closeInstallGuide();
 
 }
 
